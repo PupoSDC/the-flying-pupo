@@ -3,9 +3,8 @@ import { Flight } from "../../types/Flight";
 const flight : Flight = {
     "identification":{
        "id":"20200915EDKBEDKB",
-       "number":{
-          "default":"DEFCZ"
-       },
+       "name": "PPL Mission 1",
+       "description": "Getting to know the aircraft and doing turns",
        "callsign":"DEFCZ"
     },
     "aircraft":{
@@ -17,63 +16,24 @@ const flight : Flight = {
           "modes":"3D1229",
           "registration":"D-EFCZ",
           "serialNo":"N\/A",
-          "age":{
-             "availability":false
-          }
        },
     },
     "airport":{
        "origin": {
-         "name":"Cologne Bonn Airport",
-         "code":{
-            "iata":"CGN",
-            "icao":"EDDK"
+         "name":"Bonn Hangelar",
+         "code": "EDKB",
+         "position": {
+            latitude: 50.7682039,
+            longitude: 7.1616949
          },
-         "position":{
-            "latitude":50.866001,
-            "longitude":7.143,
-            "country":{
-               "name":"Germany",
-               "code":"DE",
-               "id":83
-            },
-            "region":{
-               "city":"Cologne"
-            }
-         },
-         "timezone":{
-            "name":"Europe\/Berlin",
-            "offset":7200,
-            "abbr":"CEST",
-            "abbrName":"Central European Summer Time",
-            "isDst":true
-         }
-      },
+       },
        "destination": {
-          "name":"Cologne Bonn Airport",
-          "code":{
-             "iata":"CGN",
-             "icao":"EDDK"
-          },
-          "position":{
-             "latitude":50.866001,
-             "longitude":7.143,
-             "country":{
-                "name":"Germany",
-                "code":"DE",
-                "id":83
-             },
-             "region":{
-                "city":"Cologne"
-             }
-          },
-          "timezone":{
-             "name":"Europe\/Berlin",
-             "offset":7200,
-             "abbr":"CEST",
-             "abbrName":"Central European Summer Time",
-             "isDst":true
-          }
+         "name":"Bonn Hangelar",
+         "code": "EDKB",
+         "position": {
+            latitude: 50.7682039,
+            longitude: 7.1616949
+         },
        },
     },
     "track":[

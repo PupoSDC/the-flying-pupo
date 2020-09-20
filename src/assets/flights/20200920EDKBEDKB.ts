@@ -2,10 +2,9 @@ import { Flight } from "../../types/Flight";
 
 const flight : Flight = {
    "identification":{
-      "id":"258e01f9",
-      "number":{
-         "default":"DEFCZ"
-      },
+      "id":"20200920EDKBEDKB",
+      "name": "PPL Mission 2",
+      "description": "Continuing with turns, mantaining level, and practicing a descent",
       "callsign":"DEFCZ"
    },
    "aircraft":{
@@ -17,68 +16,25 @@ const flight : Flight = {
          "modes":"3D1229",
          "registration":"D-EFCZ",
          "serialNo":"N\/A",
-         "age":{
-            "availability":false
-         }
       },
-      "availability":{
-         "serialNo":false,
-         "age":false
-      }
    },
    "airport":{
-      "origin":{
-         "name":"Cologne Bonn Airport",
-         "code":{
-            "iata":"CGN",
-            "icao":"EDDK"
+      "origin": {
+         "name":"Bonn Hangelar",
+         "code": "EDKB",
+         "position": {
+            latitude: 50.7682039,
+            longitude: 7.1616949
          },
-         "position":{
-            "latitude":50.866001,
-            "longitude":7.143,
-            "country":{
-               "name":"Germany",
-               "code":"DE",
-               "id":83
-            },
-            "region":{
-               "city":"Cologne"
-            }
+       },
+       "destination": {
+         "name":"Bonn Hangelar",
+         "code": "EDKB",
+         "position": {
+            latitude: 50.7682039,
+            longitude: 7.1616949
          },
-         "timezone":{
-            "name":"Europe\/Berlin",
-            "offset":7200,
-            "abbr":"CEST",
-            "abbrName":"Central European Summer Time",
-            "isDst":true
-         }
-      },
-      "destination":{
-         "name":"Cologne Bonn Airport",
-         "code":{
-            "iata":"CGN",
-            "icao":"EDDK"
-         },
-         "position":{
-            "latitude":50.866001,
-            "longitude":7.143,
-            "country":{
-               "name":"Germany",
-               "code":"DE",
-               "id":83
-            },
-            "region":{
-               "city":"Cologne"
-            }
-         },
-         "timezone":{
-            "name":"Europe\/Berlin",
-            "offset":7200,
-            "abbr":"CEST",
-            "abbrName":"Central European Summer Time",
-            "isDst":true
-         }
-      },
+       },
    },
    "track":[
       {

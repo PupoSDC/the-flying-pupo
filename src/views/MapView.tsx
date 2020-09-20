@@ -1,13 +1,9 @@
 import React, { FunctionComponent } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import { LatLngLiteral } from 'leaflet'
-import { Map, TileLayer } from 'react-leaflet'
+import { Map, Polyline, TileLayer } from 'react-leaflet'
 
-type State = {
-  lat: number,
-  lng: number,
-  zoom: number,
-}
+import flights from "../assets/flights";
 
 const useStyles = makeStyles({
   map: {
@@ -19,9 +15,10 @@ const useStyles = makeStyles({
 const MapView : FunctionComponent<{}> = () =>{
   const styles = useStyles();
 
+  const {latitude, longitude} = flights[flights.length -1].airport.destination.position;
   const position : LatLngLiteral = {
-    lat: 51.505,
-    lng: -0.09
+    lat: latitude,
+    lng: longitude,
   }
     
   return (
@@ -30,6 +27,14 @@ const MapView : FunctionComponent<{}> = () =>{
         attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.osm.org/{z}/{x}/{y}.png"
       />
+      {flights.map((flight) => {
+        const path = flight.track.map(point => ({
+          lat: point.latitude,
+          lng: point.longitude,
+        }));
+        return (<Polyline positions={path} />);
+      })}
+      
     </Map>
   )
 }
