@@ -23,20 +23,41 @@ const flight: Flight = {
       name: "Bonn Hangelar",
       code: "EDKB",
       position: {
-        latitude: 50.7682039,
-        longitude: 7.1616949,
+        latitude: 50.7690965,
+        longitude: 7.1620958,
       },
     },
     destination: {
       name: "Bonn Hangelar",
       code: "EDKB",
       position: {
-        latitude: 50.7682039,
-        longitude: 7.1616949,
+        latitude: 50.7690965,
+        longitude: 7.1620958,
       },
     },
   },
   track: [
+    {
+      latitude: 50.7690965,
+      longitude: 7.1620958,
+      altitude: {
+        feet: 200,
+        meters: 61,
+      },
+      speed: {
+        kmh: 0,
+        kts: 0,
+        mph: 0,
+      },
+      verticalSpeed: {
+        fpm: 0,
+        ms: 0,
+      },
+      heading: 287,
+      squawk: "0",
+      timestamp: 1600178940,
+      ems: null,
+    },
     {
       latitude: 50.771778,
       longitude: 7.149353,
@@ -7322,6 +7343,27 @@ const flight: Flight = {
       heading: 290,
       squawk: "7000",
       timestamp: 1600182408,
+      ems: null,
+    },
+    {
+      latitude: 50.7690965,
+      longitude: 7.1620958,
+      altitude: {
+        feet: 200,
+        meters: 61,
+      },
+      speed: {
+        kmh: 0,
+        kts: 0,
+        mph: 0,
+      },
+      verticalSpeed: {
+        fpm: 0,
+        ms: 0,
+      },
+      heading: 287,
+      squawk: "0",
+      timestamp: 1600182900,
       ems: null,
     },
   ],
