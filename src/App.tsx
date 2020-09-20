@@ -1,10 +1,8 @@
-import React from 'react';
-import MapView from './views/MapView';
+import React from "react";
+import MapView from "./views/MapView";
 
 function App() {
-  return (
-      <MapView />
-  );
+  return <MapView />;
 }
 
 export default App;
