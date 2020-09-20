@@ -48,13 +48,15 @@ const MapView : FunctionComponent<{}> = () =>{
           url="https://{s}.tile.osm.org/{z}/{x}/{y}.png"
         />
         {flights.map((flight) => {
+          const { id } = flight.identification
           const path = flight.track.map(point => ({
             lat: point.latitude,
             lng: point.longitude,
           }));
           return (<Polyline 
             positions={path} 
-            color={selected === flight.identification.id ? red[500] : blue[500]} 
+            color={selected === id ? red[500] : blue[500]} 
+            onclick={() => setSelected(id)}
           />);
         })}  
       </Map>
