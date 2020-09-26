@@ -1,11 +1,11 @@
 import React, { FunctionComponent, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { LatLngLiteral } from "leaflet";
-import { Map, Polyline, TileLayer } from "react-leaflet";
-
-import flights from "../assets/flights";
+import { Map, Polyline, TileLayer, Marker } from "react-leaflet";
 import { List, ListItem, ListItemText } from "@material-ui/core";
 import { blue, red } from "@material-ui/core/colors";
+import flights from "../assets/flights";
+import FlyingIcon from "../components/leaflet/FlyingIcon";
 
 const useStyles = makeStyles({
   container: {
@@ -34,6 +34,9 @@ const MapView: FunctionComponent<{}> = () => {
     lat: latitude,
     lng: longitude,
   };
+
+  const flight = flights.find(({ identification: { id } }) => selected === id)
+    ?.track;
 
   return (
     <div className={styles.container}>
@@ -68,6 +71,7 @@ const MapView: FunctionComponent<{}> = () => {
             />
           );
         })}
+        {flight && <FlyingIcon track={flight} />}
       </Map>
     </div>
   );
