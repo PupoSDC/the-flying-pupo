@@ -1,22 +1,32 @@
-import React, { FunctionComponent, useEffect, useRef } from "react";
+import React, {
+  FunctionComponent,
+  useCallback,
+  useEffect,
+  useRef,
+} from "react";
 import { Marker } from "react-leaflet";
 import { Icon } from "leaflet";
 import { Flight } from "../../types/Flight";
 import planeIcon from "./planeIcon.png";
 
 import "leaflet-rotatedmarker";
+import "./FlyingIcon.css";
 
 const FlyingIcon: FunctionComponent<Pick<Flight, "track">> = ({ track }) => {
   const ref = useRef<Marker>();
 
-  const getPoint = (i: number) => ({
-    lat: track[i].latitude,
-    lng: track[i].longitude,
-  });
+  const getPoint = useCallback(
+    (i: number) => ({
+      lat: track[i].latitude,
+      lng: track[i].longitude,
+    }),
+    [track]
+  );
 
   useEffect(() => {
     let i = 0;
     let timeout: NodeJS.Timeout;
+
     const updatePosition = () => {
       const oldPosition = getPoint(i);
       i = ++i % track.length;
@@ -37,7 +47,7 @@ const FlyingIcon: FunctionComponent<Pick<Flight, "track">> = ({ track }) => {
     };
     updatePosition();
     return () => clearTimeout(timeout);
-  }, [track]);
+  }, [track, getPoint]);
 
   return (
     <Marker

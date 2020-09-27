@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { LatLngLiteral } from "leaflet";
-import { Map, Polyline, TileLayer, Marker } from "react-leaflet";
+import { Map, Polyline, TileLayer } from "react-leaflet";
 import { List, ListItem, ListItemText } from "@material-ui/core";
 import { blue, red } from "@material-ui/core/colors";
 import flights from "../assets/flights";
