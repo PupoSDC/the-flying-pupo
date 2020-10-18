@@ -2,9 +2,9 @@ import { Flight } from "../../types/Flight";
 
 const flight: Flight = {
   identification: {
-    id: "20201014EDKBEDKB",
+    id: "20201017EDKBEDKB",
     callsign: "DEFCZ",
-    name: "PPL Mission 9",
+    name: "PPL Mission 10",
     description: "Pattern flying (no wind)",
   },
   aircraft: {

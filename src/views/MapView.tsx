@@ -38,19 +38,23 @@ const MapView: FunctionComponent<{}> = () => {
   const flight = flights.find(({ identification: { id } }) => selected === id)
     ?.track;
 
+  console.log(flights);
   return (
     <div className={styles.container}>
       <List className={styles.menu}>
-        {flights.map(({ identification: { name, description, id } }) => (
-          <ListItem
-            button
-            key={id}
-            onClick={() => setSelected(id)}
-            selected={selected === id}
-          >
-            <ListItemText primary={name} secondary={description} />
-          </ListItem>
-        ))}
+        {flights
+          .slice()
+          .reverse()
+          .map(({ identification: { name, description, id } }) => (
+            <ListItem
+              button
+              key={id}
+              onClick={() => setSelected(id)}
+              selected={selected === id}
+            >
+              <ListItemText primary={name} secondary={description} />
+            </ListItem>
+          ))}
       </List>
       <Map center={position} zoom={11} className={styles.map}>
         <TileLayer
