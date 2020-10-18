@@ -25,7 +25,7 @@ const useStyles = makeStyles({
 
 const MapView: FunctionComponent<{}> = () => {
   const styles = useStyles();
-  const [selected, setSelected] = useState<string>();
+  const [selected, setSelected] = useState<string[]>([]);
 
   const { latitude, longitude } = flights[
     flights.length - 1
@@ -35,10 +35,6 @@ const MapView: FunctionComponent<{}> = () => {
     lng: longitude,
   };
 
-  const flight = flights.find(({ identification: { id } }) => selected === id)
-    ?.track;
-
-  console.log(flights);
   return (
     <div className={styles.container}>
       <List className={styles.menu}>
@@ -49,8 +45,14 @@ const MapView: FunctionComponent<{}> = () => {
             <ListItem
               button
               key={id}
-              onClick={() => setSelected(id)}
-              selected={selected === id}
+              onClick={() =>
+                setSelected((selected) =>
+                  selected.includes(id)
+                    ? selected.filter((s) => s !== id)
+                    : [...selected, id]
+                )
+              }
+              selected={selected.includes(id)}
             >
               <ListItemText primary={name} secondary={description} />
             </ListItem>
@@ -61,21 +63,27 @@ const MapView: FunctionComponent<{}> = () => {
           attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.osm.org/{z}/{x}/{y}.png"
         />
-        {flights.map((flight) => {
-          const { id } = flight.identification;
-          const path = flight.track.map((point) => ({
-            lat: point.latitude,
-            lng: point.longitude,
-          }));
-          return (
-            <Polyline
-              positions={path}
-              color={selected === id ? red[500] : blue[500]}
-              onclick={() => setSelected(id)}
-            />
-          );
-        })}
-        {flight && <FlyingIcon track={flight} />}
+        {flights
+          .filter(({ identification: { id } }) => selected.includes(id))
+          .map((flight) => {
+            const { id } = flight.identification;
+            const path = flight.track.map((point) => ({
+              lat: point.latitude,
+              lng: point.longitude,
+            }));
+            return (
+              <>
+                <Polyline
+                  positions={path}
+                  color={blue[500]}
+                  onclick={() =>
+                    setSelected((selected) => selected.filter((s) => s !== id))
+                  }
+                />
+                <FlyingIcon track={flight.track} />
+              </>
+            );
+          })}
       </Map>
     </div>
   );
