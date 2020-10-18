@@ -16,6 +16,7 @@ const useStyles = makeStyles({
   menu: {
     width: 250,
     height: "100%",
+    overflow: "scroll",
   },
   map: {
     height: "100%",
