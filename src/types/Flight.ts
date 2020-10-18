@@ -58,6 +58,8 @@ export type TrackEntity = {
   verticalSpeed: VerticalSpeed;
   heading: number;
   squawk: string;
+
+  /** In seconds */
   timestamp: number;
   ems?: unknown;
 };

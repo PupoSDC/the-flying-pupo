@@ -55,7 +55,7 @@ const flight: Flight = {
       },
       heading: 287,
       squawk: "0",
-      timestamp: 1600178940,
+      timestamp: 1600179700,
       ems: null,
     },
     {
@@ -7363,7 +7363,7 @@ const flight: Flight = {
       },
       heading: 287,
       squawk: "0",
-      timestamp: 1600182900,
+      timestamp: 1600182458,
       ems: null,
     },
   ],

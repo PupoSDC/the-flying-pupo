@@ -68,21 +68,10 @@ const MapView: FunctionComponent<{}> = () => {
           .filter(({ identification: { id } }) => selected.includes(id))
           .map((flight) => {
             const { id } = flight.identification;
-            const path = flight.track.map((point) => ({
-              lat: point.latitude,
-              lng: point.longitude,
-            }));
+            const onClick = () =>
+              setSelected((selected) => selected.filter((s) => s !== id));
             return (
-              <>
-                <Polyline
-                  positions={path}
-                  color={blue[500]}
-                  onclick={() =>
-                    setSelected((selected) => selected.filter((s) => s !== id))
-                  }
-                />
-                <FlyingIcon track={flight.track} />
-              </>
+              <FlyingIcon key={id} track={flight.track} onClick={onClick} />
             );
           })}
       </Map>

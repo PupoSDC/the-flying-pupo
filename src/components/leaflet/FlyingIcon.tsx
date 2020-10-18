@@ -2,25 +2,182 @@ import React, {
   FunctionComponent,
   useCallback,
   useEffect,
+  useMemo,
   useRef,
 } from "react";
+import { blue, red } from "@material-ui/core/colors";
 import { Marker } from "react-leaflet";
-import { Icon } from "leaflet";
-import { Flight } from "../../types/Flight";
+import { Icon, LatLngLiteral, Polyline as PolylineDom } from "leaflet";
+import { Polyline } from "react-leaflet";
+import { Flight, TrackEntity } from "../../types/Flight";
 import planeIcon from "./planeIcon.png";
 
 import "leaflet-rotatedmarker";
 import "./FlyingIcon.css";
+import { PathLike } from "fs";
 
-const FlyingIcon: FunctionComponent<Pick<Flight, "track">> = ({ track }) => {
-  const ref = useRef<Marker>();
+type FlyingIconProps = Pick<Flight, "track"> & {
+  onClick?: () => void;
+};
 
-  const getPoint = useCallback(
-    (i: number) => ({
-      lat: track[i].latitude,
-      lng: track[i].longitude,
-    }),
-    [track]
+type LagrangeInterpolation = (pointsY: number[], x: number) => number;
+
+/**
+ * Lazily calculates the interpolation values using Lagrange Interpolation.
+ * The factory step only takes x coordinates (timestaps in this case) which
+ * are common to all the data points we will be processing, while the second
+ * step takes y coordinates.
+ *
+ * @param pointsX the X coordinates (timestaps in this case)
+ */
+const lagrangeInterpolationFactory = (
+  pointsX: number[]
+): LagrangeInterpolation => {
+  const k = pointsX.length;
+  const weights: number[] = [];
+  for (let j = 0; j < k; ++j) {
+    let w = 1;
+    for (var i = 0; i < k; ++i) {
+      if (i != j) {
+        w *= pointsX[j] - pointsX[i];
+      }
+    }
+    weights[j] = 1 / w;
+  }
+  return (pointsY: number[], x) => {
+    if (pointsX.length > pointsY.length) {
+      throw new Error("Disparity between pointsX and pointsY length ");
+    }
+    let a = 0,
+      b = 0,
+      c = 0;
+    for (let j = 0; j < pointsX.length; ++j) {
+      if (x === pointsX[j]) return pointsY[j];
+      a = weights[j] / (x - pointsX[j]);
+      b += a * pointsY[j];
+      c += a;
+    }
+    return b / c;
+  };
+};
+
+/**
+ * Applies a Lagrange interpolation to all fields that can be interpolated in a track
+ * point. make sure
+ */
+const mapInterpolationToTrackEntity = (
+  interpolation: LagrangeInterpolation,
+  track: TrackEntity[],
+  timestamp: number
+): TrackEntity => ({
+  latitude: interpolation(
+    track.map((t) => t.latitude),
+    timestamp
+  ),
+  longitude: interpolation(
+    track.map((t) => t.longitude),
+    timestamp
+  ),
+  heading: interpolation(
+    track.map((t) => t.heading),
+    timestamp
+  ),
+  altitude: {
+    feet: interpolation(
+      track.map((t) => t.altitude.feet),
+      timestamp
+    ),
+    meters: interpolation(
+      track.map((t) => t.altitude.meters),
+      timestamp
+    ),
+  },
+  speed: {
+    kmh: interpolation(
+      track.map((t) => t.speed.kmh),
+      timestamp
+    ),
+    kts: interpolation(
+      track.map((t) => t.speed.kts),
+      timestamp
+    ),
+    mph: interpolation(
+      track.map((t) => t.speed.mph),
+      timestamp
+    ),
+  },
+  verticalSpeed: {
+    fpm: interpolation(
+      track.map((t) => t.verticalSpeed.fpm),
+      timestamp
+    ),
+    ms: interpolation(
+      track.map((t) => t.verticalSpeed.ms),
+      timestamp
+    ),
+  },
+  squawk: track[0].squawk,
+  ems: track[0].ems,
+  timestamp,
+});
+
+/**
+ *
+ * @param track the original flight track (min 2 points)
+ * @param speed the speed multiplier (i.e.: 60 for 1 minute per second)
+ * @return the interpolated track with 20 points per second.
+ * */
+const interpolateTrack = (
+  track: TrackEntity[],
+  speed: number
+): TrackEntity[] => {
+  const timeStep = (1 / 20) * speed;
+  const endTime = track[track.length - 1].timestamp;
+  const result = [track[0]];
+
+  let currentTime = track[0].timestamp;
+  let firstIndex = 0;
+  let interpolate = lagrangeInterpolationFactory([
+    track[firstIndex].timestamp,
+    track[firstIndex + 1].timestamp,
+  ]);
+
+  do {
+    currentTime = currentTime + timeStep;
+    if (
+      firstIndex + 3 < track.length &&
+      currentTime > track[firstIndex + 1].timestamp
+    ) {
+      firstIndex++;
+      interpolate = lagrangeInterpolationFactory([
+        track[firstIndex].timestamp,
+        track[firstIndex + 1].timestamp,
+        track[firstIndex + 2].timestamp,
+      ]);
+    }
+    const newTrackPoint = mapInterpolationToTrackEntity(
+      interpolate,
+      track.slice(firstIndex, firstIndex + 3),
+      currentTime
+    );
+    result.push(newTrackPoint);
+  } while (currentTime < endTime);
+  return result;
+};
+
+/**
+ * Displays a flight track with a small cute icon following the track
+ */
+const FlyingIcon: FunctionComponent<FlyingIconProps> = ({ track, onClick }) => {
+  const markerRef = useRef<Marker>();
+  const polyLineRef = useRef<Polyline>();
+  const path = useMemo(
+    () =>
+      interpolateTrack(track, 60).map((point) => ({
+        lat: point.latitude,
+        lng: point.longitude,
+      })),
+    []
   );
 
   useEffect(() => {
@@ -28,9 +185,9 @@ const FlyingIcon: FunctionComponent<Pick<Flight, "track">> = ({ track }) => {
     let timeout: NodeJS.Timeout;
 
     const updatePosition = () => {
-      const oldPosition = getPoint(i);
-      i = ++i % track.length;
-      const newPosition = getPoint(i);
+      const oldPosition = path[i];
+      i = ++i % path.length;
+      const newPosition = path[i];
 
       const angle =
         (Math.atan2(
@@ -41,27 +198,36 @@ const FlyingIcon: FunctionComponent<Pick<Flight, "track">> = ({ track }) => {
         Math.PI;
 
       // @ts-ignore defined in leaflet-rotatedmarker
-      ref.current?.leafletElement.setRotationAngle(angle);
-      ref.current?.leafletElement.setLatLng(getPoint(i));
-      timeout = setTimeout(updatePosition, 100);
+      markerRef.current?.leafletElement.setRotationAngle(angle);
+      markerRef.current?.leafletElement.setLatLng(path[i]);
+      polyLineRef.current?.leafletElement.addLatLng(path[i]);
+      timeout = setTimeout(updatePosition, 50);
     };
     updatePosition();
     return () => clearTimeout(timeout);
-  }, [track, getPoint]);
+  }, [path]);
 
   return (
-    <Marker
-      ref={(ref as unknown) as string}
-      icon={
-        new Icon({
-          iconUrl: planeIcon,
-          iconSize: [12, 12],
-          iconAnchor: [6, 6],
-        })
-      }
-      rotationAngle={45}
-      position={getPoint(0)}
-    />
+    <>
+      <Polyline positions={path} color={blue[500]} onclick={onClick} />
+      <Polyline
+        ref={(polyLineRef as unknown) as string}
+        positions={[path[0]]}
+        color={red[500]}
+      />
+      <Marker
+        ref={(markerRef as unknown) as string}
+        icon={
+          new Icon({
+            iconUrl: planeIcon,
+            iconSize: [12, 12],
+            iconAnchor: [6, 6],
+          })
+        }
+        rotationAngle={45}
+        position={path[0]}
+      />
+    </>
   );
 };
 

@@ -38,6 +38,27 @@ const flight: Flight = {
   },
   track: [
     {
+      latitude: 50.7690965,
+      longitude: 7.1620958,
+      altitude: {
+        feet: 200,
+        meters: 61,
+      },
+      speed: {
+        kmh: 0,
+        kts: 0,
+        mph: 0,
+      },
+      verticalSpeed: {
+        fpm: 0,
+        ms: 0,
+      },
+      heading: 287,
+      squawk: "0",
+      timestamp: 1600876700,
+      ems: null,
+    },
+    {
       latitude: 50.770569,
       longitude: 7.156296,
       altitude: {
@@ -2827,7 +2848,7 @@ const flight: Flight = {
       },
       heading: 289,
       squawk: "0",
-      timestamp: 1600876750,
+      timestamp: 1600878300,
       ems: null,
     },
   ],
