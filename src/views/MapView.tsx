@@ -66,14 +66,9 @@ const MapView: FunctionComponent<{}> = () => {
         />
         {flights
           .filter(({ identification: { id } }) => selected.includes(id))
-          .map((flight) => {
-            const { id } = flight.identification;
-            const onClick = () =>
-              setSelected((selected) => selected.filter((s) => s !== id));
-            return (
-              <FlyingIcon key={id} track={flight.track} onClick={onClick} />
-            );
-          })}
+          .map((flight) => (
+            <FlyingIcon key={flight.identification.id} track={flight.track} />
+          ))}
       </Map>
     </div>
   );

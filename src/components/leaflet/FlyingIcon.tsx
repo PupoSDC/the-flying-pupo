@@ -1,10 +1,4 @@
-import React, {
-  FunctionComponent,
-  useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-} from "react";
+import React, { useEffect, useMemo, useRef } from "react";
 import { blue, red } from "@material-ui/core/colors";
 import { Marker } from "react-leaflet";
 import { Icon, LatLngLiteral, Polyline as PolylineDom } from "leaflet";
@@ -142,8 +136,7 @@ const interpolateTrack = (
     track[firstIndex + 1].timestamp,
   ]);
 
-  do {
-    currentTime = currentTime + timeStep;
+  while (currentTime < endTime) {
     if (
       firstIndex + 3 < track.length &&
       currentTime > track[firstIndex + 1].timestamp
@@ -152,7 +145,6 @@ const interpolateTrack = (
       interpolate = lagrangeInterpolationFactory([
         track[firstIndex].timestamp,
         track[firstIndex + 1].timestamp,
-        track[firstIndex + 2].timestamp,
       ]);
     }
     const newTrackPoint = mapInterpolationToTrackEntity(
@@ -161,22 +153,26 @@ const interpolateTrack = (
       currentTime
     );
     result.push(newTrackPoint);
-  } while (currentTime < endTime);
+    currentTime = currentTime + timeStep;
+  }
   return result;
 };
 
 /**
  * Displays a flight track with a small cute icon following the track
  */
-const FlyingIcon: FunctionComponent<FlyingIconProps> = ({ track, onClick }) => {
+const FlyingIcon = React.memo<FlyingIconProps>(({ track }) => {
   const markerRef = useRef<Marker>();
   const polyLineRef = useRef<Polyline>();
   const path = useMemo(
     () =>
-      interpolateTrack(track, 60).map((point) => ({
-        lat: point.latitude,
-        lng: point.longitude,
-      })),
+      interpolateTrack(track, 60)
+        .slice(-50, -1)
+        .map((point) => ({
+          lat: point.latitude,
+          lng: point.longitude,
+          angle: point.heading,
+        })),
     []
   );
 
@@ -185,20 +181,14 @@ const FlyingIcon: FunctionComponent<FlyingIconProps> = ({ track, onClick }) => {
     let timeout: NodeJS.Timeout;
 
     const updatePosition = () => {
-      const oldPosition = path[i];
       i = ++i % path.length;
-      const newPosition = path[i];
 
-      const angle =
-        (Math.atan2(
-          newPosition.lng - oldPosition.lng,
-          newPosition.lat - oldPosition.lat
-        ) *
-          180) /
-        Math.PI;
+      if (i === 0) {
+        polyLineRef.current?.leafletElement.setLatLngs([]);
+      }
 
       // @ts-ignore defined in leaflet-rotatedmarker
-      markerRef.current?.leafletElement.setRotationAngle(angle);
+      markerRef.current?.leafletElement.setRotationAngle(path[i].angle);
       markerRef.current?.leafletElement.setLatLng(path[i]);
       polyLineRef.current?.leafletElement.addLatLng(path[i]);
       timeout = setTimeout(updatePosition, 50);
@@ -207,14 +197,17 @@ const FlyingIcon: FunctionComponent<FlyingIconProps> = ({ track, onClick }) => {
     return () => clearTimeout(timeout);
   }, [path]);
 
+  console.log(path);
+
   return (
     <>
-      <Polyline positions={path} color={blue[500]} onclick={onClick} />
+      <Polyline positions={path} color={blue[500]} />
       <Polyline
         ref={(polyLineRef as unknown) as string}
         positions={[path[0]]}
         color={red[500]}
       />
+      {}
       <Marker
         ref={(markerRef as unknown) as string}
         icon={
@@ -229,6 +222,6 @@ const FlyingIcon: FunctionComponent<FlyingIconProps> = ({ track, onClick }) => {
       />
     </>
   );
-};
+});
 
 export default FlyingIcon;
