@@ -1,14 +1,13 @@
 import React, { useEffect, useMemo, useRef } from "react";
 import { blue, red } from "@material-ui/core/colors";
 import { Marker } from "react-leaflet";
-import { Icon, LatLngLiteral, Polyline as PolylineDom } from "leaflet";
+import { Icon } from "leaflet";
 import { Polyline } from "react-leaflet";
 import { Flight, TrackEntity } from "../../types/Flight";
 import planeIcon from "./planeIcon.png";
 
 import "leaflet-rotatedmarker";
 import "./FlyingIcon.css";
-import { PathLike } from "fs";
 
 type FlyingIconProps = Pick<Flight, "track"> & {
   onClick?: () => void;
@@ -32,7 +31,7 @@ const lagrangeInterpolationFactory = (
   for (let j = 0; j < k; ++j) {
     let w = 1;
     for (var i = 0; i < k; ++i) {
-      if (i != j) {
+      if (i !== j) {
         w *= pointsX[j] - pointsX[i];
       }
     }
@@ -166,14 +165,12 @@ const FlyingIcon = React.memo<FlyingIconProps>(({ track }) => {
   const polyLineRef = useRef<Polyline>();
   const path = useMemo(
     () =>
-      interpolateTrack(track, 60)
-        .slice(-50, -1)
-        .map((point) => ({
-          lat: point.latitude,
-          lng: point.longitude,
-          angle: point.heading,
-        })),
-    []
+      interpolateTrack(track, 60).map((point) => ({
+        lat: point.latitude,
+        lng: point.longitude,
+        angle: point.heading,
+      })),
+    [track]
   );
 
   useEffect(() => {
