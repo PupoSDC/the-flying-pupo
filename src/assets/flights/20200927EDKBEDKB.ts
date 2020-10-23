@@ -7,6 +7,16 @@ const flight: Flight = {
     description: "Pattern flying",
     callsign: "DEFCZ",
   },
+  pilotLog: {
+    departure: new Date(2020, 8, 27, 8, 48),
+    arrival: new Date(2020, 8, 27, 9, 59),
+    singleEnginePistonTime: 77,
+    dualTime: 77,
+    Landings: {
+      day: 7,
+      night: 0,
+    },
+  },
   aircraft: {
     model: {
       code: "P208",

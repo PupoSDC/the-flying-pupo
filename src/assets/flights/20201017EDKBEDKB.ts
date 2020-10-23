@@ -7,6 +7,16 @@ const flight: Flight = {
     name: "PPL Mission 10",
     description: "Pattern flying (no wind)",
   },
+  pilotLog: {
+    departure: new Date(2020, 9, 17, 11, 21),
+    arrival: new Date(2020, 9, 17, 12, 27),
+    singleEnginePistonTime: 66,
+    dualTime: 66,
+    Landings: {
+      day: 9,
+      night: 0,
+    },
+  },
   aircraft: {
     model: {
       code: "P208",

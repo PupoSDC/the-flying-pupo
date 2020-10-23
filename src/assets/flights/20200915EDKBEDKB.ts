@@ -36,6 +36,16 @@ const flight: Flight = {
       },
     },
   },
+  pilotLog: {
+    departure: new Date(2020, 8, 15, 14, 9),
+    arrival: new Date(2020, 8, 15, 15, 15),
+    singleEnginePistonTime: 66,
+    dualTime: 66,
+    Landings: {
+      day: 1,
+      night: 0,
+    },
+  },
   track: [
     {
       latitude: 50.7690965,

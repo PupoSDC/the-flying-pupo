@@ -1,5 +1,6 @@
 export type Flight = {
   identification: Identification;
+  pilotLog: PilotLog;
   aircraft: Aircraft;
   airport: {
     origin: Airport;
@@ -13,6 +14,21 @@ export type Identification = {
   name: string;
   description: string;
   callsign: string;
+};
+
+export type PilotLog = {
+  departure: Date;
+  arrival: Date;
+  singleEnginePistonTime?: number;
+  nightTime?: number;
+  ifrTime?: number;
+  picTime?: number;
+  dualTime?: number;
+  fiTime?: number;
+  Landings: {
+    day: number;
+    night: number;
+  };
 };
 
 export interface Aircraft {
@@ -37,17 +53,15 @@ export type Position = {
   latitude: number;
   longitude: number;
   country?: Country;
-  region?: Region;
+  region?: {
+    city: string;
+  };
 };
 
 export interface Country {
   name: string;
   code: string;
   id: number;
-}
-
-export interface Region {
-  city: string;
 }
 
 export type TrackEntity = {

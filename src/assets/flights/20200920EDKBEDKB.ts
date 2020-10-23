@@ -8,6 +8,16 @@ const flight: Flight = {
       "Continuing with turns, mantaining level, and practicing a descent",
     callsign: "DEFCZ",
   },
+  pilotLog: {
+    departure: new Date(2020, 8, 20, 9, 23),
+    arrival: new Date(2020, 8, 20, 10, 29),
+    singleEnginePistonTime: 66,
+    dualTime: 66,
+    Landings: {
+      day: 1,
+      night: 0,
+    },
+  },
   aircraft: {
     model: {
       code: "P208",
