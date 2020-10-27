@@ -12,7 +12,7 @@ const flight: Flight = {
     arrival: new Date(2020, 9, 7, 12, 41),
     singleEnginePistonTime: 63,
     dualTime: 63,
-    Landings: {
+    landings: {
       day: 6,
       night: 0,
     },

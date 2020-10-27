@@ -25,11 +25,15 @@ export type PilotLog = {
   picTime?: number;
   dualTime?: number;
   fiTime?: number;
-  Landings: {
+  landings: {
     day: number;
     night: number;
   };
 };
+
+export type FlightLogCarryOver = Required<
+  Omit<PilotLog, "departure" | "arrival">
+>;
 
 export interface Aircraft {
   model: {

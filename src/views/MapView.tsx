@@ -10,8 +10,8 @@ import {
   ListItemText,
   SwipeableDrawer,
 } from "@material-ui/core";
-import EditIcon from "@material-ui/icons/Edit";
-import flights from "../assets/flights";
+import MenuIcon from "@material-ui/icons/Menu";
+import flights, { carryOver } from "../assets/flights";
 import FlyingIcon from "../components/leaflet/FlyingIcon";
 
 const useStyles = makeStyles((theme) => ({
@@ -37,6 +37,8 @@ const useStyles = makeStyles((theme) => ({
     zIndex: 1000,
   },
 }));
+
+console.log(carryOver);
 
 const MapView: FunctionComponent<{}> = () => {
   const styles = useStyles();
@@ -100,7 +102,7 @@ const MapView: FunctionComponent<{}> = () => {
             aria-label="edit"
             size="small"
           >
-            <EditIcon />
+            <MenuIcon />
           </Fab>
         </Fade>
       </div>
