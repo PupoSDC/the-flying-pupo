@@ -5,7 +5,7 @@ const flight: Flight = {
     id: "20201029EDKBEDKB",
     callsign: "DEFCZ",
     name: "PPL Mission 12",
-    description: "Traffic pattern cross check (10kt crosswind)",
+    description: "First solo preparation",
   },
   pilotLog: {
     departure: new Date(2020, 9, 29, 9, 28),
