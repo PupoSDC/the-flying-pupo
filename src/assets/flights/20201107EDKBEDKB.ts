@@ -2,7 +2,7 @@ import { Flight } from "../../types/Flight";
 
 const flight: Flight = {
   identification: {
-    id: "20201101EDKBEDKB2",
+    id: "20201107EDKBEDKB",
     callsign: "DEFCZ",
     name: "PPL Mission 16",
     description: "Slow landings and heavy traffic pattern",
@@ -12,6 +12,7 @@ const flight: Flight = {
     arrival: new Date(2020, 10, 7, 13, 0),
     singleEnginePistonTime: 53,
     picTime: 0,
+    dualTime: 53,
     landings: {
       day: 6,
       night: 0,
