@@ -8,13 +8,13 @@ const flight: Flight = {
     description: "Second cross country into sigerland",
   },
   pilotLog: {
-    departure: new Date(2020, 10, 15, 12, 54),
-    arrival: new Date(2020, 10, 15, 13, 32),
-    singleEnginePistonTime: 38,
+    departure: new Date(2020, 10, 15, 11, 51),
+    arrival: new Date(2020, 10, 15, 12, 54),
+    singleEnginePistonTime: 63,
     picTime: 0,
-    dualTime: 38,
+    dualTime: 63,
     landings: {
-      day: 1,
+      day: 4,
       night: 0,
     },
   },
