@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef } from "react";
+import { memo, useEffect, useMemo, useRef } from "react";
 import { blue, red } from "@material-ui/core/colors";
 import { Marker } from "react-leaflet";
 import { Icon } from "leaflet";
@@ -160,7 +160,7 @@ const interpolateTrack = (
 /**
  * Displays a flight track with a small cute icon following the track
  */
-const FlyingIcon = React.memo<FlyingIconProps>(({ track }) => {
+const FlyingIcon = memo<FlyingIconProps>(({ track }) => {
   const markerRef = useRef<Marker>();
   const polyLineRef = useRef<Polyline>();
   const path = useMemo(

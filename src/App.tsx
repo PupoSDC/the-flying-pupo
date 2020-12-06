@@ -1,4 +1,3 @@
-import React from "react";
 import MapView from "./views/MapView";
 
 function App() {
