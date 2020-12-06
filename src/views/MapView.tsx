@@ -38,8 +38,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-console.log(carryOver);
-
 const MapView: FunctionComponent<{}> = () => {
   const styles = useStyles();
   const [drawerOpen, setDrawerOpen] = useState(false);
