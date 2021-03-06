@@ -57,6 +57,10 @@ const LogView: React.FunctionComponent<{}> = () => {
             <div>Dual</div>
             <div>({toTimeString(carryOver.dualTime)})</div>
           </TableCell>
+          <TableCell align="center" className={classes.timeCell}>
+            <div>Landings</div>
+            <div>({carryOver.landings.day})</div>
+          </TableCell>
         </TableRow>
       </TableHead>
       <TableBody>
@@ -84,6 +88,7 @@ const LogView: React.FunctionComponent<{}> = () => {
               <TableCell align="center">
                 {toTimeString(pilotLog.dualTime)}
               </TableCell>
+              <TableCell align="center">{pilotLog.landings.day}</TableCell>
             </TableRow>
           ))}
       </TableBody>
