@@ -31,11 +31,11 @@ const flight: Flight = {
   },
   airport: {
     origin: {
-      name: "Bonn Hangelar",
-      code: "EDKB",
+      name: "Siegen Siegerland Airport",
+      code: "EDGS",
       position: {
-        latitude: 50.7690965,
-        longitude: 7.1620958,
+        latitude: 50.707699,
+        longitude: 8.08297,
       },
     },
     destination: {

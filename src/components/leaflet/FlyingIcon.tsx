@@ -165,7 +165,7 @@ const FlyingIcon = memo<FlyingIconProps>(({ track }) => {
   const polyLineRef = useRef<Polyline>();
   const path = useMemo(
     () =>
-      interpolateTrack(track, 60).map((point) => ({
+      interpolateTrack(track, 1).map((point) => ({
         lat: point.latitude,
         lng: point.longitude,
         angle: point.heading,

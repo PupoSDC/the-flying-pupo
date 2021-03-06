@@ -45,6 +45,9 @@ import flight20210221EDGSEDKB from "./20210221EDGSEDKB";
 import flight20210305EDKBEDGS from "./20210305EDKBEDGS";
 import flight20210305EDGSEDGS from "./20210305EDGSEDGS";
 import flight20210305EDGSEDKB from "./20210305EDGSEDKB";
+import flight20210306EDKBEDRT from "./20210306EDKBEDRT";
+import flight20210306EDRTEDRT from "./20210306EDRTEDRT";
+import flight20210306EDRTEDKB from "./20210306EDRTEDKB";
 
 const flights = [
   flight20200915EDKBEDKB,
@@ -93,6 +96,9 @@ const flights = [
   flight20210305EDKBEDGS,
   flight20210305EDGSEDGS,
   flight20210305EDGSEDKB,
+  flight20210306EDKBEDRT,
+  flight20210306EDRTEDRT,
+  flight20210306EDRTEDKB,
 ];
 
 export const carryOver = flights.reduce<FlightLogCarryOver>(
