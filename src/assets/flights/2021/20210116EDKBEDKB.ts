@@ -2,7 +2,7 @@ import { Flight } from "../../../types/Flight";
 
 export const flight: Flight = {
   identification: {
-    id: "20210111EDKBEDKB",
+    id: "20210116EDKBEDKB",
     callsign: "DEFCZ",
     name: "PPL Mission 17",
     description: "Emergency landing simulation",

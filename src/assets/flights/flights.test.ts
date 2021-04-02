@@ -32,4 +32,15 @@ describe.each(flightsForTesting)("flight %s from %s to %s", (...params) => {
       flightTime(flight.pilotLog.departure, flight.pilotLog.arrival)
     );
   });
+
+  it("has an unique ID based on flight time, origin, and destination", () => {
+    const date = flight.pilotLog.departure;
+    const year = date.getFullYear();
+    const month = `0${date.getMonth() + 1}`.slice(-2);
+    const day = `0${date.getDate()}`.slice(-2);
+    const departureCode = flight.airport.origin.code;
+    const arrivalCode = flight.airport.destination.code;
+    const expectedId = `${year}${month}${day}${departureCode}${arrivalCode}`;
+    expect(flight.identification.id).toContain(expectedId);
+  });
 });
