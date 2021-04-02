@@ -5,7 +5,6 @@ import { flights2021 } from "./2021";
 
 const flights = [...flights2020, ...flights2021];
 
-console.log(flights);
 export const carryOver = flights.reduce<FlightLogCarryOver>(
   (sum, { pilotLog }) => {
     return {

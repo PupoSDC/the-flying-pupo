@@ -1,3 +1,5 @@
+import { Flight } from "../../../types/Flight";
+
 export const flights2021 = [
   require("./20210116EDKBEDKB").flight,
   require("./20210221EDKBEDGS").flight,
@@ -13,4 +15,4 @@ export const flights2021 = [
   require("./20210328EDKBEDKB").flight,
   require("./20210402EDKBEDRK").flight,
   require("./20210402EDRKEDKB").flight,
-];
+] as Flight[];

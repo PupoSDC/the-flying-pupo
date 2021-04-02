@@ -2,14 +2,14 @@ import { Flight } from "../../../types/Flight";
 
 export const flight: Flight = {
   identification: {
-    id: "20201109xEDKBEDKB2",
+    id: "20201109EDKBEDKB2",
     callsign: "DEFCZ",
     name: "PPL Mission 14",
     description: "just a litle bit more flying around the same airport",
   },
   pilotLog: {
     departure: new Date(2020, 10, 9, 10, 52),
-    arrival: new Date(2020, 10, 8, 11, 51),
+    arrival: new Date(2020, 10, 9, 11, 51),
     singleEnginePistonTime: 59,
     picTime: 59,
     dualTime: 0,
