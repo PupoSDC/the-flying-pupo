@@ -14,7 +14,7 @@ export const flight: Flight = {
     picTime: 0,
     dualTime: 50,
     landings: {
-      day: 3,
+      day: 1,
       night: 0,
     },
   },
