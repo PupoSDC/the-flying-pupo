@@ -5,7 +5,7 @@ export const flight: Flight = {
     id: "20210501EDGSEDKB",
     callsign: "DEFCZ",
     name: "PPL Solo Triangle",
-    description: "Cross country to EDKB (From Siegerland))",
+    description: "Cross country to EDKB (From Siegerland)",
   },
   pilotLog: {
     departure: new Date(2021, 4, 1, 15, 29),
