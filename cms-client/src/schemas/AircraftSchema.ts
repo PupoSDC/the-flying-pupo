@@ -1,45 +1,32 @@
 import { buildSchema } from '@camberi/firecms';
 import { Aircraft } from "@the-flying-pupo/schema";
 
-export const categorySchema = buildSchema({
+export const aircraftSchema = buildSchema({
   customId: false,
-  name: 'Category',
+  name: 'Aircraft',
   properties: {
-    model: {
-      title: "model",
+    code: {
+      title: 'Code',
+      dataType: 'string',
       validation: { required: true },
-      dataType: 'map',
-      properties: {
-        code: {
-          title: 'Code',
-          dataType: 'string',
-          validation: { required: true },
-        },
-        text: {
-          title: 'text',
-          dataType: 'string',
-          validation: { required: true },
-        },
-      }
     },
-    identification: {
-      title: "model",
+    modelName: {
+      title: 'Model Name',
+      dataType: 'string',
       validation: { required: true },
-      dataType: 'map',
-      properties: {
-        modes: {
-          title: 'text',
-          dataType: 'string',
-        },
-        registration: {
-          title: 'registration',
-          dataType: 'string',
-        },
-        serialNo: {
-          title: 'serialNo',
-          dataType: 'string',
-        },
-      }
+    },
+
+    registration: {
+      title: 'registration',
+      dataType: 'string',
+      validation: { 
+        required: true,
+        unique: true,
+      },
+    },
+    serialNo: {
+      title: 'serialNo',
+      dataType: 'string',
     },
   }
 });
