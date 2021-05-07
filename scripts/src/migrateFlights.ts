@@ -15,7 +15,7 @@ process.env.GOOGLE_APPLICATION_CREDENTIALS = "./secret.json";
 const fireStore = new Firestore();
 
 const aircraftCollection = fireStore.collection('aircraft');
-const flightsCollection = fireStore.collection('flights');
+const flightsCollection = fireStore.collection('flight');
 const airportsCollection = fireStore.collection('airport');
 
 const addNewAircraftIfNotExists = async (aircraft: Aircraft) => {
@@ -28,7 +28,7 @@ const addNewAircraftIfNotExists = async (aircraft: Aircraft) => {
     });
 
   if (currentAircraft?.docs[0]?.data()) {
-    return "/" + currentAircraft.docs[0].ref.path;
+    return currentAircraft.docs[0].ref;
   } else {
     if (!aircraft.identification.registration) {
       throw new Error("MISSING AIRCRAFT REGISTRATION!");
@@ -41,7 +41,7 @@ const addNewAircraftIfNotExists = async (aircraft: Aircraft) => {
     }
     const newAircraftOnDb = await aircraftCollection.add(newAircraft);
     console.log(aircraft.identification.registration, "added!")
-    return "/" + newAircraftOnDb.path;
+    return newAircraftOnDb;
   }
 }
 
@@ -55,7 +55,7 @@ const addNewAirportIfNotExists = async (airport: Airport) => {
     });
 
   if (currentAircraft?.docs[0]?.data()) {
-    return "/" + currentAircraft.docs[0].ref.path;
+    return currentAircraft.docs[0].ref;
   } else {
     const newAirport: NewAirport = {
       name: airport.name,
@@ -68,14 +68,14 @@ const addNewAirportIfNotExists = async (airport: Airport) => {
     }
     const newAirportOnDb = await airportsCollection.add(newAirport);
     console.log(newAirport.code, "added!")
-    return "/" + newAirportOnDb.path;
+    return newAirportOnDb;
   }
 }
 
 type NewAircraftWithRefs = Omit<NewFlight, "aircraft" | "origin" |"destination"> & {
-  aircraft: string,
-  origin: string,
-  destination: string,
+  aircraft: FirebaseFirestore.DocumentReference<FirebaseFirestore.DocumentData>,
+  origin: FirebaseFirestore.DocumentReference<FirebaseFirestore.DocumentData>,
+  destination: FirebaseFirestore.DocumentReference<FirebaseFirestore.DocumentData>,
 }
 
 (async () => {
@@ -93,7 +93,10 @@ type NewAircraftWithRefs = Omit<NewFlight, "aircraft" | "origin" |"destination">
       aircraft,
       origin,
       destination,
-      track: flight.track,
+      track: flight.track.map((entry) => ({
+        ...entry,
+        timestamp: new Date(entry.timestamp *1000)
+      })),
       pilotLog: {
         departure: flight.pilotLog.departure ?? 0,
         arrival: flight.pilotLog.arrival ?? 0,
@@ -107,7 +110,8 @@ type NewAircraftWithRefs = Omit<NewFlight, "aircraft" | "origin" |"destination">
         nightLandings: flight.pilotLog.landings.night ?? 0,
       }
     }
-    await flightsCollection.add(newFlight);
+    await flightsCollection.add(newFlight)
+
     console.log("Added flight: ",  newFlight.identification.name);
   }
 })();

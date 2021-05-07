@@ -110,7 +110,7 @@ export const flightSchema = buildSchema({
             title: "Track",
             dataType: "array",
             config: {
-                field: FlightTrackField,
+                field: () => null,
                 preview: () => null,
             },
             of: {

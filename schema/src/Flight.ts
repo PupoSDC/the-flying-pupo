@@ -38,9 +38,7 @@ export type TrackEntry = {
     verticalSpeed: VerticalSpeed;
     heading: number;
     squawk: string;
-
-    /** In seconds */
-    timestamp: number;
+    timestamp: Date;
 };
 
 export type Flight = {
