@@ -2,6 +2,7 @@ import { CMSApp, EntityCollectionView } from '@camberi/firecms';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { aircraftSchema } from './schemas/aircraftSchema';
+import { airportSchema } from './schemas/airportSchema';
 
 const navigation: EntityCollectionView[] = [
   {
@@ -9,6 +10,11 @@ const navigation: EntityCollectionView[] = [
     schema: aircraftSchema,
     name: 'Aircraft',
   },
+  {
+    relativePath: 'airport',
+    schema: airportSchema,
+    name: "Airport",
+  }
 ];
 
 const firebaseConfig = {

@@ -55,10 +55,8 @@ export type Flight = {
     }
     pilotLog: PilotLogentry;
     aircraft: Aircraft;
-    airport: {
-        origin: Airport;
-        destination: Airport;
-    };
+    origin: Airport;
+    destination: Airport;
     track: Array<TrackEntry>;
 };
 
