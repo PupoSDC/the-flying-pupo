@@ -30,7 +30,6 @@ export const FlightTrackField: FunctionComponent<FieldProps<Array<TrackEntry>>> 
     error,
     isSubmitting,
     context, 
-    ...props
 }) => {
     const [invalidJson, setInvalidJson] = useState(false);
     const [tab, setTab] = useState(0);

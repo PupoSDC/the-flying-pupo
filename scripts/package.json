@@ -1,0 +1,20 @@
+{
+    "name": "@the-flying-pupo/cms-client",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+        "migrate-flights": "ts-node src/migrateFlights"
+    },
+    "engines": {
+        "node": "14.x",
+        "npm": "7.x"
+    },
+    "devDependencies": {
+        "@google-cloud/firestore": "^4.11.0",
+        "@the-flying-pupo/schema": "link:../schema",
+        "typescript": "^4.1.2"
+    },
+    "dependencies": {
+        "ts-node": "^9.1.1"
+    }
+}
