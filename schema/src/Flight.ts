@@ -10,10 +10,8 @@ export type PilotLogentry = {
     picTime?: number;
     dualTime?: number;
     fiTime?: number;
-    landings: {
-        day: number;
-        night: number;
-    };
+    dayLandings: number;
+    nightLandings: number;
 };
 
 export interface Altitude {
@@ -43,7 +41,6 @@ export type TrackEntry = {
 
     /** In seconds */
     timestamp: number;
-    ems?: unknown;
 };
 
 export type Flight = {

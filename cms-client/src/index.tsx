@@ -1,19 +1,24 @@
-import { CMSApp, EntityCollectionView } from '@camberi/firecms';
-import React from 'react';
 import ReactDOM from 'react-dom';
+import { CMSApp, EntityCollectionView } from '@camberi/firecms';
 import { aircraftSchema } from './schemas/aircraftSchema';
 import { airportSchema } from './schemas/airportSchema';
+import { flightSchema } from './schemas/flightSchema';
 
 const navigation: EntityCollectionView[] = [
   {
     relativePath: 'aircraft',
     schema: aircraftSchema,
-    name: 'Aircraft',
+    name: 'Aircrafts',
   },
   {
     relativePath: 'airport',
     schema: airportSchema,
-    name: "Airport",
+    name: "Airports",
+  },
+  {
+    relativePath: 'flight',
+    schema: flightSchema,
+    name: "Flights",
   }
 ];
 
@@ -29,7 +34,7 @@ const firebaseConfig = {
 
 ReactDOM.render(
   <CMSApp
-    name={"The flying pupo CMS"}
+    name={"The Flying Pupo CMS"}
     authentication={(user) => {
       console.log(user?.uid)
       return true
