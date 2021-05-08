@@ -19,6 +19,7 @@ const navigation: EntityCollectionView[] = [
     relativePath: 'flight',
     schema: flightSchema,
     name: "Flights",
+    pagination: true,
   }
 ];
 
@@ -35,10 +36,7 @@ const firebaseConfig = {
 ReactDOM.render(
   <CMSApp
     name={"The Flying Pupo CMS"}
-    authentication={(user) => {
-      console.log(user?.uid)
-      return true
-    }}
+    authentication={() => true}
     navigation={navigation}
     firebaseConfig={firebaseConfig}
   />,
