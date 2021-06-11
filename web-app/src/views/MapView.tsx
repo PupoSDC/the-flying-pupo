@@ -11,8 +11,10 @@ import {
   SwipeableDrawer,
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
-import flights, { carryOver } from "../assets/flights";
+import flights from "../assets/flights";
 import FlyingIcon from "../components/leaflet/FlyingIcon";
+
+console.log(flights);
 
 const useStyles = makeStyles((theme) => ({
   container: {
