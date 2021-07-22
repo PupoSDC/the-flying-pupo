@@ -124,7 +124,7 @@ const interpolateTrack = (
   track: TrackEntity[],
   speed: number
 ): TrackEntity[] => {
-  const timeStep = (1 / 20) * speed;
+  const timeStep = (1 / 40) * speed;
   const endTime = track[track.length - 1].timestamp;
   const result = [track[0]];
 
