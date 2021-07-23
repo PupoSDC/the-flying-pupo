@@ -5,7 +5,7 @@ export const flight: Flight = {
         id: "20210722LPCSLPCS",
         callsign: "SEVAIR171",
         name: "Habituation to Cascais",
-        description: "No flight log",
+        description: "",
     },
     pilotLog: {
         departure: new Date(2021, 6, 22, 13, 10),

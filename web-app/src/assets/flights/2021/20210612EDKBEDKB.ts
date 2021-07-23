@@ -10,7 +10,7 @@ export const flight: Flight = {
   pilotLog: {
     departure: new Date(2021, 5, 12, 10, 31),
     arrival: new Date(2021, 5, 12, 11, 33),
-    singleEnginePistonTime: 80,
+    singleEnginePistonTime: 62,
     picTime: 0,
     dualTime: 62,
     landings: {
