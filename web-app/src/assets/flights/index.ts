@@ -7,6 +7,9 @@ const flights = [...flights2020, ...flights2021];
 
 export const carryOver = flights.reduce<FlightLogCarryOver>(
   (sum, { pilotLog }) => {
+    // if (pilotLog.passenger) {
+    //   return sum;
+    // }
     return {
       singleEnginePistonTime:
         sum.singleEnginePistonTime + (pilotLog.singleEnginePistonTime || 0),
