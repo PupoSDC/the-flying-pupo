@@ -36,4 +36,6 @@ export const flights2021 = [
   require("./20210813EDKBEDLI").flight,
   require("./20210813EDLIEDVM").flight,
   // require("./20210813EDVMEDKB").flight,
+  require("./20210814EDWFEDWF").flight,
+  require("./20210814EDWFEDKB").flight,
 ] as Flight[];
