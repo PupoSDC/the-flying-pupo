@@ -4,5 +4,5 @@ const useStyles = makeStyles({});
 
 export const FlightCreatorView: React.FunctionComponent<{}> = () => {
   const classes = useStyles();
-  return <Container></Container>;
+  return <div />;
 };
