@@ -50,4 +50,6 @@ export const flights2021 = [
   require("./20210904LPCSLPCS").flight,
   require("./20210916LPCSLPCS").flight,
   require("./20210918LPCSLPCS").flight,
+  require("./20211001LPCSLPPM").flight,
+  require("./20211001LPPMLPCS").flight,
 ] as Flight[];
