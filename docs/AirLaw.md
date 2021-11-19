@@ -134,6 +134,6 @@ Should be TWO independent VHF radios. One to keep in contact with Tower, and one
 with Precision. PRECISION will instruct you if you are too close to the NTZ or if you need
 to perform a breakout maneuver
 
-## Hijacked A/C should ATC approve A/C to takeoff to save lives or deny takeoff clearance to prevent greater hazard/threat to human life?
+## 29 - Hijacked A/C should ATC approve A/C to takeoff to save lives or deny takeoff clearance to prevent greater hazard/threat to human life?
 
 Takeoff clearance can be given in the interest of preserving human life
