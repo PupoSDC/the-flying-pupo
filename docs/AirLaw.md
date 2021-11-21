@@ -7,7 +7,7 @@ specification may be proposed as long as it follows the basic regulation.
 
 ## 2- During a flight from US to Germany, while over the UK, Germany does not accept the flight. Is it legal? Or the should have it been done earlier?
 
-Its legal. States maintain their sovereignty and can close their airspace at
+It's legal. States maintain their sovereignty and can close their airspace at
 any time for exceptional reasons (Think USA in 9/11)
 
 ## 3- ASHTAM elements?
@@ -77,10 +77,10 @@ Basically it's The implementation of Annex 10 and 11.
 Basically it's The implementation of Annex 6. It specifies rules for all types
 of commercial and non-commercial operations.
 
-**This Regulation lays down detailed rules for commercial air transport**
-**operations with aeroplanes and helicopters, including ramp inspections of**
-**aircraft of operators under the safety oversight of another State when landed**
-**at aerodromes located in the territory subject to the provisions of the Treaty**
+> This Regulation lays down detailed rules for commercial air transport
+> operations with aeroplanes and helicopters, including ramp inspections of
+> aircraft of operators under the safety oversight of another State when landed
+> at aerodromes located in the territory subject to the provisions of the Treaty
 
 ## 14 - EU Regulation 376 (2014). What is it about?
 
@@ -112,11 +112,11 @@ fix is a NDB, and 45º if Dead reckoning is being used.
 
 https://skybrary.aero/articles/safety-documentation
 
-**The purpose of the SMS documentation is to document the safety management**
-**system (SMS) of the organisation and communicate it internally to staff and**
-**externally to the organisations concerned, for example to the regulator.**
-**It enables the correct execution of safety procedures and thus the achievement**
-**of the organisation’s safety objectives.**
+> The purpose of the SMS documentation is to document the safety management
+> system (SMS) of the organisation and communicate it internally to staff and
+> externally to the organisations concerned, for example to the regulator.
+> It enables the correct execution of safety procedures and thus the achievement
+> of the organisation’s safety objectives.
 
 ## 18 - Is the CMC paper only, computer readable or both?
 
@@ -150,7 +150,7 @@ Threshold.
 ## 24 - How are NOTAMs distributed?
 
 NOTAMs are publicly available and distributed through telecommunications, so
-the expect the best answer to be "distributed through Internet"
+the expect the best answer to be **"distributed through Internet"**.
 
 ## 25 - Hijacked A/C should ATC approve A/C to takeoff to save lives or deny takeoff clearance to prevent greater hazard/threat to human life?
 
