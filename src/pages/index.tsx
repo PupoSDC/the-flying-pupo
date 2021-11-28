@@ -6,6 +6,9 @@ import {
   TableBody,
   styled,
 } from "@mui/material";
+import {
+  ArrowForward as ArrowForwardIcon,
+} from "@mui/icons-material";
 import { FunctionComponent } from "react";
 import { PageProps, useStaticQuery, graphql, Link } from "gatsby";
 import { GetPilotLogPageDataQuery } from "../graphql";
@@ -71,30 +74,33 @@ const PilotLogPage: FunctionComponent<PageProps<GetPilotLogPageDataQuery>> = ({
     </TableHead>
     <TableBody>
       {flights.map(({ id, pilotLog, airport, aircraft }) => (
-        <Link to={`/flights/${id.toLowerCase()}`} >
-          <TableRow key={id}>
-            <TableCell align="left">
-              {new Date(pilotLog.departure)
-                .toISOString()
-                .slice(0, 10)
-                .replace(/-/g, "/")}
-            </TableCell>
-            <TableCell align="left">{aircraft.model.code}</TableCell>
-            <TableCell align="center">
-              {airport.origin.code} / {airport.destination.code}
-            </TableCell>
-            <TableCell align="center">
-              {toTimeString(pilotLog.singleEnginePistonTime)}
-            </TableCell>
-            <TableCell align="center">
-              {toTimeString(pilotLog.picTime)}
-            </TableCell>
-            <TableCell align="center">
-              {toTimeString(pilotLog.dualTime)}
-            </TableCell>
-            <TableCell align="center">{pilotLog.landings.day}</TableCell>
-          </TableRow>
-        </Link>
+        <TableRow key={id}>
+          <TableCell align="left">
+            {new Date(pilotLog.departure)
+              .toISOString()
+              .slice(0, 10)
+              .replace(/-/g, "/")}
+          </TableCell>
+          <TableCell align="left">{aircraft.model.code}</TableCell>
+          <TableCell align="center">
+            {airport.origin.code} / {airport.destination.code}
+          </TableCell>
+          <TableCell align="center">
+            {toTimeString(pilotLog.singleEnginePistonTime)}
+          </TableCell>
+          <TableCell align="center">
+            {toTimeString(pilotLog.picTime)}
+          </TableCell>
+          <TableCell align="center">
+            {toTimeString(pilotLog.dualTime)}
+          </TableCell>
+          <TableCell align="center">{pilotLog.landings.day}</TableCell>
+          <TableCell align="center">
+            <Link to={`/flights/${id.toLowerCase()}`} >
+              <ArrowForwardIcon />
+            </Link>
+          </TableCell>
+        </TableRow>
       ))}
     </TableBody>
   </StyledTable>
