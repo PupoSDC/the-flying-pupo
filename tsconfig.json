@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "lib": [
+      "dom"
+    ],
+    "jsx": "react-jsx",
+    "moduleResolution": "node",
+    "allowJs": true,
+    "outDir": "./build"
+  }
+}
