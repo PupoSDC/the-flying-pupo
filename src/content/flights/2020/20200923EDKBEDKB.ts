@@ -8,8 +8,8 @@ export const flight: Flight = {
     callsign: "DEFCZ",
   },
   pilotLog: {
-    departure: new Date(2020, 8, 23, 15, 50),
-    arrival: new Date(2020, 8, 23, 16, 29),
+    departure: new Date(2020, 8, 23, 15, 50).getTime(),
+    arrival: new Date(2020, 8, 23, 16, 29).getTime(),
     singleEnginePistonTime: 39,
     dualTime: 39,
     landings: {

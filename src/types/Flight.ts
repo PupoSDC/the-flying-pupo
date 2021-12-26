@@ -1,3 +1,5 @@
+export type TimeInMillis = number;
+
 export type Flight = {
   identification: Identification;
   pilotLog: PilotLog;
@@ -17,8 +19,8 @@ export type Identification = {
 };
 
 export type PilotLog = {
-  departure: Date;
-  arrival: Date;
+  departure: TimeInMillis;
+  arrival: TimeInMillis;
   singleEnginePistonTime?: number;
   nightTime?: number;
   ifrTime?: number;

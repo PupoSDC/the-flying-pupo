@@ -1,3 +1,5 @@
+import { GetStaticProps, NextPage } from "next";
+import { default as Link } from "next/link";
 import {
   Table,
   TableHead,
@@ -9,9 +11,8 @@ import {
 import {
   ArrowForward as ArrowForwardIcon,
 } from "@mui/icons-material";
-import { FunctionComponent } from "react";
-import { PageProps, useStaticQuery, graphql, Link } from "gatsby";
-import { GetPilotLogPageDataQuery } from "../graphql";
+import { Flight, FlightLogCarryOver, PilotLog } from "src/types/Flight";
+import { flightLog, flights } from "src/content/flights";
 
 const StyledTable = styled(Table)(() => ({
   minWidth: 650,
@@ -36,13 +37,14 @@ const toTimeString = (minutes: number | undefined = 0) =>
     ? `${`${Math.floor(minutes / 60) || "0"}`}:${`00${minutes % 60}`.slice(-2)}`
     : "-";
 
-const PilotLogPage: FunctionComponent<PageProps<GetPilotLogPageDataQuery>> = ({
-  data: {
-    flightLog,
-    allFlight: {
-      nodes: flights
-    },
-  }
+type IndexPageProps = {
+  flightLog: FlightLogCarryOver,
+  flights: Omit<Flight, "track">[],
+}    
+
+const IndexPage: NextPage<IndexPageProps> = ({
+  flightLog,
+  flights
 }) => (
   <StyledTable stickyHeader aria-label="simple table">
     <TableHead>
@@ -70,11 +72,12 @@ const PilotLogPage: FunctionComponent<PageProps<GetPilotLogPageDataQuery>> = ({
           <div>Landings</div>
           <div>({flightLog.landings.day})</div>
         </StyledTimeCell>
+        <StyledTimeCell />
       </TableRow>
     </TableHead>
     <TableBody>
-      {flights.map(({ id, pilotLog, airport, aircraft }) => (
-        <TableRow key={id}>
+      {flights.map(({ identification, pilotLog, airport, aircraft }) => (
+        <TableRow key={identification.id}>
           <TableCell align="left">
             {new Date(pilotLog.departure)
               .toISOString()
@@ -96,7 +99,7 @@ const PilotLogPage: FunctionComponent<PageProps<GetPilotLogPageDataQuery>> = ({
           </TableCell>
           <TableCell align="center">{pilotLog.landings.day}</TableCell>
           <TableCell align="center">
-            <Link to={`/flights/${id.toLowerCase()}`} >
+            <Link href={`/flights/${identification.id.toUpperCase()}`} >
               <ArrowForwardIcon />
             </Link>
           </TableCell>
@@ -106,53 +109,13 @@ const PilotLogPage: FunctionComponent<PageProps<GetPilotLogPageDataQuery>> = ({
   </StyledTable>
 );
 
-export const query = graphql`
-  query GetPilotLogPageData {
-    flightLog {
-      id
-      dualTime
-      fiTime
-      ifrTime
-      nightTime
-      picTime
-      singleEnginePistonTime
-      landings {
-        day
-        night
-      }
-    }
-    allFlight(sort: {fields: pilotLog___departure, order: DESC}) {
-      nodes {
-        id
-        aircraft {
-          identification {
-            registration
-          }
-          model {
-            code
-          }
-        }
-        airport {
-          destination {
-            code
-          }
-          origin {
-            code
-          }
-        }
-        pilotLog {
-          arrival
-          departure
-          landings {
-            day
-          }
-          dualTime
-          picTime
-          singleEnginePistonTime
-        }
-      }
-    }
-  }
-`;
+export const getStaticProps: GetStaticProps<IndexPageProps> = async () => {
+  return {
+    props: {
+      flightLog,
+      flights: flights.map(({ track, ...flight}) => flight),
+    },
+  };
+};
 
-export default PilotLogPage;
+export default IndexPage;

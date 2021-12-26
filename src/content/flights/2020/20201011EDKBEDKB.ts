@@ -8,8 +8,8 @@ export const flight: Flight = {
     description: "Pattern flying (no wind)",
   },
   pilotLog: {
-    departure: new Date(2020, 9, 11, 11, 43),
-    arrival: new Date(2020, 9, 11, 12, 47),
+    departure: new Date(2020, 9, 11, 11, 43).getTime(),
+    arrival: new Date(2020, 9, 11, 12, 47).getTime(),
     singleEnginePistonTime: 64,
     dualTime: 64,
     landings: {

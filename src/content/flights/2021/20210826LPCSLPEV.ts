@@ -8,8 +8,8 @@ export const flight: Flight = {
     description: "",
   },
   pilotLog: {
-    departure: new Date(2021, 7, 26, 16, 50),
-    arrival: new Date(2021, 7, 26, 18, 0),
+    departure: new Date(2021, 7, 26, 16, 50).getTime(),
+    arrival: new Date(2021, 7, 26, 18, 0).getTime(),
     singleEnginePistonTime: 70,
     picTime: 70,
     dualTime: 0,

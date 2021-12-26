@@ -8,8 +8,8 @@ export const flight: Flight = {
     description: "Visited Aachen, Cologne CTR",
   },
   pilotLog: {
-    departure: new Date(2021, 3, 28, 14, 38),
-    arrival: new Date(2021, 3, 28, 15, 55),
+    departure: new Date(2021, 3, 28, 14, 38).getTime(),
+    arrival: new Date(2021, 3, 28, 15, 55).getTime(),
     singleEnginePistonTime: 77,
     picTime: 77,
     dualTime: 0,

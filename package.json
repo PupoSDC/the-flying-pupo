@@ -4,32 +4,104 @@
   "private": true,
   "description": "the-flying-pupo",
   "author": "PupoSDC",
+  "engines": {
+    "node": ">=14.x",
+    "npm": ">7.0.0"
+  },
   "scripts": {
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
-    "build": "gatsby build",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "type-check": "tsc",
+    "lint": "eslint --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\"",
+    "format": "prettier \"src/**/*.+(ts|js|tsx)\" --write",
+    "postinstall": "husky install",
+    "commit": "cz"
   },
   "dependencies": {
-    "@emotion/react": "^11.7.0",
+    "@emotion/react": "^11.6.0",
+    "@emotion/server": "^11.4.0",
     "@emotion/styled": "^11.6.0",
-    "@mui/icons-material": "^5.2.0",
-    "@mui/material": "^5.2.1",
+    "@fontsource/roboto": "^4.5.0",
+    "@mui/icons-material": "^5.1.1",
+    "@mui/material": "^5.1.1",
     "leaflet": "^1.7.1",
     "leaflet-rotatedmarker": "^0.2.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-helmet": "^6.1.0",
+    "next": "^12.0.7",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-leaflet": "^3.2.2"
   },
   "devDependencies": {
-    "@types/react-leaflet": "^2.8.2",
-    "gatsby": "^4.2.0",
-    "gatsby-plugin-graphql-codegen": "^3.1.0",
-    "gatsby-plugin-react-helmet": "^5.2.0",
-    "gatsby-plugin-react-leaflet": "^3.0.2",
-    "gatsby-plugin-ts-config": "^2.1.3",
-    "typescript": "^4.5.2"
+    "@commitlint/cli": "15.0.0",
+    "@commitlint/config-conventional": "15.0.0",
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.2.1",
+    "@trivago/prettier-plugin-sort-imports": "^3.1.1",
+    "@types/leaflet": "^1.7.7",
+    "@types/node": "16.11.9",
+    "@types/react": "17.0.35",
+    "@types/react-dom": "17.0.11",
+    "@typescript-eslint/eslint-plugin": "5.4.0",
+    "@typescript-eslint/parser": "5.4.0",
+    "commitizen": "4.2.4",
+    "cz-conventional-changelog": "3.3.0",
+    "eslint": "7.32.0",
+    "eslint-config-next": "12.0.4",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-import-resolver-typescript": "2.5.0",
+    "eslint-plugin-prettier": "4.0.0",
+    "husky": "7.0.4",
+    "jest": "^27.4.5",
+    "lint-staged": "12.1.2",
+    "prettier": "^2.5.0",
+    "typescript": "4.5.2"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "prettier": {
+    "parser": "babel-ts",
+    "importOrderParserPlugins": [
+      "classProperties",
+      "typescript",
+      "jsx"
+    ],
+    "importOrderSortSpecifiers": true,
+    "importOrder": [
+      "^react(.*)",
+      "^next(.*)",
+      "^@react(.*)",
+      "^@fontsource(.*)",
+      "^@mui(.*)",
+      "^@fullcalendar/react",
+      "^@widu(.*)",
+      "^[./]"
+    ]
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": "bash -c tsc",
+    "*.{ts,tsx}": "eslint --fix --max-warnings=0",
+    "src/**/*{ts,tsx,js,jsx,mdx,md,json,css,html}": "prettier --write"
+  },
+  "eslintConfig": {
+    "extends": "next/core-web-vitals",
+    "rules": {
+      "react/display-name": "off"
+    }
+  },
+  "eslintIgnore": [
+    "**/{__tests__,__stories__,__mocks__}/**",
+    "**/*.{test,spec,stories,example}.{js,jsx,ts,tsx}"
+  ],
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   }
 }

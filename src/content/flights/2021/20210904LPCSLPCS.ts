@@ -9,8 +9,8 @@ export const flight: Flight = {
       "Diverted from coimbra due to bad weather. Later diverted from Pontesor due to operational delays",
   },
   pilotLog: {
-    departure: new Date(2021, 8, 4, 7, 30),
-    arrival: new Date(2021, 8, 4, 10, 45),
+    departure: new Date(2021, 8, 4, 7, 30).getTime(),
+    arrival: new Date(2021, 8, 4, 10, 45).getTime(),
     singleEnginePistonTime: 195,
     picTime: 195,
     dualTime: 0,

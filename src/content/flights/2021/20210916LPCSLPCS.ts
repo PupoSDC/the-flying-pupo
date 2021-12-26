@@ -9,8 +9,8 @@ export const flight: Flight = {
       "Diverted at Arribada due to weather back to Cascais, original destination LPEV",
   },
   pilotLog: {
-    departure: new Date(2021, 8, 16, 8, 0),
-    arrival: new Date(2021, 8, 16, 8, 55),
+    departure: new Date(2021, 8, 16, 8, 0).getTime(),
+    arrival: new Date(2021, 8, 16, 8, 55).getTime(),
     singleEnginePistonTime: 55,
     picTime: 55,
     dualTime: 0,

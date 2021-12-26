@@ -8,8 +8,8 @@ export const flight: Flight = {
     description: "Solo traffic pattern siegerland",
   },
   pilotLog: {
-    departure: new Date(2021, 2, 5, 13, 26),
-    arrival: new Date(2021, 2, 5, 13, 55),
+    departure: new Date(2021, 2, 5, 13, 26).getTime(),
+    arrival: new Date(2021, 2, 5, 13, 55).getTime(),
     singleEnginePistonTime: 29,
     picTime: 29,
     dualTime: 0,

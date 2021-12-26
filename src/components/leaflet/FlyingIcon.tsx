@@ -4,10 +4,9 @@ import { Icon, Polyline as PolylineRef, Marker as MarkerRef } from "leaflet";
 import { Polyline } from "react-leaflet";
 import { Flight, TrackEntity } from "../../types/Flight";
 import planeIcon from "./planeIcon.png";
+import { blue, red } from "@mui/material/colors";
 
 import "leaflet-rotatedmarker";
-import "./FlyingIcon.css";
-import { blue, red } from "@mui/material/colors";
 
 type FlyingIconProps = Pick<Flight, "track"> & {
   onClick?: () => void;
@@ -160,9 +159,9 @@ const interpolateTrack = (
 /**
  * Displays a flight track with a small cute icon following the track
  */
-const FlyingIcon = memo<FlyingIconProps>(({ track }) => {
-  const markerRef = useRef<MarkerRef>();
-  const polyLineRef = useRef<PolylineRef>();
+export const FlyingIcon = memo<FlyingIconProps>(({ track }) => {
+  const markerRef = useRef<MarkerRef>(null);
+  const polyLineRef = useRef<PolylineRef>(null);
   const path = useMemo(
     () =>
       interpolateTrack(track, 45)
@@ -196,8 +195,6 @@ const FlyingIcon = memo<FlyingIconProps>(({ track }) => {
     return () => clearTimeout(timeout);
   }, [path]);
 
-  console.log(path);
-
   return (
     <>
       <Polyline positions={path} color={blue[500]} />
@@ -210,16 +207,15 @@ const FlyingIcon = memo<FlyingIconProps>(({ track }) => {
         ref={markerRef}
         icon={
           new Icon({
-            iconUrl: planeIcon,
+            iconUrl: planeIcon.src,
             iconSize: [12, 12],
             iconAnchor: [6, 6],
           })
         }
+        // @ts-ignore
         rotationAngle={45}
         position={path[0]}
       />
     </>
   );
 });
-
-export default FlyingIcon;

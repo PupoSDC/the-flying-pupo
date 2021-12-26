@@ -1,4 +1,4 @@
-import { Link } from "gatsby"
+import { default as Link } from "next/Link";
 
 // styles
 const pageStyles = {
@@ -15,6 +15,7 @@ const headingStyles = {
 const paragraphStyles = {
   marginBottom: 48,
 }
+
 const codeStyles = {
   color: "#8A6534",
   padding: 4,
@@ -44,7 +45,7 @@ const NotFoundPage = () => {
           </>
         ) : null}
         <br />
-        <Link to="/">Go home</Link>.
+        <Link href="/">Go home</Link>.
       </p>
     </main>
   )

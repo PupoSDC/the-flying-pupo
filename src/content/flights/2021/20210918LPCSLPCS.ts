@@ -9,8 +9,8 @@ export const flight: Flight = {
       "Touch and go at evora. Very bad approach due to weather in vicinity of aerodrome",
   },
   pilotLog: {
-    departure: new Date(2021, 8, 18, 7, 10),
-    arrival: new Date(2021, 8, 18, 9, 0),
+    departure: new Date(2021, 8, 18, 7, 10).getTime(),
+    arrival: new Date(2021, 8, 18, 9, 0).getTime(),
     singleEnginePistonTime: 110,
     picTime: 110,
     dualTime: 0,

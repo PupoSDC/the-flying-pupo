@@ -37,8 +37,8 @@ export const flight: Flight = {
     },
   },
   pilotLog: {
-    departure: new Date(2020, 8, 15, 14, 9),
-    arrival: new Date(2020, 8, 15, 15, 15),
+    departure: new Date(2020, 8, 15, 14, 9).getTime(),
+    arrival: new Date(2020, 8, 15, 15, 15).getTime(),
     singleEnginePistonTime: 66,
     dualTime: 66,
     landings: {

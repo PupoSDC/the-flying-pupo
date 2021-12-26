@@ -8,8 +8,8 @@ export const flight: Flight = {
     description: "Traffic pattern (6kt crosswind)",
   },
   pilotLog: {
-    departure: new Date(2020, 10, 1, 11, 49),
-    arrival: new Date(2020, 10, 1, 12, 20),
+    departure: new Date(2020, 10, 1, 11, 49).getTime(),
+    arrival: new Date(2020, 10, 1, 12, 20).getTime(),
     singleEnginePistonTime: 31,
     dualTime: 31,
     landings: {

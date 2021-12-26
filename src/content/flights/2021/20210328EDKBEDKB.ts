@@ -8,8 +8,8 @@ export const flight: Flight = {
     description: "15 knots Crosswing",
   },
   pilotLog: {
-    departure: new Date(2021, 2, 28, 12, 54),
-    arrival: new Date(2021, 2, 28, 13, 35),
+    departure: new Date(2021, 2, 28, 12, 54).getTime(),
+    arrival: new Date(2021, 2, 28, 13, 35).getTime(),
     singleEnginePistonTime: 41,
     picTime: 0,
     dualTime: 41,

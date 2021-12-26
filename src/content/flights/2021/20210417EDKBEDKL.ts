@@ -8,8 +8,8 @@ export const flight: Flight = {
     description: "",
   },
   pilotLog: {
-    departure: new Date(2021, 3, 17, 13, 53),
-    arrival: new Date(2021, 3, 17, 14, 38),
+    departure: new Date(2021, 3, 17, 13, 53).getTime(),
+    arrival: new Date(2021, 3, 17, 14, 38).getTime(),
     singleEnginePistonTime: 45,
     picTime: 0,
     dualTime: 45,
@@ -12418,5 +12418,5 @@ export const flight: Flight = {
       timestamp: 1618670208,
       ems: null,
     },
-  ]),
+  ])
 };

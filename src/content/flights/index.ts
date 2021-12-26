@@ -1,9 +1,14 @@
-import { FlightLogCarryOver } from "../../types/Flight";
+import { Flight, FlightLogCarryOver } from "../../types/Flight";
 
 import { flights2020 } from "./2020";
 import { flights2021 } from "./2021";
 
 export const flights = [...flights2020, ...flights2021];
+
+export const flightsAsMap = flights.reduce<Record<string, Flight>>((sum, flight) => ({
+  ...sum,
+  [flight.identification.id.toUpperCase()]: flight,
+}), {});
 
 export const flightLog = flights.reduce<FlightLogCarryOver>(
   (sum, { pilotLog }) => ({

@@ -8,8 +8,8 @@ export const flight: Flight = {
     description: "Low approach EDKB and overflight Koln",
   },
   pilotLog: {
-    departure: new Date(2021, 2, 20, 11, 50),
-    arrival: new Date(2021, 2, 20, 13, 3),
+    departure: new Date(2021, 2, 20, 11, 50).getTime(),
+    arrival: new Date(2021, 2, 20, 13, 3).getTime(),
     singleEnginePistonTime: 73,
     picTime: 0,
     dualTime: 73,

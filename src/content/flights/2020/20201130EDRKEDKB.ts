@@ -8,8 +8,8 @@ export const flight: Flight = {
     description: "cross country into Koblenz (return flight)",
   },
   pilotLog: {
-    departure: new Date(2020, 10, 30, 14, 21),
-    arrival: new Date(2020, 10, 30, 14, 50),
+    departure: new Date(2020, 10, 30, 14, 21).getTime(),
+    arrival: new Date(2020, 10, 30, 14, 50).getTime(),
     singleEnginePistonTime: 29,
     picTime: 0,
     dualTime: 29,

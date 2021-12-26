@@ -8,8 +8,8 @@ export const flight: Flight = {
     description: "Local VFR Lots of wind.",
   },
   pilotLog: {
-    departure: new Date(2020, 9, 21, 12, 26),
-    arrival: new Date(2020, 9, 21, 13, 28),
+    departure: new Date(2020, 9, 21, 12, 26).getTime(),
+    arrival: new Date(2020, 9, 21, 13, 28).getTime(),
     singleEnginePistonTime: 62,
     dualTime: 62,
     landings: {
