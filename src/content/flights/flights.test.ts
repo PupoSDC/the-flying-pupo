@@ -1,5 +1,5 @@
 import { Flight } from "../../types/Flight";
-import flights from "./index";
+import { flights } from "./index";
 
 const flightsForTesting = flights.map((flight): [
   string,
@@ -29,12 +29,12 @@ describe.each(flightsForTesting)("flight %s from %s to %s", (...params) => {
 
   it("has coherent departure and arrival times", () => {
     expect(flight.pilotLog.singleEnginePistonTime).toBe(
-      flightTime(flight.pilotLog.departure, flight.pilotLog.arrival)
+      flightTime(new Date(flight.pilotLog.departure), new Date(flight.pilotLog.arrival))
     );
   });
 
   it("has an unique ID based on flight time, origin, and destination", () => {
-    const date = flight.pilotLog.departure;
+    const date = new Date(flight.pilotLog.departure);
     const year = date.getFullYear();
     const month = `0${date.getMonth() + 1}`.slice(-2);
     const day = `0${date.getDate()}`.slice(-2);

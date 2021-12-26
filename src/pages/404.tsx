@@ -1,4 +1,4 @@
-import { default as Link } from "next/Link";
+import { default as Link } from "next/link"
 
 // styles
 const pageStyles = {
