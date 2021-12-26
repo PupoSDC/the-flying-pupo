@@ -4,6 +4,7 @@ import { GetServerSideProps, GetStaticPaths, NextPage } from "next";
 import { flights, flightsAsMap } from "src/content/flights";
 import { default as dynamic } from 'next/dynamic'
 import { default as Head } from "next/head";
+import { AppContainer } from "src/containers/AppContainer";
 
 const StyledContainer = styled("div")((theme) => ({
   display: "flex",
@@ -30,7 +31,7 @@ const FlightPage: NextPage<FlightPageProps> = ({
   );
 
   return (
-    <>
+    <AppContainer>
       <Head>
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
       </Head>
@@ -39,7 +40,7 @@ const FlightPage: NextPage<FlightPageProps> = ({
           <Map flight={flight} />
         </NoSsr>
       </StyledContainer>
-    </>
+    </AppContainer>
   );
 }
 
