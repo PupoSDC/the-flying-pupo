@@ -1,12 +1,44 @@
+import { styled, useTheme } from "@mui/material";
 import Head from "next/head";
 import { FunctionComponent } from "react";
+import { AppHeader } from "./AppHeader";
 
-export const AppContainer: FunctionComponent = ({ children }) => {
+export type AppHtmlHeadProps = {
+    title: string;
+    linkTitle: string;
+    description: string;
+    imageUrl: string;
+};
+
+const MainContainer = styled("main")(() => ({
+    display: "flex",
+    flex: 1,
+    flexDirection: "column",
+}));
+
+
+export const AppContainer: FunctionComponent<AppHtmlHeadProps> = ({
+    title,
+    linkTitle,
+    description,
+    imageUrl,
+    children,
+}) => {
+    const { palette, fontLink } = useTheme();
 
     return (
         <>
             <Head>
-                <link rel="shortcut icon" href="/favicon.ico" />
+                <title>{title}</title>
+                <meta property="og:title" content={linkTitle} key="title" />
+                <meta name="description" content={description} key="dec" />
+                <meta property="og:description" content={description} key="desc2" />
+                <meta property="og:image" content={imageUrl} key="image" />
+                <meta name="viewport" content="initial-scale=1, width=device-width" />
+                <meta name="theme-color" content={palette.primary.main} />
+                <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+                <meta name="msapplication-TileColor" content={palette.primary.main} />
+                <link rel="stylesheet" href={fontLink} />
                 <link rel="apple-touch-icon" sizes="57x57" href="/icons/apple-icon-57x57.png" />
                 <link rel="apple-touch-icon" sizes="60x60" href="/icons/apple-icon-60x60.png" />
                 <link rel="apple-touch-icon" sizes="72x72" href="/icons/apple-icon-72x72.png" />
@@ -21,12 +53,11 @@ export const AppContainer: FunctionComponent = ({ children }) => {
                 <link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon-96x96.png" />
                 <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
                 <link rel="manifest" href="/manifest.json" />
-                <meta name="msapplication-TileColor" content="#ffffff" />
-                <meta name="msapplication-TileImage" content="icons/ms-icon-144x144.png" />
-                <meta name="theme-color" content="#ffffff"></meta>
+
                 )
             </Head>
-            {children}
+            <AppHeader />
+            <MainContainer>{children}</MainContainer>
         </>
     );
 }

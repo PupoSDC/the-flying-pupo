@@ -16,6 +16,7 @@ export const baseThemeConfig: ThemeOptions = {
   },
   shape: {
     borderRadius: BASE_SPACING_UNIT,
+    headerHeight: BASE_SPACING_UNIT * 8,
   },
   fontLink: ROBOTO_FONT,
 };

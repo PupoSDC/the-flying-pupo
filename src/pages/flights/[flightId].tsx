@@ -31,9 +31,17 @@ const FlightPage: NextPage<FlightPageProps> = ({
   );
 
   return (
-    <AppContainer>
+    <AppContainer
+      title={flight.identification.name}
+      linkTitle={flight.identification.name}
+      description={flight.identification.description}
+      imageUrl={""}
+    >
       <Head>
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
+        <link 
+          rel="stylesheet" 
+          href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" 
+        />
       </Head>
       <StyledContainer>
         <NoSsr>
