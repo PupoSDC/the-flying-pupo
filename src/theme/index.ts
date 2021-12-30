@@ -23,6 +23,6 @@ declare module "@mui/material/styles" {
   }
 }
 
-export const widuTheme = createTheme({
+export const theme = createTheme({
   ...baseThemeConfig,
 });
