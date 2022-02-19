@@ -116,7 +116,7 @@ const IndexPage: NextPage = () => {
   );
 }
 
-export const getServerSideProps: GetStaticProps<ReactQueryPageProps> = async () => {
+export const getStaticProps: GetStaticProps<ReactQueryPageProps> = async () => {
   const queryClient = new QueryClient()
 
   await Promise.all([
