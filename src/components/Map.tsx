@@ -27,5 +27,3 @@ export const Map : FunctionComponent<MapProps> = ({
     </MapContainer>
   );
 }
-
-export default Map;

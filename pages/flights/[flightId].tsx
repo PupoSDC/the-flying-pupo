@@ -1,10 +1,10 @@
-import { NoSsr, styled } from "@mui/material";
-import { Flight } from "src/types/Flight";
+import { styled } from "@mui/material";
 import { GetServerSideProps, GetStaticPaths, NextPage } from "next";
-import { flights, flightsAsMap } from "src/content/flights";
-import { default as dynamic } from 'next/dynamic'
 import { default as Head } from "next/head";
 import { AppContainer } from "src/containers/AppContainer";
+import { prefetchUseFlight, useFlight } from "src/queries/useFlight";
+import { dehydrate, QueryClient } from "react-query";
+import { FlightMap } from "src/containers/FlightMap";
 
 const StyledContainer = styled("div")((theme) => ({
   display: "flex",
@@ -18,18 +18,10 @@ const StyledContainer = styled("div")((theme) => ({
   },
 }));
 
-type FlightPageProps = {
-  flight: Flight,
-}
-
-const FlightPage: NextPage<FlightPageProps> = ({
-  flight,
+const FlightPage: NextPage<{ flightId: string }> = ({
+  flightId
 }) => {
-  const Map = dynamic(
-    () => import('src/components/Map'),
-    { ssr: false }
-  );
-
+  const flight = useFlight(flightId);
   return (
     <AppContainer
       title={flight.identification.name}
@@ -38,37 +30,37 @@ const FlightPage: NextPage<FlightPageProps> = ({
       imageUrl={""}
     >
       <Head>
-        <link 
-          rel="stylesheet" 
-          href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" 
+        <link
+          rel="stylesheet"
+          href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css"
         />
       </Head>
       <StyledContainer>
-        <NoSsr>
-          <Map flight={flight} />
-        </NoSsr>
+        <FlightMap flightId={flightId} />
       </StyledContainer>
     </AppContainer>
   );
 }
 
-export const getStaticProps: GetServerSideProps<FlightPageProps> = async (context) => {
-  const flightId = context.params?.["flightId"];
-  if (typeof flightId !== "string") {
-    throw new Error(`missing flight id: ${flightId}`);
-  }
+export const getStaticProps: GetServerSideProps = async (context) => {
+  const queryClient = new QueryClient()
+  const flightId = context.params?.["flightId"] as string;
 
-  const flight = flightsAsMap[flightId];
+  await Promise.all([
+    prefetchUseFlight(queryClient, flightId)
+  ]);
 
   return {
     props: {
-      flight,
+      flightId,
+      dehydratedState: dehydrate(queryClient),
     },
-  }
+  };
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = flights.map((flight) => ({
+  const { getFlightIndex } = await import("src/server");
+  const paths = getFlightIndex().map((flight) => ({
     params: { flightId: flight.identification.id },
   }));
 

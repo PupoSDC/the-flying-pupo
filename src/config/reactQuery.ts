@@ -1,17 +1,12 @@
-export const reactQueryConfig = {
+import { QueryClient } from "react-query";
+
+export const getQueryClient = () =>
+  new QueryClient({
     defaultOptions: {
-        queries: {
-            refetchOnWindowFocus: false,
-            refetchOnMount: false,
-            refetchOnReconnect: false,
-            retry: false,
-            staleTime: 5 * 60 * 1000,
-        },
+      queries: {
+        retry: 0,
+        refetchOnMount: false,
+        refetchOnWindowFocus: false,
+      },
     },
-}
-
-export const QUERY_KEY_FLIGHTS = "QUERY_KEY_FLIGHTS";
-export const QUERY_KEY_FLIGHT_LOG = "QUERY_KEY_FLIGHT_LOG";
-
-export const ROUTE_FLIGHTS = "/flights";
-export const ROUTE_FLIGHT_LOG = "/flights/log";
+  });

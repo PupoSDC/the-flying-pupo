@@ -12,7 +12,7 @@ import {
   ArrowForward as ArrowForwardIcon,
 } from "@mui/icons-material";
 import { AppContainer } from "src/containers/AppContainer";
-import { prefetchUseFlights, useFlights } from "src/queries/useFlights";
+import { prefetchUseFlights, useFlightIndex } from "src/queries/useFlightIndex";
 import { prefetchUseFlightLog, useFlightLog } from "src/queries/useFlightLog";
 import { dehydrate, QueryClient, useQuery } from 'react-query';
 import { ReactQueryPageProps } from "src/types/Next";
@@ -41,7 +41,7 @@ const toTimeString = (minutes: number | undefined = 0) =>
     : "-";
 
 const IndexPage: NextPage = () => {
- const flights = useFlights();
+ const flights = useFlightIndex();
  const flightLog = useFlightLog();
 
   return (

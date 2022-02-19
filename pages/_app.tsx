@@ -1,4 +1,4 @@
-import { StrictMode, useState } from "react";
+import { StrictMode, useMemo, useState } from "react";
 import { AppProps } from "next/app";
 import {
     CacheProvider,
@@ -7,8 +7,8 @@ import {
 } from "src/config/emotionCache";
 import { theme } from "src/theme";
 import { ThemeProvider, CssBaseline } from "@mui/material";
-import { Hydrate, QueryClient, QueryClientProvider } from 'react-query'
-import { reactQueryConfig } from "src/config/reactQuery";
+import { Hydrate, QueryClientProvider } from 'react-query'
+import { getQueryClient } from "src/config/reactQuery";
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -21,7 +21,7 @@ const App = ({
     emotionCache = clientSideEmotionCache,
     pageProps,
 }: CustomAppProps) => {
-    const [queryClient] = useState(() => new QueryClient(reactQueryConfig))
+    const queryClient = useMemo(getQueryClient, []);
     return (
         <StrictMode>
             <CacheProvider value={emotionCache}>
