@@ -2,7 +2,7 @@ import { Flight } from "../../../types/Flight";
 
 export const flight: Flight = {
   identification: {
-    id: "20220219EDSBEDRW",
+    id: "20220219EDSBEDLW",
     callsign: "DEFCZ",
     name: "300NM second leg - 166NM",
     description: "",
