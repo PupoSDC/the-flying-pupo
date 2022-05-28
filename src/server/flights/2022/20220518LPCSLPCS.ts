@@ -2,20 +2,20 @@ import { Flight } from "../../../types/Flight";
 
 export const flight: Flight = {
   identification: {
-    id: "20220415LPCSLPCS",
+    id: "20220518LPCSLPCS",
     callsign: "CSDHW",
     name: "First Night Flight",
     description: "",
   },
   pilotLog: {
-    departure: new Date(2022, 4, 18, 20, 45).getTime(),
-    arrival: new Date(2022, 4, 18, 21, 30).getTime(),
+    departure: new Date(2022, 4, 18, 21, 0).getTime(),
+    arrival: new Date(2022, 4, 18, 21, 45).getTime(),
     singleEnginePistonTime: 45,
     picTime: 0,
     dualTime: 45,
     landings: {
-      day: 4,
-      night: 0,
+      day: 0,
+      night: 4,
     },
   },
   aircraft: {
