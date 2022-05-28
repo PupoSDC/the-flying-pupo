@@ -13,6 +13,7 @@ export const flight: Flight = {
     singleEnginePistonTime: 45,
     picTime: 0,
     dualTime: 45,
+    nightTime: 45,
     landings: {
       day: 0,
       night: 4,
