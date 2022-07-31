@@ -75,7 +75,7 @@ const IndexPage: NextPage = () => {
             </StyledTimeCell>
             <StyledTimeCell align="center">
               <div>Landings</div>
-              <div>({flightLog.landings.day})</div>
+              <div>({flightLog.landings.day + flightLog.landings.night})</div>
             </StyledTimeCell>
             <StyledTimeCell />
           </TableRow>
@@ -102,7 +102,7 @@ const IndexPage: NextPage = () => {
               <TableCell align="center">
                 {toTimeString(pilotLog.dualTime)}
               </TableCell>
-              <TableCell align="center">{pilotLog.landings.day}</TableCell>
+              <TableCell align="center">{pilotLog.landings.day + pilotLog.landings.night}</TableCell>
               <TableCell align="center">
                 <Link href={`/flights/${identification.id.toUpperCase()}`} >
                   <ArrowForwardIcon />
