@@ -41,8 +41,8 @@ const toTimeString = (minutes: number | undefined = 0) =>
     : "-";
 
 const IndexPage: NextPage = () => {
- const flights = useFlightIndex();
- const flightLog = useFlightLog();
+  const flights = useFlightIndex();
+  const flightLog = useFlightLog();
 
   return (
     <AppContainer
@@ -123,7 +123,7 @@ export const getStaticProps: GetStaticProps<ReactQueryPageProps> = async () => {
     prefetchUseFlightLog(queryClient),
     prefetchUseFlights(queryClient)
   ]);
- 
+
   return {
     props: {
       dehydratedState: dehydrate(queryClient),
