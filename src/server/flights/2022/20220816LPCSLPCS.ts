@@ -9,7 +9,7 @@ export const flight: Flight = {
   },
   pilotLog: {
     departure: new Date(2022, 7, 16, 19, 30).getTime(),
-    arrival: new Date(2022, 7, 16, 20, 10).getTime(),
+    arrival: new Date(2022, 7, 16, 20, 40).getTime(),
     singleEnginePistonTime: 70,
     picTime: 0,
     dualTime: 70,
