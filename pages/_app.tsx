@@ -1,16 +1,11 @@
-import { StrictMode, useMemo, useState } from "react";
+import { StrictMode } from "react";
 import { AppProps } from "next/app";
-import {
-    CacheProvider,
-    EmotionCache,
-    createEmotionCache,
-} from "src/config/emotionCache";
 import { theme } from "src/theme";
 import { ThemeProvider, CssBaseline } from "@mui/material";
-import { Hydrate, QueryClientProvider } from 'react-query'
-import { getQueryClient } from "src/config/reactQuery";
+import { default as createCache } from "@emotion/cache";
+import { CacheProvider, EmotionCache } from "@emotion/react";
 
-const clientSideEmotionCache = createEmotionCache();
+const clientSideEmotionCache = createCache({ key: "css" });
 
 type CustomAppProps = AppProps & {
     emotionCache: EmotionCache;
@@ -21,18 +16,13 @@ const App = ({
     emotionCache = clientSideEmotionCache,
     pageProps,
 }: CustomAppProps) => {
-    const queryClient = useMemo(getQueryClient, []);
     return (
         <StrictMode>
             <CacheProvider value={emotionCache}>
-                <QueryClientProvider client={queryClient}>
-                    <Hydrate state={pageProps.dehydratedState}>
-                        <ThemeProvider theme={theme}>
-                            <CssBaseline />
-                            <Component {...pageProps} />
-                        </ThemeProvider>
-                    </Hydrate>
-                </QueryClientProvider>
+                <ThemeProvider theme={theme}>
+                    <CssBaseline />
+                    <Component {...pageProps} />
+                </ThemeProvider>
             </CacheProvider>
         </StrictMode>
     );

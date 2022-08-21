@@ -1,10 +1,11 @@
 import { styled } from "@mui/material";
-import { GetServerSideProps, GetStaticPaths, NextPage } from "next";
+import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { default as Head } from "next/head";
 import { AppContainer } from "src/containers/AppContainer";
-import { prefetchUseFlight, useFlight } from "src/queries/useFlight";
-import { dehydrate, QueryClient } from "react-query";
 import { FlightMap } from "src/containers/FlightMap";
+import { Flight } from "src/types/Flight";
+import { flights } from "records/flights";
+import { NotFoundError } from "src/types/errors";
 
 const StyledContainer = styled("div")((theme) => ({
   display: "flex",
@@ -18,10 +19,14 @@ const StyledContainer = styled("div")((theme) => ({
   },
 }));
 
-const FlightPage: NextPage<{ flightId: string }> = ({
-  flightId
+type FlightPageProps = {
+  flight: Flight,
+}
+
+const FlightPage: NextPage<FlightPageProps> = ({
+  flight
 }) => {
-  const flight = useFlight(flightId);
+
   return (
     <AppContainer
       title={flight.identification.name}
@@ -36,31 +41,29 @@ const FlightPage: NextPage<{ flightId: string }> = ({
         />
       </Head>
       <StyledContainer>
-        <FlightMap flightId={flightId} />
+        <FlightMap flight={flight} />
       </StyledContainer>
     </AppContainer>
   );
 }
 
-export const getStaticProps: GetServerSideProps = async (context) => {
-  const queryClient = new QueryClient()
+export const getStaticProps: GetStaticProps<FlightPageProps> = async (context) => {
   const flightId = context.params?.["flightId"] as string;
+  const flight = flights.find(({ identification }) =>  identification.id === flightId);
 
-  await Promise.all([
-    prefetchUseFlight(queryClient, flightId)
-  ]);
+  if(!flight) {
+    throw new NotFoundError();
+  }
 
   return {
     props: {
-      flightId,
-      dehydratedState: dehydrate(queryClient),
+      flight,
     },
   };
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const { getFlightIndex } = await import("src/server");
-  const paths = getFlightIndex().map((flight) => ({
+  const paths = flights.map((flight) => ({
     params: { flightId: flight.identification.id },
   }));
 

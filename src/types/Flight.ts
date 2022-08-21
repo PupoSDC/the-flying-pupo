@@ -11,7 +11,7 @@ export type Flight = {
   track: Array<TrackEntity>;
 };
 
-export type LightFlight = Omit<Flight, "track">;
+export type FlightWithoutTrack = Omit<Flight, "track">;
 
 export type Identification = {
   id: string;

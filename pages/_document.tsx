@@ -1,7 +1,7 @@
 import { default as createEmotionServer } from "@emotion/server/create-instance";
 import { Children } from "react";
 import Document, { Head, Html, Main, NextScript } from "next/document";
-import { createEmotionCache } from "src/config/emotionCache";
+import { default as createCache } from "@emotion/cache";
 
 class MyDocument extends Document {
   render() {
@@ -19,7 +19,7 @@ class MyDocument extends Document {
 
 MyDocument.getInitialProps = async (ctx) => {
   const originalRenderPage = ctx.renderPage;
-  const cache = createEmotionCache();
+  const cache =  createCache({ key: "css" });
 
   const { extractCriticalToChunks } = createEmotionServer(cache);
 

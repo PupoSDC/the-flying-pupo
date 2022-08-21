@@ -12,10 +12,9 @@ import {
   ArrowForward as ArrowForwardIcon,
 } from "@mui/icons-material";
 import { AppContainer } from "src/containers/AppContainer";
-import { prefetchUseFlights, useFlightIndex } from "src/queries/useFlightIndex";
-import { prefetchUseFlightLog, useFlightLog } from "src/queries/useFlightLog";
-import { dehydrate, QueryClient, useQuery } from 'react-query';
-import { ReactQueryPageProps } from "src/types/Next";
+import { flights as rawFlights } from "records/flights";
+import { FlightLogCarryOver, FlightWithoutTrack } from "src/types/Flight";
+import { calculateTripDistance, calculateTripDistanceCovered } from "src/utils/flightProcessing";
 
 const StyledTable = styled(Table)(() => ({
   minWidth: 650,
@@ -40,10 +39,18 @@ const toTimeString = (minutes: number | undefined = 0) =>
     ? `${`${Math.floor(minutes / 60) || "0"}`}:${`00${minutes % 60}`.slice(-2)}`
     : "-";
 
-const IndexPage: NextPage = () => {
-  const flights = useFlightIndex();
-  const flightLog = useFlightLog();
+type IndexPageProps = {
+  flightLog: FlightLogCarryOver,
+  flights: Array<FlightWithoutTrack & {
+    tripDistance: number,
+    tripDistanceCovered: number,
+  }> ,
+}
 
+const IndexPage: NextPage<IndexPageProps> = ({
+  flightLog,
+  flights,
+}) => {
   return (
     <AppContainer
       title={"The Flying Pupo"}
@@ -77,11 +84,13 @@ const IndexPage: NextPage = () => {
               <div>Landings</div>
               <div>({flightLog.landings.day + flightLog.landings.night})</div>
             </StyledTimeCell>
+            <TableCell align="center">tripDistance</TableCell>
+            <TableCell align="center">tripDistanceCovered</TableCell>
             <StyledTimeCell />
           </TableRow>
         </TableHead>
         <TableBody>
-          {flights.map(({ identification, pilotLog, airport, aircraft }) => (
+          {flights.map(({ identification, pilotLog, airport, aircraft, tripDistance, tripDistanceCovered }) => (
             <TableRow key={identification.id}>
               <TableCell align="left">
                 {new Date(pilotLog.departure)
@@ -103,11 +112,17 @@ const IndexPage: NextPage = () => {
                 {toTimeString(pilotLog.dualTime)}
               </TableCell>
               <TableCell align="center">{pilotLog.landings.day + pilotLog.landings.night}</TableCell>
+              <TableCell align="center">{tripDistance}</TableCell>
+              <TableCell align="center">{tripDistanceCovered}</TableCell>
+
+              
+
               <TableCell align="center">
                 <Link href={`/flights/${identification.id.toUpperCase()}`} >
                   <ArrowForwardIcon />
                 </Link>
               </TableCell>
+              
             </TableRow>
           ))}
         </TableBody>
@@ -116,17 +131,49 @@ const IndexPage: NextPage = () => {
   );
 }
 
-export const getStaticProps: GetStaticProps<ReactQueryPageProps> = async () => {
-  const queryClient = new QueryClient()
+export const getStaticProps: GetStaticProps<IndexPageProps> = async () => {
+  const flightLog = rawFlights.reduce<FlightLogCarryOver>(
+    (sum, { pilotLog }) => ({
+      singleEnginePistonTime:
+        sum.singleEnginePistonTime + (pilotLog.singleEnginePistonTime || 0),
+      nightTime: sum.nightTime + (pilotLog.nightTime || 0),
+      ifrTime: sum.ifrTime + (pilotLog.ifrTime || 0),
+      picTime: sum.picTime + (pilotLog.picTime || 0),
+      dualTime: sum.dualTime + (pilotLog.dualTime || 0),
+      fiTime: sum.fiTime + (pilotLog.fiTime || 0),
+      landings: {
+        day: sum.landings.day + pilotLog.landings.day,
+        night: sum.landings.night + pilotLog.landings.night,
+      },
+    }),
+    {
+      singleEnginePistonTime: 0,
+      nightTime: 0,
+      ifrTime: 0,
+      picTime: 0,
+      dualTime: 0,
+      fiTime: 0,
+      landings: {
+        day: 0,
+        night: 0,
+      },
+    }
+  );
 
-  await Promise.all([
-    prefetchUseFlightLog(queryClient),
-    prefetchUseFlights(queryClient)
-  ]);
+  const flights = rawFlights.map((flight) => ({
+    identification: flight.identification, 
+    pilotLog: flight.pilotLog, 
+    airport: flight.airport, 
+    aircraft: flight.aircraft,
+    tripDistance: Math.floor(calculateTripDistance(flight)),
+    tripDistanceCovered: Math.floor(calculateTripDistanceCovered(flight)),
+  }))
+  
 
   return {
     props: {
-      dehydratedState: dehydrate(queryClient),
+      flights,
+      flightLog,
     },
   };
 };
