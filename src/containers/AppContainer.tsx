@@ -1,7 +1,5 @@
-import { styled, useTheme } from "@mui/material";
 import Head from "next/head";
 import { FunctionComponent } from "react";
-import { AppHeader } from "./AppHeader";
 
 export type AppHtmlHeadProps = {
     title: string;
@@ -10,12 +8,7 @@ export type AppHtmlHeadProps = {
     imageUrl: string;
 };
 
-const MainContainer = styled("main")(() => ({
-    display: "flex",
-    flex: 1,
-    flexDirection: "column",
-}));
-
+const ROBOTO_FONT = "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap";
 
 export const AppContainer: FunctionComponent<AppHtmlHeadProps> = ({
     title,
@@ -24,7 +17,6 @@ export const AppContainer: FunctionComponent<AppHtmlHeadProps> = ({
     imageUrl,
     children,
 }) => {
-    const { palette, fontLink } = useTheme();
 
     return (
         <>
@@ -35,10 +27,10 @@ export const AppContainer: FunctionComponent<AppHtmlHeadProps> = ({
                 <meta property="og:description" content={description} key="desc2" />
                 <meta property="og:image" content={imageUrl} key="image" />
                 <meta name="viewport" content="initial-scale=1, width=device-width" />
-                <meta name="theme-color" content={palette.primary.main} />
+                <meta name="theme-color" content={"#000"} />
                 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
-                <meta name="msapplication-TileColor" content={palette.primary.main} />
-                <link rel="stylesheet" href={fontLink} />
+                <meta name="msapplication-TileColor" content={"#000"} />
+                <link rel="stylesheet" href={ROBOTO_FONT} />
                 <link rel="apple-touch-icon" sizes="57x57" href="/icons/apple-icon-57x57.png" />
                 <link rel="apple-touch-icon" sizes="60x60" href="/icons/apple-icon-60x60.png" />
                 <link rel="apple-touch-icon" sizes="72x72" href="/icons/apple-icon-72x72.png" />
@@ -53,11 +45,9 @@ export const AppContainer: FunctionComponent<AppHtmlHeadProps> = ({
                 <link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon-96x96.png" />
                 <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
                 <link rel="manifest" href="/manifest.json" />
-
-                )
             </Head>
-            <AppHeader />
-            <MainContainer>{children}</MainContainer>
+
+            <main>{children}</main>
         </>
     );
 }

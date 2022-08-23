@@ -23,7 +23,7 @@ export const calculateTripDistance = (flight: Flight) => {
 }
 
 export const calculateTripDistanceCovered = (flight: Flight) => {
-    if (!flight.track) {
+    if (!flight.track.length) {
         return calculateTripDistance(flight)
     }
     return flight

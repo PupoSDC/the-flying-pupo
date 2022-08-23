@@ -1,43 +1,11 @@
 import { GetStaticProps, NextPage } from "next";
 import { default as Link } from "next/link";
-import {
-  Table,
-  TableHead,
-  TableRow,
-  TableCell,
-  TableBody,
-  styled,
-} from "@mui/material";
-import {
-  ArrowForward as ArrowForwardIcon,
-} from "@mui/icons-material";
+import { ArrowForward as ArrowForwardIcon } from "@mui/icons-material";
 import { AppContainer } from "src/containers/AppContainer";
 import { flights as rawFlights } from "records/flights";
 import { FlightLogCarryOver, FlightWithoutTrack } from "src/types/Flight";
-import { calculateTripDistance, calculateTripDistanceCovered } from "src/utils/flightProcessing";
+import { calculateTripDistance, calculateTripDistanceCovered, toTimeString } from "src/utils/flightProcessing";
 
-const StyledTable = styled(Table)(() => ({
-  minWidth: 650,
-  maxWidth: 1000,
-  margin: "auto",
-}));
-
-const StyledDateCell = styled(TableCell)(() => ({
-  width: "6rem",
-}));
-
-const StyledFromToCell = styled(TableCell)(() => ({
-  width: "10rem",
-}));
-
-const StyledTimeCell = styled(TableCell)(() => ({
-  width: "12rem",
-}));
-
-const toTimeString = (minutes: number | undefined = 0) =>
-  minutes
-    ? `${`${Math.floor(minutes / 60) || "0"}`}:${`00${minutes % 60}`.slice(-2)}`
-    : "-";
 
 type IndexPageProps = {
   flightLog: FlightLogCarryOver,
@@ -58,75 +26,73 @@ const IndexPage: NextPage<IndexPageProps> = ({
       description={"My own adventures through the sky"}
       imageUrl={""}
     >
-      <StyledTable stickyHeader aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <StyledDateCell align="left">
+      <table aria-label="simple table" className="table-auto">
+        <thead className="bg-gray-300">
+          <tr>
+            <th align="left">
               Date
-            </StyledDateCell>
-            <TableCell align="left">Type / Registration</TableCell>
-            <StyledFromToCell align="center">
-              From / To
-            </StyledFromToCell>
-            <StyledTimeCell align="center">
+            </th>
+            <th align="center">Type<br/>Registration</th>
+            <th align="center">
+              From<br/>To
+            </th>
+            <th align="center">
               <div>SEP</div>
               <div>({toTimeString(flightLog.singleEnginePistonTime)})</div>
-            </StyledTimeCell>
-            <StyledTimeCell align="center">
+            </th>
+            <th align="center">
               <div>PIC</div>
               <div>({toTimeString(flightLog.picTime)})</div>
-            </StyledTimeCell>
-            <StyledTimeCell align="center">
+            </th>
+            <th align="center">
               <div>Dual</div>
               <div>({toTimeString(flightLog.dualTime)})</div>
-            </StyledTimeCell>
-            <StyledTimeCell align="center">
+            </th>
+            <th align="center">
               <div>Landings</div>
-              <div>({flightLog.landings.day + flightLog.landings.night})</div>
-            </StyledTimeCell>
-            <TableCell align="center">tripDistance</TableCell>
-            <TableCell align="center">tripDistanceCovered</TableCell>
-            <StyledTimeCell />
-          </TableRow>
-        </TableHead>
-        <TableBody>
+              <div>({flightLog.landings.day} | {flightLog.landings.night})</div>
+            </th>
+            <th align="center">
+              NGM<br/>
+              ({flights.reduce((s, r) => s + r.tripDistanceCovered, 0)})
+            </th>
+            <th />
+          </tr>
+        </thead>
+        <tbody>
           {flights.map(({ identification, pilotLog, airport, aircraft, tripDistance, tripDistanceCovered }) => (
-            <TableRow key={identification.id}>
-              <TableCell align="left">
+            <tr key={identification.id}>
+              <td align="left">
                 {new Date(pilotLog.departure)
                   .toISOString()
                   .slice(0, 10)
-                  .replace(/-/g, "/")}
-              </TableCell>
-              <TableCell align="left">{aircraft.model.code}</TableCell>
-              <TableCell align="center">
-                {airport.origin.code} / {airport.destination.code}
-              </TableCell>
-              <TableCell align="center">
+                  .replace(/-/g, ".")}
+              </td>
+              <td align="center">{aircraft.model.code}<br />{aircraft.identification.registration}</td>
+              <td align="center">
+                {airport.origin.code}<br />{airport.destination.code}
+              </td>
+              <td align="center">
                 {toTimeString(pilotLog.singleEnginePistonTime)}
-              </TableCell>
-              <TableCell align="center">
+              </td>
+              <td align="center">
                 {toTimeString(pilotLog.picTime)}
-              </TableCell>
-              <TableCell align="center">
+              </td>
+              <td align="center">
                 {toTimeString(pilotLog.dualTime)}
-              </TableCell>
-              <TableCell align="center">{pilotLog.landings.day + pilotLog.landings.night}</TableCell>
-              <TableCell align="center">{tripDistance}</TableCell>
-              <TableCell align="center">{tripDistanceCovered}</TableCell>
-
-              
-
-              <TableCell align="center">
+              </td>
+              <td align="center">{pilotLog.landings.day} | {pilotLog.landings.night}</td>
+              <td align="center">{tripDistanceCovered}</td>
+              <td align="center">
                 <Link href={`/flights/${identification.id.toUpperCase()}`} >
                   <ArrowForwardIcon />
                 </Link>
-              </TableCell>
+              </td>
               
-            </TableRow>
+            </tr>
           ))}
-        </TableBody>
-      </StyledTable>
+        </tbody>
+      </table>
     </AppContainer>
   );
 }
@@ -167,7 +133,7 @@ export const getStaticProps: GetStaticProps<IndexPageProps> = async () => {
     aircraft: flight.aircraft,
     tripDistance: Math.floor(calculateTripDistance(flight)),
     tripDistanceCovered: Math.floor(calculateTripDistanceCovered(flight)),
-  }))
+  })).sort((a, b) => b.pilotLog.departure - a.pilotLog.departure)
   
 
   return {
