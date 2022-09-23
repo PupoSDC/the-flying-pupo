@@ -25,7 +25,7 @@ export const flight: Flight = {
     },
     identification: {
       modes: "3D3720",
-      registration: "D-EFCZ",
+      registration: "DP_DME",
       serialNo: "N/A",
     },
   },
