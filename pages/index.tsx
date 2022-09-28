@@ -41,6 +41,10 @@ const IndexPage: NextPage<IndexPageProps> = ({
               <div>({toTimeString(flightLog.singleEnginePistonTime)})</div>
             </th>
             <th align="center">
+              <div>MEP</div>
+              <div>({toTimeString(flightLog.multiEnginePistonTime)})</div>
+            </th>
+            <th align="center">
               <div>PIC</div>
               <div>({toTimeString(flightLog.picTime)})</div>
             </th>
@@ -76,6 +80,9 @@ const IndexPage: NextPage<IndexPageProps> = ({
                 {toTimeString(pilotLog.singleEnginePistonTime)}
               </td>
               <td align="center">
+                {toTimeString(pilotLog.multiEnginePistonTime)}
+              </td>
+              <td align="center">
                 {toTimeString(pilotLog.picTime)}
               </td>
               <td align="center">
@@ -102,6 +109,8 @@ export const getStaticProps: GetStaticProps<IndexPageProps> = async () => {
     (sum, { pilotLog }) => ({
       singleEnginePistonTime:
         sum.singleEnginePistonTime + (pilotLog.singleEnginePistonTime || 0),
+      multiEnginePistonTime: 
+        sum.multiEnginePistonTime + (pilotLog.multiEnginePistonTime || 0),
       nightTime: sum.nightTime + (pilotLog.nightTime || 0),
       ifrTime: sum.ifrTime + (pilotLog.ifrTime || 0),
       picTime: sum.picTime + (pilotLog.picTime || 0),
@@ -114,6 +123,7 @@ export const getStaticProps: GetStaticProps<IndexPageProps> = async () => {
     }),
     {
       singleEnginePistonTime: 0,
+      multiEnginePistonTime: 0,
       nightTime: 0,
       ifrTime: 0,
       picTime: 0,

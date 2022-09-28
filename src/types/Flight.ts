@@ -24,6 +24,7 @@ export type PilotLog = {
   departure: TimeInMillis;
   arrival: TimeInMillis;
   singleEnginePistonTime?: number;
+  multiEnginePistonTime?: number;
   nightTime?: number;
   ifrTime?: number;
   picTime?: number;

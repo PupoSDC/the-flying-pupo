@@ -20,15 +20,19 @@ const flightTime = (departureTime: Date, arrivalTime: Date) => {
 
 describe.each(flightsForTesting)("flight %s from %s to %s", (...params) => {
   const [, , , flight] = params;
+  const operationTime = 
+  (flight.pilotLog.singleEnginePistonTime ?? 0) + 
+  (flight.pilotLog.multiEnginePistonTime ?? 0);
 
   it("has matching flight time and operation time", () => {
-    expect(flight.pilotLog.singleEnginePistonTime).toBe(
+    console.log(flight.pilotLog)
+    expect(operationTime).toBe(
       (flight.pilotLog.dualTime ?? 0) + (flight.pilotLog.picTime ?? 0)
     );
   });
 
   it("has coherent departure and arrival times", () => {
-    expect(flight.pilotLog.singleEnginePistonTime).toBe(
+    expect(operationTime).toBe(
       flightTime(new Date(flight.pilotLog.departure), new Date(flight.pilotLog.arrival))
     );
   });
