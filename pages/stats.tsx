@@ -79,7 +79,9 @@ export const getStaticProps: GetStaticProps<StatsPageProps> = async () => {
   )
 
   const flightTime = Math.floor(rawFlights.reduce((s, r) => {
-    return s + (r.pilotLog.singleEnginePistonTime  ?? 0)
+    return s 
+      + (r.pilotLog.singleEnginePistonTime  ?? 0)
+      + (r.pilotLog.multiEnginePistonTime ?? 0)
   }, 0 ))
 
   const tripDistanceCovered = Math.floor(
