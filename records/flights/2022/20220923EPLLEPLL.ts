@@ -3,7 +3,7 @@ import { Flight } from "../../../src/types/Flight";
 export const flight: Flight = {
   identification: {
     id: "20220923EPLLEPLL",
-    callsign: "SPDME",
+    callsign: "BNI8E",
     name: "Cross Country to Pietrokow",
     description: "",
   },

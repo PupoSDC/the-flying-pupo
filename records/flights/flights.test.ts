@@ -25,7 +25,6 @@ describe.each(flightsForTesting)("flight %s from %s to %s", (...params) => {
   (flight.pilotLog.multiEnginePistonTime ?? 0);
 
   it("has matching flight time and operation time", () => {
-    console.log(flight.pilotLog)
     expect(operationTime).toBe(
       (flight.pilotLog.dualTime ?? 0) + (flight.pilotLog.picTime ?? 0)
     );
