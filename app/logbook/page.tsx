@@ -1,4 +1,5 @@
 import { FlightLogCarryOver, FlightWithoutTrack } from "src/types/Flight";
+import { default as Link } from 'next/link'
 import { default as path } from 'path';
 import { default as fs } from 'fs';
 import { toHourString, toTimeString } from "src/utils/flightProcessing";
@@ -135,7 +136,9 @@ const IndexPage = async () => {
             <td align="center">{pilotLog.landings.day} | {pilotLog.landings.night}</td>
             <td align="center">{tripDistanceCovered}</td>
             <td align="center">
-              <div><LinkIcon  className="h-6 w-6 text-blue-500 m-2" /></div>
+              <Link href={`flights/${identification.id}`}>
+                <LinkIcon  className="h-6 w-6 text-blue-500 m-2" />
+              </Link>
             </td>
           </tr>
         ))}

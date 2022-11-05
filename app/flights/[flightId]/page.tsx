@@ -1,76 +1,25 @@
-import { styled } from "@mui/material";
-import { GetStaticPaths, GetStaticProps, NextPage } from "next";
-import { default as Head } from "next/head";
-import { AppContainer } from "src/containers/AppContainer";
-import { FlightMap } from "src/containers/FlightMap";
-import { RawFlight } from "src/types/Flight";
-import { flights } from "records/flights";
-import { NotFoundError } from "src/types/errors";
+import { FlightMap } from "src/components/FlightMap";
+import { notFound } from 'next/navigation';
+import type { Flight } from "src/types/Flight";
+import { default as path } from 'path';
+import { default as fs } from 'fs';
 
-const StyledContainer = styled("div")((theme) => ({
-  display: "flex",
-  flexDirection: "row",
-  height: "100vh",
-  position: "relative",
-
-  "& > *": {
-    height: "100%",
-    flex: 1,
-  },
-}));
-
-type FlightPageProps = {
-  flight: RawFlight,
+const getData = (id: string) => {
+  const file = path.join(process.cwd(), 'public', 'records', `${id}.json`);
+  const flight: Flight = JSON.parse(fs.readFileSync(file, 'utf8'));
+  return { flight }
 }
 
-const FlightPage: NextPage<FlightPageProps> = ({
-  flight
-}) => {
+const FlightPage = async ({ params: { flightId }} : { params: { flightId: string }}) => {
+  const { flight } = await getData(flightId);
+
+  if (!flight) {
+    notFound();
+  }
 
   return (
-    <AppContainer
-      title={flight.identification.name}
-      linkTitle={flight.identification.name}
-      description={flight.identification.description}
-      imageUrl={""}
-    >
-      <Head>
-        <link
-          rel="stylesheet"
-          href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css"
-        />
-      </Head>
-      <StyledContainer>
-        <FlightMap flight={flight} />
-      </StyledContainer>
-    </AppContainer>
-  );
-}
-
-export const getStaticProps: GetStaticProps<FlightPageProps> = async (context) => {
-  const flightId = context.params?.["flightId"] as string;
-  const flight = flights.find(({ identification }) =>  identification.id === flightId);
-
-  if(!flight) {
-    throw new NotFoundError();
-  }
-
-  return {
-    props: {
-      flight,
-    },
-  };
-}
-
-export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = flights.map((flight) => ({
-    params: { flightId: flight.identification.id },
-  }));
-
-  return {
-    paths,
-    fallback: false
-  }
+    <FlightMap flight={flight} />
+  )
 }
 
 export default FlightPage;

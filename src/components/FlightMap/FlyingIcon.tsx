@@ -2,9 +2,8 @@ import { memo, useEffect, useMemo, useRef } from "react";
 import { Marker } from "react-leaflet";
 import { Icon, Polyline as PolylineRef, Marker as MarkerRef } from "leaflet";
 import { Polyline } from "react-leaflet";
-import { RawFlight, TrackEntity } from "../../types/Flight";
-import planeIcon from "./planeIcon.png";
-import { blue, red } from "@mui/material/colors";
+import { RawFlight, TrackEntity } from "src/types/Flight";
+import planeIcon from "./FlyingIcon.png";
 
 import "leaflet-rotatedmarker";
 
@@ -159,7 +158,7 @@ const interpolateTrack = (
 /**
  * Displays a flight track with a small cute icon following the track
  */
-export const FlyingIcon = memo<FlyingIconProps>(({ track }) => {
+export const FlyingIcon = memo<FlyingIconProps>(({ track }) => {  
   const markerRef = useRef<MarkerRef>(null);
   const polyLineRef = useRef<PolylineRef>(null);
   const path = useMemo(
@@ -197,11 +196,11 @@ export const FlyingIcon = memo<FlyingIconProps>(({ track }) => {
 
   return (
     <>
-      <Polyline positions={path} color={blue[500]} />
+      <Polyline positions={path} color={"blue"} />
       <Polyline
         ref={polyLineRef}
         positions={[path[0]]}
-        color={red[500]}
+        color={"red"}
       />
       <Marker
         ref={markerRef}
