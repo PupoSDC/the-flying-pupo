@@ -2,13 +2,13 @@ import { memo, useEffect, useMemo, useRef } from "react";
 import { Marker } from "react-leaflet";
 import { Icon, Polyline as PolylineRef, Marker as MarkerRef } from "leaflet";
 import { Polyline } from "react-leaflet";
-import { Flight, TrackEntity } from "../../types/Flight";
+import { RawFlight, TrackEntity } from "../../types/Flight";
 import planeIcon from "./planeIcon.png";
 import { blue, red } from "@mui/material/colors";
 
 import "leaflet-rotatedmarker";
 
-type FlyingIconProps = Pick<Flight, "track"> & {
+type FlyingIconProps = Pick<RawFlight, "track"> & {
   onClick?: () => void;
 };
 

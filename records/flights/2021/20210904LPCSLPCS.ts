@@ -1,6 +1,6 @@
-import { Flight } from "../../../src/types/Flight";
+import { RawFlight } from "../../../src/types/Flight";
 
-export const flight: Flight = {
+export const flight: RawFlight = {
   identification: {
     id: "20210904LPCSLPCS",
     callsign: "SEVAIR050",

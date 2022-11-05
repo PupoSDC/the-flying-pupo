@@ -3,7 +3,7 @@ import { default as dynamic } from "next/dynamic";
 import { ClientSideOnly } from "src/components/ClientSideOnly";
 
 import type { MapProps  } from "src/components/Map"
-import { Flight } from "src/types/Flight";
+import { RawFlight } from "src/types/Flight";
 
 const Map = dynamic<MapProps>(() => import("src/components/Map").then(mod => mod.Map), {
     ssr: false,
@@ -18,7 +18,7 @@ const FlightMapClient: FunctionComponent<FlightMapProps> = ({
 }
 
 export type FlightMapProps = {
-    flight: Flight,
+    flight: RawFlight,
 }
 
 export const FlightMap: FunctionComponent<FlightMapProps> = (props) => (

@@ -3,7 +3,7 @@ import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { default as Head } from "next/head";
 import { AppContainer } from "src/containers/AppContainer";
 import { FlightMap } from "src/containers/FlightMap";
-import { Flight } from "src/types/Flight";
+import { RawFlight } from "src/types/Flight";
 import { flights } from "records/flights";
 import { NotFoundError } from "src/types/errors";
 
@@ -20,7 +20,7 @@ const StyledContainer = styled("div")((theme) => ({
 }));
 
 type FlightPageProps = {
-  flight: Flight,
+  flight: RawFlight,
 }
 
 const FlightPage: NextPage<FlightPageProps> = ({

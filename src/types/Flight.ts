@@ -1,6 +1,6 @@
 export type TimeInMillis = number;
 
-export type Flight = {
+export type RawFlight = {
   identification: Identification;
   pilotLog: PilotLog;
   aircraft: Aircraft;
@@ -10,6 +10,11 @@ export type Flight = {
   };
   track: Array<TrackEntity>;
 };
+
+export type Flight = RawFlight & {
+  tripDistance: number,
+  tripDistanceCovered: number,
+}
 
 export type FlightWithoutTrack = Omit<Flight, "track">;
 

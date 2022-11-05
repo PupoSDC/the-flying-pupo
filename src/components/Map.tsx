@@ -1,11 +1,11 @@
 import { LatLngLiteral } from "leaflet";
 import { FunctionComponent } from "react";
 import { MapContainer, TileLayer } from "react-leaflet";
-import { Flight } from "src/types/Flight";
+import { RawFlight } from "src/types/Flight";
 import { FlyingIcon } from "./leaflet/FlyingIcon";
 
 export type MapProps = {
-  flight: Flight
+  flight: RawFlight
 }
 
 export const Map : FunctionComponent<MapProps> = ({

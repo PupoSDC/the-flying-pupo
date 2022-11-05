@@ -1,14 +1,14 @@
 import fs from "fs";
-import type { Flight } from "../../src/types/Flight";
+import type { RawFlight } from "../../src/types/Flight";
 
 const flightTime = (departureTime: Date, arrivalTime: Date) => {
   const diff = (arrivalTime.getTime() - departureTime.getTime()) / 1000 / 60;
   return Math.round(Math.round(diff));
 };
 
-const operationTime = (flight: Flight) => {
-  return         (flight.pilotLog.singleEnginePistonTime ?? 0) +
-  (flight.pilotLog.multiEnginePistonTime ?? 0);
+const operationTime = (flight: RawFlight) => {
+  return (flight.pilotLog.singleEnginePistonTime ?? 0) +
+    (flight.pilotLog.multiEnginePistonTime ?? 0);
 }
 
 const filesToTest = fs
@@ -17,13 +17,12 @@ const filesToTest = fs
   .flatMap(e => fs.readdirSync(`./records/flights/${e.name}`).map(f => `./${e.name}/${f}`))
   .filter(e => e.includes(".ts"))
 
-
 describe("Flight records", () => {
-  let flights: Flight[] = [];
+  let flights: RawFlight[] = [];
 
   beforeAll(async () => {
     const promises = filesToTest.map(e => import(`${e}`))
-    flights = (await Promise.all(promises)).map((e): Flight => e.flight)
+    flights = (await Promise.all(promises)).map((e): RawFlight => e.flight)
     console.log("done!")
   })
 
@@ -54,6 +53,6 @@ describe("Flight records", () => {
       const arrivalCode = flight.airport.destination.code;
       const expectedId = `${year}${month}${day}${departureCode}${arrivalCode}`;
       expect(flight.identification.id).toContain(expectedId);
-    }); 
+    });
   });
 });
