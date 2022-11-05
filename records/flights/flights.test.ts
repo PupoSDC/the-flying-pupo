@@ -1,49 +1,59 @@
-import { Flight } from "../../src/types/Flight";
-import { flights } from "./index";
-
-const flightsForTesting = flights.map((flight): [
-  string,
-  string,
-  string,
-  Flight
-] => [
-  flight.identification.id,
-  flight.airport.origin.code,
-  flight.airport.destination.code,
-  flight,
-]);
+import fs from "fs";
+import type { Flight } from "../../src/types/Flight";
 
 const flightTime = (departureTime: Date, arrivalTime: Date) => {
   const diff = (arrivalTime.getTime() - departureTime.getTime()) / 1000 / 60;
   return Math.round(Math.round(diff));
 };
 
-describe.each(flightsForTesting)("flight %s from %s to %s", (...params) => {
-  const [, , , flight] = params;
-  const operationTime = 
-  (flight.pilotLog.singleEnginePistonTime ?? 0) + 
+const operationTime = (flight: Flight) => {
+  return         (flight.pilotLog.singleEnginePistonTime ?? 0) +
   (flight.pilotLog.multiEnginePistonTime ?? 0);
+}
 
-  it("has matching flight time and operation time", () => {
-    expect(operationTime).toBe(
-      (flight.pilotLog.dualTime ?? 0) + (flight.pilotLog.picTime ?? 0)
-    );
-  });
+const filesToTest = fs
+  .readdirSync("./records/flights", { withFileTypes: true })
+  .filter(e => e.isDirectory())
+  .flatMap(e => fs.readdirSync(`./records/flights/${e.name}`).map(f => `./${e.name}/${f}`))
+  .filter(e => e.includes(".ts"))
 
-  it("has coherent departure and arrival times", () => {
-    expect(operationTime).toBe(
-      flightTime(new Date(flight.pilotLog.departure), new Date(flight.pilotLog.arrival))
-    );
-  });
 
-  it("has an unique ID based on flight time, origin, and destination", () => {
-    const date = new Date(flight.pilotLog.departure);
-    const year = date.getFullYear();
-    const month = `0${date.getMonth() + 1}`.slice(-2);
-    const day = `0${date.getDate()}`.slice(-2);
-    const departureCode = flight.airport.origin.code;
-    const arrivalCode = flight.airport.destination.code;
-    const expectedId = `${year}${month}${day}${departureCode}${arrivalCode}`;
-    expect(flight.identification.id).toContain(expectedId);
+describe("Flight records", () => {
+  let flights: Flight[] = [];
+
+  beforeAll(async () => {
+    const promises = filesToTest.map(e => import(`${e}`))
+    flights = (await Promise.all(promises)).map((e): Flight => e.flight)
+    console.log("done!")
+  })
+
+
+  describe.each(filesToTest.map((s, i) => [s, i]))("flight %s", (s, i) => {
+
+    it("has matching flight time and operation time", () => {
+      const flight = flights[i];
+      expect(operationTime(flight)).toBe(
+        (flight.pilotLog.dualTime ?? 0) + (flight.pilotLog.picTime ?? 0)
+      );
+    });
+
+    it("has coherent departure and arrival times", () => {
+      const flight = flights[i];
+      expect(operationTime(flight)).toBe(
+        flightTime(new Date(flight.pilotLog.departure), new Date(flight.pilotLog.arrival))
+      );
+    });
+
+    it("has an unique ID based on flight time, origin, and destination", () => {
+      const flight = flights[i];
+      const date = new Date(flight.pilotLog.departure);
+      const year = date.getFullYear();
+      const month = `0${date.getMonth() + 1}`.slice(-2);
+      const day = `0${date.getDate()}`.slice(-2);
+      const departureCode = flight.airport.origin.code;
+      const arrivalCode = flight.airport.destination.code;
+      const expectedId = `${year}${month}${day}${departureCode}${arrivalCode}`;
+      expect(flight.identification.id).toContain(expectedId);
+    }); 
   });
 });
