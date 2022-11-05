@@ -1,0 +1,49 @@
+.logbook-table {
+    margin: auto;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    max-height: calc(100% - 2em);
+    position: relative;
+    overflow-y: hidden;
+}
+
+.logbook-table thead {
+    background-color: black;
+}
+
+.logbook-table th {
+    background: #ddd;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
+}
+
+.logbook-table th {
+    border: 1px solid black;
+    padding: 0
+}
+
+.logbook-table th > * {
+    padding: 0.2em;
+}
+
+.logbook-table th > *:nth-child(2) {
+    border-top: 1px solid black;
+}
+
+.logbook-table tbody {
+    background-color: white;
+}
+
+.logbook-table td {
+    border: 1px solid black;
+    padding: 0
+}
+
+.logbook-table td > * {
+    padding: 0.1em;
+}
+
+.logbook-table td > *:nth-child(2) {
+    border-top: 1px solid black;
+}

@@ -2,14 +2,14 @@ import { RawFlight } from "../../../src/types/Flight";
 
 export const flight: RawFlight = {
   identification: {
-    id: "20221103EPLLEPLL",
+    id: "20221104EPLLEPLL",
     callsign: "BNI8I",
     name: "CP1/02 - Last nav with diversions",
     description: "",
   },
   pilotLog: {
-    departure: new Date(2022, 10, 3, 9, 32).getTime(),
-    arrival: new Date(2022, 10, 3, 11, 55).getTime(),
+    departure: new Date(2022, 10, 4, 9, 32).getTime(),
+    arrival: new Date(2022, 10, 4, 11, 55).getTime(),
     singleEnginePistonTime: 120 +23,
     multiEnginePistonTime: 0,
     picTime: 0,

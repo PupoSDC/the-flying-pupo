@@ -1,21 +1,19 @@
-import { GetStaticProps, NextPage } from "next";
-import { default as Link } from "next/link";
-import { AppContainer } from "src/containers/AppContainer";
-//import { flights as rawFlights } from "records/";
-import { Flight, FlightLogCarryOver, FlightWithoutTrack } from "src/types/Flight";
+import { FlightLogCarryOver, FlightWithoutTrack } from "src/types/Flight";
 import { default as path } from 'path';
 import { default as fs } from 'fs';
-import { toTimeString } from "src/utils/flightProcessing";
+import { toHourString, toTimeString } from "src/utils/flightProcessing";
+import { LinkIcon } from "@heroicons/react/24/outline"
+import style from "./styles.module.css";
 
 const getData = async () => {
   const file = path.join(process.cwd(), 'public', 'records', 'flightLog.json');
-  const flights : FlightWithoutTrack[] = JSON.parse(fs.readFileSync(file, 'utf8'));
+  const flights: FlightWithoutTrack[] = JSON.parse(fs.readFileSync(file, 'utf8'));
 
   const flightLog = flights.reduce<FlightLogCarryOver>(
     (sum, { pilotLog }) => ({
       singleEnginePistonTime:
         sum.singleEnginePistonTime + (pilotLog.singleEnginePistonTime || 0),
-      multiEnginePistonTime: 
+      multiEnginePistonTime:
         sum.multiEnginePistonTime + (pilotLog.multiEnginePistonTime || 0),
       nightTime: sum.nightTime + (pilotLog.nightTime || 0),
       ifrTime: sum.ifrTime + (pilotLog.ifrTime || 0),
@@ -52,15 +50,23 @@ const IndexPage = async () => {
   const { flights, flightLog } = await getData();
 
   return (
-    <table aria-label="simple table" className="table-auto">
+    <table aria-label="simple table" className={style.logbookTable}>
       <thead className="bg-gray-300">
         <tr>
           <th align="left">
-            Date
+            <div>Date</div>
           </th>
-          <th align="center">Type<br />Registration</th>
           <th align="center">
-            From<br />To
+            <div>Type</div>
+            <div>Registration</div>
+          </th>
+          <th align="center">
+            <div>From</div>
+            <div>To</div>
+          </th>
+          <th align="center">
+            <div>Departure</div>
+            <div>Arrival</div>
           </th>
           <th align="center">
             <div>SEP</div>
@@ -79,50 +85,63 @@ const IndexPage = async () => {
             <div>({toTimeString(flightLog.dualTime)})</div>
           </th>
           <th align="center">
-            <div>Landings</div>
+            <div className="w-20">Landings</div>
             <div>({flightLog.landings.day} | {flightLog.landings.night})</div>
           </th>
           <th align="center">
-            NGM<br />
-            ({flights.reduce((s, r) => s + r.tripDistanceCovered, 0)})
+            <div>
+              NGM<br />
+              ({flights.reduce((s, r) => s + r.tripDistanceCovered, 0)})
+            </div>
           </th>
           <th />
         </tr>
       </thead>
       <tbody>
-        {flights.map(({ identification, pilotLog, airport, aircraft, tripDistance, tripDistanceCovered }) => (
+        {flights.map(({ identification, pilotLog, airport, aircraft, tripDistanceCovered }) => (
           <tr key={identification.id}>
             <td align="left">
+              <div>
               {new Date(pilotLog.departure)
                 .toISOString()
                 .slice(0, 10)
                 .replace(/-/g, ".")}
-            </td>
-            <td align="center">{aircraft.model.code}<br />{aircraft.identification.registration}</td>
-            <td align="center">
-              {airport.origin.code}<br />{airport.destination.code}
+              </div>
             </td>
             <td align="center">
-              {toTimeString(pilotLog.singleEnginePistonTime)}
+              <div>{aircraft.model.code}</div>
+              <div>{aircraft.identification.registration}</div>
             </td>
             <td align="center">
-              {toTimeString(pilotLog.multiEnginePistonTime)}
+              <div>{airport.origin.code}</div>
+              <div>{airport.destination.code}</div>
             </td>
             <td align="center">
-              {toTimeString(pilotLog.picTime)}
+              <div>{toHourString(pilotLog.departure)}</div>
+              <div>{toHourString(pilotLog.arrival)}</div>
             </td>
             <td align="center">
-              {toTimeString(pilotLog.dualTime)}
+              <div>{toTimeString(pilotLog.singleEnginePistonTime)}</div>
+            </td>
+            <td align="center">
+              <div>{toTimeString(pilotLog.multiEnginePistonTime)}</div>
+            </td>
+            <td align="center">
+              <div>{toTimeString(pilotLog.picTime)}</div>
+            </td>
+            <td align="center">
+              <div>{toTimeString(pilotLog.dualTime)}</div>
             </td>
             <td align="center">{pilotLog.landings.day} | {pilotLog.landings.night}</td>
             <td align="center">{tripDistanceCovered}</td>
             <td align="center">
-              TBD
+              <div><LinkIcon  className="h-6 w-6 text-blue-500 m-2" /></div>
             </td>
           </tr>
         ))}
       </tbody>
     </table>
   )
-  
+}
+
 export default IndexPage;
