@@ -3,12 +3,15 @@ import { Marker } from "react-leaflet";
 import { Icon, Polyline as PolylineRef, Marker as MarkerRef } from "leaflet";
 import { Polyline } from "react-leaflet";
 import { RawFlight, TrackEntity } from "src/types/Flight";
+
 import planeIcon from "./FlyingIcon.png";
 
 import "leaflet-rotatedmarker";
 
 type FlyingIconProps = Pick<RawFlight, "track"> & {
   onClick?: () => void;
+  /** the speed multiplier (i.e.: 60 for 1 minute per second) */
+  speedMultiplier: number
 };
 
 type LagrangeInterpolation = (pointsY: number[], x: number) => number;
@@ -122,6 +125,7 @@ const interpolateTrack = (
   track: TrackEntity[],
   speed: number
 ): TrackEntity[] => {
+  return track;
   const timeStep = (1 / 40) * speed;
   const endTime = track[track.length - 1].timestamp;
   const result = [track[0]];
@@ -158,12 +162,12 @@ const interpolateTrack = (
 /**
  * Displays a flight track with a small cute icon following the track
  */
-export const FlyingIcon = memo<FlyingIconProps>(({ track }) => {  
+export const FlyingIcon = memo<FlyingIconProps>(({ track, speedMultiplier = 20 }) => {  
   const markerRef = useRef<MarkerRef>(null);
   const polyLineRef = useRef<PolylineRef>(null);
   const path = useMemo(
     () =>
-      interpolateTrack(track, 45)
+      interpolateTrack(track, speedMultiplier)
         .filter((point) => !isNaN(point.latitude))
         .map((point) => ({
           lat: point.latitude,
@@ -196,11 +200,12 @@ export const FlyingIcon = memo<FlyingIconProps>(({ track }) => {
 
   return (
     <>
-      <Polyline positions={path} color={"blue"} />
+      <Polyline positions={path} color={"blue"} weight={2} />
       <Polyline
         ref={polyLineRef}
         positions={[path[0]]}
-        color={"red"}
+        weight={2}
+        color={"blue"}
       />
       <Marker
         ref={markerRef}

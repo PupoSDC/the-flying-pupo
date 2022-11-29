@@ -1,6 +1,6 @@
 import { readdirSync, mkdirSync, rmSync } from "fs"
 import { writeFile } from "fs/promises"
-import { RawFlight, FlightWithoutTrack, Flight, PilotLog } from "../src/types/Flight"
+import { RawFlight, Flight } from "../src/types/Flight"
 
 
 const calculateDistance = (a: {
@@ -40,6 +40,16 @@ const calculateTripDistanceCovered = (flight: RawFlight) => {
         }, 0)
 }
 
+const getSetPointsFromArray = <T>(array: T[], count: number) : T[] => {
+    const values : T[] = new Array(count);
+    values[0] = array[0];
+    values[count - 1] = array.at(-1)
+    for (let i = 1; i < count - 2; i++) {
+        values[i] = array[Math.floor(i * array.length / (count - 1))];
+    }
+    return values;
+}
+
 const compileRecords = async () => {
     const flights = (await Promise.all(readdirSync("./records/flights", { withFileTypes: true })
         .filter(e => e.isDirectory())
@@ -53,8 +63,9 @@ const compileRecords = async () => {
         tripDistanceCovered: Math.floor(calculateTripDistanceCovered(flight)),
     }))
 
-    const flightLog: FlightWithoutTrack[] = flights.map(({ track, ...flight }) => ({
-        ...flight
+    const flightLog: Flight[] = flights.map(({ ...flight }) => ({
+        ...flight,
+        track: getSetPointsFromArray(flight.track, 50).filter(e => !!e)
     })).sort((a, b) => b.pilotLog.departure - a.pilotLog.departure)
 
     rmSync('./public/records', { recursive: true, force: true });

@@ -7,13 +7,14 @@ import { FlyingIcon } from "./FlyingIcon";
 import 'leaflet/dist/leaflet.css';
 
 export type FlightMapProps = {
-  flight: Flight
+  flights: Flight[]
+  speed?: number
 }
 
 export const FlightMapClient : FunctionComponent<FlightMapProps> = ({
-  flight
+  flights
 }) => {
-  const { latitude, longitude } = flight.airport.origin.position;
+  const { latitude, longitude } = flights[0].airport.origin.position;
   const position: LatLngLiteral = {
     lat: latitude,
     lng: longitude,
@@ -25,7 +26,9 @@ export const FlightMapClient : FunctionComponent<FlightMapProps> = ({
         attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.osm.org/{z}/{x}/{y}.png"
       />
-      <FlyingIcon key={flight.identification.id} track={flight.track} /> 
+      {flights.map((flight) => (
+         <FlyingIcon key={flight.identification.id} track={flight.track} speedMultiplier={900} /> 
+      ))}
     </MapContainer>
   );
 }

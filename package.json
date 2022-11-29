@@ -11,7 +11,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "prebuild": "npx ts-node scripts/compileRecords.ts",
+    "pre-build": "npx ts-node scripts/compileRecords.ts",
     "build": "next build",
     "start": "next start",
     "test": "jest --watch",

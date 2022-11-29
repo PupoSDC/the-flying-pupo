@@ -18,7 +18,7 @@ const FlightPage = async ({ params: { flightId }} : { params: { flightId: string
   }
 
   return (
-    <FlightMap flight={flight} />
+    <FlightMap flights={[flight]} />
   )
 }
 

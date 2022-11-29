@@ -1,4 +1,4 @@
-import { FlightLogCarryOver, FlightWithoutTrack } from "src/types/Flight";
+import { FlightLogCarryOver, Flight } from "src/types/Flight";
 import { default as Link } from 'next/link'
 import { default as path } from 'path';
 import { default as fs } from 'fs';
@@ -8,7 +8,7 @@ import style from "./styles.module.css";
 
 const getData = async () => {
   const file = path.join(process.cwd(), 'public', 'records', 'flightLog.json');
-  const flights: FlightWithoutTrack[] = JSON.parse(fs.readFileSync(file, 'utf8'));
+  const flights: Flight[] = JSON.parse(fs.readFileSync(file, 'utf8'));
 
   const flightLog = flights.reduce<FlightLogCarryOver>(
     (sum, { pilotLog }) => ({

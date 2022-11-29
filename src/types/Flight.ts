@@ -16,8 +16,6 @@ export type Flight = RawFlight & {
   tripDistanceCovered: number,
 }
 
-export type FlightWithoutTrack = Omit<Flight, "track">;
-
 export type Identification = {
   id: string;
   name: string;
