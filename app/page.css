@@ -34,6 +34,7 @@ video {
 }
 
 #menu>h1 {
+    background: inherit;
     font-size: 4em;
     color: lightgray;
 }
@@ -41,6 +42,20 @@ video {
 #menu>hr {
     width: 400px;
     border-top: 1px solid lightgray;
+}
+
+#menu>ul {
+    margin-bottom: 1em;
+    overflow: hidden;
+}
+
+#menu>ul>li {
+    transition: all 0.6s ease-in-out;
+    transform: translateY(250%);
+}
+
+#menu>ul.pop>li {
+   transform: translateY(0);
 }
 
 #menu>ul a {

@@ -1,8 +1,14 @@
+"use client"
 import Link from "next/link";
-import type { FunctionComponent } from "react"
+import { FunctionComponent, useEffect, useState } from "react"
 import "./page.css"
 
 const Page: FunctionComponent = () => {
+    const [popped, setPopped] = useState(false);
+    useEffect(() => {
+        setTimeout(() => setPopped(true), 200);
+    }, []);
+
     return (
         <>
             <video autoPlay muted loop id="myVideo">
@@ -10,8 +16,9 @@ const Page: FunctionComponent = () => {
             </video>
             <div className="content">
                 <div id="menu">
-                    <ul>
+                    <ul className={popped ? "pop" : ""}>
                         <li><Link href="logbook">Logbook</Link></li>
+                        <li><Link href="logbook">Curriculum</Link></li>
                     </ul>
                     <hr />
                     <h1>The Flying Pupo</h1>
