@@ -1,19 +1,23 @@
+import Link from "next/link";
 import type { FunctionComponent } from "react"
+import "./page.css"
 
 const Page: FunctionComponent = () => {
     return (
-
-        <div id="menu">
-            <div id="menu-items">
-                <div className="menu-item">Home</div>
-                <div className="menu-item">Shop</div>
-                <div className="menu-item">About</div>
-                <div className="menu-item">Contact Us</div>
+        <>
+            <video autoPlay muted loop id="myVideo">
+                <source src="videos/background.mp4" type="video/mp4" />
+            </video>
+            <div className="content">
+                <div id="menu">
+                    <ul>
+                        <li><Link href="logbook">Logbook</Link></li>
+                    </ul>
+                    <hr />
+                    <h1>The Flying Pupo</h1>
+                </div>
             </div>
-            <div id="menu-background-pattern"></div>
-            <div id="menu-background-image"></div>
-        </div>
-
+        </>
     )
 }
 
