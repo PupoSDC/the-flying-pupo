@@ -21,3 +21,5 @@ console.log(JSON.stringify(skyvector.split("\n").map(b => b.split(" ")).map(c =>
     "timestamp": Math.floor(new Date(c[0]).getTime() / 1000),
     "ems": null
 })), null, 2))
+
+export {}

@@ -1,11 +1,5 @@
-import { flights as rawFlights } from "records/flights";
-import { AppContainer } from "src/containers/AppContainer";
-import {
-  calculateTripDistance,
-  calculateTripDistanceCovered,
-  toTimeString,
-} from "src/utils/flightProcessing";
 import { GetStaticProps, NextPage } from "next";
+import { toTimeString } from "src/utils/flightProcessing";
 
 type StatsPageProps = {
   tripDistance: number;
@@ -43,12 +37,7 @@ const StatsPage: NextPage<StatsPageProps> = ({
   maxDistanceInOneDay,
 }) => {
   return (
-    <AppContainer
-      title={"The Flying Pupo"}
-      linkTitle={"The Flying Pupo"}
-      description={"My own adventures through the sky"}
-      imageUrl={""}
-    >
+    <>
       <h1>A Summary of my flying so far...</h1>
       <p>
         I've done <b>{flightsCount} flights</b> so far, which took me{" "}
@@ -75,10 +64,10 @@ const StatsPage: NextPage<StatsPageProps> = ({
         busiest day saw me covering <b>{maxDistanceInOneDay}NM</b> taking me{" "}
         <b>{toTimeString(longestDailyFlightTime)}</b> hours to complete.
       </p>
-    </AppContainer>
+    </>
   );
 };
-
+/** 
 export const getStaticProps: GetStaticProps<StatsPageProps> = async () => {
   const tripDistance = Math.floor(
     rawFlights.reduce((s, r) => s + calculateTripDistance(r), 0)
@@ -196,3 +185,4 @@ export const getStaticProps: GetStaticProps<StatsPageProps> = async () => {
 };
 
 export default StatsPage;
+*/

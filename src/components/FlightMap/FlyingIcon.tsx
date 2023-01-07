@@ -173,7 +173,7 @@ export const FlyingIcon = memo<FlyingIconProps>(
             lng: point.longitude,
             angle: point.heading,
           })),
-      [track]
+      [track, speedMultiplier]
     );
 
     useEffect(() => {

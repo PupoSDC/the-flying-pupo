@@ -2,7 +2,6 @@ import { readdirSync, mkdirSync, rmSync } from "fs"
 import { writeFile } from "fs/promises"
 import { RawFlight, Flight } from "../src/types/Flight"
 
-
 const calculateDistance = (a: {
     latitude: number,
     longitude: number,
@@ -43,7 +42,7 @@ const calculateTripDistanceCovered = (flight: RawFlight) => {
 const getSetPointsFromArray = <T>(array: T[], count: number) : T[] => {
     const values : T[] = new Array(count);
     values[0] = array[0];
-    values[count - 1] = array.at(-1)
+    values[count - 1] = array.at(-1) as T
     for (let i = 1; i < count - 2; i++) {
         values[i] = array[Math.floor(i * array.length / (count - 1))];
     }

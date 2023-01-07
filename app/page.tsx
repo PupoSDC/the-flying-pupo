@@ -3,7 +3,16 @@ import { FunctionComponent, useEffect, useState } from "react";
 import { default as Link } from "next/link";
 import { default as styles } from "./styles.module.css";
 
-const Page: FunctionComponent = () => {
+type PageProps = {
+  params?: {
+    num?: string;
+  };
+  searchParams?: {
+    search?: string;
+  };
+};
+
+const Page: FunctionComponent<PageProps> = () => {
   const [popped, setPopped] = useState(false);
   useEffect(() => {
     setTimeout(() => setPopped(true), 200);

@@ -1,7 +1,6 @@
+"use client"
 import { FunctionComponent, useEffect, useState } from "react";
 import { FlightMapProps } from "./FlightMapClient";
-
-("use client");
 
 export const FlightMap: FunctionComponent<FlightMapProps> = (props) => {
   const [Client, setClient] = useState<FunctionComponent<FlightMapProps>>();
