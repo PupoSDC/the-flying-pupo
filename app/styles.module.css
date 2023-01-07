@@ -7,9 +7,9 @@
 
 .container video {
     min-width: 100%;
-    min-height: 100vh;
+    min-height: 100%;
     max-width: 100%;
-    max-height: 100vh;
+    max-height: 100%;
     object-fit: cover;
     filter: blur(1px);
 }
@@ -36,6 +36,9 @@
 
 .container main {
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     background-color: rgba(35, 45, 57, 0.8);
     top: 0;
     left: 0;
@@ -47,8 +50,6 @@
     align-items: flex-start;
     justify-content: flex-end;
     display: flex;
-    height: calc(100vh - 1em);
-    max: calc(100vw - 2em);
     color: white;
     flex-direction: column;
     margin-left: 2em;
