@@ -23,7 +23,7 @@ const Page: FunctionComponent<PageProps> = () => {
 
   return (
     <div className={styles.container}>
-      <video className={styles.video} autoPlay muted loop>
+      <video className={styles.video} autoPlay muted loop playsInline>
         <source src="videos/background.mp4" type="video/mp4" />
       </video>
       <header>
