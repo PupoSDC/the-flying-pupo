@@ -1,5 +1,5 @@
 "use client"
-import { FunctionComponent, useEffect, useState } from "react";
+import { FunctionComponent, useEffect, useRef, useState } from "react";
 import { default as Link } from "next/link";
 import { default as styles } from "./styles.module.css";
 
@@ -14,12 +14,14 @@ type PageProps = {
 
 const Page: FunctionComponent<PageProps> = () => {
   const [popped, setPopped] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
   useEffect(() => {
+    videoRef.current?.play();
     setTimeout(() => setPopped(true), 200);
   }, []);
 
   return (
-    <>
+    <div className={styles.container}>
       <video className={styles.video} autoPlay muted loop>
         <source src="videos/background.mp4" type="video/mp4" />
       </video>
@@ -37,7 +39,7 @@ const Page: FunctionComponent<PageProps> = () => {
           <h1>The Flying Pupo</h1>
         </nav>
       </div>
-    </>
+    </div>
   );
 };
 

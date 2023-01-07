@@ -12,6 +12,9 @@ const getData = async () => {
 
   const flightLog = flights.reduce<FlightLogCarryOver>(
     (sum, { pilotLog }) => ({
+      totalTime: 
+        sum.singleEnginePistonTime + (pilotLog.singleEnginePistonTime || 0) +
+        sum.multiEnginePistonTime + (pilotLog.multiEnginePistonTime || 0),
       singleEnginePistonTime:
         sum.singleEnginePistonTime + (pilotLog.singleEnginePistonTime || 0),
       multiEnginePistonTime:
@@ -27,6 +30,7 @@ const getData = async () => {
       },
     }),
     {
+      totalTime: 0,
       singleEnginePistonTime: 0,
       multiEnginePistonTime: 0,
       nightTime: 0,
@@ -70,6 +74,10 @@ const IndexPage = async () => {
             <div>Arrival</div>
           </th>
           <th align="center">
+            <div>TT</div>
+            <div>({toTimeString(flightLog.totalTime)})</div>
+          </th>
+          <th align="center">
             <div>SEP</div>
             <div>({toTimeString(flightLog.singleEnginePistonTime)})</div>
           </th>
@@ -84,6 +92,14 @@ const IndexPage = async () => {
           <th align="center">
             <div>Dual</div>
             <div>({toTimeString(flightLog.dualTime)})</div>
+          </th>
+          <th align="center">
+            <div>Night</div>
+            <div>({toTimeString(flightLog.nightTime)})</div>
+          </th>
+          <th align="center">
+            <div>IFR</div>
+            <div>({toTimeString(flightLog.ifrTime)})</div>
           </th>
           <th align="center">
             <div className="w-20">Landings</div>
@@ -131,6 +147,12 @@ const IndexPage = async () => {
                 <div>{toHourString(pilotLog.arrival)}</div>
               </td>
               <td align="center">
+                <div>{toTimeString(
+                  (pilotLog.singleEnginePistonTime ?? 0) + 
+                  (pilotLog.multiEnginePistonTime ?? 0)
+                )}</div>
+              </td>
+              <td align="center">
                 <div>{toTimeString(pilotLog.singleEnginePistonTime)}</div>
               </td>
               <td align="center">
@@ -141,6 +163,12 @@ const IndexPage = async () => {
               </td>
               <td align="center">
                 <div>{toTimeString(pilotLog.dualTime)}</div>
+              </td>
+              <td align="center">
+                <div>{toTimeString(pilotLog.nightTime)}</div>
+              </td>
+              <td align="center">
+                <div>{toTimeString(pilotLog.ifrTime)}</div>
               </td>
               <td align="center">
                 {pilotLog.landings.day} | {pilotLog.landings.night}
