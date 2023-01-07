@@ -1,4 +1,3 @@
-import { LinkIcon } from "@heroicons/react/24/outline";
 import { default as fs } from "fs";
 import { default as path } from "path";
 import { Flight, FlightLogCarryOver } from "src/types/Flight";
@@ -176,7 +175,7 @@ const IndexPage = async () => {
               <td align="center">{tripDistanceCovered}</td>
               <td align="center">
                 <Link href={`flights/${identification.id}`}>
-                  <LinkIcon className="h-6 w-6 text-blue-500 m-2" />
+                   link
                 </Link>
               </td>
             </tr>
