@@ -1,8 +1,7 @@
+"use client"
 import { FunctionComponent, useEffect, useState } from "react";
 import { default as Link } from "next/link";
 import { default as styles } from "./styles.module.css";
-
-("use client");
 
 const Page: FunctionComponent = () => {
   const [popped, setPopped] = useState(false);
