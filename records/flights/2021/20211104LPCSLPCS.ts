@@ -23,8 +23,7 @@ export const flight: RawFlight = {
       code: "C152",
       text: "Cessna 152",
     },
-    identification: {
-    },
+    identification: {},
   },
   airport: {
     origin: {

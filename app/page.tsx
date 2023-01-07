@@ -1,31 +1,36 @@
-"use client"
-import Link from "next/link";
-import { FunctionComponent, useEffect, useState } from "react"
-import "./page.css"
+import { FunctionComponent, useEffect, useState } from "react";
+import { default as Link } from "next/link";
+import { default as styles } from "./styles.module.css";
+
+("use client");
 
 const Page: FunctionComponent = () => {
-    const [popped, setPopped] = useState(false);
-    useEffect(() => {
-        setTimeout(() => setPopped(true), 200);
-    }, []);
+  const [popped, setPopped] = useState(false);
+  useEffect(() => {
+    setTimeout(() => setPopped(true), 200);
+  }, []);
 
-    return (
-        <>
-            <video autoPlay muted loop id="myVideo">
-                <source src="videos/background.mp4" type="video/mp4" />
-            </video>
-            <div className="content">
-                <div id="menu">
-                    <ul className={popped ? "pop" : ""}>
-                        <li><Link href="logbook">Logbook</Link></li>
-                        <li><Link href="logbook">Curriculum</Link></li>
-                    </ul>
-                    <hr />
-                    <h1>The Flying Pupo</h1>
-                </div>
-            </div>
-        </>
-    )
-}
+  return (
+    <>
+      <video className={styles.video} autoPlay muted loop>
+        <source src="videos/background.mp4" type="video/mp4" />
+      </video>
+      <div className={styles.content}>
+        <nav>
+          <ul className={popped ? styles.pop : ""}>
+            <li>
+              <Link href="logbook">Logbook</Link>
+            </li>
+            <li>
+              <Link href="logbook">Curriculum</Link>
+            </li>
+          </ul>
+          <hr />
+          <h1>The Flying Pupo</h1>
+        </nav>
+      </div>
+    </>
+  );
+};
 
 export default Page;

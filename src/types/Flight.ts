@@ -12,9 +12,9 @@ export type RawFlight = {
 };
 
 export type Flight = RawFlight & {
-  tripDistance: number,
-  tripDistanceCovered: number,
-}
+  tripDistance: number;
+  tripDistanceCovered: number;
+};
 
 export type Identification = {
   id: string;

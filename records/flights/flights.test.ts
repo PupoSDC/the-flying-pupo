@@ -7,28 +7,30 @@ const flightTime = (departureTime: Date, arrivalTime: Date) => {
 };
 
 const operationTime = (flight: RawFlight) => {
-  return (flight.pilotLog.singleEnginePistonTime ?? 0) +
-    (flight.pilotLog.multiEnginePistonTime ?? 0);
-}
+  return (
+    (flight.pilotLog.singleEnginePistonTime ?? 0) +
+    (flight.pilotLog.multiEnginePistonTime ?? 0)
+  );
+};
 
 const filesToTest = fs
   .readdirSync("./records/flights", { withFileTypes: true })
-  .filter(e => e.isDirectory())
-  .flatMap(e => fs.readdirSync(`./records/flights/${e.name}`).map(f => `./${e.name}/${f}`))
-  .filter(e => e.includes(".ts"))
+  .filter((e) => e.isDirectory())
+  .flatMap((e) =>
+    fs.readdirSync(`./records/flights/${e.name}`).map((f) => `./${e.name}/${f}`)
+  )
+  .filter((e) => e.includes(".ts"));
 
 describe("Flight records", () => {
   let flights: RawFlight[] = [];
 
   beforeAll(async () => {
-    const promises = filesToTest.map(e => import(`${e}`))
-    flights = (await Promise.all(promises)).map((e): RawFlight => e.flight)
-    console.log("done!")
-  })
-
+    const promises = filesToTest.map((e) => import(`${e}`));
+    flights = (await Promise.all(promises)).map((e): RawFlight => e.flight);
+    console.log("done!");
+  });
 
   describe.each(filesToTest.map((s, i) => [s, i]))("flight %s", (s, i) => {
-
     it("has matching flight time and operation time", () => {
       const flight = flights[i];
       expect(operationTime(flight)).toBe(
@@ -39,7 +41,10 @@ describe("Flight records", () => {
     it("has coherent departure and arrival times", () => {
       const flight = flights[i];
       expect(operationTime(flight)).toBe(
-        flightTime(new Date(flight.pilotLog.departure), new Date(flight.pilotLog.arrival))
+        flightTime(
+          new Date(flight.pilotLog.departure),
+          new Date(flight.pilotLog.arrival)
+        )
       );
     });
 

@@ -5,7 +5,8 @@ export const flight: RawFlight = {
     id: "20210305EDGSEDKB",
     callsign: "DEFCZ",
     name: "PPL Mission 21",
-    description: " Cross country to siegerland (return).getTime(), heavy crosswind",
+    description:
+      " Cross country to siegerland (return).getTime(), heavy crosswind",
   },
   pilotLog: {
     departure: new Date(2021, 2, 5, 15, 9).getTime(),

@@ -18,22 +18,19 @@
     "test:coverage": "jest --coverage",
     "type-check": "tsc",
     "lint": "eslint --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\"",
-    "format": "prettier \"src/**/*.+(ts|js|tsx)\" --write",
+    "format": "prettier \"(src|app|records)/**/*.+(ts|js|tsx|css)\" --write",
     "postinstall": "husky install"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.13",
-    "autoprefixer": "^10.4.13",
+    "@picocss/pico": "^1.5.6",
     "axios": "^0.24.0",
     "leaflet": "^1.7.1",
     "leaflet-rotatedmarker": "^0.2.0",
     "next": "^13.1.1",
-    "postcss": "^8.4.18",
-    "postinstall-postinstall": "^2.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-leaflet": "^4.1.0",
-    "tailwindcss": "^3.2.2"
+    "react-leaflet": "^4.1.0"
   },
   "devDependencies": {
     "@commitlint/cli": "15.0.0",
@@ -68,7 +65,6 @@
     }
   },
   "prettier": {
-    "parser": "babel-ts",
     "importOrderParserPlugins": [
       "classProperties",
       "typescript",

@@ -1,17 +1,15 @@
+import { Icon, Marker as MarkerRef, Polyline as PolylineRef } from "leaflet";
+import "leaflet-rotatedmarker";
+import { RawFlight, TrackEntity } from "src/types/Flight";
 import { memo, useEffect, useMemo, useRef } from "react";
 import { Marker } from "react-leaflet";
-import { Icon, Polyline as PolylineRef, Marker as MarkerRef } from "leaflet";
 import { Polyline } from "react-leaflet";
-import { RawFlight, TrackEntity } from "src/types/Flight";
-
 import planeIcon from "./FlyingIcon.png";
-
-import "leaflet-rotatedmarker";
 
 type FlyingIconProps = Pick<RawFlight, "track"> & {
   onClick?: () => void;
   /** the speed multiplier (i.e.: 60 for 1 minute per second) */
-  speedMultiplier: number
+  speedMultiplier: number;
 };
 
 type LagrangeInterpolation = (pointsY: number[], x: number) => number;
@@ -162,64 +160,66 @@ const interpolateTrack = (
 /**
  * Displays a flight track with a small cute icon following the track
  */
-export const FlyingIcon = memo<FlyingIconProps>(({ track, speedMultiplier = 20 }) => {  
-  const markerRef = useRef<MarkerRef>(null);
-  const polyLineRef = useRef<PolylineRef>(null);
-  const path = useMemo(
-    () =>
-      interpolateTrack(track, speedMultiplier)
-        .filter((point) => !isNaN(point.latitude))
-        .map((point) => ({
-          lat: point.latitude,
-          lng: point.longitude,
-          angle: point.heading,
-        })),
-    [track]
-  );
+export const FlyingIcon = memo<FlyingIconProps>(
+  ({ track, speedMultiplier = 20 }) => {
+    const markerRef = useRef<MarkerRef>(null);
+    const polyLineRef = useRef<PolylineRef>(null);
+    const path = useMemo(
+      () =>
+        interpolateTrack(track, speedMultiplier)
+          .filter((point) => !isNaN(point.latitude))
+          .map((point) => ({
+            lat: point.latitude,
+            lng: point.longitude,
+            angle: point.heading,
+          })),
+      [track]
+    );
 
-  useEffect(() => {
-    let i = 0;
-    let timeout: NodeJS.Timeout;
+    useEffect(() => {
+      let i = 0;
+      let timeout: NodeJS.Timeout;
 
-    const updatePosition = () => {
-      i = ++i % path.length;
+      const updatePosition = () => {
+        i = ++i % path.length;
 
-      if (i === 0) {
-        polyLineRef.current?.setLatLngs([]);
-      }
-
-      // @ts-ignore defined in leaflet-rotatedmarker
-      markerRef.current?.setRotationAngle(path[i].angle);
-      markerRef.current?.setLatLng(path[i]);
-      polyLineRef.current?.addLatLng(path[i]);
-      timeout = setTimeout(updatePosition, 50);
-    };
-    updatePosition();
-    return () => clearTimeout(timeout);
-  }, [path]);
-
-  return (
-    <>
-      <Polyline positions={path} color={"blue"} weight={2} />
-      <Polyline
-        ref={polyLineRef}
-        positions={[path[0]]}
-        weight={2}
-        color={"blue"}
-      />
-      <Marker
-        ref={markerRef}
-        icon={
-          new Icon({
-            iconUrl: planeIcon.src,
-            iconSize: [12, 12],
-            iconAnchor: [6, 6],
-          })
+        if (i === 0) {
+          polyLineRef.current?.setLatLngs([]);
         }
-        // @ts-ignore
-        rotationAngle={45}
-        position={path[0]}
-      />
-    </>
-  );
-});
+
+        // @ts-ignore defined in leaflet-rotatedmarker
+        markerRef.current?.setRotationAngle(path[i].angle);
+        markerRef.current?.setLatLng(path[i]);
+        polyLineRef.current?.addLatLng(path[i]);
+        timeout = setTimeout(updatePosition, 50);
+      };
+      updatePosition();
+      return () => clearTimeout(timeout);
+    }, [path]);
+
+    return (
+      <>
+        <Polyline positions={path} color={"blue"} weight={2} />
+        <Polyline
+          ref={polyLineRef}
+          positions={[path[0]]}
+          weight={2}
+          color={"blue"}
+        />
+        <Marker
+          ref={markerRef}
+          icon={
+            new Icon({
+              iconUrl: planeIcon.src,
+              iconSize: [12, 12],
+              iconAnchor: [6, 6],
+            })
+          }
+          // @ts-ignore
+          rotationAngle={45}
+          position={path[0]}
+        />
+      </>
+    );
+  }
+);

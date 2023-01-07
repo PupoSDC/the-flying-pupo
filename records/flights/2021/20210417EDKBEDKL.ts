@@ -12418,5 +12418,5 @@ export const flight: RawFlight = {
       timestamp: 1618670208,
       ems: null,
     },
-  ])
+  ]),
 };

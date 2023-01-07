@@ -48,5 +48,5 @@ export const flight: RawFlight = {
       },
     },
   },
-  track: []
+  track: [],
 };

@@ -4,4 +4,4 @@ export const toTimeString = (minutes: number | undefined = 0) =>
     : "-";
 
 export const toHourString = (milis: number) =>
-  toTimeString(new Date(milis).getHours() * 60 + new Date(milis).getMinutes())
+  toTimeString(new Date(milis).getHours() * 60 + new Date(milis).getMinutes());
