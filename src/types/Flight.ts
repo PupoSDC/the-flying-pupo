@@ -42,7 +42,7 @@ export type PilotLog = {
 export type FlightLogCarryOver = Required<
   Omit<PilotLog, "departure" | "arrival">
 > & {
-    totalTime?: number;
+  totalTime?: number;
 };
 
 export interface Aircraft {

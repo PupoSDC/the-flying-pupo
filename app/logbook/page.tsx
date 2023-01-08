@@ -11,9 +11,11 @@ const getData = async () => {
 
   const flightLog = flights.reduce<FlightLogCarryOver>(
     (sum, { pilotLog }) => ({
-      totalTime: 
-        sum.singleEnginePistonTime + (pilotLog.singleEnginePistonTime || 0) +
-        sum.multiEnginePistonTime + (pilotLog.multiEnginePistonTime || 0),
+      totalTime:
+        sum.singleEnginePistonTime +
+        (pilotLog.singleEnginePistonTime || 0) +
+        sum.multiEnginePistonTime +
+        (pilotLog.multiEnginePistonTime || 0),
       singleEnginePistonTime:
         sum.singleEnginePistonTime + (pilotLog.singleEnginePistonTime || 0),
       multiEnginePistonTime:
@@ -73,7 +75,7 @@ const IndexPage = async () => {
             <div>Arrival</div>
           </th>
           <th align="center">
-            <div>TT</div>
+            <div>Total Time</div>
             <div>({toTimeString(flightLog.totalTime)})</div>
           </th>
           <th align="center">
@@ -146,10 +148,12 @@ const IndexPage = async () => {
                 <div>{toHourString(pilotLog.arrival)}</div>
               </td>
               <td align="center">
-                <div>{toTimeString(
-                  (pilotLog.singleEnginePistonTime ?? 0) + 
-                  (pilotLog.multiEnginePistonTime ?? 0)
-                )}</div>
+                <div>
+                  {toTimeString(
+                    (pilotLog.singleEnginePistonTime ?? 0) +
+                      (pilotLog.multiEnginePistonTime ?? 0)
+                  )}
+                </div>
               </td>
               <td align="center">
                 <div>{toTimeString(pilotLog.singleEnginePistonTime)}</div>
@@ -174,9 +178,7 @@ const IndexPage = async () => {
               </td>
               <td align="center">{tripDistanceCovered}</td>
               <td align="center">
-                <Link href={`flights/${identification.id}`}>
-                   link
-                </Link>
+                <Link href={`flights/${identification.id}`}>link</Link>
               </td>
             </tr>
           )

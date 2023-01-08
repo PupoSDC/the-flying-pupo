@@ -1,6 +1,10 @@
 "use client"
 import { FunctionComponent, useEffect, useRef, useState } from "react";
-import { AiOutlineLinkedin, AiOutlineInstagram, AiOutlineGithub } from "react-icons/ai";
+import {
+  AiOutlineGithub,
+  AiOutlineInstagram,
+  AiOutlineLinkedin,
+} from "react-icons/ai";
 import { default as Link } from "next/link";
 import { default as styles } from "./styles.module.css";
 
@@ -27,9 +31,15 @@ const Page: FunctionComponent<PageProps> = () => {
         <source src="videos/background.mp4" type="video/mp4" />
       </video>
       <header>
-        <Link href="https://www.instagram.com/puposdc/"><AiOutlineInstagram /></Link>
-        <Link href="https://www.linkedin.com/in/puposdc/"><AiOutlineLinkedin /></Link>
-        <Link href="https://github.com/PupoSDC"><AiOutlineGithub /></Link>
+        <Link href="https://www.instagram.com/puposdc/">
+          <AiOutlineInstagram />
+        </Link>
+        <Link href="https://www.linkedin.com/in/puposdc/">
+          <AiOutlineLinkedin />
+        </Link>
+        <Link href="https://github.com/PupoSDC">
+          <AiOutlineGithub />
+        </Link>
       </header>
       <main>
         <nav>
@@ -38,11 +48,11 @@ const Page: FunctionComponent<PageProps> = () => {
               <Link href="logbook">Logbook</Link>
             </li>
             <li>
-              <Link href="logbook">Curriculum</Link>
+              <Link href="about-me">About Me</Link>
             </li>
           </ul>
           <hr />
-          <h1>The Flying Pupo  </h1>
+          <h1>The Flying Pupo </h1>
         </nav>
       </main>
     </div>

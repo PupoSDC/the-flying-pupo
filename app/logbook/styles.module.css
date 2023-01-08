@@ -18,6 +18,10 @@
   box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
 }
 
+.logbook-table th div {
+  white-space: nowrap;
+}
+
 .logbook-table th {
   border: 1px solid black;
   padding: 0;

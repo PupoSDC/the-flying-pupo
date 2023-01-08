@@ -14,6 +14,7 @@ export const flight: RawFlight = {
     multiEnginePistonTime: 120 + 15,
     picTime: 0,
     dualTime: 120 + 15,
+    ifrTime: 120 + 15,
     nightTime: 0,
     landings: {
       day: 4,

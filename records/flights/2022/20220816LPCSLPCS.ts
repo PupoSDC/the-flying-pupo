@@ -13,6 +13,7 @@ export const flight: RawFlight = {
     singleEnginePistonTime: 70,
     picTime: 0,
     dualTime: 70,
+    nightTime: 70,
     landings: {
       day: 0,
       night: 1,
