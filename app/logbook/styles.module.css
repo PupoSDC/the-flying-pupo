@@ -7,17 +7,6 @@
   bottom: 0;
   overflow: scroll;
   max-width: 1400px;
-  border-bottom: 1px solid lightgray;
-}
-
-@media (min-height: 500px) {
-  .logbookHeader {
-    height: 4em;
-  }
-
-  .logbookTable {
-    padding: 4em 0.75em 0.5em 0.75em;
-  }
 }
 
 .logbookTable table {
@@ -52,6 +41,10 @@
 
 .logbookTable th > * {
   padding: 0.2em;
+}
+
+.logbookTable th[align="center"] {
+  text-align: center;
 }
 
 .logbookTable td {
