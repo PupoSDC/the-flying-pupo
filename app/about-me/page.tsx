@@ -9,6 +9,7 @@ import {
 } from "react-icons/ai";
 import Link from "next/link";
 import { default as styles } from "./styles.module.css";
+import { FaHome } from "react-icons/fa";
 
 const getData = async () => {
   const file = path.join(process.cwd(), "public", "records", `flightLog.json`);
@@ -165,8 +166,8 @@ const StatsPage = async () => {
           startups.
         </p>
         <p>
-          To this day I am Software Engineer with the very expensive hobby of
-          Flying around the skies on a steel machine weighting at least 650kg. I
+          To this day I am a Software Engineer with the very expensive hobby of
+          flying around the skies on a steel machine weighting at least 650kg. I
           started flying in September 2020 and have been enjoying it ever since.
         </p>
         <p>
@@ -196,6 +197,9 @@ const StatsPage = async () => {
         </p>
       </main>
       <footer className={styles.footer}>
+        <Link href="/">
+          <FaHome />
+        </Link>
         <Link href="https://www.instagram.com/puposdc/">
           <AiOutlineInstagram />
         </Link>
