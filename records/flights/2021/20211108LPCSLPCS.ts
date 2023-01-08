@@ -2,14 +2,14 @@ import { RawFlight } from "../../../src/types/Flight";
 
 export const flight: RawFlight = {
   identification: {
-    id: "20211106LPCSLPCS",
+    id: "20211108LPCSLPCS",
     callsign: "SEVAIR116",
     name: "UPRT class 3",
     description: "",
   },
   pilotLog: {
-    departure: new Date(2021, 10, 6, 14, 5).getTime(),
-    arrival: new Date(2021, 10, 6, 15, 25).getTime(),
+    departure: new Date(2021, 10, 8, 14, 5).getTime(),
+    arrival: new Date(2021, 10, 8, 15, 25).getTime(),
     singleEnginePistonTime: 80,
     picTime: 0,
     dualTime: 80,
@@ -23,7 +23,9 @@ export const flight: RawFlight = {
       code: "C152",
       text: "Cessna 152",
     },
-    identification: {},
+    identification: {
+      registration: "CS-DAT",
+    },
   },
   airport: {
     origin: {

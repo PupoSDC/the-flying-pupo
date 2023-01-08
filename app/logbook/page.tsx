@@ -73,7 +73,7 @@ const IndexPage = async () => {
           <th align="center">
             <div>Departure</div>
             <div>Arrival</div>
-          </th>
+          </th>        {/** 
           <th align="center">
             <div>Total Time</div>
             <div>({toTimeString(flightLog.totalTime)})</div>
@@ -108,13 +108,7 @@ const IndexPage = async () => {
               ({flightLog.landings.day} | {flightLog.landings.night})
             </div>
           </th>
-          <th align="center">
-            <div>
-              NGM
-              <br />({flights.reduce((s, r) => s + r.tripDistanceCovered, 0)})
-            </div>
-          </th>
-          <th />
+  <th /> **/}
         </tr>
       </thead>
       <tbody>
@@ -147,7 +141,7 @@ const IndexPage = async () => {
                 <div>{toHourString(pilotLog.departure)}</div>
                 <div>{toHourString(pilotLog.arrival)}</div>
               </td>
-              <td align="center">
+              {/**               <td align="center">
                 <div>
                   {toTimeString(
                     (pilotLog.singleEnginePistonTime ?? 0) +
@@ -174,12 +168,12 @@ const IndexPage = async () => {
                 <div>{toTimeString(pilotLog.ifrTime)}</div>
               </td>
               <td align="center">
-                {pilotLog.landings.day} | {pilotLog.landings.night}
+                <div>{pilotLog.landings.day} | {pilotLog.landings.night}</div>
               </td>
-              <td align="center">{tripDistanceCovered}</td>
               <td align="center">
                 <Link href={`flights/${identification.id}`}>link</Link>
-              </td>
+              </td> */}
+
             </tr>
           )
         )}

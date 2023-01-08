@@ -23,7 +23,9 @@ export const flight: RawFlight = {
       code: "C152",
       text: "Cessna 152",
     },
-    identification: {},
+    identification: {
+      registration: "CS-DAT"
+    },
   },
   airport: {
     origin: {

@@ -10,7 +10,7 @@ import {
 import Link from "next/link";
 import { default as styles } from "./styles.module.css";
 
-export const getData = async () => {
+const getData = async () => {
   const file = path.join(process.cwd(), "public", "records", `flightLog.json`);
   const rawFlights: Flight[] = JSON.parse(fs.readFileSync(file, "utf8"));
 

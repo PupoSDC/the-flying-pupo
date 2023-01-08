@@ -25,7 +25,7 @@ export const flight: RawFlight = {
     },
     identification: {
       modes: "491463",
-      registration: "CS-EDHU",
+      registration: "CS-DHU",
       serialNo: "N/A",
     },
   },

@@ -1,4 +1,4 @@
-.logbook-table {
+.logbookTable {
   margin: auto;
   margin-top: 2em;
   margin-bottom: 2em;
@@ -7,47 +7,47 @@
   overflow-y: hidden;
 }
 
-.logbook-table thead {
-  background-color: black;
+.logbookTable thead {
+  background-color: var(--secondary);
 }
 
-.logbook-table th {
+.logbookTable th {
   background: #ddd;
   position: sticky;
   top: 0;
   box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
 }
 
-.logbook-table th div {
+.logbookTable th div {
   white-space: nowrap;
 }
 
-.logbook-table th {
-  border: 1px solid black;
+.logbookTable th {
+  border: 1px solid var(--secondary);
   padding: 0;
 }
 
-.logbook-table th > * {
+.logbookTable th > * {
   padding: 0.2em;
 }
 
-.logbook-table th > *:nth-child(2) {
-  border-top: 1px solid black;
+.logbookTable th > *:nth-child(2) {
+  border-top: 1px solid var(--secondary);
 }
 
-.logbook-table tbody {
-  background-color: white;
-}
-
-.logbook-table td {
-  border: 1px solid black;
+.logbookTable td {
+  border: 1px solid var(--secondary);
   padding: 0;
 }
 
-.logbook-table td > * {
+.logbookTable td > * {
   padding: 0.1em;
 }
 
-.logbook-table td > *:nth-child(2) {
-  border-top: 1px solid black;
+.logbookTable td > *:nth-child(2) {
+  border-top: 1px solid var(--secondary);
+}
+
+.logbookTable td[align="center"] > * {
+  text-align: center;
 }
