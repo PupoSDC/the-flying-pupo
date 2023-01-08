@@ -4,7 +4,7 @@ import { FlightMap } from "src/components/FlightMap";
 import { Header } from "src/components/Header";
 import type { Flight } from "src/types/Flight";
 import { toHourString, toTimeString } from "src/utils/flightProcessing";
-import { FaClock, FaExternalLinkAlt, FaPlane } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight, FaClock, FaExternalLinkAlt, FaHome, FaListAlt, FaPlane } from "react-icons/fa";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { default as styles } from "./styles.module.css";
@@ -103,38 +103,42 @@ const FlightPage = async ({
             <div className={styles.chapterContent}>
               <div className={styles.sectionTitle}>SEP Time</div>
               <div>{toTimeString(flight.pilotLog.singleEnginePistonTime)}</div>
+              <small>({toTimeString(flight.flightLogCarryOver.singleEnginePistonTime)})</small>
             </div>
             <div className={styles.chapterContent}>
               <div className={styles.sectionTitle}>MEP Time</div>
               <div>{toTimeString(flight.pilotLog.multiEnginePistonTime)}</div>
+              <small>({toTimeString(flight.flightLogCarryOver.multiEnginePistonTime)})</small>
             </div>
             <div className={styles.chapterContent}>
               <div className={styles.sectionTitle}>PIC Time</div>
               <div>{toTimeString(flight.pilotLog.picTime)}</div>
+              <small>({toTimeString(flight.flightLogCarryOver.picTime)})</small>
             </div>
             <div className={styles.chapterContent}>
               <div className={styles.sectionTitle}>Dual Time</div>
               <div>{toTimeString(flight.pilotLog.dualTime)}</div>
+              <small>({toTimeString(flight.flightLogCarryOver.dualTime)})</small>
             </div>
           </div>
           <div className={styles.totalsTable}>
             <div className={styles.chapterContent}>
               <div className={styles.sectionTitle}>Night Time</div>
-              <div>{toTimeString(flight.pilotLog.nightTime)}</div>
+              <div>{toTimeString(flight.pilotLog.nightTime)} <small>({toTimeString(flight.flightLogCarryOver.nightTime)})</small></div>
             </div>
             <div className={styles.chapterContent}>
               <div className={styles.sectionTitle}>IFR Time</div>
-              <div>{toTimeString(flight.pilotLog.ifrTime)}</div>
+              <div>{toTimeString(flight.pilotLog.ifrTime)} <small>({toTimeString(flight.flightLogCarryOver.ifrTime)})</small></div>
             </div>
           </div>
           <div className={styles.totalsTable}>
             <div className={styles.chapterContent}>
               <div className={styles.sectionTitle}>Day Landings</div>
-              <div>{flight.pilotLog.landings.day}</div>
+              <div>{flight.pilotLog.landings.day} <small>({flight.flightLogCarryOver.landings.day})</small></div>
             </div>
             <div className={styles.chapterContent}>
               <div className={styles.sectionTitle}>Night Landings</div>
-              <div>{flight.pilotLog.landings.night}</div>
+              <div>{flight.pilotLog.landings.night} <small>({flight.flightLogCarryOver.landings.night})</small></div>
             </div>
           </div>
           <div className={styles.descriptionContent}>
@@ -142,6 +146,13 @@ const FlightPage = async ({
               {flight.identification.name}
             </div>
             <div>{flight.identification.description}</div>
+          </div>
+          <div className={styles.flex} />
+          <div className={styles.controlsContainer}>
+            <Link href={flight.previousId ? `/flights/${flight.previousId}` : "logbook"}><FaChevronLeft /></Link>
+            <Link href="/logbook"><FaListAlt /></Link>
+            <Link href="/"><FaHome /></Link>
+            <Link href={flight.nextId ? `/flights/${flight.nextId}` : "logbook"}><FaChevronRight /></Link>
           </div>
         </section>
       </main>

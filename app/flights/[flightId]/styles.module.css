@@ -26,6 +26,8 @@
   max-width: 1400px;
   margin: auto;
   padding: 1em;
+  display: flex;
+  flex-direction: column;
 }
 
 .dataSection h1 {
@@ -81,6 +83,23 @@
   border-bottom: 1px solid white;
 }
 
+.controlsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 2em;
+  margin-top: 0.5em;
+  color: white;
+}
+
+.controlsContainer a {
+  color: white;
+}
+
+.flex {
+  flex: 1;
+}
+
 @media (min-width: 1700px) {
   .pageWrapper header {
     display: none;
@@ -97,6 +116,8 @@
     width: 450px;
     margin: 0;
     padding-top: 3em;
+    height: 100vh;
+    max-height: calc(100vh - 6em);
   }
 
   .dataSection h1 {
