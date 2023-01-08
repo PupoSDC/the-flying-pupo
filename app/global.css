@@ -2,3 +2,9 @@ html,
 body {
   background-color: #232d39;
 }
+
+.leaflet-marker-icon {
+  transition: translate3d 50ms linear;
+  background-color: transparent;
+  border: none;
+}
