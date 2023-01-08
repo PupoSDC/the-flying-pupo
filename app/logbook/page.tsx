@@ -2,7 +2,7 @@ import { default as fs } from "fs";
 import { default as path } from "path";
 import { Flight, FlightLogCarryOver } from "src/types/Flight";
 import { toHourString, toTimeString } from "src/utils/flightProcessing";
-import { FaPlane, Fa, FaHome } from "react-icons/fa"
+import { FaPlane, FaHome } from "react-icons/fa"
 import { default as Link } from "next/link";
 import style from "./styles.module.css";
 
