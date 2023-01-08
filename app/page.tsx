@@ -1,4 +1,5 @@
-"use client"
+"use client";
+
 import { FunctionComponent, useEffect, useRef, useState } from "react";
 import {
   AiOutlineGithub,

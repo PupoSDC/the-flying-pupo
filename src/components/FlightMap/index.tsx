@@ -1,4 +1,5 @@
-"use client"
+"use client";
+
 import { FunctionComponent, useEffect, useState } from "react";
 import { FlightMapProps } from "./FlightMapClient";
 

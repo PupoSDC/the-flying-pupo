@@ -20,12 +20,7 @@ export const FlightMapClient: FunctionComponent<FlightMapProps> = ({
   };
 
   return (
-    <MapContainer
-      center={position}
-      zoom={11}
-      style={{ height: "100%", width: "100%", position: "absolute" }}
-      key={new Date().getTime()}
-    >
+    <MapContainer center={position} zoom={11} key={new Date().getTime()}>
       <TileLayer
         attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.osm.org/{z}/{x}/{y}.png"

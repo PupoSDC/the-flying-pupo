@@ -50,8 +50,8 @@ describe("Flight records", () => {
 
     it("has plausible registration", () => {
       const flight = flights[i];
-      expect(flight.aircraft.identification.registration).toHaveLength(6)
-    })
+      expect(flight.aircraft.identification.registration).toHaveLength(6);
+    });
 
     it("has an unique ID based on flight time, origin, and destination", () => {
       const flight = flights[i];

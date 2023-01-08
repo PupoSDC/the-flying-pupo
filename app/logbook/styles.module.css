@@ -1,39 +1,3 @@
-.logbookHeader {
-  height: 3em;
-  padding: 0;
-  width: 100%;
-  background-color: #232d39;
-  position: absolute;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-}
-
-.logbookHeader  div {
-  margin: auto;
-  padding: 0 0.75em;
-  width: 100%;
-  max-width: 1400px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logbookHeader div h1 {
-  padding-left: 0.1em;
-  margin-bottom: 0;
-}
-
-
-.logbookHeader div a {
-  color: white;
-  font-size: 2em;
-  margin: 0 0.25em;
-  display: flex;
-}
-
-
 .logbookTable {
   position: absolute;
   padding: 3em 0.75em 0.5em 0.75em;
@@ -54,7 +18,6 @@
   .logbookTable {
     padding: 4em 0.75em 0.5em 0.75em;
   }
-  
 }
 
 .logbookTable table {
@@ -87,7 +50,7 @@
   border-top: 1px solid lightgray;
 }
 
-.logbookTable th>* {
+.logbookTable th > * {
   padding: 0.2em;
 }
 
@@ -109,19 +72,19 @@
   background-color: #2d3949;
 }
 
-.logbookTable td>* {
+.logbookTable td > * {
   padding: 0.1em;
 }
 
-.logbookTable td>a {
+.logbookTable td > a {
   padding: 0.4em;
 }
 
-.logbookTable td>*:nth-child(2) {
+.logbookTable td > *:nth-child(2) {
   border-top: 1px solid var(--secondary);
 }
 
-.logbookTable td[align="center"]>* {
+.logbookTable td[align="center"] > * {
   text-align: center;
 }
 
@@ -130,50 +93,49 @@
   display: none;
 }
 
-.logbookTable th.priority0, 
+.logbookTable th.priority0,
 .logbookTable td.priority0 {
   display: table-cell;
 }
 
 @media (min-width: 345px) {
-  .logbookTable th.priority1, 
+  .logbookTable th.priority1,
   .logbookTable td.priority1 {
     display: table-cell;
   }
 }
 
 @media (min-width: 430px) {
-  .logbookTable th.priority2, 
+  .logbookTable th.priority2,
   .logbookTable td.priority2 {
     display: table-cell;
   }
 }
 
 @media (min-width: 590px) {
-  .logbookTable th.priority3, 
+  .logbookTable th.priority3,
   .logbookTable td.priority3 {
     display: table-cell;
-  } 
+  }
 }
 
 @media (min-width: 730px) {
-  .logbookTable th.priority4, 
+  .logbookTable th.priority4,
   .logbookTable td.priority4 {
     display: table-cell;
   }
 }
 
 @media (min-width: 885px) {
-  .logbookTable th.priority5, 
+  .logbookTable th.priority5,
   .logbookTable td.priority5 {
     display: table-cell;
-  } 
+  }
 }
 
-
 @media (min-width: 1020px) {
-  .logbookTable th.priority6, 
+  .logbookTable th.priority6,
   .logbookTable td.priority6 {
     display: table-cell;
-  } 
+  }
 }

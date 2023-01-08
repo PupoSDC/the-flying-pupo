@@ -7,9 +7,9 @@ import {
   AiOutlineInstagram,
   AiOutlineLinkedin,
 } from "react-icons/ai";
+import { FaHome } from "react-icons/fa";
 import Link from "next/link";
 import { default as styles } from "./styles.module.css";
-import { FaHome } from "react-icons/fa";
 
 const getData = async () => {
   const file = path.join(process.cwd(), "public", "records", `flightLog.json`);
@@ -178,8 +178,8 @@ const StatsPage = async () => {
         </p>
         <p>
           I did all of this in <b>{aircraftCount} different aircraft</b> of{" "}
-          <b>{aircraftTypeCount}</b> types. My most often flown aircraft type
-          is the <b>{mostFrequentType}</b>.
+          <b>{aircraftTypeCount}</b> types. My most often flown aircraft type is
+          the <b>{mostFrequentType}</b>.
         </p>
         <p>
           I've performed <b>{landings} landings</b> in{" "}

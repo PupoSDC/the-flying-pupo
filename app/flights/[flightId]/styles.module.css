@@ -1,0 +1,112 @@
+.mainContainer {
+  min-height: 100vh;
+  padding: 0;
+}
+
+.mapSection {
+  max-height: 75vh;
+  height: 100vh;
+  max-width: 1400px;
+  margin: auto;
+  padding-top: 3em;
+}
+
+.mapSection > div {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.mapSection > div a {
+  padding: 0;
+  border: 1px solid #ccc;
+}
+
+.dataSection {
+  max-width: 1400px;
+  margin: auto;
+  padding: 1em;
+}
+
+.dataSection h1 {
+  display: none;
+}
+
+.dataChapter {
+  display: flex;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid white;
+}
+
+.chapterTitle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 2em;
+  padding: 0.25em;
+  color: white;
+  border-right: 1px solid white;
+}
+
+.chapterContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-left: 0.5em;
+}
+
+.sectionTitle {
+  font-size: 0.75em;
+  white-space: nowrap;
+}
+
+.totalsTable {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.totalsTable .chapterContent {
+  padding: 0.25em;
+  border-bottom: 1px solid white;
+}
+
+.totalsTable .chapterContent:not(:nth-last-child(1)) > * {
+  border-right: 1px solid white;
+}
+
+.descriptionContent {
+  padding: 0.5em 0;
+  border-bottom: 1px solid white;
+}
+
+@media (min-width: 1700px) {
+  .pageWrapper header {
+    display: none;
+  }
+
+  .mainContainer {
+    display: flex;
+    flex-direction: row;
+    padding: 1em;
+    align-items: flex-start;
+  }
+
+  .dataSection {
+    width: 450px;
+    margin: 0;
+    padding-top: 3em;
+  }
+
+  .dataSection h1 {
+    display: block;
+  }
+
+  .mapSection {
+    flex: 1;
+    margin: 0;
+    max-width: 10000px;
+    max-height: calc(100vh - 6em);
+  }
+}

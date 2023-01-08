@@ -24,7 +24,7 @@ export const flight: RawFlight = {
       text: "Cessna 152",
     },
     identification: {
-      registration: "CS-DAT"
+      registration: "CS-DAT",
     },
   },
   airport: {
