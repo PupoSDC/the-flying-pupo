@@ -100,7 +100,7 @@
   flex: 1;
 }
 
-@media (min-width: 1700px) {
+@media (min-width: 1400px) {
   .pageWrapper header {
     display: none;
   }
@@ -115,9 +115,11 @@
   .dataSection {
     width: 450px;
     margin: 0;
-    padding-top: 3em;
+    padding: 0;
+    margin-top: 1em;
+    margin-left: 1em;
     height: 100vh;
-    max-height: calc(100vh - 6em);
+    max-height: calc(100vh - 3em);
   }
 
   .dataSection h1 {
@@ -129,6 +131,8 @@
     flex: 1;
     margin: 0;
     max-width: 10000px;
-    max-height: calc(100vh - 6em);
+    padding: 0;
+    margin-top: 1em;
+    max-height: calc(100vh - 3em);
   }
 }
