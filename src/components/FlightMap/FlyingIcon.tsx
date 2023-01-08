@@ -5,7 +5,6 @@ import { memo, useEffect, useMemo, useRef } from "react";
 import { Marker } from "react-leaflet";
 import { Polyline } from "react-leaflet";
 import planeIcon from "./FlyingIcon.png";
-import "./flyingIcon.css"
 
 type FlyingIconProps = Pick<RawFlight, "track"> & {
   onClick?: () => void;
