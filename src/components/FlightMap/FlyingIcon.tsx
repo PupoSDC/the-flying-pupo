@@ -5,6 +5,7 @@ import { memo, useEffect, useMemo, useRef } from "react";
 import { Marker } from "react-leaflet";
 import { Polyline } from "react-leaflet";
 import planeIcon from "./FlyingIcon.png";
+import "./flyingIcon.css"
 
 type FlyingIconProps = Pick<RawFlight, "track"> & {
   onClick?: () => void;
@@ -199,19 +200,19 @@ export const FlyingIcon = memo<FlyingIconProps>(
 
     return (
       <>
-        <Polyline positions={path} color={"blue"} weight={2} />
+        <Polyline positions={path} color={"#1095c1"} weight={2} />
         <Polyline
           ref={polyLineRef}
           positions={[path[0]]}
           weight={2}
-          color={"blue"}
+          color={"#232d39"}
         />
         <Marker
           ref={markerRef}
           icon={
             new Icon({
               iconUrl: planeIcon.src,
-              iconSize: [12, 12],
+              iconSize: [16, 16],
               iconAnchor: [6, 6],
             })
           }

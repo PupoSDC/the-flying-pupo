@@ -1,3 +1,5 @@
-* .leaflet-marker-icon {
+.leaflet-marker-icon {
   transition: translate3d 50ms linear;
+  background-color: transparent;
+  border: none;
 }
