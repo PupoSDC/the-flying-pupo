@@ -2,6 +2,7 @@ import { default as fs } from "fs";
 import { default as path } from "path";
 import { Flight, FlightLogCarryOver } from "src/types/Flight";
 import { toHourString, toTimeString } from "src/utils/flightProcessing";
+import { FaPlane, Fa, FaHome } from "react-icons/fa"
 import { default as Link } from "next/link";
 import style from "./styles.module.css";
 
@@ -56,129 +57,143 @@ const IndexPage = async () => {
   const { flights, flightLog } = await getData();
 
   return (
-    <table aria-label="simple table" className={style.logbookTable}>
-      <thead className="bg-gray-300">
-        <tr>
-          <th align="left">
-            <div>Date</div>
-          </th>
-          <th align="center">
-            <div>Type</div>
-            <div>Registration</div>
-          </th>
-          <th align="center">
-            <div>From</div>
-            <div>To</div>
-          </th>
-          <th align="center">
-            <div>Departure</div>
-            <div>Arrival</div>
-          </th>        {/** 
-          <th align="center">
-            <div>Total Time</div>
-            <div>({toTimeString(flightLog.totalTime)})</div>
-          </th>
-          <th align="center">
-            <div>SEP</div>
-            <div>({toTimeString(flightLog.singleEnginePistonTime)})</div>
-          </th>
-          <th align="center">
-            <div>MEP</div>
-            <div>({toTimeString(flightLog.multiEnginePistonTime)})</div>
-          </th>
-          <th align="center">
-            <div>PIC</div>
-            <div>({toTimeString(flightLog.picTime)})</div>
-          </th>
-          <th align="center">
-            <div>Dual</div>
-            <div>({toTimeString(flightLog.dualTime)})</div>
-          </th>
-          <th align="center">
-            <div>Night</div>
-            <div>({toTimeString(flightLog.nightTime)})</div>
-          </th>
-          <th align="center">
-            <div>IFR</div>
-            <div>({toTimeString(flightLog.ifrTime)})</div>
-          </th>
-          <th align="center">
-            <div className="w-20">Landings</div>
-            <div>
-              ({flightLog.landings.day} | {flightLog.landings.night})
-            </div>
-          </th>
-  <th /> **/}
-        </tr>
-      </thead>
-      <tbody>
-        {flights.map(
-          ({
-            identification,
-            pilotLog,
-            airport,
-            aircraft,
-            tripDistanceCovered,
-          }) => (
-            <tr key={identification.id}>
-              <td align="left">
-                <div>
-                  {new Date(pilotLog.departure)
-                    .toISOString()
-                    .slice(0, 10)
-                    .replace(/-/g, ".")}
-                </div>
-              </td>
-              <td align="center">
-                <div>{aircraft.model.code}</div>
-                <div>{aircraft.identification.registration}</div>
-              </td>
-              <td align="center">
-                <div>{airport.origin.code}</div>
-                <div>{airport.destination.code}</div>
-              </td>
-              <td align="center">
-                <div>{toHourString(pilotLog.departure)}</div>
-                <div>{toHourString(pilotLog.arrival)}</div>
-              </td>
-              {/**               <td align="center">
-                <div>
-                  {toTimeString(
-                    (pilotLog.singleEnginePistonTime ?? 0) +
-                      (pilotLog.multiEnginePistonTime ?? 0)
-                  )}
-                </div>
-              </td>
-              <td align="center">
-                <div>{toTimeString(pilotLog.singleEnginePistonTime)}</div>
-              </td>
-              <td align="center">
-                <div>{toTimeString(pilotLog.multiEnginePistonTime)}</div>
-              </td>
-              <td align="center">
-                <div>{toTimeString(pilotLog.picTime)}</div>
-              </td>
-              <td align="center">
-                <div>{toTimeString(pilotLog.dualTime)}</div>
-              </td>
-              <td align="center">
-                <div>{toTimeString(pilotLog.nightTime)}</div>
-              </td>
-              <td align="center">
-                <div>{toTimeString(pilotLog.ifrTime)}</div>
-              </td>
-              <td align="center">
-                <div>{pilotLog.landings.day} | {pilotLog.landings.night}</div>
-              </td>
-              <td align="center">
-                <Link href={`flights/${identification.id}`}>link</Link>
-              </td> */}
+    <>
+      <header className={style.logbookHeader}>
+        <div>
+          <h1>My Logbook</h1>
 
+          <Link href="/"><FaHome /></Link>
+        </div>
+      </header>
+      <main className={style.logbookTable}>
+        <table aria-label="simple table">
+          <thead className="bg-gray-300">
+            <tr>
+              <th align="left" className={style.priority0}>
+                <div>Date</div>
+              </th>
+              <th align="center" className={style.priority0}>
+                <div>Type</div>
+                <div>Registration</div>
+              </th>
+              <th align="center" className={style.priority0}>
+                <div>From</div>
+                <div>To</div>
+              </th>
+              <th align="center" className={style.priority1}>
+                <div>Departure</div>
+                <div>Arrival</div>
+              </th>
+              <th align="center" className={style.priority2}>
+                <div>Total Time</div>
+                <div>({toTimeString(flightLog.totalTime)})</div>
+              </th>
+              <th align="center" className={style.priority4}>
+                <div>SEP</div>
+                <div>({toTimeString(flightLog.singleEnginePistonTime)})</div>
+              </th>
+              <th align="center" className={style.priority4}>
+                <div>MEP</div>
+                <div>({toTimeString(flightLog.multiEnginePistonTime)})</div>
+              </th>
+              <th align="center" className={style.priority3}>
+                <div>PIC</div>
+                <div>({toTimeString(flightLog.picTime)})</div>
+              </th>
+              <th align="center" className={style.priority3}>
+                <div>Dual</div>
+                <div>({toTimeString(flightLog.dualTime)})</div>
+              </th>
+              <th align="center" className={style.priority5}>
+                <div>Night</div>
+                <div>({toTimeString(flightLog.nightTime)})</div>
+              </th>
+              <th align="center" className={style.priority5}>
+                <div>IFR</div>
+                <div>({toTimeString(flightLog.ifrTime)})</div>
+              </th>
+              <th align="center" className={style.priority6}>
+                <div className="w-20">Landings</div>
+                <div>
+                  ({flightLog.landings.day} | {flightLog.landings.night})
+                </div>
+              </th>
+              <th className={style.priority0} />
             </tr>
-          )
-        )}
-      </tbody>
-    </table>
+          </thead>
+          <tbody>
+            {flights.map(
+              ({
+                identification,
+                pilotLog,
+                airport,
+                aircraft,
+                tripDistanceCovered,
+              }) => (
+                <tr key={identification.id}>
+                  <td align="left" className={style.priority0}>
+                    <div>
+                      {new Date(pilotLog.departure)
+                        .toISOString()
+                        .slice(0, 10)
+                        .replace(/-/g, ".")}
+                    </div>
+                  </td>
+                  <td align="center" className={style.priority0}>
+                    <div>{aircraft.model.code}</div>
+                    <div>{aircraft.identification.registration}</div>
+                  </td>
+                  <td align="center" className={style.priority0}>
+                    <div>{airport.origin.code}</div>
+                    <div>{airport.destination.code}</div>
+                  </td>
+                  <td align="center" className={style.priority1}>
+                    <div>{toHourString(pilotLog.departure)}</div>
+                    <div>{toHourString(pilotLog.arrival)}</div>
+                  </td>
+                  <td align="center" className={style.priority2}>
+                    <div>
+                      {toTimeString(
+                        (pilotLog.singleEnginePistonTime ?? 0) +
+                        (pilotLog.multiEnginePistonTime ?? 0)
+                      )}
+                    </div>
+                  </td>
+                  <td align="center" className={style.priority4}>
+                    <div>{toTimeString(pilotLog.singleEnginePistonTime)}</div>
+                  </td>
+                  <td align="center" className={style.priority4}>
+                    <div>{toTimeString(pilotLog.multiEnginePistonTime)}</div>
+                  </td>
+                  <td align="center" className={style.priority3}>
+                    <div>{toTimeString(pilotLog.picTime)}</div>
+                  </td>
+                  <td align="center" className={style.priority3}>
+                    <div>{toTimeString(pilotLog.dualTime)}</div>
+                  </td>
+                  <td align="center" className={style.priority5}>
+                    <div>{toTimeString(pilotLog.nightTime)}</div>
+                  </td>
+                  <td align="center" className={style.priority5}>
+                    <div>{toTimeString(pilotLog.ifrTime)}</div>
+                  </td>
+                  <td align="center" className={style.priority6}>
+                    <div>{pilotLog.landings.day} | {pilotLog.landings.night}</div>
+                  </td>
+                  <td align="center" className={style.priority0}>
+                    <Link href={`flights/${identification.id}`}><FaPlane /></Link>
+                  </td>
+
+                </tr>
+              )
+            )}
+          </tbody>
+        </table>
+      </main>
+      <footer className={style.logbookFooter}>
+
+      </footer>
+    </>
   );
 };
 
