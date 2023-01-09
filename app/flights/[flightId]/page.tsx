@@ -8,6 +8,7 @@ import { FaChevronLeft, FaChevronRight, FaClock, FaExternalLinkAlt, FaHome, FaLi
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { default as styles } from "./styles.module.css";
+import { flight } from "records/flights/2023/20230106EPLLEPLL";
 
 const getData = (id: string) => {
   const file = path.join(process.cwd(), "public", "records", `${id}.json`);
@@ -159,5 +160,14 @@ const FlightPage = async ({
     </div>
   );
 };
+
+export const generateStaticParams = async () => {
+  const file = path.join(process.cwd(), "public", "records", `flightLog.json`);
+  const flights: Flight[] = JSON.parse(fs.readFileSync(file, "utf8"));
+
+  return flights.map((flight) => ({
+    flightId: flight.identification.id,
+  }));
+}
 
 export default FlightPage;
