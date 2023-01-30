@@ -2,9 +2,7 @@ import { default as fs } from "fs";
 import { default as path } from "path";
 import { Header } from "src/components/Header";
 import { Flight } from "src/types/Flight";
-import { toHourString, toTimeString } from "src/utils/flightProcessing";
-import { FaPlane } from "react-icons/fa";
-import { default as Link } from "next/link";
+import { toTimeString } from "src/utils/flightProcessing";
 import { default as styles } from "./styles.module.css";
 
 const getData = async () => {
