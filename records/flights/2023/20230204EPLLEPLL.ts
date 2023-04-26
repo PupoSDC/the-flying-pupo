@@ -3,15 +3,15 @@ import { RawFlight } from "../../../src/types/Flight";
 export const flight: RawFlight = {
   identification: {
     id: "20230204EPLLEPLL",
-    callsign: "BNI8D",
+    callsign: "BNI6D",
     name: "CPL Referesher training",
     description: "",
   },
   pilotLog: {
     departure: new Date(2023, 1, 4, 7, 35).getTime(),
     arrival: new Date(2023, 1, 4, 8, 40).getTime(),
-    singleEnginePistonTime: 65,
-    multiEnginePistonTime: 0,
+    singleEnginePistonTime: 0,
+    multiEnginePistonTime: 65,
     picTime: 0,
     dualTime: 65,
     ifrTime: 0,
@@ -22,12 +22,12 @@ export const flight: RawFlight = {
   },
   aircraft: {
     model: {
-      code: "P208",
-      text: "Tecnam P-2008JC",
+      code: "P06T",
+      text: "Tecnam P-2006T",
     },
     identification: {
-      modes: "3D3720",
-      registration: "SP-PFD",
+      modes: "48B048",
+      registration: "SP-SID",
       serialNo: "N/A",
     },
   },
