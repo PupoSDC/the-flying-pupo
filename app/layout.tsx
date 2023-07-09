@@ -1,8 +1,8 @@
 import "@picocss/pico/css/pico.css";
-import { FunctionComponent } from "react";
+import { FunctionComponent, PropsWithChildren } from "react";
 import "./global.css";
 
-const RootLayout: FunctionComponent = ({ children }) => (
+const RootLayout: FunctionComponent<PropsWithChildren> = ({ children }) => (
   <html data-theme="dark">
     <body>{children}</body>
   </html>

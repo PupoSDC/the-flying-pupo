@@ -9,6 +9,7 @@ import {
 } from "react-icons/ai";
 import { FaHome } from "react-icons/fa";
 import Link from "next/link";
+import Image from "next/image";
 import { default as styles } from "./styles.module.css";
 
 const getData = async () => {
@@ -150,10 +151,11 @@ const StatsPage = async () => {
   return (
     <>
       <div className={styles.backgroundImage}>
-        <img
+        <Image
+          fill
           src="/images/me.jpg"
           alt="Me looking professional on an aircraft"
-        ></img>
+        />
       </div>
       <main className={styles.main}>
         <h1>About me</h1>
@@ -171,7 +173,7 @@ const StatsPage = async () => {
           started flying in September 2020 and have been enjoying it ever since.
         </p>
         <p>
-          I've done <b>{flightsCount} flights</b> so far, which took me{" "}
+          I&apos;ve done <b>{flightsCount} flights</b> so far, which took me{" "}
           <b>{toTimeString(flightTime)}</b> hours. During that time I covered
           (at least) <b>{tripDistanceCovered} NM</b>, which is enough to go
           around the equator <b>{tripsAroundTheWorld}</b> times.
@@ -182,7 +184,7 @@ const StatsPage = async () => {
           the <b>{mostFrequentType}</b>.
         </p>
         <p>
-          I've performed <b>{landings} landings</b> in{" "}
+          I&apos;ve performed <b>{landings} landings</b> in{" "}
           <b>{airportCount} airports</b> in <b>{countryCount} countries</b>
         </p>
         <p>
@@ -192,7 +194,7 @@ const StatsPage = async () => {
           me <b>{toTimeString(longestDailyFlightTime)}</b> hours to complete.
         </p>
         <p>
-          If you would like to know more about where I've been flying, you can
+          If you would like to know more about where I&apos;ve been flying, you can
           explore <Link href={"logbook"}>my Logbook</Link>.
         </p>
       </main>
