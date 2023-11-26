@@ -54,6 +54,7 @@ const compileRecords = async () => {
         totalTime: 0,
         singleEnginePistonTime: 0,
         multiEnginePistonTime: 0,
+        multiPilotTime: 0,
         nightTime: 0,
         ifrTime: 0,
         picTime: 0,
@@ -77,6 +78,7 @@ const compileRecords = async () => {
         carryOver.totalTime += flight.pilotLog.multiEnginePistonTime ?? 0;
         carryOver.singleEnginePistonTime += flight.pilotLog.singleEnginePistonTime ?? 0;
         carryOver.multiEnginePistonTime += flight.pilotLog.multiEnginePistonTime ?? 0;
+        carryOver.multiPilotTime += flight.pilotLog.multiPilotTime ?? 0;
         carryOver.nightTime += flight.pilotLog.nightTime ?? 0;
         carryOver.ifrTime += flight.pilotLog.ifrTime ?? 0;
         carryOver.picTime += flight.pilotLog.picTime ?? 0;

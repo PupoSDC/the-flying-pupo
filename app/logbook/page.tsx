@@ -54,6 +54,10 @@ const IndexPage = async () => {
                 <div>MEP</div>
                 <div>({toTimeString(flightLog.multiEnginePistonTime)})</div>
               </th>
+              <th align="center" className={styles.priority4}>
+                <div>Multi Pilot</div>
+                <div>({toTimeString(flightLog.multiPilotTime)})</div>
+              </th>
               <th align="center" className={styles.priority3}>
                 <div>PIC</div>
                 <div>({toTimeString(flightLog.picTime)})</div>
@@ -121,6 +125,9 @@ const IndexPage = async () => {
                   </td>
                   <td align="center" className={styles.priority4}>
                     <div>{toTimeString(pilotLog.multiEnginePistonTime)}</div>
+                  </td>
+                  <td align="center" className={styles.priority4}>
+                    <div>{toTimeString(pilotLog.multiPilotTime)}</div>
                   </td>
                   <td align="center" className={styles.priority3}>
                     <div>{toTimeString(pilotLog.picTime)}</div>
