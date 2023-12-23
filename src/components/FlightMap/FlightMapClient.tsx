@@ -1,8 +1,8 @@
+import type { FunctionComponent } from "react";
+import { MapContainer, TileLayer } from "react-leaflet";
 import type { LatLngLiteral } from "leaflet";
 import "leaflet/dist/leaflet.css";
 import type { Flight } from "src/types/Flight";
-import type { FunctionComponent } from "react";
-import { MapContainer, TileLayer } from "react-leaflet";
 import { FlyingIcon } from "./FlyingIcon";
 
 export type FlightMapProps = {

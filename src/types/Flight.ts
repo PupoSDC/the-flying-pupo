@@ -14,9 +14,9 @@ export type RawFlight = {
 export type Flight = RawFlight & {
   tripDistance: number;
   tripDistanceCovered: number;
-  flightLogCarryOver: FlightLogCarryOver,
-  nextId?: string
-  previousId?: string
+  flightLogCarryOver: FlightLogCarryOver;
+  nextId?: string;
+  previousId?: string;
 };
 
 export type Identification = {

@@ -1,8 +1,8 @@
+import { notFound } from "next/navigation";
 import { default as fs } from "fs";
 import { default as path } from "path";
 import { FlightMap } from "src/components/FlightMap";
 import { Flight } from "src/types/Flight";
-import { notFound } from "next/navigation";
 
 const getData = async () => {
   const file = path.join(process.cwd(), "public", "records", `flightLog.json`);

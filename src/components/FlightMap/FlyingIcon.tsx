@@ -1,9 +1,9 @@
-import { Icon, Marker as MarkerRef, Polyline as PolylineRef } from "leaflet";
-import "leaflet-rotatedmarker";
-import { RawFlight, TrackEntity } from "src/types/Flight";
 import { memo, useEffect, useMemo, useRef } from "react";
 import { Marker } from "react-leaflet";
 import { Polyline } from "react-leaflet";
+import { Icon, Marker as MarkerRef, Polyline as PolylineRef } from "leaflet";
+import "leaflet-rotatedmarker";
+import { RawFlight, TrackEntity } from "src/types/Flight";
 import planeIcon from "./FlyingIcon.png";
 
 type FlyingIconProps = Pick<RawFlight, "track"> & {
@@ -23,7 +23,7 @@ type LagrangeInterpolation = (pointsY: number[], x: number) => number;
  * @param pointsX the X coordinates (timestaps in this case)
  */
 const lagrangeInterpolationFactory = (
-  pointsX: number[]
+  pointsX: number[],
 ): LagrangeInterpolation => {
   const k = pointsX.length;
   const weights: number[] = [];
@@ -60,52 +60,52 @@ const lagrangeInterpolationFactory = (
 const mapInterpolationToTrackEntity = (
   interpolation: LagrangeInterpolation,
   track: TrackEntity[],
-  timestamp: number
+  timestamp: number,
 ): TrackEntity => ({
   latitude: interpolation(
     track.map((t) => t.latitude),
-    timestamp
+    timestamp,
   ),
   longitude: interpolation(
     track.map((t) => t.longitude),
-    timestamp
+    timestamp,
   ),
   heading: interpolation(
     track.map((t) => t.heading),
-    timestamp
+    timestamp,
   ),
   altitude: {
     feet: interpolation(
       track.map((t) => t.altitude.feet),
-      timestamp
+      timestamp,
     ),
     meters: interpolation(
       track.map((t) => t.altitude.meters),
-      timestamp
+      timestamp,
     ),
   },
   speed: {
     kmh: interpolation(
       track.map((t) => t.speed.kmh),
-      timestamp
+      timestamp,
     ),
     kts: interpolation(
       track.map((t) => t.speed.kts),
-      timestamp
+      timestamp,
     ),
     mph: interpolation(
       track.map((t) => t.speed.mph),
-      timestamp
+      timestamp,
     ),
   },
   verticalSpeed: {
     fpm: interpolation(
       track.map((t) => t.verticalSpeed.fpm),
-      timestamp
+      timestamp,
     ),
     ms: interpolation(
       track.map((t) => t.verticalSpeed.ms),
-      timestamp
+      timestamp,
     ),
   },
   squawk: track[0].squawk,
@@ -121,7 +121,7 @@ const mapInterpolationToTrackEntity = (
  * */
 const interpolateTrack = (
   track: TrackEntity[],
-  speed: number
+  speed: number,
 ): TrackEntity[] => {
   return track;
   const timeStep = (1 / 40) * speed;
@@ -149,7 +149,7 @@ const interpolateTrack = (
     const newTrackPoint = mapInterpolationToTrackEntity(
       interpolate,
       track.slice(firstIndex, firstIndex + 3),
-      currentTime
+      currentTime,
     );
     result.push(newTrackPoint);
     currentTime = currentTime + timeStep;
@@ -173,7 +173,7 @@ export const FlyingIcon = memo<FlyingIconProps>(
             lng: point.longitude,
             angle: point.heading,
           })),
-      [track, speedMultiplier]
+      [track, speedMultiplier],
     );
 
     useEffect(() => {
@@ -221,5 +221,5 @@ export const FlyingIcon = memo<FlyingIconProps>(
         />
       </>
     );
-  }
+  },
 );

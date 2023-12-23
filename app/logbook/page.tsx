@@ -1,10 +1,10 @@
+import { FaPlane } from "react-icons/fa";
+import { default as Link } from "next/link";
 import { default as fs } from "fs";
 import { default as path } from "path";
 import { Header } from "src/components/Header";
 import { Flight } from "src/types/Flight";
 import { toHourString, toTimeString } from "src/utils/flightProcessing";
-import { FaPlane } from "react-icons/fa";
-import { default as Link } from "next/link";
 import { default as styles } from "./styles.module.css";
 
 const getData = async () => {
@@ -84,76 +84,69 @@ const IndexPage = async () => {
             </tr>
           </thead>
           <tbody>
-            {flights.map(
-              ({
-                identification,
-                pilotLog,
-                airport,
-                aircraft,
-              }) => (
-                <tr key={identification.id}>
-                  <td align="left" className={styles.priority0}>
-                    <div>
-                      {new Date(pilotLog.departure)
-                        .toISOString()
-                        .slice(0, 10)
-                        .replace(/-/g, ".")}
-                    </div>
-                  </td>
-                  <td align="left" className={styles.priority0}>
-                    <div>{aircraft.model.code}</div>
-                    <div>{aircraft.identification.registration}</div>
-                  </td>
-                  <td align="left" className={styles.priority0}>
-                    <div>{airport.origin.code}</div>
-                    <div>{airport.destination.code}</div>
-                  </td>
-                  <td align="left" className={styles.priority1}>
-                    <div>{toHourString(pilotLog.departure)}</div>
-                    <div>{toHourString(pilotLog.arrival)}</div>
-                  </td>
-                  <td align="center" className={styles.priority2}>
-                    <div>
-                      {toTimeString(
-                        (pilotLog.singleEnginePistonTime ?? 0) +
-                          (pilotLog.multiEnginePistonTime ?? 0)
-                      )}
-                    </div>
-                  </td>
-                  <td align="center" className={styles.priority4}>
-                    <div>{toTimeString(pilotLog.singleEnginePistonTime)}</div>
-                  </td>
-                  <td align="center" className={styles.priority4}>
-                    <div>{toTimeString(pilotLog.multiEnginePistonTime)}</div>
-                  </td>
-                  <td align="center" className={styles.priority4}>
-                    <div>{toTimeString(pilotLog.multiPilotTime)}</div>
-                  </td>
-                  <td align="center" className={styles.priority3}>
-                    <div>{toTimeString(pilotLog.picTime)}</div>
-                  </td>
-                  <td align="center" className={styles.priority3}>
-                    <div>{toTimeString(pilotLog.dualTime)}</div>
-                  </td>
-                  <td align="center" className={styles.priority5}>
-                    <div>{toTimeString(pilotLog.nightTime)}</div>
-                  </td>
-                  <td align="center" className={styles.priority5}>
-                    <div>{toTimeString(pilotLog.ifrTime)}</div>
-                  </td>
-                  <td align="center" className={styles.priority6}>
-                    <div>
-                      {pilotLog.landings.day} | {pilotLog.landings.night}
-                    </div>
-                  </td>
-                  <td align="center" className={styles.priority0}>
-                    <Link href={`flights/${identification.id}`}>
-                      <FaPlane />
-                    </Link>
-                  </td>
-                </tr>
-              )
-            )}
+            {flights.map(({ identification, pilotLog, airport, aircraft }) => (
+              <tr key={identification.id}>
+                <td align="left" className={styles.priority0}>
+                  <div>
+                    {new Date(pilotLog.departure)
+                      .toISOString()
+                      .slice(0, 10)
+                      .replace(/-/g, ".")}
+                  </div>
+                </td>
+                <td align="left" className={styles.priority0}>
+                  <div>{aircraft.model.code}</div>
+                  <div>{aircraft.identification.registration}</div>
+                </td>
+                <td align="left" className={styles.priority0}>
+                  <div>{airport.origin.code}</div>
+                  <div>{airport.destination.code}</div>
+                </td>
+                <td align="left" className={styles.priority1}>
+                  <div>{toHourString(pilotLog.departure)}</div>
+                  <div>{toHourString(pilotLog.arrival)}</div>
+                </td>
+                <td align="center" className={styles.priority2}>
+                  <div>
+                    {toTimeString(
+                      (pilotLog.singleEnginePistonTime ?? 0) +
+                        (pilotLog.multiEnginePistonTime ?? 0),
+                    )}
+                  </div>
+                </td>
+                <td align="center" className={styles.priority4}>
+                  <div>{toTimeString(pilotLog.singleEnginePistonTime)}</div>
+                </td>
+                <td align="center" className={styles.priority4}>
+                  <div>{toTimeString(pilotLog.multiEnginePistonTime)}</div>
+                </td>
+                <td align="center" className={styles.priority4}>
+                  <div>{toTimeString(pilotLog.multiPilotTime)}</div>
+                </td>
+                <td align="center" className={styles.priority3}>
+                  <div>{toTimeString(pilotLog.picTime)}</div>
+                </td>
+                <td align="center" className={styles.priority3}>
+                  <div>{toTimeString(pilotLog.dualTime)}</div>
+                </td>
+                <td align="center" className={styles.priority5}>
+                  <div>{toTimeString(pilotLog.nightTime)}</div>
+                </td>
+                <td align="center" className={styles.priority5}>
+                  <div>{toTimeString(pilotLog.ifrTime)}</div>
+                </td>
+                <td align="center" className={styles.priority6}>
+                  <div>
+                    {pilotLog.landings.day} | {pilotLog.landings.night}
+                  </div>
+                </td>
+                <td align="center" className={styles.priority0}>
+                  <Link href={`flights/${identification.id}`}>
+                    <FaPlane />
+                  </Link>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </main>

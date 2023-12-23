@@ -65,45 +65,79 @@ const IndexPage = async () => {
             </tr>
           </thead>
           <tbody>
-            {Object.entries(flights.reduce<Record<string, {
-              singleEnginePistonTime: number,
-              multiEnginePistonTime: number,
-              picTime: number,
-              dualTime: number,
-              nightTime: number,
-              ifrTime: number,
-              ladingsDay: number,
-              landingsNight: number,
-            }>>((sum, entry) => ({
-              ...sum,
-              [entry.identification.id.slice(0, 6)]: {
-                singleEnginePistonTime: (sum[entry.identification.id.slice(0, 6)]?.singleEnginePistonTime ?? 0) + (entry.pilotLog.singleEnginePistonTime ?? 0),
-                multiEnginePistonTime: (sum[entry.identification.id.slice(0, 6)]?.multiEnginePistonTime ?? 0) + (entry.pilotLog.multiEnginePistonTime ?? 0),
-                picTime: (sum[entry.identification.id.slice(0, 6)]?.picTime ?? 0) + (entry.pilotLog.picTime ?? 0),
-                dualTime: (sum[entry.identification.id.slice(0, 6)]?.dualTime ?? 0) + (entry.pilotLog.dualTime ?? 0),
-                nightTime: (sum[entry.identification.id.slice(0, 6)]?.nightTime ?? 0) + (entry.pilotLog.nightTime ?? 0),
-                ifrTime: (sum[entry.identification.id.slice(0, 6)]?.ifrTime ?? 0) + (entry.pilotLog.ifrTime ?? 0),
-                ladingsDay: (sum[entry.identification.id.slice(0, 6)]?.ladingsDay ?? 0) + (entry.pilotLog.landings.day ?? 0),
-                landingsNight: (sum[entry.identification.id.slice(0, 6)]?.landingsNight ?? 0) + (entry.pilotLog.landings.night ?? 0),
-              }
-            }), {})).map(
-              ([identification, {
-                singleEnginePistonTime,
-                multiEnginePistonTime,
-                picTime,
-                dualTime,
-                nightTime,
-                ifrTime,
-                ladingsDay,
-                landingsNight,
-              }]) => (
+            {Object.entries(
+              flights.reduce<
+                Record<
+                  string,
+                  {
+                    singleEnginePistonTime: number;
+                    multiEnginePistonTime: number;
+                    picTime: number;
+                    dualTime: number;
+                    nightTime: number;
+                    ifrTime: number;
+                    ladingsDay: number;
+                    landingsNight: number;
+                  }
+                >
+              >(
+                (sum, entry) => ({
+                  ...sum,
+                  [entry.identification.id.slice(0, 6)]: {
+                    singleEnginePistonTime:
+                      (sum[entry.identification.id.slice(0, 6)]
+                        ?.singleEnginePistonTime ?? 0) +
+                      (entry.pilotLog.singleEnginePistonTime ?? 0),
+                    multiEnginePistonTime:
+                      (sum[entry.identification.id.slice(0, 6)]
+                        ?.multiEnginePistonTime ?? 0) +
+                      (entry.pilotLog.multiEnginePistonTime ?? 0),
+                    picTime:
+                      (sum[entry.identification.id.slice(0, 6)]?.picTime ?? 0) +
+                      (entry.pilotLog.picTime ?? 0),
+                    dualTime:
+                      (sum[entry.identification.id.slice(0, 6)]?.dualTime ??
+                        0) + (entry.pilotLog.dualTime ?? 0),
+                    nightTime:
+                      (sum[entry.identification.id.slice(0, 6)]?.nightTime ??
+                        0) + (entry.pilotLog.nightTime ?? 0),
+                    ifrTime:
+                      (sum[entry.identification.id.slice(0, 6)]?.ifrTime ?? 0) +
+                      (entry.pilotLog.ifrTime ?? 0),
+                    ladingsDay:
+                      (sum[entry.identification.id.slice(0, 6)]?.ladingsDay ??
+                        0) + (entry.pilotLog.landings.day ?? 0),
+                    landingsNight:
+                      (sum[entry.identification.id.slice(0, 6)]
+                        ?.landingsNight ?? 0) +
+                      (entry.pilotLog.landings.night ?? 0),
+                  },
+                }),
+                {},
+              ),
+            ).map(
+              ([
+                identification,
+                {
+                  singleEnginePistonTime,
+                  multiEnginePistonTime,
+                  picTime,
+                  dualTime,
+                  nightTime,
+                  ifrTime,
+                  ladingsDay,
+                  landingsNight,
+                },
+              ]) => (
                 <tr key={identification}>
                   <td align="center" className={styles.priority2}>
                     {identification.slice(0, 4)}.{identification.slice(4, 6)}
                   </td>
                   <td align="center" className={styles.priority2}>
                     <div>
-                      {toTimeString(singleEnginePistonTime + multiEnginePistonTime)}
+                      {toTimeString(
+                        singleEnginePistonTime + multiEnginePistonTime,
+                      )}
                     </div>
                   </td>
                   <td align="center" className={styles.priority4}>
@@ -130,7 +164,7 @@ const IndexPage = async () => {
                     </div>
                   </td>
                 </tr>
-              )
+              ),
             )}
           </tbody>
         </table>

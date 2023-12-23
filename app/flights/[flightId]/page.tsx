@@ -1,14 +1,22 @@
+import {
+  FaChevronLeft,
+  FaChevronRight,
+  FaClock,
+  FaExternalLinkAlt,
+  FaHome,
+  FaListAlt,
+  FaPlane,
+} from "react-icons/fa";
+import Link from "next/link";
+import { notFound } from "next/navigation";
 import { default as fs } from "fs";
 import { default as path } from "path";
+import { flight } from "records/flights/2023/20230106EPLLEPLL";
 import { FlightMap } from "src/components/FlightMap";
 import { Header } from "src/components/Header";
 import type { Flight } from "src/types/Flight";
 import { toHourString, toTimeString } from "src/utils/flightProcessing";
-import { FaChevronLeft, FaChevronRight, FaClock, FaExternalLinkAlt, FaHome, FaListAlt, FaPlane } from "react-icons/fa";
-import Link from "next/link";
-import { notFound } from "next/navigation";
 import { default as styles } from "./styles.module.css";
-import { flight } from "records/flights/2023/20230106EPLLEPLL";
 
 const getData = (id: string) => {
   const file = path.join(process.cwd(), "public", "records", `${id}.json`);
@@ -104,17 +112,26 @@ const FlightPage = async ({
             <div className={styles.chapterContent}>
               <div className={styles.sectionTitle}>SEP Time</div>
               <div>{toTimeString(flight.pilotLog.singleEnginePistonTime)}</div>
-              <small>({toTimeString(flight.flightLogCarryOver.singleEnginePistonTime)})</small>
+              <small>
+                (
+                {toTimeString(flight.flightLogCarryOver.singleEnginePistonTime)}
+                )
+              </small>
             </div>
             <div className={styles.chapterContent}>
               <div className={styles.sectionTitle}>MEP Time</div>
               <div>{toTimeString(flight.pilotLog.multiEnginePistonTime)}</div>
-              <small>({toTimeString(flight.flightLogCarryOver.multiEnginePistonTime)})</small>
+              <small>
+                ({toTimeString(flight.flightLogCarryOver.multiEnginePistonTime)}
+                )
+              </small>
             </div>
             <div className={styles.chapterContent}>
               <div className={styles.sectionTitle}>MultiPilot Time</div>
               <div>{toTimeString(flight.pilotLog.multiPilotTime)}</div>
-              <small>({toTimeString(flight.flightLogCarryOver.multiPilotTime)})</small>
+              <small>
+                ({toTimeString(flight.flightLogCarryOver.multiPilotTime)})
+              </small>
             </div>
           </div>
           <div className={styles.totalsTable}>
@@ -126,7 +143,9 @@ const FlightPage = async ({
             <div className={styles.chapterContent}>
               <div className={styles.sectionTitle}>Dual Time</div>
               <div>{toTimeString(flight.pilotLog.dualTime)}</div>
-              <small>({toTimeString(flight.flightLogCarryOver.dualTime)})</small>
+              <small>
+                ({toTimeString(flight.flightLogCarryOver.dualTime)})
+              </small>
             </div>
             <div className={styles.chapterContent}>
               <div className={styles.sectionTitle}>FI Time</div>
@@ -137,21 +156,37 @@ const FlightPage = async ({
           <div className={styles.totalsTable}>
             <div className={styles.chapterContent}>
               <div className={styles.sectionTitle}>Night Time</div>
-              <div>{toTimeString(flight.pilotLog.nightTime)} <small>({toTimeString(flight.flightLogCarryOver.nightTime)})</small></div>
+              <div>
+                {toTimeString(flight.pilotLog.nightTime)}{" "}
+                <small>
+                  ({toTimeString(flight.flightLogCarryOver.nightTime)})
+                </small>
+              </div>
             </div>
             <div className={styles.chapterContent}>
               <div className={styles.sectionTitle}>IFR Time</div>
-              <div>{toTimeString(flight.pilotLog.ifrTime)} <small>({toTimeString(flight.flightLogCarryOver.ifrTime)})</small></div>
+              <div>
+                {toTimeString(flight.pilotLog.ifrTime)}{" "}
+                <small>
+                  ({toTimeString(flight.flightLogCarryOver.ifrTime)})
+                </small>
+              </div>
             </div>
           </div>
           <div className={styles.totalsTable}>
             <div className={styles.chapterContent}>
               <div className={styles.sectionTitle}>Day Landings</div>
-              <div>{flight.pilotLog.landings.day} <small>({flight.flightLogCarryOver.landings.day})</small></div>
+              <div>
+                {flight.pilotLog.landings.day}{" "}
+                <small>({flight.flightLogCarryOver.landings.day})</small>
+              </div>
             </div>
             <div className={styles.chapterContent}>
               <div className={styles.sectionTitle}>Night Landings</div>
-              <div>{flight.pilotLog.landings.night} <small>({flight.flightLogCarryOver.landings.night})</small></div>
+              <div>
+                {flight.pilotLog.landings.night}{" "}
+                <small>({flight.flightLogCarryOver.landings.night})</small>
+              </div>
             </div>
           </div>
           <div className={styles.descriptionContent}>
@@ -162,10 +197,24 @@ const FlightPage = async ({
           </div>
           <div className={styles.flex} />
           <div className={styles.controlsContainer}>
-            <Link href={flight.previousId ? `/flights/${flight.previousId}` : "logbook"}><FaChevronLeft /></Link>
-            <Link href="/logbook"><FaListAlt /></Link>
-            <Link href="/"><FaHome /></Link>
-            <Link href={flight.nextId ? `/flights/${flight.nextId}` : "logbook"}><FaChevronRight /></Link>
+            <Link
+              href={
+                flight.previousId ? `/flights/${flight.previousId}` : "logbook"
+              }
+            >
+              <FaChevronLeft />
+            </Link>
+            <Link href="/logbook">
+              <FaListAlt />
+            </Link>
+            <Link href="/">
+              <FaHome />
+            </Link>
+            <Link
+              href={flight.nextId ? `/flights/${flight.nextId}` : "logbook"}
+            >
+              <FaChevronRight />
+            </Link>
           </div>
         </section>
       </main>
@@ -180,6 +229,6 @@ export const generateStaticParams = async () => {
   return flights.map((flight) => ({
     flightId: flight.identification.id,
   }));
-}
+};
 
 export default FlightPage;

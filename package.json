@@ -18,7 +18,7 @@
     "test:coverage": "jest --coverage",
     "type-check": "tsc",
     "lint": "eslint --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\"",
-    "format": "prettier \"(src|app|records)/**/*.+(ts|js|tsx|css)\" --write",
+    "prettier": "prettier \"(src|app|records)/**/*.+(ts|js|tsx|css)\" --write",
     "postinstall": "husky install"
   },
   "dependencies": {
@@ -65,21 +65,17 @@
     }
   },
   "prettier": {
-    "importOrderParserPlugins": [
-      "classProperties",
-      "typescript",
-      "jsx"
+    "plugins": [
+      "@trivago/prettier-plugin-sort-imports"
     ],
-    "importOrderSortSpecifiers": true,
     "importOrder": [
-      "^react(.*)",
-      "^next(.*)",
-      "^@react(.*)",
-      "^@fontsource(.*)",
-      "^@mui(.*)",
-      "^@fullcalendar/react",
-      "^@widu(.*)",
-      "^[./]"
+      "^react(.*)?$",
+      "^next(.*)?$",
+      "<THIRD_PARTY_MODULES>",
+      "^[./]",
+      "<THIRD_PARTY_TS_TYPES>",
+      "<TS_TYPES>",
+      "^@fontsource(/.*)?$"
     ]
   },
   "lint-staged": {

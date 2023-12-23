@@ -1,5 +1,5 @@
-import "@picocss/pico/css/pico.css";
 import { FunctionComponent, PropsWithChildren } from "react";
+import "@picocss/pico/css/pico.css";
 import "./global.css";
 
 const RootLayout: FunctionComponent<PropsWithChildren> = ({ children }) => (
@@ -9,7 +9,7 @@ const RootLayout: FunctionComponent<PropsWithChildren> = ({ children }) => (
 );
 
 export const metadata = {
-  title: 'The Flying Pupo',
+  title: "The Flying Pupo",
 };
 
 export default RootLayout;

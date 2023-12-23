@@ -1,15 +1,15 @@
-import { default as fs } from "fs";
-import { default as path } from "path";
-import { Flight } from "src/types/Flight";
-import { toTimeString } from "src/utils/flightProcessing";
 import {
   AiOutlineGithub,
   AiOutlineInstagram,
   AiOutlineLinkedin,
 } from "react-icons/ai";
 import { FaHome } from "react-icons/fa";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
+import { default as fs } from "fs";
+import { default as path } from "path";
+import { Flight } from "src/types/Flight";
+import { toTimeString } from "src/utils/flightProcessing";
 import { default as styles } from "./styles.module.css";
 
 const getData = async () => {
@@ -17,7 +17,7 @@ const getData = async () => {
   const rawFlights: Flight[] = JSON.parse(fs.readFileSync(file, "utf8"));
 
   const tripDistance = Math.floor(
-    rawFlights.reduce((s, r) => s + r.tripDistance, 0)
+    rawFlights.reduce((s, r) => s + r.tripDistance, 0),
   );
 
   const flightTime = Math.floor(
@@ -27,22 +27,22 @@ const getData = async () => {
         (r.pilotLog.singleEnginePistonTime ?? 0) +
         (r.pilotLog.multiEnginePistonTime ?? 0)
       );
-    }, 0)
+    }, 0),
   );
 
   const tripDistanceCovered = Math.floor(
-    rawFlights.reduce((s, r) => s + r.tripDistanceCovered, 0)
+    rawFlights.reduce((s, r) => s + r.tripDistanceCovered, 0),
   );
 
   const maxDistanceInOneFlight = Math.floor(
-    rawFlights.reduce((s, r) => Math.max(s, r.tripDistanceCovered), 0)
+    rawFlights.reduce((s, r) => Math.max(s, r.tripDistanceCovered), 0),
   );
 
   const longestFlightTime = Math.floor(
     rawFlights.reduce(
       (s, r) => Math.max(s, r.pilotLog.singleEnginePistonTime ?? 0),
-      0
-    )
+      0,
+    ),
   );
 
   const longestDailyFlightTime = Math.floor(
@@ -53,8 +53,8 @@ const getData = async () => {
           ...s,
           [key]: (s[key] ?? 0) + (r.pilotLog.singleEnginePistonTime ?? 0),
         };
-      }, {})
-    ).reduce((s, r) => Math.max(s, r), 0)
+      }, {}),
+    ).reduce((s, r) => Math.max(s, r), 0),
   );
 
   const maxDistanceInOneDay = Math.floor(
@@ -65,8 +65,8 @@ const getData = async () => {
           ...s,
           [key]: (s[key] ?? 0) + r.tripDistanceCovered,
         };
-      }, {})
-    ).reduce((s, r) => Math.max(s, r), 0)
+      }, {}),
+    ).reduce((s, r) => Math.max(s, r), 0),
   );
 
   const airportCount = [
@@ -74,7 +74,7 @@ const getData = async () => {
       rawFlights.flatMap((r) => [
         r.airport.destination.code,
         r.airport.origin.code,
-      ])
+      ]),
     ),
   ].length;
 
@@ -83,7 +83,7 @@ const getData = async () => {
       rawFlights.flatMap((r) => [
         r.airport.destination.code.slice(0, 2),
         r.airport.origin.code.slice(0, 2),
-      ])
+      ]),
     ),
   ].length;
 
@@ -94,7 +94,7 @@ const getData = async () => {
         ...s,
         [key]: (s[key] ?? 0) + 1,
       };
-    }, {})
+    }, {}),
   ).sort((a, b) => b[1] - a[1])[0][0];
 
   const landings = rawFlights.reduce((s, r) => {
@@ -194,8 +194,8 @@ const StatsPage = async () => {
           me <b>{toTimeString(longestDailyFlightTime)}</b> hours to complete.
         </p>
         <p>
-          If you would like to know more about where I&apos;ve been flying, you can
-          explore <Link href={"logbook"}>my Logbook</Link>.
+          If you would like to know more about where I&apos;ve been flying, you
+          can explore <Link href={"logbook"}>my Logbook</Link>.
         </p>
       </main>
       <footer className={styles.footer}>

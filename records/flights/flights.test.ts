@@ -9,7 +9,7 @@ const flightTime = (departureTime: Date, arrivalTime: Date) => {
 const operationTime = (flight: RawFlight) => {
   return (
     (flight.pilotLog.singleEnginePistonTime ?? 0) +
-    (flight.pilotLog.multiEnginePistonTime ?? 0) + 
+    (flight.pilotLog.multiEnginePistonTime ?? 0) +
     (flight.pilotLog.multiPilotTime ?? 0)
   );
 };
@@ -18,7 +18,9 @@ const filesToTest = fs
   .readdirSync("./records/flights", { withFileTypes: true })
   .filter((e) => e.isDirectory())
   .flatMap((e) =>
-    fs.readdirSync(`./records/flights/${e.name}`).map((f) => `./${e.name}/${f}`)
+    fs
+      .readdirSync(`./records/flights/${e.name}`)
+      .map((f) => `./${e.name}/${f}`),
   )
   .filter((e) => e.includes(".ts"));
 
@@ -35,8 +37,7 @@ describe("Flight records", () => {
     it("has matching flight time and operation time", () => {
       const flight = flights[i];
       expect(operationTime(flight)).toBe(
-        (flight.pilotLog.dualTime ?? 0) + 
-        (flight.pilotLog.picTime ?? 0)
+        (flight.pilotLog.dualTime ?? 0) + (flight.pilotLog.picTime ?? 0),
       );
     });
 
@@ -45,8 +46,8 @@ describe("Flight records", () => {
       expect(operationTime(flight)).toBe(
         flightTime(
           new Date(flight.pilotLog.departure),
-          new Date(flight.pilotLog.arrival)
-        )
+          new Date(flight.pilotLog.arrival),
+        ),
       );
     });
 
