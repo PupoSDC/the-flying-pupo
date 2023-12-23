@@ -25,7 +25,7 @@ export const flight: RawFlight = {
     },
     identification: {
       modes: "3D3720",
-      registration: "DP_DME",
+      registration: "SP-DME",
       serialNo: "N/A",
     },
   },

@@ -112,6 +112,13 @@ const FlightPage = async ({
               <small>({toTimeString(flight.flightLogCarryOver.multiEnginePistonTime)})</small>
             </div>
             <div className={styles.chapterContent}>
+              <div className={styles.sectionTitle}>MultiPilot Time</div>
+              <div>{toTimeString(flight.pilotLog.multiPilotTime)}</div>
+              <small>({toTimeString(flight.flightLogCarryOver.multiPilotTime)})</small>
+            </div>
+          </div>
+          <div className={styles.totalsTable}>
+            <div className={styles.chapterContent}>
               <div className={styles.sectionTitle}>PIC Time</div>
               <div>{toTimeString(flight.pilotLog.picTime)}</div>
               <small>({toTimeString(flight.flightLogCarryOver.picTime)})</small>
@@ -120,6 +127,11 @@ const FlightPage = async ({
               <div className={styles.sectionTitle}>Dual Time</div>
               <div>{toTimeString(flight.pilotLog.dualTime)}</div>
               <small>({toTimeString(flight.flightLogCarryOver.dualTime)})</small>
+            </div>
+            <div className={styles.chapterContent}>
+              <div className={styles.sectionTitle}>FI Time</div>
+              <div>{toTimeString(flight.pilotLog.fiTime)}</div>
+              <small>({toTimeString(flight.flightLogCarryOver.fiTime)})</small>
             </div>
           </div>
           <div className={styles.totalsTable}>
