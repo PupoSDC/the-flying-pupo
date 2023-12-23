@@ -1,18 +1,19 @@
 {
   "name": "the-flying-pupo",
+  "description": "All my flight data and tracks. Intended for personal use, but you are welcome to take a look",
   "version": "1.0.0",
   "private": true,
   "license": "UNLICENSED",
-  "description": "the-flying-pupo",
   "author": "PupoSDC",
   "engines": {
-    "node": ">=18.x",
-    "npm": ">9.0.0"
+    "node": "20.x",
+    "npm": ">10.0.0"
   },
   "scripts": {
     "dev": "next dev",
-    "prebuild": "npx ts-node scripts/compileRecords.ts",
-    "build": "next build",
+    "build:records": "npx ts-node scripts/compileRecords.ts",
+    "build:next": "next build",
+    "build": "npm run build:records && npm run build:next",
     "start": "next start",
     "test": "jest --watch",
     "test:coverage": "jest --coverage",
