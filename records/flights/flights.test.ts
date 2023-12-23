@@ -9,7 +9,8 @@ const flightTime = (departureTime: Date, arrivalTime: Date) => {
 const operationTime = (flight: RawFlight) => {
   return (
     (flight.pilotLog.singleEnginePistonTime ?? 0) +
-    (flight.pilotLog.multiEnginePistonTime ?? 0)
+    (flight.pilotLog.multiEnginePistonTime ?? 0) + 
+    (flight.pilotLog.multiPilotTime ?? 0)
   );
 };
 
@@ -34,7 +35,8 @@ describe("Flight records", () => {
     it("has matching flight time and operation time", () => {
       const flight = flights[i];
       expect(operationTime(flight)).toBe(
-        (flight.pilotLog.dualTime ?? 0) + (flight.pilotLog.picTime ?? 0)
+        (flight.pilotLog.dualTime ?? 0) + 
+        (flight.pilotLog.picTime ?? 0)
       );
     });
 
