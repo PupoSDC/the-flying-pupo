@@ -111,46 +111,53 @@ const FlightPage = async ({
           <div className={styles.totalsTable}>
             <div className={styles.chapterContent}>
               <div className={styles.sectionTitle}>SEP Time</div>
-              <div>{toTimeString(flight.pilotLog.singleEnginePistonTime)}</div>
-              <small>
-                (
-                {toTimeString(flight.flightLogCarryOver.singleEnginePistonTime)}
-                )
-              </small>
+              <div>{toTimeString(flight.pilotLog.singleEnginePistonTime)}
+                <small>
+                  (
+                  {toTimeString(flight.flightLogCarryOver.singleEnginePistonTime)}
+                  )
+                </small>
+              </div>
             </div>
             <div className={styles.chapterContent}>
               <div className={styles.sectionTitle}>MEP Time</div>
-              <div>{toTimeString(flight.pilotLog.multiEnginePistonTime)}</div>
-              <small>
-                ({toTimeString(flight.flightLogCarryOver.multiEnginePistonTime)}
-                )
-              </small>
+              <div>{toTimeString(flight.pilotLog.multiEnginePistonTime)}
+                <small>
+                  ({toTimeString(flight.flightLogCarryOver.multiEnginePistonTime)}
+                  )
+                </small>
+              </div>
             </div>
             <div className={styles.chapterContent}>
               <div className={styles.sectionTitle}>MultiPilot Time</div>
-              <div>{toTimeString(flight.pilotLog.multiPilotTime)}</div>
-              <small>
-                ({toTimeString(flight.flightLogCarryOver.multiPilotTime)})
-              </small>
+              <div>
+                {toTimeString(flight.pilotLog.multiPilotTime)}
+                <small>
+                  ({toTimeString(flight.flightLogCarryOver.multiPilotTime)})
+                </small>
+              </div>
             </div>
           </div>
           <div className={styles.totalsTable}>
             <div className={styles.chapterContent}>
               <div className={styles.sectionTitle}>PIC Time</div>
-              <div>{toTimeString(flight.pilotLog.picTime)}</div>
-              <small>({toTimeString(flight.flightLogCarryOver.picTime)})</small>
+              <div>{toTimeString(flight.pilotLog.picTime)}
+                <small>({toTimeString(flight.flightLogCarryOver.picTime)})</small>
+              </div>
             </div>
             <div className={styles.chapterContent}>
               <div className={styles.sectionTitle}>Dual Time</div>
-              <div>{toTimeString(flight.pilotLog.dualTime)}</div>
-              <small>
-                ({toTimeString(flight.flightLogCarryOver.dualTime)})
-              </small>
+              <div>{toTimeString(flight.pilotLog.dualTime)}
+                <small>
+                  ({toTimeString(flight.flightLogCarryOver.dualTime)})
+                </small>
+              </div>
             </div>
             <div className={styles.chapterContent}>
               <div className={styles.sectionTitle}>FI Time</div>
-              <div>{toTimeString(flight.pilotLog.fiTime)}</div>
-              <small>({toTimeString(flight.flightLogCarryOver.fiTime)})</small>
+              <div>{toTimeString(flight.pilotLog.fiTime)}
+                <small>({toTimeString(flight.flightLogCarryOver.fiTime)})</small>
+              </div>
             </div>
           </div>
           <div className={styles.totalsTable}>
@@ -199,7 +206,7 @@ const FlightPage = async ({
           <div className={styles.controlsContainer}>
             <Link
               href={
-                flight.previousId ? `/flights/${flight.previousId}` : "logbook"
+                flight.previousId ? `/flights/${flight.previousId}` : "/logbook"
               }
             >
               <FaChevronLeft />
@@ -211,7 +218,7 @@ const FlightPage = async ({
               <FaHome />
             </Link>
             <Link
-              href={flight.nextId ? `/flights/${flight.nextId}` : "logbook"}
+              href={flight.nextId ? `/flights/${flight.nextId}` : "/logbook"}
             >
               <FaChevronRight />
             </Link>
