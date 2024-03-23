@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  background-color: #232d39;
+}
+
+.leaflet-marker-icon {
+  transition: translate3d 50ms linear !important;
+  background-color: transparent !important;
+  border: none !important;
+}
