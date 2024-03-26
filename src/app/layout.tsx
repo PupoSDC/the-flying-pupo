@@ -2,8 +2,8 @@ import { FunctionComponent, PropsWithChildren } from "react";
 import "./layout.css";
 
 const RootLayout: FunctionComponent<PropsWithChildren> = ({ children }) => (
-  <html data-theme="dark">
-    <body>{children}</body>
+  <html className="dark h-full w-full bg-slate-800">
+    <body className="dark min-h-full">{children}</body>
   </html>
 );
 

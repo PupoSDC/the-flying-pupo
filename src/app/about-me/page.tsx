@@ -4,56 +4,50 @@ import {
   AiOutlineLinkedin,
 } from "react-icons/ai";
 import { FaHome } from "react-icons/fa";
-import Image from "next/image";
-import Link from "next/link";
-import { default as fs } from "fs";
-import { default as path } from "path";
-import { Flight } from "src/types/Flight";
-import { toTimeString } from "src/utils/flightProcessing";
-import { default as styles } from "./styles.module.css";
+import { default as Image } from "next/image";
+import { default as Link } from "next/link";
 import { getFlightLog } from "src/server/get-flight-log";
-
-
+import { toTimeString } from "src/utils/flightProcessing";
+import { cn } from "src/utils/cn";
 
 const StatsPage = async () => {
-  const { flightLog } = await getFlightLog();
+  const { flights, aircrafts, airports } = await getFlightLog();
 
   const tripDistance = Math.floor(
-    flightLog.reduce((s, r) => s + r.tripDistance, 0),
+    flights.reduce((s, r) => s + r.tripDistance, 0),
   );
 
   const flightTime = Math.floor(
-    flightLog.reduce((s, r) => {
-      return (
-        s +
-        (r.pilotLog.singleEnginePistonTime ?? 0) +
-        (r.pilotLog.multiEnginePistonTime ?? 0)
-      );
-    }, 0),
+    flights.at(-1)?.carryOver.totalTimeMinutes ?? 0
   );
 
   const tripDistanceCovered = Math.floor(
-    flightLog.reduce((s, r) => s + r.tripDistanceCovered, 0),
+    flights.reduce((s, r) => s + r.tripDistanceCovered, 0),
   );
 
   const maxDistanceInOneFlight = Math.floor(
-    flightLog.reduce((s, r) => Math.max(s, r.tripDistanceCovered), 0),
+    flights.reduce((s, r) => Math.max(s, r.tripDistanceCovered), 0),
   );
 
   const longestFlightTime = Math.floor(
-    flightLog.reduce(
-      (s, r) => Math.max(s, r.pilotLog.singleEnginePistonTime ?? 0),
-      0,
-    ),
+    flights.reduce((s, r) => Math.max(
+      s, 
+      r.pilotLog.singleEnginePistonTimeMinutes ?? 0,
+      r.pilotLog.multiEnginePistonTimeMinutes ?? 0,
+      r.pilotLog.multiPilotTimeMinutes ?? 0,
+    ), 0),
   );
 
   const longestDailyFlightTime = Math.floor(
     Object.values(
-      flightLog.reduce<Record<string, number>>((s, r) => {
-        const key = new Date(r.pilotLog.departure).toISOString().slice(0, 10);
+      flights.reduce<Record<string, number>>((s, r) => {
+        const key = r.pilotLog.departure.toFormat("yyyy-MM-dd");
         return {
           ...s,
-          [key]: (s[key] ?? 0) + (r.pilotLog.singleEnginePistonTime ?? 0),
+          [key]: (s[key] ?? 0) + 
+            r.pilotLog.singleEnginePistonTimeMinutes + 
+            r.pilotLog.multiEnginePistonTimeMinutes +
+            r.pilotLog.multiPilotTimeMinutes,
         };
       }, {}),
     ).reduce((s, r) => Math.max(s, r), 0),
@@ -61,8 +55,8 @@ const StatsPage = async () => {
 
   const maxDistanceInOneDay = Math.floor(
     Object.values(
-      flightLog.reduce<Record<string, number>>((s, r) => {
-        const key = new Date(r.pilotLog.departure).toISOString().slice(0, 10);
+      flights.reduce<Record<string, number>>((s, r) => {
+        const key = r.pilotLog.departure.toFormat("yyyy-MM-dd");
         return {
           ...s,
           [key]: (s[key] ?? 0) + r.tripDistanceCovered,
@@ -71,61 +65,58 @@ const StatsPage = async () => {
     ).reduce((s, r) => Math.max(s, r), 0),
   );
 
-  const airportCount = [
-    ...new Set(
-      flightLog.flatMap((r) => [
-        r.airport.destination.code,
-        r.airport.origin.code,
-      ]),
-    ),
-  ].length;
+  const airportCount = Object.keys(airports).length;
 
-  const countryCount = [
-    ...new Set(
-      flightLog.flatMap((r) => [
-        r.airport.destination.code.slice(0, 2),
-        r.airport.origin.code.slice(0, 2),
-      ]),
-    ),
-  ].length;
+  const countryCount = [... new Set(
+    Object.values(airports).map((v) => v.country)
+  )].length;
 
   const mostFrequentType = Object.entries(
-    flightLog.reduce<Record<string, number>>((s, r) => {
-      const key = r.aircraft.model.text;
+    Object.values(aircrafts).reduce<Record<string, number>>((s, r) => {
+      const key = r.code;
       return {
         ...s,
-        [key]: (s[key] ?? 0) + 1,
+        [key]: (s[key] ?? 0) + r.flights.length,
       };
     }, {}),
   ).sort((a, b) => b[1] - a[1])[0][0];
 
-  const landings = flightLog.reduce((s, r) => {
+  const landings = flights.reduce((s, r) => {
     return s + r.pilotLog.landings.day + r.pilotLog.landings.night;
   }, 0);
 
-  const aircraftCount = [
-    ...new Set(flightLog.map((r) => r.aircraft.identification.registration)),
-  ].length;
+  const aircraftCount = Object.values(aircrafts).length;
 
-  const aircraftTypeCount = [
-    ...new Set(flightLog.map((r) => r.aircraft.model.code)),
-  ].length;
+  const aircraftTypeCount = [... new Set(
+    Object.values(aircrafts).map((v) => v.model)
+  )].length;
 
-  const tripsAroundTheWorld =
-    Math.floor((tripDistanceCovered / (360 * 60)) * 100) / 100;
-
+  const tripsAroundTheWorld = Math.floor(
+    (tripDistanceCovered / (360 * 60)) * 100
+  ) / 100;
 
   return (
     <>
-      <div className={styles.backgroundImage}>
+      <div className="overflow-hidden fixed top-0 left-0 w-full h-full z-[-1] select-none">
         <Image
           fill
+          className="object-cover max-w-lg select-none"
+          style={{
+            WebkitMask: "linear-gradient(to right, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0)) top right / cover",
+            mask: "linear-gradient(to right, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0)) top right / cover",
+          }}
           src="/images/me.jpg"
           alt="Me looking professional on an aircraft"
         />
       </div>
-      <main className={styles.main}>
-        <h1>About me</h1>
+      <main 
+        className={cn(
+          "relative flex flex-col justify-end m-auto px-4 py-4 md:py-16",
+          "max-w-screen-md w-full",
+          "prose dark:!prose-invert",
+        )}
+      >
+        <h1 className="mb-2">About me</h1>
         <p>
           I was born in Lisbon, Portugal, and later graduated with a degree in
           Mechanical Engineering from the Lisbon University of Technology. My
@@ -135,15 +126,14 @@ const StatsPage = async () => {
           startups.
         </p>
         <p>
-          To this day I am a Software Engineer with the very expensive hobby of
-          flying around the skies on a steel machine weighting at least 650kg. I
-          started flying in September 2020 and have been enjoying it ever since.
+          After 5 years as  a Software Engineer I've transitioned to being a 
+          full time pilot flying the Boeing 737 as of November 2023.
         </p>
         <p>
-          I&apos;ve done <b>{flightLog.length} flights</b> so far, which took me
-          {" "}<b>{toTimeString(flightTime)}</b> hours. During that time I 
-          covered (at least) <b>{tripDistanceCovered} NM</b>, which is enough to 
-          go around the equator <b>{tripsAroundTheWorld}</b> times.
+          I&apos;ve done <b>{flights.length} flights</b> so far, which took me{" "}
+          <b>{toTimeString(flightTime)}</b> hours. During that time I covered
+          (at least) <b>{tripDistanceCovered} NM</b>, which is enough to go
+          around the equator <b>{tripsAroundTheWorld}</b> times.
         </p>
         <p>
           I did all of this in <b>{aircraftCount} different aircraft</b> of{" "}
@@ -165,17 +155,22 @@ const StatsPage = async () => {
           can explore <Link href={"logbook"}>my Logbook</Link>.
         </p>
       </main>
-      <footer className={styles.footer}>
-        <Link href="/">
+      <footer 
+        className={cn(
+          "w-full flex justify-center align-center pb-8 mx-auto z-10",
+          "prose dark:!prose-invert",
+        )}
+      >
+        <Link href="/" className="text-4xl m-2">
           <FaHome />
         </Link>
-        <Link href="https://www.instagram.com/puposdc/">
+        <Link href="https://www.instagram.com/puposdc/" className="text-4xl m-2">
           <AiOutlineInstagram />
         </Link>
-        <Link href="https://www.linkedin.com/in/puposdc/">
+        <Link href="https://www.linkedin.com/in/puposdc/" className="text-4xl m-2">
           <AiOutlineLinkedin />
         </Link>
-        <Link href="https://github.com/PupoSDC">
+        <Link href="https://github.com/PupoSDC" className="text-4xl m-2">
           <AiOutlineGithub />
         </Link>
       </footer>

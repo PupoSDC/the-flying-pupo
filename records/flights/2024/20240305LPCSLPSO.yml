@@ -6,8 +6,8 @@
     description: "",
   },
   pilotLog: {
-    departure: new Date(2024, 2, 5, 9, 0).getTime(),
-    arrival: new Date(2024, 2, 5, 9, 0).getTime(),
+    departure: "2024, 2, 5, 9, 0).getTime(),
+    arrival: "2024, 2, 5, 9, 0).getTime(),
     singleEnginePistonTime: 95,
     multiEnginePistonTime: 0,
     picTime: 95,
@@ -35,16 +35,16 @@
       name: "Ponte de Sor",
       code: "LPSO",
       position: {
-        latitude: 39.211723,
-        longitude: -8.057656,
+        lat: 39.211723,
+        lng: -8.057656,
       },
     },
     origin: {
       name: "Cascais Municipal Aerodrome",
       code: "LPCS",
       position: {
-        latitude: 38.725555,
-        longitude: -9.355278,
+        lat: 38.725555,
+        lng: -9.355278,
       },
     },
   },

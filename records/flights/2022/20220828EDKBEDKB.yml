@@ -6,8 +6,8 @@
     description: "",
   },
   pilotLog: {
-    departure: new Date(2022, 7, 28, 12, 40).getTime(),
-    arrival: new Date(2022, 7, 28, 13, 20).getTime(),
+    departure: "2022, 7, 28, 12, 40).getTime(),
+    arrival: "2022, 7, 28, 13, 20).getTime(),
     singleEnginePistonTime: 40,
     picTime: 40,
     dualTime: 0,
@@ -32,16 +32,16 @@
       name: "Bonn Hangelar",
       code: "EDKB",
       position: {
-        latitude: 50.7690965,
-        longitude: 7.1620958,
+        lat: 50.7690965,
+        lng: 7.1620958,
       },
     },
     destination: {
       name: "Bonn Hangelar",
       code: "EDKB",
       position: {
-        latitude: 50.7690965,
-        longitude: 7.1620958,
+        lat: 50.7690965,
+        lng: 7.1620958,
       },
     },
   },

@@ -6,8 +6,8 @@
     description: "",
   },
   pilotLog: {
-    departure: new Date(2022, 4, 26, 7, 30).getTime(),
-    arrival: new Date(2022, 4, 26, 8, 30).getTime(),
+    departure: "2022, 4, 26, 7, 30).getTime(),
+    arrival: "2022, 4, 26, 8, 30).getTime(),
     singleEnginePistonTime: 60,
     picTime: 0,
     dualTime: 60,
@@ -32,16 +32,16 @@
       name: "Cascais Municipal Aerodrome",
       code: "LPCS",
       position: {
-        latitude: 38.725555,
-        longitude: -9.355278,
+        lat: 38.725555,
+        lng: -9.355278,
       },
     },
     destination: {
       name: "Cascais Municipal Aerodrome",
       code: "LPCS",
       position: {
-        latitude: 38.725555,
-        longitude: -9.355278,
+        lat: 38.725555,
+        lng: -9.355278,
       },
     },
   },

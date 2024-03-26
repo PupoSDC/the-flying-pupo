@@ -6,8 +6,8 @@
     description: "",
   },
   pilotLog: {
-    departure: new Date(2022, 11, 14, 14, 12).getTime(),
-    arrival: new Date(2022, 11, 14, 15, 2).getTime(),
+    departure: "2022, 11, 14, 14, 12).getTime(),
+    arrival: "2022, 11, 14, 15, 2).getTime(),
     singleEnginePistonTime: 50,
     multiEnginePistonTime: 0,
     picTime: 50,
@@ -34,16 +34,16 @@
       name: "Lodz Wladyslaw Reymont Airport",
       code: "EPLL",
       position: {
-        latitude: 51.721882,
-        longitude: 19.39813,
+        lat: 51.721882,
+        lng: 19.39813,
       },
     },
     origin: {
       name: "Lodz Wladyslaw Reymont Airport",
       code: "EPLL",
       position: {
-        latitude: 51.721882,
-        longitude: 19.39813,
+        lat: 51.721882,
+        lng: 19.39813,
       },
     },
   },

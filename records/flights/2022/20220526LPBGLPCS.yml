@@ -6,8 +6,8 @@
     description: "",
   },
   pilotLog: {
-    departure: new Date(2022, 4, 26, 16, 10).getTime(),
-    arrival: new Date(2022, 4, 26, 18, 55).getTime(),
+    departure: "2022, 4, 26, 16, 10).getTime(),
+    arrival: "2022, 4, 26, 18, 55).getTime(),
     singleEnginePistonTime: 165,
     picTime: 165,
     dualTime: 0,
@@ -32,16 +32,16 @@
       name: "Bragança Airport",
       code: "LPBG",
       position: {
-        latitude: 41.8578,
-        longitude: -6.70712,
+        lat: 41.8578,
+        lng: -6.70712,
       },
     },
     destination: {
       name: "Cascais Municipal Aerodrome",
       code: "LPCS",
       position: {
-        latitude: 38.725555,
-        longitude: -9.355278,
+        lat: 38.725555,
+        lng: -9.355278,
       },
     },
   },

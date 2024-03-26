@@ -6,8 +6,8 @@
     description: "",
   },
   pilotLog: {
-    departure: new Date(2022, 4, 26, 12, 15).getTime(),
-    arrival: new Date(2022, 4, 26, 13, 35).getTime(),
+    departure: "2022, 4, 26, 12, 15).getTime(),
+    arrival: "2022, 4, 26, 13, 35).getTime(),
     singleEnginePistonTime: 80,
     picTime: 80,
     dualTime: 0,
@@ -32,16 +32,16 @@
       name: "Viseu Airport",
       code: "LPVZ",
       position: {
-        latitude: 40.725498,
-        longitude: -7.88899,
+        lat: 40.725498,
+        lng: -7.88899,
       },
     },
     destination: {
       name: "Bragança Airport",
       code: "LPBG",
       position: {
-        latitude: 41.8578,
-        longitude: -6.70712,
+        lat: 41.8578,
+        lng: -6.70712,
       },
     },
   },

@@ -1,103 +1,175 @@
-import { RawFlight, Flight, FlightLogCarryOver } from "../types/Flight"
-import { getRawFlights } from "./get-raw-flights";
+import { YamlFlight } from "src/schemas/yaml-flight";
+import { getYamlData } from "./get-yaml-data";
+import { YamlAirport } from "src/schemas/yaml-airport";
+import { YamlAircraft } from "src/schemas/yaml-aircraft";
+import { DateTime } from "luxon";
 
-const calculateDistance = (a: {
-    latitude: number,
-    longitude: number,
-}, b: {
-    latitude: number,
-    longitude: number,
-}) => {
-    const deltaLat = a.latitude - b.latitude;
-    const deltaLng = a.longitude - b.longitude;
-    const avgLat = (a.latitude + b.latitude) / 2
-    const nmLat = (Math.abs(deltaLat) * 60)
-    const nmLng = (Math.abs(deltaLng) * Math.cos(avgLat / 180 * Math.PI) * 60)
-    return Math.sqrt(nmLat * nmLat + nmLng * nmLng)
-
-}
-
-const calculateTripDistance = (flight: RawFlight) => {
-    const origin = flight.airport.origin.position;
-    const destination = flight.airport.destination.position;
-    return calculateDistance(origin, destination)
-}
-
-const calculateTripDistanceCovered = (flight: RawFlight) => {
-    if (!flight.track.length) {
-        return calculateTripDistance(flight)
-    }
-    return flight
-        .track
-        .reduce((ss, rr, i, arr) => {
-            if (i === 0) return ss;
-            const origin = arr[i - 1];
-            const destination = rr
-            const nm = calculateDistance(origin, destination)
-            return ss + nm;
-        }, 0)
-}
-
-const getSetPointsFromArray = <T>(array: T[], count: number): T[] => {
-    const values: T[] = new Array(count);
-    values[0] = array[0];
-    values[count - 1] = array.at(-1) as T
-    for (let i = 1; i < count - 2; i++) {
-        values[i] = array[Math.floor(i * array.length / (count - 1))];
-    }
-    return values;
-}
-
-export const getFlightLog = async () => {
-    const carryOver : FlightLogCarryOver = {
-        totalTime: 0,
-        singleEnginePistonTime: 0,
-        multiEnginePistonTime: 0,
-        multiPilotTime: 0,
-        nightTime: 0,
-        ifrTime: 0,
-        picTime: 0,
-        dualTime: 0,
-        fiTime: 0,
+type FlightLogFlight = YamlFlight & {
+    nextId: string | undefined,
+    previousId: string | undefined,
+    tripDistance: number,
+    tripDistanceCovered: number,
+    carryOver: {
+        totalTimeMinutes: number,
+        singleEnginePistonTimeMinutes: number,
+        multiEnginePistonTimeMinutes: number,
+        multiPilotTimeMinutes: number,
+        picTimeMinutes: number,
+        dualTimeMinutes: number,
+        copilotTimeMinutes: number,
+        instructorTimeMinutes: number,
+        nightTimeMinutes: number,
+        ifrTimeMinutes: number,
         landings: {
-            day: 0,
-            night: 0,
+          day: number,
+          night: number,
+        },
+        takeoffs: {
+          day: number,
+          night: number,
         },
     }
+}
 
-    const rawFlights = await getRawFlights();
+type FlightLogAircraft =  YamlAircraft  & {
+    flights: string[];
+}
 
-    const processedFlights = rawFlights.map(({ flight }, index, arr): Flight => {
-        carryOver.totalTime += flight.pilotLog.singleEnginePistonTime ?? 0;
-        carryOver.totalTime += flight.pilotLog.multiEnginePistonTime ?? 0;
-        carryOver.singleEnginePistonTime += flight.pilotLog.singleEnginePistonTime ?? 0;
-        carryOver.multiEnginePistonTime += flight.pilotLog.multiEnginePistonTime ?? 0;
-        carryOver.multiPilotTime += flight.pilotLog.multiPilotTime ?? 0;
-        carryOver.nightTime += flight.pilotLog.nightTime ?? 0;
-        carryOver.ifrTime += flight.pilotLog.ifrTime ?? 0;
-        carryOver.picTime += flight.pilotLog.picTime ?? 0;
-        carryOver.dualTime += flight.pilotLog.dualTime ?? 0;
-        carryOver.fiTime += flight.pilotLog.fiTime ?? 0;
-        carryOver.landings.day += flight.pilotLog.landings.day ?? 0;
-        carryOver.landings.night += flight.pilotLog.landings.night ?? 0;
+const calculateDistance = (
+  a: {
+    latitude: number;
+    longitude: number;
+  },
+  b: {
+    latitude: number;
+    longitude: number;
+  },
+) => {
+  const deltaLat = a.latitude - b.latitude;
+  const deltaLng = a.longitude - b.longitude;
+  const avgLat = (a.latitude + b.latitude) / 2;
+  const nmLat = Math.abs(deltaLat) * 60;
+  const nmLng = Math.abs(deltaLng) * Math.cos((avgLat / 180) * Math.PI) * 60;
+  return Math.sqrt(nmLat * nmLat + nmLng * nmLng);
+};
 
-        return {
-            ...flight,
-            nextId: arr[index + 1]?.flight.identification.id ?? undefined,
-            previousId:  arr[index - 1]?.flight.identification.id ?? undefined,
-            tripDistance: Math.floor(calculateTripDistance(flight)),
-            tripDistanceCovered: Math.floor(calculateTripDistanceCovered(flight)),
-            flightLogCarryOver: JSON.parse(JSON.stringify(carryOver)),
-        };
-    })
+const calculateTripDistance = (
+    flight: YamlFlight, 
+    airports: Record<string, YamlAirport>
+) => {
+  const origin = airports[flight.origin];
+  const destination = airports[flight.destination];
+  return calculateDistance(origin, destination);
+};
 
-    const flightLog: Flight[] = processedFlights.map(({ ...flight }) => ({
-        ...flight,
-        track: getSetPointsFromArray(flight.track, 50).filter(e => !!e)
-    })).sort((a, b) => b.pilotLog.departure - a.pilotLog.departure)
+const calculateTripDistanceCovered = (
+    flight: YamlFlight,
+    airports: Record<string, YamlAirport>
+) => {
+  if (!flight.track.length) {
+    return calculateTripDistance(flight, airports);
+  }
+  return flight.track.reduce((ss, rr, i, arr) => {
+    if (i === 0) return ss;
+    const origin = arr[i - 1];
+    const destination = rr;
+    const nm = calculateDistance(origin, destination);
+    return ss + nm;
+  }, 0);
+};
+
+const getSetPointsFromArray = <T>(array: T[], count: number): T[] => {
+  const values: T[] = new Array(count);
+  values[0] = array[0];
+  values[count - 1] = array.at(-1) as T;
+  for (let i = 1; i < count - 2; i++) {
+    values[i] = array[Math.floor((i * array.length) / (count - 1))];
+  }
+  return values;
+};
+
+let CACHE : { 
+    flights: FlightLogFlight[] 
+    airports: Record<string, YamlAirport>,
+    aircrafts: Record<string, FlightLogAircraft>
+};
+
+export const getFlightLog = async () => {
+  if (CACHE) return CACHE;
+
+  const { 
+    flights: rawFlights, 
+    airports,
+    aircrafts: rawAircrafts, 
+} = await getYamlData();
+
+  const carryOver = {
+    totalTimeMinutes: 0,
+    singleEnginePistonTimeMinutes: 0,
+    multiEnginePistonTimeMinutes: 0,
+    multiPilotTimeMinutes: 0,
+    picTimeMinutes: 0,
+    dualTimeMinutes: 0,
+    copilotTimeMinutes: 0,
+    instructorTimeMinutes: 0,
+    nightTimeMinutes: 0,
+    ifrTimeMinutes: 0,
+    landings: {
+      day: 0,
+      night: 0,
+    },
+    takeoffs: {
+      day: 0,
+      night: 0,
+    },
+  };
+
+  const aircrafts = Object
+    .values(rawAircrafts)
+    .reduce<Record<string, FlightLogAircraft>>((s, r) => {
+        s[r.registration] = { ...r, flights: [] };
+        return s;
+    }, {});
+
+  const flights = rawFlights.map<FlightLogFlight>((flight, index, arr)  => {
+    carryOver.totalTimeMinutes +=
+      flight.pilotLog.singleEnginePistonTimeMinutes +
+      flight.pilotLog.multiEnginePistonTimeMinutes +
+      flight.pilotLog.multiPilotTimeMinutes;
+    carryOver.singleEnginePistonTimeMinutes +=
+      flight.pilotLog.singleEnginePistonTimeMinutes;
+    carryOver.multiEnginePistonTimeMinutes +=
+      flight.pilotLog.multiEnginePistonTimeMinutes;
+
+    carryOver.multiPilotTimeMinutes += flight.pilotLog.multiPilotTimeMinutes;
+    carryOver.picTimeMinutes += flight.pilotLog.picTimeMinutes;
+    carryOver.dualTimeMinutes += flight.pilotLog.dualTimeMinutes;
+    carryOver.copilotTimeMinutes += flight.pilotLog.copilotTimeMinutes;
+    carryOver.instructorTimeMinutes += flight.pilotLog.instructorTimeMinutes;
+    carryOver.nightTimeMinutes += flight.pilotLog.nightTimeMinutes;
+    carryOver.ifrTimeMinutes += flight.pilotLog.ifrTimeMinutes;
+    carryOver.landings.day += flight.pilotLog.landings.day;
+    carryOver.landings.night += flight.pilotLog.landings.night;
+    carryOver.takeoffs.day += flight.pilotLog.takeoffs.day;
+    carryOver.takeoffs.night += flight.pilotLog.takeoffs.night;
+
+    aircrafts[flight.aircraft].flights.push(flight.id);
 
     return {
-        flightLog,
-        flightLogCarryOver: carryOver
-    }
-}
+      ...flight,
+      nextId: arr[index + 1]?.id ?? undefined,
+      previousId: arr[index - 1]?.id ?? undefined,
+      tripDistance: Math.floor(calculateTripDistance(flight, airports)),
+      tripDistanceCovered: Math.floor(calculateTripDistanceCovered(flight, airports)),
+      carryOver: JSON.parse(JSON.stringify(carryOver)),
+      track: getSetPointsFromArray(flight.track, 50).filter((e) => !!e),
+    };
+  });
+
+  flights.sort((a, b) => {
+    return b.pilotLog.departure.toMillis() - a.pilotLog.departure.toMillis();
+  });
+
+  CACHE = { flights, airports, aircrafts };
+  return CACHE;
+};

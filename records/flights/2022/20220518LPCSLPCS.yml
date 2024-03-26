@@ -6,8 +6,8 @@
     description: "",
   },
   pilotLog: {
-    departure: new Date(2022, 4, 18, 21, 0).getTime(),
-    arrival: new Date(2022, 4, 18, 21, 45).getTime(),
+    departure: "2022, 4, 18, 21, 0).getTime(),
+    arrival: "2022, 4, 18, 21, 45).getTime(),
     singleEnginePistonTime: 45,
     picTime: 0,
     dualTime: 45,
@@ -33,23 +33,23 @@
       name: "Cascais Municipal Aerodrome",
       code: "LPCS",
       position: {
-        latitude: 38.725555,
-        longitude: -9.355278,
+        lat: 38.725555,
+        lng: -9.355278,
       },
     },
     destination: {
       name: "Cascais Municipal Aerodrome",
       code: "LPCS",
       position: {
-        latitude: 38.725555,
-        longitude: -9.355278,
+        lat: 38.725555,
+        lng: -9.355278,
       },
     },
   },
   track: [
     {
-      latitude: 38.718601,
-      longitude: -9.352336,
+      lat: 38.718601,
+      lng: -9.352336,
       altitude: {
         feet: 0,
         meters: 0,
@@ -69,8 +69,8 @@
       ems: null,
     },
     {
-      latitude: 38.718475,
-      longitude: -9.352545,
+      lat: 38.718475,
+      lng: -9.352545,
       altitude: {
         feet: 0,
         meters: 0,
@@ -90,8 +90,8 @@
       ems: null,
     },
     {
-      latitude: 38.718567,
-      longitude: -9.352768,
+      lat: 38.718567,
+      lng: -9.352768,
       altitude: {
         feet: 0,
         meters: 0,
@@ -111,8 +111,8 @@
       ems: null,
     },
     {
-      latitude: 38.718777,
-      longitude: -9.352905,
+      lat: 38.718777,
+      lng: -9.352905,
       altitude: {
         feet: 0,
         meters: 0,
@@ -132,8 +132,8 @@
       ems: null,
     },
     {
-      latitude: 38.719036,
-      longitude: -9.352992,
+      lat: 38.719036,
+      lng: -9.352992,
       altitude: {
         feet: 0,
         meters: 0,
@@ -153,8 +153,8 @@
       ems: null,
     },
     {
-      latitude: 38.719334,
-      longitude: -9.353104,
+      lat: 38.719334,
+      lng: -9.353104,
       altitude: {
         feet: 0,
         meters: 0,
@@ -174,8 +174,8 @@
       ems: null,
     },
     {
-      latitude: 38.719608,
-      longitude: -9.353202,
+      lat: 38.719608,
+      lng: -9.353202,
       altitude: {
         feet: 0,
         meters: 0,
@@ -195,8 +195,8 @@
       ems: null,
     },
     {
-      latitude: 38.719837,
-      longitude: -9.353292,
+      lat: 38.719837,
+      lng: -9.353292,
       altitude: {
         feet: 0,
         meters: 0,
@@ -216,8 +216,8 @@
       ems: null,
     },
     {
-      latitude: 38.720314,
-      longitude: -9.353455,
+      lat: 38.720314,
+      lng: -9.353455,
       altitude: {
         feet: 0,
         meters: 0,
@@ -237,8 +237,8 @@
       ems: null,
     },
     {
-      latitude: 38.720547,
-      longitude: -9.353545,
+      lat: 38.720547,
+      lng: -9.353545,
       altitude: {
         feet: 0,
         meters: 0,
@@ -258,8 +258,8 @@
       ems: null,
     },
     {
-      latitude: 38.722153,
-      longitude: -9.354187,
+      lat: 38.722153,
+      lng: -9.354187,
       altitude: {
         feet: 100,
         meters: 30,
@@ -279,8 +279,8 @@
       ems: null,
     },
     {
-      latitude: 38.723736,
-      longitude: -9.354736,
+      lat: 38.723736,
+      lng: -9.354736,
       altitude: {
         feet: 200,
         meters: 61,
@@ -300,8 +300,8 @@
       ems: null,
     },
     {
-      latitude: 38.725204,
-      longitude: -9.355336,
+      lat: 38.725204,
+      lng: -9.355336,
       altitude: {
         feet: 300,
         meters: 91,
@@ -321,8 +321,8 @@
       ems: null,
     },
     {
-      latitude: 38.727226,
-      longitude: -9.356079,
+      lat: 38.727226,
+      lng: -9.356079,
       altitude: {
         feet: 400,
         meters: 122,
@@ -342,8 +342,8 @@
       ems: null,
     },
     {
-      latitude: 38.728436,
-      longitude: -9.356506,
+      lat: 38.728436,
+      lng: -9.356506,
       altitude: {
         feet: 400,
         meters: 122,
@@ -363,8 +363,8 @@
       ems: null,
     },
     {
-      latitude: 38.729736,
-      longitude: -9.356889,
+      lat: 38.729736,
+      lng: -9.356889,
       altitude: {
         feet: 500,
         meters: 152,
@@ -384,8 +384,8 @@
       ems: null,
     },
     {
-      latitude: 38.731091,
-      longitude: -9.357239,
+      lat: 38.731091,
+      lng: -9.357239,
       altitude: {
         feet: 600,
         meters: 183,
@@ -405,8 +405,8 @@
       ems: null,
     },
     {
-      latitude: 38.731693,
-      longitude: -9.357422,
+      lat: 38.731693,
+      lng: -9.357422,
       altitude: {
         feet: 700,
         meters: 213,
@@ -426,8 +426,8 @@
       ems: null,
     },
     {
-      latitude: 38.7323,
-      longitude: -9.357545,
+      lat: 38.7323,
+      lng: -9.357545,
       altitude: {
         feet: 700,
         meters: 213,
@@ -447,8 +447,8 @@
       ems: null,
     },
     {
-      latitude: 38.732857,
-      longitude: -9.357666,
+      lat: 38.732857,
+      lng: -9.357666,
       altitude: {
         feet: 700,
         meters: 213,
@@ -468,8 +468,8 @@
       ems: null,
     },
     {
-      latitude: 38.73349,
-      longitude: -9.357784,
+      lat: 38.73349,
+      lng: -9.357784,
       altitude: {
         feet: 700,
         meters: 213,
@@ -489,8 +489,8 @@
       ems: null,
     },
     {
-      latitude: 38.734024,
-      longitude: -9.35791,
+      lat: 38.734024,
+      lng: -9.35791,
       altitude: {
         feet: 800,
         meters: 244,
@@ -510,8 +510,8 @@
       ems: null,
     },
     {
-      latitude: 38.734726,
-      longitude: -9.358142,
+      lat: 38.734726,
+      lng: -9.358142,
       altitude: {
         feet: 800,
         meters: 244,
@@ -531,8 +531,8 @@
       ems: null,
     },
     {
-      latitude: 38.735466,
-      longitude: -9.358459,
+      lat: 38.735466,
+      lng: -9.358459,
       altitude: {
         feet: 800,
         meters: 244,
@@ -552,8 +552,8 @@
       ems: null,
     },
     {
-      latitude: 38.736191,
-      longitude: -9.358799,
+      lat: 38.736191,
+      lng: -9.358799,
       altitude: {
         feet: 800,
         meters: 244,
@@ -573,8 +573,8 @@
       ems: null,
     },
     {
-      latitude: 38.737015,
-      longitude: -9.359097,
+      lat: 38.737015,
+      lng: -9.359097,
       altitude: {
         feet: 800,
         meters: 244,
@@ -594,8 +594,8 @@
       ems: null,
     },
     {
-      latitude: 38.738724,
-      longitude: -9.359741,
+      lat: 38.738724,
+      lng: -9.359741,
       altitude: {
         feet: 800,
         meters: 244,
@@ -615,8 +615,8 @@
       ems: null,
     },
     {
-      latitude: 38.739716,
-      longitude: -9.360053,
+      lat: 38.739716,
+      lng: -9.360053,
       altitude: {
         feet: 800,
         meters: 244,
@@ -636,8 +636,8 @@
       ems: null,
     },
     {
-      latitude: 38.741379,
-      longitude: -9.360596,
+      lat: 38.741379,
+      lng: -9.360596,
       altitude: {
         feet: 800,
         meters: 244,
@@ -657,8 +657,8 @@
       ems: null,
     },
     {
-      latitude: 38.743195,
-      longitude: -9.361084,
+      lat: 38.743195,
+      lng: -9.361084,
       altitude: {
         feet: 700,
         meters: 213,
@@ -678,8 +678,8 @@
       ems: null,
     },
     {
-      latitude: 38.743973,
-      longitude: -9.361307,
+      lat: 38.743973,
+      lng: -9.361307,
       altitude: {
         feet: 700,
         meters: 213,
@@ -699,8 +699,8 @@
       ems: null,
     },
     {
-      latitude: 38.744778,
-      longitude: -9.361511,
+      lat: 38.744778,
+      lng: -9.361511,
       altitude: {
         feet: 700,
         meters: 213,
@@ -720,8 +720,8 @@
       ems: null,
     },
     {
-      latitude: 38.746265,
-      longitude: -9.362183,
+      lat: 38.746265,
+      lng: -9.362183,
       altitude: {
         feet: 700,
         meters: 213,
@@ -741,8 +741,8 @@
       ems: null,
     },
     {
-      latitude: 38.746674,
-      longitude: -9.362501,
+      lat: 38.746674,
+      lng: -9.362501,
       altitude: {
         feet: 700,
         meters: 213,
@@ -762,8 +762,8 @@
       ems: null,
     },
     {
-      latitude: 38.747314,
-      longitude: -9.363935,
+      lat: 38.747314,
+      lng: -9.363935,
       altitude: {
         feet: 700,
         meters: 213,
@@ -783,8 +783,8 @@
       ems: null,
     },
     {
-      latitude: 38.747383,
-      longitude: -9.365234,
+      lat: 38.747383,
+      lng: -9.365234,
       altitude: {
         feet: 700,
         meters: 213,
@@ -804,8 +804,8 @@
       ems: null,
     },
     {
-      latitude: 38.747177,
-      longitude: -9.366502,
+      lat: 38.747177,
+      lng: -9.366502,
       altitude: {
         feet: 700,
         meters: 213,
@@ -825,8 +825,8 @@
       ems: null,
     },
     {
-      latitude: 38.746719,
-      longitude: -9.367875,
+      lat: 38.746719,
+      lng: -9.367875,
       altitude: {
         feet: 700,
         meters: 213,
@@ -846,8 +846,8 @@
       ems: null,
     },
     {
-      latitude: 38.746265,
-      longitude: -9.369019,
+      lat: 38.746265,
+      lng: -9.369019,
       altitude: {
         feet: 700,
         meters: 213,
@@ -867,8 +867,8 @@
       ems: null,
     },
     {
-      latitude: 38.745712,
-      longitude: -9.370382,
+      lat: 38.745712,
+      lng: -9.370382,
       altitude: {
         feet: 700,
         meters: 213,
@@ -888,8 +888,8 @@
       ems: null,
     },
     {
-      latitude: 38.745392,
-      longitude: -9.371338,
+      lat: 38.745392,
+      lng: -9.371338,
       altitude: {
         feet: 700,
         meters: 213,
@@ -909,8 +909,8 @@
       ems: null,
     },
     {
-      latitude: 38.744797,
-      longitude: -9.37307,
+      lat: 38.744797,
+      lng: -9.37307,
       altitude: {
         feet: 700,
         meters: 213,
@@ -930,8 +930,8 @@
       ems: null,
     },
     {
-      latitude: 38.744171,
-      longitude: -9.374573,
+      lat: 38.744171,
+      lng: -9.374573,
       altitude: {
         feet: 800,
         meters: 244,
@@ -951,8 +951,8 @@
       ems: null,
     },
     {
-      latitude: 38.743103,
-      longitude: -9.375995,
+      lat: 38.743103,
+      lng: -9.375995,
       altitude: {
         feet: 800,
         meters: 244,
@@ -972,8 +972,8 @@
       ems: null,
     },
     {
-      latitude: 38.741795,
-      longitude: -9.376953,
+      lat: 38.741795,
+      lng: -9.376953,
       altitude: {
         feet: 800,
         meters: 244,
@@ -993,8 +993,8 @@
       ems: null,
     },
     {
-      latitude: 38.740173,
-      longitude: -9.377547,
+      lat: 38.740173,
+      lng: -9.377547,
       altitude: {
         feet: 800,
         meters: 244,
@@ -1014,8 +1014,8 @@
       ems: null,
     },
     {
-      latitude: 38.738663,
-      longitude: -9.377547,
+      lat: 38.738663,
+      lng: -9.377547,
       altitude: {
         feet: 800,
         meters: 244,
@@ -1035,8 +1035,8 @@
       ems: null,
     },
     {
-      latitude: 38.737049,
-      longitude: -9.377136,
+      lat: 38.737049,
+      lng: -9.377136,
       altitude: {
         feet: 800,
         meters: 244,
@@ -1056,8 +1056,8 @@
       ems: null,
     },
     {
-      latitude: 38.73542,
-      longitude: -9.376587,
+      lat: 38.73542,
+      lng: -9.376587,
       altitude: {
         feet: 800,
         meters: 244,
@@ -1077,8 +1077,8 @@
       ems: null,
     },
     {
-      latitude: 38.733974,
-      longitude: -9.376099,
+      lat: 38.733974,
+      lng: -9.376099,
       altitude: {
         feet: 800,
         meters: 244,
@@ -1098,8 +1098,8 @@
       ems: null,
     },
     {
-      latitude: 38.732437,
-      longitude: -9.375637,
+      lat: 38.732437,
+      lng: -9.375637,
       altitude: {
         feet: 800,
         meters: 244,
@@ -1119,8 +1119,8 @@
       ems: null,
     },
     {
-      latitude: 38.730881,
-      longitude: -9.375159,
+      lat: 38.730881,
+      lng: -9.375159,
       altitude: {
         feet: 800,
         meters: 244,
@@ -1140,8 +1140,8 @@
       ems: null,
     },
     {
-      latitude: 38.729275,
-      longitude: -9.374695,
+      lat: 38.729275,
+      lng: -9.374695,
       altitude: {
         feet: 800,
         meters: 244,
@@ -1161,8 +1161,8 @@
       ems: null,
     },
     {
-      latitude: 38.727631,
-      longitude: -9.374264,
+      lat: 38.727631,
+      lng: -9.374264,
       altitude: {
         feet: 800,
         meters: 244,
@@ -1182,8 +1182,8 @@
       ems: null,
     },
     {
-      latitude: 38.726109,
-      longitude: -9.373901,
+      lat: 38.726109,
+      lng: -9.373901,
       altitude: {
         feet: 800,
         meters: 244,
@@ -1203,8 +1203,8 @@
       ems: null,
     },
     {
-      latitude: 38.72438,
-      longitude: -9.373548,
+      lat: 38.72438,
+      lng: -9.373548,
       altitude: {
         feet: 800,
         meters: 244,
@@ -1224,8 +1224,8 @@
       ems: null,
     },
     {
-      latitude: 38.722988,
-      longitude: -9.373291,
+      lat: 38.722988,
+      lng: -9.373291,
       altitude: {
         feet: 800,
         meters: 244,
@@ -1245,8 +1245,8 @@
       ems: null,
     },
     {
-      latitude: 38.721497,
-      longitude: -9.37301,
+      lat: 38.721497,
+      lng: -9.37301,
       altitude: {
         feet: 800,
         meters: 244,
@@ -1266,8 +1266,8 @@
       ems: null,
     },
     {
-      latitude: 38.719639,
-      longitude: -9.372742,
+      lat: 38.719639,
+      lng: -9.372742,
       altitude: {
         feet: 700,
         meters: 213,
@@ -1287,8 +1287,8 @@
       ems: null,
     },
     {
-      latitude: 38.718147,
-      longitude: -9.372559,
+      lat: 38.718147,
+      lng: -9.372559,
       altitude: {
         feet: 700,
         meters: 213,
@@ -1308,8 +1308,8 @@
       ems: null,
     },
     {
-      latitude: 38.716473,
-      longitude: -9.372314,
+      lat: 38.716473,
+      lng: -9.372314,
       altitude: {
         feet: 700,
         meters: 213,
@@ -1329,8 +1329,8 @@
       ems: null,
     },
     {
-      latitude: 38.715042,
-      longitude: -9.372174,
+      lat: 38.715042,
+      lng: -9.372174,
       altitude: {
         feet: 700,
         meters: 213,
@@ -1350,8 +1350,8 @@
       ems: null,
     },
     {
-      latitude: 38.713486,
-      longitude: -9.371995,
+      lat: 38.713486,
+      lng: -9.371995,
       altitude: {
         feet: 800,
         meters: 244,
@@ -1371,8 +1371,8 @@
       ems: null,
     },
     {
-      latitude: 38.7117,
-      longitude: -9.371756,
+      lat: 38.7117,
+      lng: -9.371756,
       altitude: {
         feet: 800,
         meters: 244,
@@ -1392,8 +1392,8 @@
       ems: null,
     },
     {
-      latitude: 38.710236,
-      longitude: -9.371576,
+      lat: 38.710236,
+      lng: -9.371576,
       altitude: {
         feet: 800,
         meters: 244,
@@ -1413,8 +1413,8 @@
       ems: null,
     },
     {
-      latitude: 38.707069,
-      longitude: -9.371277,
+      lat: 38.707069,
+      lng: -9.371277,
       altitude: {
         feet: 800,
         meters: 244,
@@ -1434,8 +1434,8 @@
       ems: null,
     },
     {
-      latitude: 38.703995,
-      longitude: -9.370911,
+      lat: 38.703995,
+      lng: -9.370911,
       altitude: {
         feet: 800,
         meters: 244,
@@ -1455,8 +1455,8 @@
       ems: null,
     },
     {
-      latitude: 38.702553,
-      longitude: -9.370422,
+      lat: 38.702553,
+      lng: -9.370422,
       altitude: {
         feet: 800,
         meters: 244,
@@ -1476,8 +1476,8 @@
       ems: null,
     },
     {
-      latitude: 38.701298,
-      longitude: -9.369446,
+      lat: 38.701298,
+      lng: -9.369446,
       altitude: {
         feet: 800,
         meters: 244,
@@ -1497,8 +1497,8 @@
       ems: null,
     },
     {
-      latitude: 38.700439,
-      longitude: -9.368293,
+      lat: 38.700439,
+      lng: -9.368293,
       altitude: {
         feet: 800,
         meters: 244,
@@ -1518,8 +1518,8 @@
       ems: null,
     },
     {
-      latitude: 38.69989,
-      longitude: -9.367099,
+      lat: 38.69989,
+      lng: -9.367099,
       altitude: {
         feet: 800,
         meters: 244,
@@ -1539,8 +1539,8 @@
       ems: null,
     },
     {
-      latitude: 38.699478,
-      longitude: -9.365606,
+      lat: 38.699478,
+      lng: -9.365606,
       altitude: {
         feet: 800,
         meters: 244,
@@ -1560,8 +1560,8 @@
       ems: null,
     },
     {
-      latitude: 38.699341,
-      longitude: -9.364471,
+      lat: 38.699341,
+      lng: -9.364471,
       altitude: {
         feet: 800,
         meters: 244,
@@ -1581,8 +1581,8 @@
       ems: null,
     },
     {
-      latitude: 38.699295,
-      longitude: -9.363098,
+      lat: 38.699295,
+      lng: -9.363098,
       altitude: {
         feet: 700,
         meters: 213,
@@ -1602,8 +1602,8 @@
       ems: null,
     },
     {
-      latitude: 38.699295,
-      longitude: -9.361904,
+      lat: 38.699295,
+      lng: -9.361904,
       altitude: {
         feet: 700,
         meters: 213,
@@ -1623,8 +1623,8 @@
       ems: null,
     },
     {
-      latitude: 38.699341,
-      longitude: -9.360718,
+      lat: 38.699341,
+      lng: -9.360718,
       altitude: {
         feet: 700,
         meters: 213,
@@ -1644,8 +1644,8 @@
       ems: null,
     },
     {
-      latitude: 38.699387,
-      longitude: -9.359694,
+      lat: 38.699387,
+      lng: -9.359694,
       altitude: {
         feet: 700,
         meters: 213,
@@ -1665,8 +1665,8 @@
       ems: null,
     },
     {
-      latitude: 38.699528,
-      longitude: -9.358459,
+      lat: 38.699528,
+      lng: -9.358459,
       altitude: {
         feet: 700,
         meters: 213,
@@ -1686,8 +1686,8 @@
       ems: null,
     },
     {
-      latitude: 38.699661,
-      longitude: -9.357426,
+      lat: 38.699661,
+      lng: -9.357426,
       altitude: {
         feet: 700,
         meters: 213,
@@ -1707,8 +1707,8 @@
       ems: null,
     },
     {
-      latitude: 38.699799,
-      longitude: -9.356351,
+      lat: 38.699799,
+      lng: -9.356351,
       altitude: {
         feet: 600,
         meters: 183,
@@ -1728,8 +1728,8 @@
       ems: null,
     },
     {
-      latitude: 38.700039,
-      longitude: -9.355103,
+      lat: 38.700039,
+      lng: -9.355103,
       altitude: {
         feet: 600,
         meters: 183,
@@ -1749,8 +1749,8 @@
       ems: null,
     },
     {
-      latitude: 38.700211,
-      longitude: -9.354201,
+      lat: 38.700211,
+      lng: -9.354201,
       altitude: {
         feet: 600,
         meters: 183,
@@ -1770,8 +1770,8 @@
       ems: null,
     },
     {
-      latitude: 38.700485,
-      longitude: -9.353187,
+      lat: 38.700485,
+      lng: -9.353187,
       altitude: {
         feet: 600,
         meters: 183,
@@ -1791,8 +1791,8 @@
       ems: null,
     },
     {
-      latitude: 38.70076,
-      longitude: -9.352172,
+      lat: 38.70076,
+      lng: -9.352172,
       altitude: {
         feet: 600,
         meters: 183,
@@ -1812,8 +1812,8 @@
       ems: null,
     },
     {
-      latitude: 38.701035,
-      longitude: -9.351275,
+      lat: 38.701035,
+      lng: -9.351275,
       altitude: {
         feet: 600,
         meters: 183,
@@ -1833,8 +1833,8 @@
       ems: null,
     },
     {
-      latitude: 38.701401,
-      longitude: -9.350202,
+      lat: 38.701401,
+      lng: -9.350202,
       altitude: {
         feet: 500,
         meters: 152,
@@ -1854,8 +1854,8 @@
       ems: null,
     },
     {
-      latitude: 38.701809,
-      longitude: -9.349426,
+      lat: 38.701809,
+      lng: -9.349426,
       altitude: {
         feet: 500,
         meters: 152,
@@ -1875,8 +1875,8 @@
       ems: null,
     },
     {
-      latitude: 38.702229,
-      longitude: -9.348816,
+      lat: 38.702229,
+      lng: -9.348816,
       altitude: {
         feet: 500,
         meters: 152,
@@ -1896,8 +1896,8 @@
       ems: null,
     },
     {
-      latitude: 38.702927,
-      longitude: -9.348206,
+      lat: 38.702927,
+      lng: -9.348206,
       altitude: {
         feet: 400,
         meters: 122,
@@ -1917,8 +1917,8 @@
       ems: null,
     },
     {
-      latitude: 38.703625,
-      longitude: -9.3479,
+      lat: 38.703625,
+      lng: -9.3479,
       altitude: {
         feet: 400,
         meters: 122,
@@ -1938,8 +1938,8 @@
       ems: null,
     },
     {
-      latitude: 38.70433,
-      longitude: -9.347932,
+      lat: 38.70433,
+      lng: -9.347932,
       altitude: {
         feet: 400,
         meters: 122,
@@ -1959,8 +1959,8 @@
       ems: null,
     },
     {
-      latitude: 38.705112,
-      longitude: -9.348083,
+      lat: 38.705112,
+      lng: -9.348083,
       altitude: {
         feet: 400,
         meters: 122,
@@ -1980,8 +1980,8 @@
       ems: null,
     },
     {
-      latitude: 38.705765,
-      longitude: -9.348328,
+      lat: 38.705765,
+      lng: -9.348328,
       altitude: {
         feet: 400,
         meters: 122,
@@ -2001,8 +2001,8 @@
       ems: null,
     },
     {
-      latitude: 38.706482,
-      longitude: -9.348529,
+      lat: 38.706482,
+      lng: -9.348529,
       altitude: {
         feet: 400,
         meters: 122,
@@ -2022,8 +2022,8 @@
       ems: null,
     },
     {
-      latitude: 38.707214,
-      longitude: -9.348768,
+      lat: 38.707214,
+      lng: -9.348768,
       altitude: {
         feet: 300,
         meters: 91,
@@ -2043,8 +2043,8 @@
       ems: null,
     },
     {
-      latitude: 38.707813,
-      longitude: -9.348999,
+      lat: 38.707813,
+      lng: -9.348999,
       altitude: {
         feet: 300,
         meters: 91,
@@ -2064,8 +2064,8 @@
       ems: null,
     },
     {
-      latitude: 38.708744,
-      longitude: -9.349304,
+      lat: 38.708744,
+      lng: -9.349304,
       altitude: {
         feet: 300,
         meters: 91,
@@ -2085,8 +2085,8 @@
       ems: null,
     },
     {
-      latitude: 38.709457,
-      longitude: -9.349545,
+      lat: 38.709457,
+      lng: -9.349545,
       altitude: {
         feet: 300,
         meters: 91,
@@ -2106,8 +2106,8 @@
       ems: null,
     },
     {
-      latitude: 38.710236,
-      longitude: -9.349854,
+      lat: 38.710236,
+      lng: -9.349854,
       altitude: {
         feet: 300,
         meters: 91,
@@ -2127,8 +2127,8 @@
       ems: null,
     },
     {
-      latitude: 38.710968,
-      longitude: -9.350142,
+      lat: 38.710968,
+      lng: -9.350142,
       altitude: {
         feet: 300,
         meters: 91,
@@ -2148,8 +2148,8 @@
       ems: null,
     },
     {
-      latitude: 38.712467,
-      longitude: -9.350647,
+      lat: 38.712467,
+      lng: -9.350647,
       altitude: {
         feet: 200,
         meters: 61,
@@ -2169,8 +2169,8 @@
       ems: null,
     },
     {
-      latitude: 38.713852,
-      longitude: -9.351156,
+      lat: 38.713852,
+      lng: -9.351156,
       altitude: {
         feet: 200,
         meters: 61,
@@ -2190,8 +2190,8 @@
       ems: null,
     },
     {
-      latitude: 38.715309,
-      longitude: -9.351685,
+      lat: 38.715309,
+      lng: -9.351685,
       altitude: {
         feet: 200,
         meters: 61,
@@ -2211,8 +2211,8 @@
       ems: null,
     },
     {
-      latitude: 38.716644,
-      longitude: -9.352172,
+      lat: 38.716644,
+      lng: -9.352172,
       altitude: {
         feet: 100,
         meters: 30,
@@ -2232,8 +2232,8 @@
       ems: null,
     },
     {
-      latitude: 38.718193,
-      longitude: -9.352722,
+      lat: 38.718193,
+      lng: -9.352722,
       altitude: {
         feet: 100,
         meters: 30,
@@ -2253,8 +2253,8 @@
       ems: null,
     },
     {
-      latitude: 38.719482,
-      longitude: -9.353187,
+      lat: 38.719482,
+      lng: -9.353187,
       altitude: {
         feet: 100,
         meters: 30,
@@ -2274,8 +2274,8 @@
       ems: null,
     },
     {
-      latitude: 38.721085,
-      longitude: -9.353784,
+      lat: 38.721085,
+      lng: -9.353784,
       altitude: {
         feet: 100,
         meters: 30,
@@ -2295,8 +2295,8 @@
       ems: null,
     },
     {
-      latitude: 38.722198,
-      longitude: -9.354187,
+      lat: 38.722198,
+      lng: -9.354187,
       altitude: {
         feet: 100,
         meters: 30,
@@ -2316,8 +2316,8 @@
       ems: null,
     },
     {
-      latitude: 38.723175,
-      longitude: -9.354553,
+      lat: 38.723175,
+      lng: -9.354553,
       altitude: {
         feet: 100,
         meters: 30,
@@ -2337,8 +2337,8 @@
       ems: null,
     },
     {
-      latitude: 38.724106,
-      longitude: -9.354858,
+      lat: 38.724106,
+      lng: -9.354858,
       altitude: {
         feet: 100,
         meters: 30,
@@ -2358,8 +2358,8 @@
       ems: null,
     },
     {
-      latitude: 38.725571,
-      longitude: -9.355395,
+      lat: 38.725571,
+      lng: -9.355395,
       altitude: {
         feet: 100,
         meters: 30,
@@ -2379,8 +2379,8 @@
       ems: null,
     },
     {
-      latitude: 38.726852,
-      longitude: -9.355873,
+      lat: 38.726852,
+      lng: -9.355873,
       altitude: {
         feet: 200,
         meters: 61,
@@ -2400,8 +2400,8 @@
       ems: null,
     },
     {
-      latitude: 38.728481,
-      longitude: -9.356506,
+      lat: 38.728481,
+      lng: -9.356506,
       altitude: {
         feet: 200,
         meters: 61,
@@ -2421,8 +2421,8 @@
       ems: null,
     },
     {
-      latitude: 38.729832,
-      longitude: -9.356934,
+      lat: 38.729832,
+      lng: -9.356934,
       altitude: {
         feet: 300,
         meters: 91,
@@ -2442,8 +2442,8 @@
       ems: null,
     },
     {
-      latitude: 38.731064,
-      longitude: -9.357367,
+      lat: 38.731064,
+      lng: -9.357367,
       altitude: {
         feet: 400,
         meters: 122,
@@ -2463,8 +2463,8 @@
       ems: null,
     },
     {
-      latitude: 38.731613,
-      longitude: -9.357486,
+      lat: 38.731613,
+      lng: -9.357486,
       altitude: {
         feet: 500,
         meters: 152,
@@ -2484,8 +2484,8 @@
       ems: null,
     },
     {
-      latitude: 38.732071,
-      longitude: -9.357545,
+      lat: 38.732071,
+      lng: -9.357545,
       altitude: {
         feet: 500,
         meters: 152,
@@ -2505,8 +2505,8 @@
       ems: null,
     },
     {
-      latitude: 38.732346,
-      longitude: -9.357605,
+      lat: 38.732346,
+      lng: -9.357605,
       altitude: {
         feet: 500,
         meters: 152,
@@ -2526,8 +2526,8 @@
       ems: null,
     },
     {
-      latitude: 38.732666,
-      longitude: -9.357665,
+      lat: 38.732666,
+      lng: -9.357665,
       altitude: {
         feet: 500,
         meters: 152,
@@ -2547,8 +2547,8 @@
       ems: null,
     },
     {
-      latitude: 38.732998,
-      longitude: -9.357727,
+      lat: 38.732998,
+      lng: -9.357727,
       altitude: {
         feet: 500,
         meters: 152,
@@ -2568,8 +2568,8 @@
       ems: null,
     },
     {
-      latitude: 38.733444,
-      longitude: -9.357843,
+      lat: 38.733444,
+      lng: -9.357843,
       altitude: {
         feet: 500,
         meters: 152,
@@ -2589,8 +2589,8 @@
       ems: null,
     },
     {
-      latitude: 38.734268,
-      longitude: -9.358023,
+      lat: 38.734268,
+      lng: -9.358023,
       altitude: {
         feet: 600,
         meters: 183,
@@ -2610,8 +2610,8 @@
       ems: null,
     },
     {
-      latitude: 38.734634,
-      longitude: -9.358083,
+      lat: 38.734634,
+      lng: -9.358083,
       altitude: {
         feet: 600,
         meters: 183,
@@ -2631,8 +2631,8 @@
       ems: null,
     },
     {
-      latitude: 38.734863,
-      longitude: -9.358142,
+      lat: 38.734863,
+      lng: -9.358142,
       altitude: {
         feet: 700,
         meters: 213,
@@ -2652,8 +2652,8 @@
       ems: null,
     },
     {
-      latitude: 38.735733,
-      longitude: -9.358321,
+      lat: 38.735733,
+      lng: -9.358321,
       altitude: {
         feet: 700,
         meters: 213,
@@ -2673,8 +2673,8 @@
       ems: null,
     },
     {
-      latitude: 38.736923,
-      longitude: -9.35862,
+      lat: 38.736923,
+      lng: -9.35862,
       altitude: {
         feet: 800,
         meters: 244,
@@ -2694,8 +2694,8 @@
       ems: null,
     },
     {
-      latitude: 38.738068,
-      longitude: -9.358918,
+      lat: 38.738068,
+      lng: -9.358918,
       altitude: {
         feet: 800,
         meters: 244,
@@ -2715,8 +2715,8 @@
       ems: null,
     },
     {
-      latitude: 38.739624,
-      longitude: -9.359277,
+      lat: 38.739624,
+      lng: -9.359277,
       altitude: {
         feet: 800,
         meters: 244,
@@ -2736,8 +2736,8 @@
       ems: null,
     },
     {
-      latitude: 38.741096,
-      longitude: -9.359741,
+      lat: 38.741096,
+      lng: -9.359741,
       altitude: {
         feet: 800,
         meters: 244,
@@ -2757,8 +2757,8 @@
       ems: null,
     },
     {
-      latitude: 38.74173,
-      longitude: -9.359993,
+      lat: 38.74173,
+      lng: -9.359993,
       altitude: {
         feet: 800,
         meters: 244,
@@ -2778,8 +2778,8 @@
       ems: null,
     },
     {
-      latitude: 38.74231,
-      longitude: -9.360229,
+      lat: 38.74231,
+      lng: -9.360229,
       altitude: {
         feet: 800,
         meters: 244,
@@ -2799,8 +2799,8 @@
       ems: null,
     },
     {
-      latitude: 38.743099,
-      longitude: -9.360474,
+      lat: 38.743099,
+      lng: -9.360474,
       altitude: {
         feet: 800,
         meters: 244,
@@ -2820,8 +2820,8 @@
       ems: null,
     },
     {
-      latitude: 38.74366,
-      longitude: -9.360718,
+      lat: 38.74366,
+      lng: -9.360718,
       altitude: {
         feet: 800,
         meters: 244,
@@ -2841,8 +2841,8 @@
       ems: null,
     },
     {
-      latitude: 38.744476,
-      longitude: -9.361068,
+      lat: 38.744476,
+      lng: -9.361068,
       altitude: {
         feet: 800,
         meters: 244,
@@ -2862,8 +2862,8 @@
       ems: null,
     },
     {
-      latitude: 38.745102,
-      longitude: -9.361328,
+      lat: 38.745102,
+      lng: -9.361328,
       altitude: {
         feet: 800,
         meters: 244,
@@ -2883,8 +2883,8 @@
       ems: null,
     },
     {
-      latitude: 38.745754,
-      longitude: -9.361633,
+      lat: 38.745754,
+      lng: -9.361633,
       altitude: {
         feet: 800,
         meters: 244,
@@ -2904,8 +2904,8 @@
       ems: null,
     },
     {
-      latitude: 38.74649,
-      longitude: -9.362023,
+      lat: 38.74649,
+      lng: -9.362023,
       altitude: {
         feet: 800,
         meters: 244,
@@ -2925,8 +2925,8 @@
       ems: null,
     },
     {
-      latitude: 38.746822,
-      longitude: -9.362244,
+      lat: 38.746822,
+      lng: -9.362244,
       altitude: {
         feet: 800,
         meters: 244,
@@ -2946,8 +2946,8 @@
       ems: null,
     },
     {
-      latitude: 38.747635,
-      longitude: -9.363038,
+      lat: 38.747635,
+      lng: -9.363038,
       altitude: {
         feet: 800,
         meters: 244,
@@ -2967,8 +2967,8 @@
       ems: null,
     },
     {
-      latitude: 38.748184,
-      longitude: -9.364591,
+      lat: 38.748184,
+      lng: -9.364591,
       altitude: {
         feet: 800,
         meters: 244,
@@ -2988,8 +2988,8 @@
       ems: null,
     },
     {
-      latitude: 38.748184,
-      longitude: -9.365785,
+      lat: 38.748184,
+      lng: -9.365785,
       altitude: {
         feet: 800,
         meters: 244,
@@ -3009,8 +3009,8 @@
       ems: null,
     },
     {
-      latitude: 38.747955,
-      longitude: -9.367158,
+      lat: 38.747955,
+      lng: -9.367158,
       altitude: {
         feet: 800,
         meters: 244,
@@ -3030,8 +3030,8 @@
       ems: null,
     },
     {
-      latitude: 38.747524,
-      longitude: -9.368652,
+      lat: 38.747524,
+      lng: -9.368652,
       altitude: {
         feet: 800,
         meters: 244,
@@ -3051,8 +3051,8 @@
       ems: null,
     },
     {
-      latitude: 38.747009,
-      longitude: -9.370117,
+      lat: 38.747009,
+      lng: -9.370117,
       altitude: {
         feet: 800,
         meters: 244,
@@ -3072,8 +3072,8 @@
       ems: null,
     },
     {
-      latitude: 38.746498,
-      longitude: -9.371582,
+      lat: 38.746498,
+      lng: -9.371582,
       altitude: {
         feet: 800,
         meters: 244,
@@ -3093,8 +3093,8 @@
       ems: null,
     },
     {
-      latitude: 38.745846,
-      longitude: -9.372864,
+      lat: 38.745846,
+      lng: -9.372864,
       altitude: {
         feet: 800,
         meters: 244,
@@ -3114,8 +3114,8 @@
       ems: null,
     },
     {
-      latitude: 38.745056,
-      longitude: -9.373779,
+      lat: 38.745056,
+      lng: -9.373779,
       altitude: {
         feet: 800,
         meters: 244,
@@ -3135,8 +3135,8 @@
       ems: null,
     },
     {
-      latitude: 38.743332,
-      longitude: -9.37498,
+      lat: 38.743332,
+      lng: -9.37498,
       altitude: {
         feet: 800,
         meters: 244,
@@ -3156,8 +3156,8 @@
       ems: null,
     },
     {
-      latitude: 38.741913,
-      longitude: -9.375398,
+      lat: 38.741913,
+      lng: -9.375398,
       altitude: {
         feet: 800,
         meters: 244,
@@ -3177,8 +3177,8 @@
       ems: null,
     },
     {
-      latitude: 38.740265,
-      longitude: -9.375458,
+      lat: 38.740265,
+      lng: -9.375458,
       altitude: {
         feet: 900,
         meters: 274,
@@ -3198,8 +3198,8 @@
       ems: null,
     },
     {
-      latitude: 38.738956,
-      longitude: -9.375305,
+      lat: 38.738956,
+      lng: -9.375305,
       altitude: {
         feet: 800,
         meters: 244,
@@ -3219,8 +3219,8 @@
       ems: null,
     },
     {
-      latitude: 38.737335,
-      longitude: -9.375099,
+      lat: 38.737335,
+      lng: -9.375099,
       altitude: {
         feet: 800,
         meters: 244,
@@ -3240,8 +3240,8 @@
       ems: null,
     },
     {
-      latitude: 38.735779,
-      longitude: -9.374861,
+      lat: 38.735779,
+      lng: -9.374861,
       altitude: {
         feet: 800,
         meters: 244,
@@ -3261,8 +3261,8 @@
       ems: null,
     },
     {
-      latitude: 38.734177,
-      longitude: -9.374681,
+      lat: 38.734177,
+      lng: -9.374681,
       altitude: {
         feet: 800,
         meters: 244,
@@ -3282,8 +3282,8 @@
       ems: null,
     },
     {
-      latitude: 38.732533,
-      longitude: -9.374451,
+      lat: 38.732533,
+      lng: -9.374451,
       altitude: {
         feet: 800,
         meters: 244,
@@ -3303,8 +3303,8 @@
       ems: null,
     },
     {
-      latitude: 38.731018,
-      longitude: -9.374264,
+      lat: 38.731018,
+      lng: -9.374264,
       altitude: {
         feet: 800,
         meters: 244,
@@ -3324,8 +3324,8 @@
       ems: null,
     },
     {
-      latitude: 38.729321,
-      longitude: -9.374084,
+      lat: 38.729321,
+      lng: -9.374084,
       altitude: {
         feet: 800,
         meters: 244,
@@ -3345,8 +3345,8 @@
       ems: null,
     },
     {
-      latitude: 38.727585,
-      longitude: -9.373905,
+      lat: 38.727585,
+      lng: -9.373905,
       altitude: {
         feet: 800,
         meters: 244,
@@ -3366,8 +3366,8 @@
       ems: null,
     },
     {
-      latitude: 38.72612,
-      longitude: -9.373786,
+      lat: 38.72612,
+      lng: -9.373786,
       altitude: {
         feet: 800,
         meters: 244,
@@ -3387,8 +3387,8 @@
       ems: null,
     },
     {
-      latitude: 38.723175,
-      longitude: -9.373474,
+      lat: 38.723175,
+      lng: -9.373474,
       altitude: {
         feet: 800,
         meters: 244,
@@ -3408,8 +3408,8 @@
       ems: null,
     },
     {
-      latitude: 38.719986,
-      longitude: -9.373189,
+      lat: 38.719986,
+      lng: -9.373189,
       altitude: {
         feet: 800,
         meters: 244,
@@ -3429,8 +3429,8 @@
       ems: null,
     },
     {
-      latitude: 38.717102,
-      longitude: -9.37283,
+      lat: 38.717102,
+      lng: -9.37283,
       altitude: {
         feet: 800,
         meters: 244,
@@ -3450,8 +3450,8 @@
       ems: null,
     },
     {
-      latitude: 38.714378,
-      longitude: -9.372498,
+      lat: 38.714378,
+      lng: -9.372498,
       altitude: {
         feet: 900,
         meters: 274,
@@ -3471,8 +3471,8 @@
       ems: null,
     },
     {
-      latitude: 38.711819,
-      longitude: -9.372253,
+      lat: 38.711819,
+      lng: -9.372253,
       altitude: {
         feet: 800,
         meters: 244,
@@ -3492,8 +3492,8 @@
       ems: null,
     },
     {
-      latitude: 38.709274,
-      longitude: -9.371995,
+      lat: 38.709274,
+      lng: -9.371995,
       altitude: {
         feet: 800,
         meters: 244,
@@ -3513,8 +3513,8 @@
       ems: null,
     },
     {
-      latitude: 38.706509,
-      longitude: -9.371521,
+      lat: 38.706509,
+      lng: -9.371521,
       altitude: {
         feet: 800,
         meters: 244,
@@ -3534,8 +3534,8 @@
       ems: null,
     },
     {
-      latitude: 38.705441,
-      longitude: -9.371155,
+      lat: 38.705441,
+      lng: -9.371155,
       altitude: {
         feet: 800,
         meters: 244,
@@ -3555,8 +3555,8 @@
       ems: null,
     },
     {
-      latitude: 38.704323,
-      longitude: -9.370361,
+      lat: 38.704323,
+      lng: -9.370361,
       altitude: {
         feet: 800,
         meters: 244,
@@ -3576,8 +3576,8 @@
       ems: null,
     },
     {
-      latitude: 38.703297,
-      longitude: -9.369202,
+      lat: 38.703297,
+      lng: -9.369202,
       altitude: {
         feet: 800,
         meters: 244,
@@ -3597,8 +3597,8 @@
       ems: null,
     },
     {
-      latitude: 38.702728,
-      longitude: -9.368054,
+      lat: 38.702728,
+      lng: -9.368054,
       altitude: {
         feet: 800,
         meters: 244,
@@ -3618,8 +3618,8 @@
       ems: null,
     },
     {
-      latitude: 38.70232,
-      longitude: -9.366821,
+      lat: 38.70232,
+      lng: -9.366821,
       altitude: {
         feet: 700,
         meters: 213,
@@ -3639,8 +3639,8 @@
       ems: null,
     },
     {
-      latitude: 38.702133,
-      longitude: -9.365665,
+      lat: 38.702133,
+      lng: -9.365665,
       altitude: {
         feet: 700,
         meters: 213,
@@ -3660,8 +3660,8 @@
       ems: null,
     },
     {
-      latitude: 38.702042,
-      longitude: -9.364411,
+      lat: 38.702042,
+      lng: -9.364411,
       altitude: {
         feet: 700,
         meters: 213,
@@ -3681,8 +3681,8 @@
       ems: null,
     },
     {
-      latitude: 38.702042,
-      longitude: -9.363277,
+      lat: 38.702042,
+      lng: -9.363277,
       altitude: {
         feet: 600,
         meters: 183,
@@ -3702,8 +3702,8 @@
       ems: null,
     },
     {
-      latitude: 38.702087,
-      longitude: -9.362122,
+      lat: 38.702087,
+      lng: -9.362122,
       altitude: {
         feet: 600,
         meters: 183,
@@ -3723,8 +3723,8 @@
       ems: null,
     },
     {
-      latitude: 38.702179,
-      longitude: -9.360901,
+      lat: 38.702179,
+      lng: -9.360901,
       altitude: {
         feet: 600,
         meters: 183,
@@ -3744,8 +3744,8 @@
       ems: null,
     },
     {
-      latitude: 38.702225,
-      longitude: -9.359755,
+      lat: 38.702225,
+      lng: -9.359755,
       altitude: {
         feet: 600,
         meters: 183,
@@ -3765,8 +3765,8 @@
       ems: null,
     },
     {
-      latitude: 38.70232,
-      longitude: -9.358765,
+      lat: 38.70232,
+      lng: -9.358765,
       altitude: {
         feet: 600,
         meters: 183,
@@ -3786,8 +3786,8 @@
       ems: null,
     },
     {
-      latitude: 38.702408,
-      longitude: -9.357545,
+      lat: 38.702408,
+      lng: -9.357545,
       altitude: {
         feet: 500,
         meters: 152,
@@ -3807,8 +3807,8 @@
       ems: null,
     },
     {
-      latitude: 38.702545,
-      longitude: -9.35659,
+      lat: 38.702545,
+      lng: -9.35659,
       altitude: {
         feet: 500,
         meters: 152,
@@ -3828,8 +3828,8 @@
       ems: null,
     },
     {
-      latitude: 38.702694,
-      longitude: -9.355469,
+      lat: 38.702694,
+      lng: -9.355469,
       altitude: {
         feet: 500,
         meters: 152,
@@ -3849,8 +3849,8 @@
       ems: null,
     },
     {
-      latitude: 38.702831,
-      longitude: -9.354431,
+      lat: 38.702831,
+      lng: -9.354431,
       altitude: {
         feet: 500,
         meters: 152,
@@ -3870,8 +3870,8 @@
       ems: null,
     },
     {
-      latitude: 38.703018,
-      longitude: -9.353394,
+      lat: 38.703018,
+      lng: -9.353394,
       altitude: {
         feet: 500,
         meters: 152,
@@ -3891,8 +3891,8 @@
       ems: null,
     },
     {
-      latitude: 38.703186,
-      longitude: -9.35253,
+      lat: 38.703186,
+      lng: -9.35253,
       altitude: {
         feet: 500,
         meters: 152,
@@ -3912,8 +3912,8 @@
       ems: null,
     },
     {
-      latitude: 38.703392,
-      longitude: -9.35144,
+      lat: 38.703392,
+      lng: -9.35144,
       altitude: {
         feet: 400,
         meters: 122,
@@ -3933,8 +3933,8 @@
       ems: null,
     },
     {
-      latitude: 38.703735,
-      longitude: -9.350559,
+      lat: 38.703735,
+      lng: -9.350559,
       altitude: {
         feet: 400,
         meters: 122,
@@ -3954,8 +3954,8 @@
       ems: null,
     },
     {
-      latitude: 38.704193,
-      longitude: -9.349843,
+      lat: 38.704193,
+      lng: -9.349843,
       altitude: {
         feet: 400,
         meters: 122,
@@ -3975,8 +3975,8 @@
       ems: null,
     },
     {
-      latitude: 38.704693,
-      longitude: -9.349365,
+      lat: 38.704693,
+      lng: -9.349365,
       altitude: {
         feet: 400,
         meters: 122,
@@ -3996,8 +3996,8 @@
       ems: null,
     },
     {
-      latitude: 38.705345,
-      longitude: -9.348999,
+      lat: 38.705345,
+      lng: -9.348999,
       altitude: {
         feet: 400,
         meters: 122,
@@ -4017,8 +4017,8 @@
       ems: null,
     },
     {
-      latitude: 38.706024,
-      longitude: -9.348887,
+      lat: 38.706024,
+      lng: -9.348887,
       altitude: {
         feet: 400,
         meters: 122,
@@ -4038,8 +4038,8 @@
       ems: null,
     },
     {
-      latitude: 38.706696,
-      longitude: -9.348816,
+      lat: 38.706696,
+      lng: -9.348816,
       altitude: {
         feet: 400,
         meters: 122,
@@ -4059,8 +4059,8 @@
       ems: null,
     },
     {
-      latitude: 38.707348,
-      longitude: -9.348816,
+      lat: 38.707348,
+      lng: -9.348816,
       altitude: {
         feet: 400,
         meters: 122,
@@ -4080,8 +4080,8 @@
       ems: null,
     },
     {
-      latitude: 38.707993,
-      longitude: -9.348948,
+      lat: 38.707993,
+      lng: -9.348948,
       altitude: {
         feet: 400,
         meters: 122,
@@ -4101,8 +4101,8 @@
       ems: null,
     },
     {
-      latitude: 38.708725,
-      longitude: -9.349186,
+      lat: 38.708725,
+      lng: -9.349186,
       altitude: {
         feet: 400,
         meters: 122,
@@ -4122,8 +4122,8 @@
       ems: null,
     },
     {
-      latitude: 38.709351,
-      longitude: -9.349426,
+      lat: 38.709351,
+      lng: -9.349426,
       altitude: {
         feet: 300,
         meters: 91,
@@ -4143,8 +4143,8 @@
       ems: null,
     },
     {
-      latitude: 38.710049,
-      longitude: -9.349731,
+      lat: 38.710049,
+      lng: -9.349731,
       altitude: {
         feet: 300,
         meters: 91,
@@ -4164,8 +4164,8 @@
       ems: null,
     },
     {
-      latitude: 38.710747,
-      longitude: -9.349976,
+      lat: 38.710747,
+      lng: -9.349976,
       altitude: {
         feet: 300,
         meters: 91,
@@ -4185,8 +4185,8 @@
       ems: null,
     },
     {
-      latitude: 38.711517,
-      longitude: -9.350261,
+      lat: 38.711517,
+      lng: -9.350261,
       altitude: {
         feet: 300,
         meters: 91,
@@ -4206,8 +4206,8 @@
       ems: null,
     },
     {
-      latitude: 38.712204,
-      longitude: -9.3505,
+      lat: 38.712204,
+      lng: -9.3505,
       altitude: {
         feet: 300,
         meters: 91,
@@ -4227,8 +4227,8 @@
       ems: null,
     },
     {
-      latitude: 38.712936,
-      longitude: -9.350858,
+      lat: 38.712936,
+      lng: -9.350858,
       altitude: {
         feet: 200,
         meters: 61,
@@ -4248,8 +4248,8 @@
       ems: null,
     },
     {
-      latitude: 38.713806,
-      longitude: -9.351156,
+      lat: 38.713806,
+      lng: -9.351156,
       altitude: {
         feet: 200,
         meters: 61,
@@ -4269,8 +4269,8 @@
       ems: null,
     },
     {
-      latitude: 38.714447,
-      longitude: -9.351396,
+      lat: 38.714447,
+      lng: -9.351396,
       altitude: {
         feet: 200,
         meters: 61,
@@ -4290,8 +4290,8 @@
       ems: null,
     },
     {
-      latitude: 38.715912,
-      longitude: -9.351873,
+      lat: 38.715912,
+      lng: -9.351873,
       altitude: {
         feet: 200,
         meters: 61,
@@ -4311,8 +4311,8 @@
       ems: null,
     },
     {
-      latitude: 38.717545,
-      longitude: -9.352478,
+      lat: 38.717545,
+      lng: -9.352478,
       altitude: {
         feet: 100,
         meters: 30,
@@ -4332,8 +4332,8 @@
       ems: null,
     },
     {
-      latitude: 38.718933,
-      longitude: -9.353007,
+      lat: 38.718933,
+      lng: -9.353007,
       altitude: {
         feet: 100,
         meters: 30,
@@ -4353,8 +4353,8 @@
       ems: null,
     },
     {
-      latitude: 38.720383,
-      longitude: -9.353516,
+      lat: 38.720383,
+      lng: -9.353516,
       altitude: {
         feet: 100,
         meters: 30,
@@ -4374,8 +4374,8 @@
       ems: null,
     },
     {
-      latitude: 38.721592,
-      longitude: -9.353943,
+      lat: 38.721592,
+      lng: -9.353943,
       altitude: {
         feet: 100,
         meters: 30,
@@ -4395,8 +4395,8 @@
       ems: null,
     },
     {
-      latitude: 38.722549,
-      longitude: -9.354261,
+      lat: 38.722549,
+      lng: -9.354261,
       altitude: {
         feet: 100,
         meters: 30,
@@ -4416,8 +4416,8 @@
       ems: null,
     },
     {
-      latitude: 38.723602,
-      longitude: -9.354679,
+      lat: 38.723602,
+      lng: -9.354679,
       altitude: {
         feet: 100,
         meters: 30,
@@ -4437,8 +4437,8 @@
       ems: null,
     },
     {
-      latitude: 38.724976,
-      longitude: -9.355217,
+      lat: 38.724976,
+      lng: -9.355217,
       altitude: {
         feet: 100,
         meters: 30,
@@ -4458,8 +4458,8 @@
       ems: null,
     },
     {
-      latitude: 38.726395,
-      longitude: -9.355695,
+      lat: 38.726395,
+      lng: -9.355695,
       altitude: {
         feet: 200,
         meters: 61,
@@ -4479,8 +4479,8 @@
       ems: null,
     },
     {
-      latitude: 38.727676,
-      longitude: -9.356172,
+      lat: 38.727676,
+      lng: -9.356172,
       altitude: {
         feet: 300,
         meters: 91,
@@ -4500,8 +4500,8 @@
       ems: null,
     },
     {
-      latitude: 38.729004,
-      longitude: -9.356709,
+      lat: 38.729004,
+      lng: -9.356709,
       altitude: {
         feet: 300,
         meters: 91,
@@ -4521,8 +4521,8 @@
       ems: null,
     },
     {
-      latitude: 38.730286,
-      longitude: -9.357127,
+      lat: 38.730286,
+      lng: -9.357127,
       altitude: {
         feet: 400,
         meters: 122,
@@ -4542,8 +4542,8 @@
       ems: null,
     },
     {
-      latitude: 38.731567,
-      longitude: -9.357486,
+      lat: 38.731567,
+      lng: -9.357486,
       altitude: {
         feet: 500,
         meters: 152,
@@ -4563,8 +4563,8 @@
       ems: null,
     },
     {
-      latitude: 38.732437,
-      longitude: -9.357665,
+      lat: 38.732437,
+      lng: -9.357665,
       altitude: {
         feet: 500,
         meters: 152,
@@ -4584,8 +4584,8 @@
       ems: null,
     },
     {
-      latitude: 38.733555,
-      longitude: -9.357971,
+      lat: 38.733555,
+      lng: -9.357971,
       altitude: {
         feet: 500,
         meters: 152,
@@ -4605,8 +4605,8 @@
       ems: null,
     },
     {
-      latitude: 38.73436,
-      longitude: -9.358142,
+      lat: 38.73436,
+      lng: -9.358142,
       altitude: {
         feet: 500,
         meters: 152,
@@ -4626,8 +4626,8 @@
       ems: null,
     },
     {
-      latitude: 38.735092,
-      longitude: -9.358321,
+      lat: 38.735092,
+      lng: -9.358321,
       altitude: {
         feet: 600,
         meters: 183,
@@ -4647,8 +4647,8 @@
       ems: null,
     },
     {
-      latitude: 38.735836,
-      longitude: -9.358459,
+      lat: 38.735836,
+      lng: -9.358459,
       altitude: {
         feet: 700,
         meters: 213,
@@ -4668,8 +4668,8 @@
       ems: null,
     },
     {
-      latitude: 38.736351,
-      longitude: -9.358582,
+      lat: 38.736351,
+      lng: -9.358582,
       altitude: {
         feet: 700,
         meters: 213,
@@ -4689,8 +4689,8 @@
       ems: null,
     },
     {
-      latitude: 38.737701,
-      longitude: -9.358887,
+      lat: 38.737701,
+      lng: -9.358887,
       altitude: {
         feet: 800,
         meters: 244,
@@ -4710,8 +4710,8 @@
       ems: null,
     },
     {
-      latitude: 38.739189,
-      longitude: -9.359253,
+      lat: 38.739189,
+      lng: -9.359253,
       altitude: {
         feet: 800,
         meters: 244,
@@ -4731,8 +4731,8 @@
       ems: null,
     },
     {
-      latitude: 38.739933,
-      longitude: -9.359497,
+      lat: 38.739933,
+      lng: -9.359497,
       altitude: {
         feet: 800,
         meters: 244,
@@ -4752,8 +4752,8 @@
       ems: null,
     },
     {
-      latitude: 38.740772,
-      longitude: -9.359802,
+      lat: 38.740772,
+      lng: -9.359802,
       altitude: {
         feet: 700,
         meters: 213,
@@ -4773,8 +4773,8 @@
       ems: null,
     },
     {
-      latitude: 38.741638,
-      longitude: -9.360172,
+      lat: 38.741638,
+      lng: -9.360172,
       altitude: {
         feet: 700,
         meters: 213,
@@ -4794,8 +4794,8 @@
       ems: null,
     },
     {
-      latitude: 38.742264,
-      longitude: -9.360413,
+      lat: 38.742264,
+      lng: -9.360413,
       altitude: {
         feet: 700,
         meters: 213,
@@ -4815,8 +4815,8 @@
       ems: null,
     },
     {
-      latitude: 38.744064,
-      longitude: -9.360888,
+      lat: 38.744064,
+      lng: -9.360888,
       altitude: {
         feet: 700,
         meters: 213,
@@ -4836,8 +4836,8 @@
       ems: null,
     },
     {
-      latitude: 38.745621,
-      longitude: -9.361247,
+      lat: 38.745621,
+      lng: -9.361247,
       altitude: {
         feet: 700,
         meters: 213,
@@ -4857,8 +4857,8 @@
       ems: null,
     },
     {
-      latitude: 38.746307,
-      longitude: -9.361665,
+      lat: 38.746307,
+      lng: -9.361665,
       altitude: {
         feet: 700,
         meters: 213,
@@ -4878,8 +4878,8 @@
       ems: null,
     },
     {
-      latitude: 38.746822,
-      longitude: -9.362244,
+      lat: 38.746822,
+      lng: -9.362244,
       altitude: {
         feet: 700,
         meters: 213,
@@ -4899,8 +4899,8 @@
       ems: null,
     },
     {
-      latitude: 38.74736,
-      longitude: -9.363755,
+      lat: 38.74736,
+      lng: -9.363755,
       altitude: {
         feet: 700,
         meters: 213,
@@ -4920,8 +4920,8 @@
       ems: null,
     },
     {
-      latitude: 38.747406,
-      longitude: -9.36483,
+      lat: 38.747406,
+      lng: -9.36483,
       altitude: {
         feet: 700,
         meters: 213,
@@ -4941,8 +4941,8 @@
       ems: null,
     },
     {
-      latitude: 38.747131,
-      longitude: -9.366442,
+      lat: 38.747131,
+      lng: -9.366442,
       altitude: {
         feet: 700,
         meters: 213,
@@ -4962,8 +4962,8 @@
       ems: null,
     },
     {
-      latitude: 38.746857,
-      longitude: -9.367696,
+      lat: 38.746857,
+      lng: -9.367696,
       altitude: {
         feet: 700,
         meters: 213,
@@ -4983,8 +4983,8 @@
       ems: null,
     },
     {
-      latitude: 38.746536,
-      longitude: -9.369428,
+      lat: 38.746536,
+      lng: -9.369428,
       altitude: {
         feet: 700,
         meters: 213,
@@ -5004,8 +5004,8 @@
       ems: null,
     },
     {
-      latitude: 38.74622,
-      longitude: -9.37085,
+      lat: 38.74622,
+      lng: -9.37085,
       altitude: {
         feet: 700,
         meters: 213,
@@ -5025,8 +5025,8 @@
       ems: null,
     },
     {
-      latitude: 38.745575,
-      longitude: -9.372473,
+      lat: 38.745575,
+      lng: -9.372473,
       altitude: {
         feet: 700,
         meters: 213,
@@ -5046,8 +5046,8 @@
       ems: null,
     },
     {
-      latitude: 38.744728,
-      longitude: -9.373779,
+      lat: 38.744728,
+      lng: -9.373779,
       altitude: {
         feet: 800,
         meters: 244,
@@ -5067,8 +5067,8 @@
       ems: null,
     },
     {
-      latitude: 38.743565,
-      longitude: -9.374878,
+      lat: 38.743565,
+      lng: -9.374878,
       altitude: {
         feet: 800,
         meters: 244,
@@ -5088,8 +5088,8 @@
       ems: null,
     },
     {
-      latitude: 38.742077,
-      longitude: -9.375793,
+      lat: 38.742077,
+      lng: -9.375793,
       altitude: {
         feet: 800,
         meters: 244,
@@ -5109,8 +5109,8 @@
       ems: null,
     },
     {
-      latitude: 38.740677,
-      longitude: -9.376234,
+      lat: 38.740677,
+      lng: -9.376234,
       altitude: {
         feet: 800,
         meters: 244,
@@ -5130,8 +5130,8 @@
       ems: null,
     },
     {
-      latitude: 38.738956,
-      longitude: -9.376404,
+      lat: 38.738956,
+      lng: -9.376404,
       altitude: {
         feet: 800,
         meters: 244,
@@ -5151,8 +5151,8 @@
       ems: null,
     },
     {
-      latitude: 38.737606,
-      longitude: -9.376282,
+      lat: 38.737606,
+      lng: -9.376282,
       altitude: {
         feet: 800,
         meters: 244,
@@ -5172,8 +5172,8 @@
       ems: null,
     },
     {
-      latitude: 38.735825,
-      longitude: -9.375995,
+      lat: 38.735825,
+      lng: -9.375995,
       altitude: {
         feet: 700,
         meters: 213,
@@ -5193,8 +5193,8 @@
       ems: null,
     },
     {
-      latitude: 38.734406,
-      longitude: -9.375756,
+      lat: 38.734406,
+      lng: -9.375756,
       altitude: {
         feet: 700,
         meters: 213,
@@ -5214,8 +5214,8 @@
       ems: null,
     },
     {
-      latitude: 38.732895,
-      longitude: -9.375518,
+      lat: 38.732895,
+      lng: -9.375518,
       altitude: {
         feet: 700,
         meters: 213,
@@ -5235,8 +5235,8 @@
       ems: null,
     },
     {
-      latitude: 38.731415,
-      longitude: -9.375305,
+      lat: 38.731415,
+      lng: -9.375305,
       altitude: {
         feet: 700,
         meters: 213,
@@ -5256,8 +5256,8 @@
       ems: null,
     },
     {
-      latitude: 38.729874,
-      longitude: -9.37504,
+      lat: 38.729874,
+      lng: -9.37504,
       altitude: {
         feet: 700,
         meters: 213,
@@ -5277,8 +5277,8 @@
       ems: null,
     },
     {
-      latitude: 38.728363,
-      longitude: -9.374801,
+      lat: 38.728363,
+      lng: -9.374801,
       altitude: {
         feet: 700,
         meters: 213,
@@ -5298,8 +5298,8 @@
       ems: null,
     },
     {
-      latitude: 38.726852,
-      longitude: -9.374621,
+      lat: 38.726852,
+      lng: -9.374621,
       altitude: {
         feet: 700,
         meters: 213,
@@ -5319,8 +5319,8 @@
       ems: null,
     },
     {
-      latitude: 38.725269,
-      longitude: -9.374451,
+      lat: 38.725269,
+      lng: -9.374451,
       altitude: {
         feet: 700,
         meters: 213,
@@ -5340,8 +5340,8 @@
       ems: null,
     },
     {
-      latitude: 38.723782,
-      longitude: -9.374329,
+      lat: 38.723782,
+      lng: -9.374329,
       altitude: {
         feet: 700,
         meters: 213,
@@ -5361,8 +5361,8 @@
       ems: null,
     },
     {
-      latitude: 38.720707,
-      longitude: -9.373962,
+      lat: 38.720707,
+      lng: -9.373962,
       altitude: {
         feet: 700,
         meters: 213,
@@ -5382,8 +5382,8 @@
       ems: null,
     },
     {
-      latitude: 38.71788,
-      longitude: -9.373726,
+      lat: 38.71788,
+      lng: -9.373726,
       altitude: {
         feet: 700,
         meters: 213,
@@ -5403,8 +5403,8 @@
       ems: null,
     },
     {
-      latitude: 38.715076,
-      longitude: -9.373474,
+      lat: 38.715076,
+      lng: -9.373474,
       altitude: {
         feet: 700,
         meters: 213,
@@ -5424,8 +5424,8 @@
       ems: null,
     },
     {
-      latitude: 38.712387,
-      longitude: -9.373248,
+      lat: 38.712387,
+      lng: -9.373248,
       altitude: {
         feet: 800,
         meters: 244,
@@ -5445,8 +5445,8 @@
       ems: null,
     },
     {
-      latitude: 38.708324,
-      longitude: -9.372742,
+      lat: 38.708324,
+      lng: -9.372742,
       altitude: {
         feet: 800,
         meters: 244,
@@ -5466,8 +5466,8 @@
       ems: null,
     },
     {
-      latitude: 38.707161,
-      longitude: -9.372131,
+      lat: 38.707161,
+      lng: -9.372131,
       altitude: {
         feet: 800,
         meters: 244,
@@ -5487,8 +5487,8 @@
       ems: null,
     },
     {
-      latitude: 38.70607,
-      longitude: -9.371219,
+      lat: 38.70607,
+      lng: -9.371219,
       altitude: {
         feet: 800,
         meters: 244,
@@ -5508,8 +5508,8 @@
       ems: null,
     },
     {
-      latitude: 38.7052,
-      longitude: -9.369965,
+      lat: 38.7052,
+      lng: -9.369965,
       altitude: {
         feet: 800,
         meters: 244,
@@ -5529,8 +5529,8 @@
       ems: null,
     },
     {
-      latitude: 38.704697,
-      longitude: -9.36883,
+      lat: 38.704697,
+      lng: -9.36883,
       altitude: {
         feet: 800,
         meters: 244,
@@ -5550,8 +5550,8 @@
       ems: null,
     },
     {
-      latitude: 38.704414,
-      longitude: -9.367554,
+      lat: 38.704414,
+      lng: -9.367554,
       altitude: {
         feet: 800,
         meters: 244,
@@ -5571,8 +5571,8 @@
       ems: null,
     },
     {
-      latitude: 38.704277,
-      longitude: -9.366333,
+      lat: 38.704277,
+      lng: -9.366333,
       altitude: {
         feet: 800,
         meters: 244,
@@ -5592,8 +5592,8 @@
       ems: null,
     },
     {
-      latitude: 38.704193,
-      longitude: -9.364949,
+      lat: 38.704193,
+      lng: -9.364949,
       altitude: {
         feet: 800,
         meters: 244,
@@ -5613,8 +5613,8 @@
       ems: null,
     },
     {
-      latitude: 38.704136,
-      longitude: -9.363831,
+      lat: 38.704136,
+      lng: -9.363831,
       altitude: {
         feet: 800,
         meters: 244,
@@ -5634,8 +5634,8 @@
       ems: null,
     },
     {
-      latitude: 38.704102,
-      longitude: -9.36268,
+      lat: 38.704102,
+      lng: -9.36268,
       altitude: {
         feet: 800,
         meters: 244,
@@ -5655,8 +5655,8 @@
       ems: null,
     },
     {
-      latitude: 38.704044,
-      longitude: -9.36145,
+      lat: 38.704044,
+      lng: -9.36145,
       altitude: {
         feet: 700,
         meters: 213,
@@ -5676,8 +5676,8 @@
       ems: null,
     },
     {
-      latitude: 38.704056,
-      longitude: -9.360172,
+      lat: 38.704056,
+      lng: -9.360172,
       altitude: {
         feet: 700,
         meters: 213,
@@ -5697,8 +5697,8 @@
       ems: null,
     },
     {
-      latitude: 38.704102,
-      longitude: -9.359158,
+      lat: 38.704102,
+      lng: -9.359158,
       altitude: {
         feet: 700,
         meters: 213,
@@ -5718,8 +5718,8 @@
       ems: null,
     },
     {
-      latitude: 38.704193,
-      longitude: -9.358083,
+      lat: 38.704193,
+      lng: -9.358083,
       altitude: {
         feet: 600,
         meters: 183,
@@ -5739,8 +5739,8 @@
       ems: null,
     },
     {
-      latitude: 38.704239,
-      longitude: -9.357008,
+      lat: 38.704239,
+      lng: -9.357008,
       altitude: {
         feet: 600,
         meters: 183,
@@ -5760,8 +5760,8 @@
       ems: null,
     },
     {
-      latitude: 38.704376,
-      longitude: -9.355873,
+      lat: 38.704376,
+      lng: -9.355873,
       altitude: {
         feet: 600,
         meters: 183,
@@ -5781,8 +5781,8 @@
       ems: null,
     },
     {
-      latitude: 38.704605,
-      longitude: -9.354798,
+      lat: 38.704605,
+      lng: -9.354798,
       altitude: {
         feet: 500,
         meters: 152,
@@ -5802,8 +5802,8 @@
       ems: null,
     },
     {
-      latitude: 38.70488,
-      longitude: -9.353943,
+      lat: 38.70488,
+      lng: -9.353943,
       altitude: {
         feet: 500,
         meters: 152,
@@ -5823,8 +5823,8 @@
       ems: null,
     },
     {
-      latitude: 38.705208,
-      longitude: -9.353088,
+      lat: 38.705208,
+      lng: -9.353088,
       altitude: {
         feet: 500,
         meters: 152,
@@ -5844,8 +5844,8 @@
       ems: null,
     },
     {
-      latitude: 38.705532,
-      longitude: -9.352295,
+      lat: 38.705532,
+      lng: -9.352295,
       altitude: {
         feet: 500,
         meters: 152,
@@ -5865,8 +5865,8 @@
       ems: null,
     },
     {
-      latitude: 38.705978,
-      longitude: -9.351515,
+      lat: 38.705978,
+      lng: -9.351515,
       altitude: {
         feet: 400,
         meters: 122,
@@ -5886,8 +5886,8 @@
       ems: null,
     },
     {
-      latitude: 38.706604,
-      longitude: -9.350769,
+      lat: 38.706604,
+      lng: -9.350769,
       altitude: {
         feet: 400,
         meters: 122,
@@ -5907,8 +5907,8 @@
       ems: null,
     },
     {
-      latitude: 38.707069,
-      longitude: -9.350281,
+      lat: 38.707069,
+      lng: -9.350281,
       altitude: {
         feet: 400,
         meters: 122,
@@ -5928,8 +5928,8 @@
       ems: null,
     },
     {
-      latitude: 38.707767,
-      longitude: -9.349792,
+      lat: 38.707767,
+      lng: -9.349792,
       altitude: {
         feet: 400,
         meters: 122,
@@ -5949,8 +5949,8 @@
       ems: null,
     },
     {
-      latitude: 38.708359,
-      longitude: -9.349724,
+      lat: 38.708359,
+      lng: -9.349724,
       altitude: {
         feet: 400,
         meters: 122,
@@ -5970,8 +5970,8 @@
       ems: null,
     },
     {
-      latitude: 38.708954,
-      longitude: -9.349783,
+      lat: 38.708954,
+      lng: -9.349783,
       altitude: {
         feet: 300,
         meters: 91,
@@ -5991,8 +5991,8 @@
       ems: null,
     },
     {
-      latitude: 38.709732,
-      longitude: -9.349902,
+      lat: 38.709732,
+      lng: -9.349902,
       altitude: {
         feet: 300,
         meters: 91,
@@ -6012,8 +6012,8 @@
       ems: null,
     },
     {
-      latitude: 38.710419,
-      longitude: -9.350037,
+      lat: 38.710419,
+      lng: -9.350037,
       altitude: {
         feet: 300,
         meters: 91,
@@ -6033,8 +6033,8 @@
       ems: null,
     },
     {
-      latitude: 38.711117,
-      longitude: -9.35022,
+      lat: 38.711117,
+      lng: -9.35022,
       altitude: {
         feet: 300,
         meters: 91,
@@ -6054,8 +6054,8 @@
       ems: null,
     },
     {
-      latitude: 38.711929,
-      longitude: -9.35044,
+      lat: 38.711929,
+      lng: -9.35044,
       altitude: {
         feet: 300,
         meters: 91,
@@ -6075,8 +6075,8 @@
       ems: null,
     },
     {
-      latitude: 38.712708,
-      longitude: -9.350739,
+      lat: 38.712708,
+      lng: -9.350739,
       altitude: {
         feet: 200,
         meters: 61,
@@ -6096,8 +6096,8 @@
       ems: null,
     },
     {
-      latitude: 38.713398,
-      longitude: -9.351013,
+      lat: 38.713398,
+      lng: -9.351013,
       altitude: {
         feet: 200,
         meters: 61,
@@ -6117,8 +6117,8 @@
       ems: null,
     },
     {
-      latitude: 38.714127,
-      longitude: -9.351275,
+      lat: 38.714127,
+      lng: -9.351275,
       altitude: {
         feet: 200,
         meters: 61,
@@ -6138,8 +6138,8 @@
       ems: null,
     },
     {
-      latitude: 38.714703,
-      longitude: -9.35144,
+      lat: 38.714703,
+      lng: -9.35144,
       altitude: {
         feet: 200,
         meters: 61,
@@ -6159,8 +6159,8 @@
       ems: null,
     },
     {
-      latitude: 38.715408,
-      longitude: -9.351694,
+      lat: 38.715408,
+      lng: -9.351694,
       altitude: {
         feet: 200,
         meters: 61,
@@ -6180,8 +6180,8 @@
       ems: null,
     },
     {
-      latitude: 38.716053,
-      longitude: -9.35199,
+      lat: 38.716053,
+      lng: -9.35199,
       altitude: {
         feet: 100,
         meters: 30,
@@ -6201,8 +6201,8 @@
       ems: null,
     },
     {
-      latitude: 38.716827,
-      longitude: -9.352231,
+      lat: 38.716827,
+      lng: -9.352231,
       altitude: {
         feet: 100,
         meters: 30,
@@ -6222,8 +6222,8 @@
       ems: null,
     },
     {
-      latitude: 38.718384,
-      longitude: -9.352769,
+      lat: 38.718384,
+      lng: -9.352769,
       altitude: {
         feet: 100,
         meters: 30,
@@ -6243,8 +6243,8 @@
       ems: null,
     },
     {
-      latitude: 38.719265,
-      longitude: -9.353088,
+      lat: 38.719265,
+      lng: -9.353088,
       altitude: {
         feet: 100,
         meters: 30,
@@ -6264,8 +6264,8 @@
       ems: null,
     },
     {
-      latitude: 38.721222,
-      longitude: -9.353821,
+      lat: 38.721222,
+      lng: -9.353821,
       altitude: {
         feet: 100,
         meters: 30,
@@ -6285,8 +6285,8 @@
       ems: null,
     },
     {
-      latitude: 38.722412,
-      longitude: -9.354261,
+      lat: 38.722412,
+      lng: -9.354261,
       altitude: {
         feet: 100,
         meters: 30,
@@ -6306,8 +6306,8 @@
       ems: null,
     },
     {
-      latitude: 38.723686,
-      longitude: -9.354736,
+      lat: 38.723686,
+      lng: -9.354736,
       altitude: {
         feet: 100,
         meters: 30,
@@ -6327,8 +6327,8 @@
       ems: null,
     },
     {
-      latitude: 38.725037,
-      longitude: -9.355225,
+      lat: 38.725037,
+      lng: -9.355225,
       altitude: {
         feet: 100,
         meters: 30,
@@ -6348,8 +6348,8 @@
       ems: null,
     },
     {
-      latitude: 38.726532,
-      longitude: -9.355754,
+      lat: 38.726532,
+      lng: -9.355754,
       altitude: {
         feet: 200,
         meters: 61,
@@ -6369,8 +6369,8 @@
       ems: null,
     },
     {
-      latitude: 38.727924,
-      longitude: -9.356262,
+      lat: 38.727924,
+      lng: -9.356262,
       altitude: {
         feet: 300,
         meters: 91,
@@ -6390,8 +6390,8 @@
       ems: null,
     },
     {
-      latitude: 38.729095,
-      longitude: -9.356649,
+      lat: 38.729095,
+      lng: -9.356649,
       altitude: {
         feet: 300,
         meters: 91,
@@ -6411,8 +6411,8 @@
       ems: null,
     },
     {
-      latitude: 38.729782,
-      longitude: -9.356829,
+      lat: 38.729782,
+      lng: -9.356829,
       altitude: {
         feet: 400,
         meters: 122,
@@ -6432,8 +6432,8 @@
       ems: null,
     },
     {
-      latitude: 38.730206,
-      longitude: -9.356934,
+      lat: 38.730206,
+      lng: -9.356934,
       altitude: {
         feet: 400,
         meters: 122,
@@ -6453,8 +6453,8 @@
       ems: null,
     },
     {
-      latitude: 38.731136,
-      longitude: -9.357056,
+      lat: 38.731136,
+      lng: -9.357056,
       altitude: {
         feet: 400,
         meters: 122,
@@ -6474,8 +6474,8 @@
       ems: null,
     },
     {
-      latitude: 38.731834,
-      longitude: -9.357178,
+      lat: 38.731834,
+      lng: -9.357178,
       altitude: {
         feet: 500,
         meters: 152,
@@ -6495,8 +6495,8 @@
       ems: null,
     },
     {
-      latitude: 38.732483,
-      longitude: -9.357246,
+      lat: 38.732483,
+      lng: -9.357246,
       altitude: {
         feet: 500,
         meters: 152,
@@ -6516,8 +6516,8 @@
       ems: null,
     },
     {
-      latitude: 38.733582,
-      longitude: -9.357486,
+      lat: 38.733582,
+      lng: -9.357486,
       altitude: {
         feet: 600,
         meters: 183,
@@ -6537,8 +6537,8 @@
       ems: null,
     },
     {
-      latitude: 38.734177,
-      longitude: -9.357605,
+      lat: 38.734177,
+      lng: -9.357605,
       altitude: {
         feet: 600,
         meters: 183,
@@ -6558,8 +6558,8 @@
       ems: null,
     },
     {
-      latitude: 38.734768,
-      longitude: -9.357727,
+      lat: 38.734768,
+      lng: -9.357727,
       altitude: {
         feet: 700,
         meters: 213,
@@ -6579,8 +6579,8 @@
       ems: null,
     },
     {
-      latitude: 38.735977,
-      longitude: -9.358032,
+      lat: 38.735977,
+      lng: -9.358032,
       altitude: {
         feet: 700,
         meters: 213,
@@ -6600,8 +6600,8 @@
       ems: null,
     },
     {
-      latitude: 38.736557,
-      longitude: -9.358262,
+      lat: 38.736557,
+      lng: -9.358262,
       altitude: {
         feet: 800,
         meters: 244,
@@ -6621,8 +6621,8 @@
       ems: null,
     },
     {
-      latitude: 38.737152,
-      longitude: -9.3585,
+      lat: 38.737152,
+      lng: -9.3585,
       altitude: {
         feet: 800,
         meters: 244,
@@ -6642,8 +6642,8 @@
       ems: null,
     },
     {
-      latitude: 38.737839,
-      longitude: -9.358765,
+      lat: 38.737839,
+      lng: -9.358765,
       altitude: {
         feet: 800,
         meters: 244,
@@ -6663,8 +6663,8 @@
       ems: null,
     },
     {
-      latitude: 38.73835,
-      longitude: -9.358948,
+      lat: 38.73835,
+      lng: -9.358948,
       altitude: {
         feet: 800,
         meters: 244,
@@ -6684,8 +6684,8 @@
       ems: null,
     },
     {
-      latitude: 38.73912,
-      longitude: -9.359217,
+      lat: 38.73912,
+      lng: -9.359217,
       altitude: {
         feet: 800,
         meters: 244,
@@ -6705,8 +6705,8 @@
       ems: null,
     },
     {
-      latitude: 38.740494,
-      longitude: -9.35968,
+      lat: 38.740494,
+      lng: -9.35968,
       altitude: {
         feet: 800,
         meters: 244,
@@ -6726,8 +6726,8 @@
       ems: null,
     },
     {
-      latitude: 38.74118,
-      longitude: -9.359934,
+      lat: 38.74118,
+      lng: -9.359934,
       altitude: {
         feet: 800,
         meters: 244,
@@ -6747,8 +6747,8 @@
       ems: null,
     },
     {
-      latitude: 38.741638,
-      longitude: -9.360113,
+      lat: 38.741638,
+      lng: -9.360113,
       altitude: {
         feet: 800,
         meters: 244,
@@ -6768,8 +6768,8 @@
       ems: null,
     },
     {
-      latitude: 38.74324,
-      longitude: -9.36071,
+      lat: 38.74324,
+      lng: -9.36071,
       altitude: {
         feet: 800,
         meters: 244,
@@ -6789,8 +6789,8 @@
       ems: null,
     },
     {
-      latitude: 38.744568,
-      longitude: -9.361128,
+      lat: 38.744568,
+      lng: -9.361128,
       altitude: {
         feet: 700,
         meters: 213,
@@ -6810,8 +6810,8 @@
       ems: null,
     },
     {
-      latitude: 38.745335,
-      longitude: -9.36145,
+      lat: 38.745335,
+      lng: -9.36145,
       altitude: {
         feet: 700,
         meters: 213,
@@ -6831,8 +6831,8 @@
       ems: null,
     },
     {
-      latitude: 38.745987,
-      longitude: -9.361785,
+      lat: 38.745987,
+      lng: -9.361785,
       altitude: {
         feet: 700,
         meters: 213,
@@ -6852,8 +6852,8 @@
       ems: null,
     },
     {
-      latitude: 38.746311,
-      longitude: -9.361938,
+      lat: 38.746311,
+      lng: -9.361938,
       altitude: {
         feet: 700,
         meters: 213,
@@ -6873,8 +6873,8 @@
       ems: null,
     },
     {
-      latitude: 38.747429,
-      longitude: -9.361816,
+      lat: 38.747429,
+      lng: -9.361816,
       altitude: {
         feet: 700,
         meters: 213,
@@ -6894,8 +6894,8 @@
       ems: null,
     },
     {
-      latitude: 38.748455,
-      longitude: -9.361084,
+      lat: 38.748455,
+      lng: -9.361084,
       altitude: {
         feet: 700,
         meters: 213,
@@ -6915,8 +6915,8 @@
       ems: null,
     },
     {
-      latitude: 38.748966,
-      longitude: -9.360291,
+      lat: 38.748966,
+      lng: -9.360291,
       altitude: {
         feet: 800,
         meters: 244,
@@ -6936,8 +6936,8 @@
       ems: null,
     },
     {
-      latitude: 38.749477,
-      longitude: -9.359375,
+      lat: 38.749477,
+      lng: -9.359375,
       altitude: {
         feet: 800,
         meters: 244,
@@ -6957,8 +6957,8 @@
       ems: null,
     },
     {
-      latitude: 38.749851,
-      longitude: -9.358398,
+      lat: 38.749851,
+      lng: -9.358398,
       altitude: {
         feet: 800,
         meters: 244,
@@ -6978,8 +6978,8 @@
       ems: null,
     },
     {
-      latitude: 38.750221,
-      longitude: -9.3573,
+      lat: 38.750221,
+      lng: -9.3573,
       altitude: {
         feet: 800,
         meters: 244,
@@ -6999,8 +6999,8 @@
       ems: null,
     },
     {
-      latitude: 38.750641,
-      longitude: -9.356201,
+      lat: 38.750641,
+      lng: -9.356201,
       altitude: {
         feet: 800,
         meters: 244,
@@ -7020,8 +7020,8 @@
       ems: null,
     },
     {
-      latitude: 38.750977,
-      longitude: -9.355097,
+      lat: 38.750977,
+      lng: -9.355097,
       altitude: {
         feet: 800,
         meters: 244,
@@ -7041,8 +7041,8 @@
       ems: null,
     },
     {
-      latitude: 38.751251,
-      longitude: -9.353724,
+      lat: 38.751251,
+      lng: -9.353724,
       altitude: {
         feet: 900,
         meters: 274,
@@ -7062,8 +7062,8 @@
       ems: null,
     },
     {
-      latitude: 38.751293,
-      longitude: -9.352295,
+      lat: 38.751293,
+      lng: -9.352295,
       altitude: {
         feet: 900,
         meters: 274,
@@ -7083,8 +7083,8 @@
       ems: null,
     },
     {
-      latitude: 38.751114,
-      longitude: -9.350799,
+      lat: 38.751114,
+      lng: -9.350799,
       altitude: {
         feet: 900,
         meters: 274,
@@ -7104,8 +7104,8 @@
       ems: null,
     },
     {
-      latitude: 38.750828,
-      longitude: -9.349304,
+      lat: 38.750828,
+      lng: -9.349304,
       altitude: {
         feet: 900,
         meters: 274,
@@ -7125,8 +7125,8 @@
       ems: null,
     },
     {
-      latitude: 38.750317,
-      longitude: -9.347717,
+      lat: 38.750317,
+      lng: -9.347717,
       altitude: {
         feet: 900,
         meters: 274,
@@ -7146,8 +7146,8 @@
       ems: null,
     },
     {
-      latitude: 38.749466,
-      longitude: -9.345902,
+      lat: 38.749466,
+      lng: -9.345902,
       altitude: {
         feet: 900,
         meters: 274,
@@ -7167,8 +7167,8 @@
       ems: null,
     },
     {
-      latitude: 38.748592,
-      longitude: -9.344788,
+      lat: 38.748592,
+      lng: -9.344788,
       altitude: {
         feet: 900,
         meters: 274,
@@ -7188,8 +7188,8 @@
       ems: null,
     },
     {
-      latitude: 38.747177,
-      longitude: -9.343872,
+      lat: 38.747177,
+      lng: -9.343872,
       altitude: {
         feet: 900,
         meters: 274,
@@ -7209,8 +7209,8 @@
       ems: null,
     },
     {
-      latitude: 38.745575,
-      longitude: -9.343096,
+      lat: 38.745575,
+      lng: -9.343096,
       altitude: {
         feet: 900,
         meters: 274,
@@ -7230,8 +7230,8 @@
       ems: null,
     },
     {
-      latitude: 38.743973,
-      longitude: -9.342439,
+      lat: 38.743973,
+      lng: -9.342439,
       altitude: {
         feet: 900,
         meters: 274,
@@ -7251,8 +7251,8 @@
       ems: null,
     },
     {
-      latitude: 38.742554,
-      longitude: -9.341902,
+      lat: 38.742554,
+      lng: -9.341902,
       altitude: {
         feet: 800,
         meters: 244,
@@ -7272,8 +7272,8 @@
       ems: null,
     },
     {
-      latitude: 38.741005,
-      longitude: -9.341248,
+      lat: 38.741005,
+      lng: -9.341248,
       altitude: {
         feet: 800,
         meters: 244,
@@ -7293,8 +7293,8 @@
       ems: null,
     },
     {
-      latitude: 38.739487,
-      longitude: -9.340708,
+      lat: 38.739487,
+      lng: -9.340708,
       altitude: {
         feet: 800,
         meters: 244,
@@ -7314,8 +7314,8 @@
       ems: null,
     },
     {
-      latitude: 38.73793,
-      longitude: -9.340051,
+      lat: 38.73793,
+      lng: -9.340051,
       altitude: {
         feet: 800,
         meters: 244,
@@ -7335,8 +7335,8 @@
       ems: null,
     },
     {
-      latitude: 38.736603,
-      longitude: -9.339454,
+      lat: 38.736603,
+      lng: -9.339454,
       altitude: {
         feet: 800,
         meters: 244,
@@ -7356,8 +7356,8 @@
       ems: null,
     },
     {
-      latitude: 38.734955,
-      longitude: -9.338857,
+      lat: 38.734955,
+      lng: -9.338857,
       altitude: {
         feet: 800,
         meters: 244,
@@ -7377,8 +7377,8 @@
       ems: null,
     },
     {
-      latitude: 38.733463,
-      longitude: -9.338196,
+      lat: 38.733463,
+      lng: -9.338196,
       altitude: {
         feet: 800,
         meters: 244,
@@ -7398,8 +7398,8 @@
       ems: null,
     },
     {
-      latitude: 38.732208,
-      longitude: -9.337708,
+      lat: 38.732208,
+      lng: -9.337708,
       altitude: {
         feet: 800,
         meters: 244,
@@ -7419,8 +7419,8 @@
       ems: null,
     },
     {
-      latitude: 38.729095,
-      longitude: -9.336349,
+      lat: 38.729095,
+      lng: -9.336349,
       altitude: {
         feet: 800,
         meters: 244,
@@ -7440,8 +7440,8 @@
       ems: null,
     },
     {
-      latitude: 38.726528,
-      longitude: -9.335266,
+      lat: 38.726528,
+      lng: -9.335266,
       altitude: {
         feet: 800,
         meters: 244,
@@ -7461,8 +7461,8 @@
       ems: null,
     },
     {
-      latitude: 38.723595,
-      longitude: -9.334045,
+      lat: 38.723595,
+      lng: -9.334045,
       altitude: {
         feet: 800,
         meters: 244,
@@ -7482,8 +7482,8 @@
       ems: null,
     },
     {
-      latitude: 38.720764,
-      longitude: -9.332886,
+      lat: 38.720764,
+      lng: -9.332886,
       altitude: {
         feet: 800,
         meters: 244,
@@ -7503,8 +7503,8 @@
       ems: null,
     },
     {
-      latitude: 38.718018,
-      longitude: -9.331751,
+      lat: 38.718018,
+      lng: -9.331751,
       altitude: {
         feet: 800,
         meters: 244,
@@ -7524,8 +7524,8 @@
       ems: null,
     },
     {
-      latitude: 38.715271,
-      longitude: -9.330736,
+      lat: 38.715271,
+      lng: -9.330736,
       altitude: {
         feet: 800,
         meters: 244,
@@ -7545,8 +7545,8 @@
       ems: null,
     },
     {
-      latitude: 38.713863,
-      longitude: -9.330322,
+      lat: 38.713863,
+      lng: -9.330322,
       altitude: {
         feet: 800,
         meters: 244,
@@ -7566,8 +7566,8 @@
       ems: null,
     },
     {
-      latitude: 38.712467,
-      longitude: -9.329895,
+      lat: 38.712467,
+      lng: -9.329895,
       altitude: {
         feet: 700,
         meters: 213,
@@ -7587,8 +7587,8 @@
       ems: null,
     },
     {
-      latitude: 38.709503,
-      longitude: -9.328885,
+      lat: 38.709503,
+      lng: -9.328885,
       altitude: {
         feet: 800,
         meters: 244,
@@ -7608,8 +7608,8 @@
       ems: null,
     },
     {
-      latitude: 38.708221,
-      longitude: -9.328527,
+      lat: 38.708221,
+      lng: -9.328527,
       altitude: {
         feet: 800,
         meters: 244,
@@ -7629,8 +7629,8 @@
       ems: null,
     },
     {
-      latitude: 38.706848,
-      longitude: -9.328348,
+      lat: 38.706848,
+      lng: -9.328348,
       altitude: {
         feet: 800,
         meters: 244,
@@ -7650,8 +7650,8 @@
       ems: null,
     },
     {
-      latitude: 38.705486,
-      longitude: -9.328552,
+      lat: 38.705486,
+      lng: -9.328552,
       altitude: {
         feet: 700,
         meters: 213,
@@ -7671,8 +7671,8 @@
       ems: null,
     },
     {
-      latitude: 38.704422,
-      longitude: -9.328945,
+      lat: 38.704422,
+      lng: -9.328945,
       altitude: {
         feet: 700,
         meters: 213,
@@ -7692,8 +7692,8 @@
       ems: null,
     },
     {
-      latitude: 38.70314,
-      longitude: -9.329841,
+      lat: 38.70314,
+      lng: -9.329841,
       altitude: {
         feet: 700,
         meters: 213,
@@ -7713,8 +7713,8 @@
       ems: null,
     },
     {
-      latitude: 38.702225,
-      longitude: -9.330855,
+      lat: 38.702225,
+      lng: -9.330855,
       altitude: {
         feet: 700,
         meters: 213,
@@ -7734,8 +7734,8 @@
       ems: null,
     },
     {
-      latitude: 38.701481,
-      longitude: -9.331909,
+      lat: 38.701481,
+      lng: -9.331909,
       altitude: {
         feet: 700,
         meters: 213,
@@ -7755,8 +7755,8 @@
       ems: null,
     },
     {
-      latitude: 38.700924,
-      longitude: -9.332947,
+      lat: 38.700924,
+      lng: -9.332947,
       altitude: {
         feet: 800,
         meters: 244,
@@ -7776,8 +7776,8 @@
       ems: null,
     },
     {
-      latitude: 38.700302,
-      longitude: -9.33414,
+      lat: 38.700302,
+      lng: -9.33414,
       altitude: {
         feet: 800,
         meters: 244,
@@ -7797,8 +7797,8 @@
       ems: null,
     },
     {
-      latitude: 38.699753,
-      longitude: -9.335394,
+      lat: 38.699753,
+      lng: -9.335394,
       altitude: {
         feet: 700,
         meters: 213,
@@ -7818,8 +7818,8 @@
       ems: null,
     },
     {
-      latitude: 38.699432,
-      longitude: -9.336528,
+      lat: 38.699432,
+      lng: -9.336528,
       altitude: {
         feet: 700,
         meters: 213,
@@ -7839,8 +7839,8 @@
       ems: null,
     },
     {
-      latitude: 38.699341,
-      longitude: -9.337769,
+      lat: 38.699341,
+      lng: -9.337769,
       altitude: {
         feet: 700,
         meters: 213,
@@ -7860,8 +7860,8 @@
       ems: null,
     },
     {
-      latitude: 38.699295,
-      longitude: -9.338806,
+      lat: 38.699295,
+      lng: -9.338806,
       altitude: {
         feet: 700,
         meters: 213,
@@ -7881,8 +7881,8 @@
       ems: null,
     },
     {
-      latitude: 38.699249,
-      longitude: -9.340111,
+      lat: 38.699249,
+      lng: -9.340111,
       altitude: {
         feet: 600,
         meters: 183,
@@ -7902,8 +7902,8 @@
       ems: null,
     },
     {
-      latitude: 38.699203,
-      longitude: -9.341065,
+      lat: 38.699203,
+      lng: -9.341065,
       altitude: {
         feet: 600,
         meters: 183,
@@ -7923,8 +7923,8 @@
       ems: null,
     },
     {
-      latitude: 38.699249,
-      longitude: -9.342081,
+      lat: 38.699249,
+      lng: -9.342081,
       altitude: {
         feet: 600,
         meters: 183,
@@ -7944,8 +7944,8 @@
       ems: null,
     },
     {
-      latitude: 38.699295,
-      longitude: -9.343262,
+      lat: 38.699295,
+      lng: -9.343262,
       altitude: {
         feet: 600,
         meters: 183,
@@ -7965,8 +7965,8 @@
       ems: null,
     },
     {
-      latitude: 38.699432,
-      longitude: -9.344171,
+      lat: 38.699432,
+      lng: -9.344171,
       altitude: {
         feet: 600,
         meters: 183,
@@ -7986,8 +7986,8 @@
       ems: null,
     },
     {
-      latitude: 38.699753,
-      longitude: -9.345126,
+      lat: 38.699753,
+      lng: -9.345126,
       altitude: {
         feet: 600,
         meters: 183,
@@ -8007,8 +8007,8 @@
       ems: null,
     },
     {
-      latitude: 38.700211,
-      longitude: -9.345842,
+      lat: 38.700211,
+      lng: -9.345842,
       altitude: {
         feet: 500,
         meters: 152,
@@ -8028,8 +8028,8 @@
       ems: null,
     },
     {
-      latitude: 38.70076,
-      longitude: -9.34632,
+      lat: 38.70076,
+      lng: -9.34632,
       altitude: {
         feet: 500,
         meters: 152,
@@ -8049,8 +8049,8 @@
       ems: null,
     },
     {
-      latitude: 38.701401,
-      longitude: -9.346559,
+      lat: 38.701401,
+      lng: -9.346559,
       altitude: {
         feet: 500,
         meters: 152,
@@ -8070,8 +8070,8 @@
       ems: null,
     },
     {
-      latitude: 38.701904,
-      longitude: -9.346798,
+      lat: 38.701904,
+      lng: -9.346798,
       altitude: {
         feet: 500,
         meters: 152,
@@ -8091,8 +8091,8 @@
       ems: null,
     },
     {
-      latitude: 38.702454,
-      longitude: -9.346977,
+      lat: 38.702454,
+      lng: -9.346977,
       altitude: {
         feet: 500,
         meters: 152,
@@ -8112,8 +8112,8 @@
       ems: null,
     },
     {
-      latitude: 38.703094,
-      longitude: -9.347216,
+      lat: 38.703094,
+      lng: -9.347216,
       altitude: {
         feet: 400,
         meters: 122,
@@ -8133,8 +8133,8 @@
       ems: null,
     },
     {
-      latitude: 38.703716,
-      longitude: -9.347473,
+      lat: 38.703716,
+      lng: -9.347473,
       altitude: {
         feet: 400,
         meters: 122,
@@ -8154,8 +8154,8 @@
       ems: null,
     },
     {
-      latitude: 38.70433,
-      longitude: -9.347693,
+      lat: 38.70433,
+      lng: -9.347693,
       altitude: {
         feet: 400,
         meters: 122,
@@ -8175,8 +8175,8 @@
       ems: null,
     },
     {
-      latitude: 38.704926,
-      longitude: -9.3479,
+      lat: 38.704926,
+      lng: -9.3479,
       altitude: {
         feet: 400,
         meters: 122,
@@ -8196,8 +8196,8 @@
       ems: null,
     },
     {
-      latitude: 38.705624,
-      longitude: -9.348206,
+      lat: 38.705624,
+      lng: -9.348206,
       altitude: {
         feet: 300,
         meters: 91,
@@ -8217,8 +8217,8 @@
       ems: null,
     },
     {
-      latitude: 38.70623,
-      longitude: -9.348389,
+      lat: 38.70623,
+      lng: -9.348389,
       altitude: {
         feet: 300,
         meters: 91,
@@ -8238,8 +8238,8 @@
       ems: null,
     },
     {
-      latitude: 38.706741,
-      longitude: -9.348572,
+      lat: 38.706741,
+      lng: -9.348572,
       altitude: {
         feet: 300,
         meters: 91,
@@ -8259,8 +8259,8 @@
       ems: null,
     },
     {
-      latitude: 38.708138,
-      longitude: -9.34906,
+      lat: 38.708138,
+      lng: -9.34906,
       altitude: {
         feet: 300,
         meters: 91,
@@ -8280,8 +8280,8 @@
       ems: null,
     },
     {
-      latitude: 38.70932,
-      longitude: -9.349484,
+      lat: 38.70932,
+      lng: -9.349484,
       altitude: {
         feet: 300,
         meters: 91,
@@ -8301,8 +8301,8 @@
       ems: null,
     },
     {
-      latitude: 38.710831,
-      longitude: -9.350081,
+      lat: 38.710831,
+      lng: -9.350081,
       altitude: {
         feet: 300,
         meters: 91,
@@ -8322,8 +8322,8 @@
       ems: null,
     },
     {
-      latitude: 38.712479,
-      longitude: -9.350678,
+      lat: 38.712479,
+      lng: -9.350678,
       altitude: {
         feet: 200,
         meters: 61,
@@ -8343,8 +8343,8 @@
       ems: null,
     },
     {
-      latitude: 38.713852,
-      longitude: -9.351156,
+      lat: 38.713852,
+      lng: -9.351156,
       altitude: {
         feet: 200,
         meters: 61,
@@ -8364,8 +8364,8 @@
       ems: null,
     },
     {
-      latitude: 38.715122,
-      longitude: -9.351624,
+      lat: 38.715122,
+      lng: -9.351624,
       altitude: {
         feet: 200,
         meters: 61,
@@ -8385,8 +8385,8 @@
       ems: null,
     },
     {
-      latitude: 38.716286,
-      longitude: -9.352051,
+      lat: 38.716286,
+      lng: -9.352051,
       altitude: {
         feet: 200,
         meters: 61,
@@ -8406,8 +8406,8 @@
       ems: null,
     },
     {
-      latitude: 38.717697,
-      longitude: -9.35253,
+      lat: 38.717697,
+      lng: -9.35253,
       altitude: {
         feet: 100,
         meters: 30,
@@ -8427,8 +8427,8 @@
       ems: null,
     },
     {
-      latitude: 38.719032,
-      longitude: -9.353027,
+      lat: 38.719032,
+      lng: -9.353027,
       altitude: {
         feet: 100,
         meters: 30,
@@ -8448,8 +8448,8 @@
       ems: null,
     },
     {
-      latitude: 38.720306,
-      longitude: -9.353485,
+      lat: 38.720306,
+      lng: -9.353485,
       altitude: {
         feet: 100,
         meters: 30,
@@ -8469,8 +8469,8 @@
       ems: null,
     },
     {
-      latitude: 38.721313,
-      longitude: -9.353844,
+      lat: 38.721313,
+      lng: -9.353844,
       altitude: {
         feet: 100,
         meters: 30,
@@ -8490,8 +8490,8 @@
       ems: null,
     },
     {
-      latitude: 38.722012,
-      longitude: -9.354126,
+      lat: 38.722012,
+      lng: -9.354126,
       altitude: {
         feet: 100,
         meters: 30,
@@ -8511,8 +8511,8 @@
       ems: null,
     },
     {
-      latitude: 38.722412,
-      longitude: -9.354261,
+      lat: 38.722412,
+      lng: -9.354261,
       altitude: {
         feet: 100,
         meters: 30,
@@ -8532,8 +8532,8 @@
       ems: null,
     },
     {
-      latitude: 38.722755,
-      longitude: -9.35437,
+      lat: 38.722755,
+      lng: -9.35437,
       altitude: {
         feet: 100,
         meters: 30,
@@ -8553,8 +8553,8 @@
       ems: null,
     },
     {
-      latitude: 38.723007,
-      longitude: -9.354321,
+      lat: 38.723007,
+      lng: -9.354321,
       altitude: {
         feet: 100,
         meters: 30,
@@ -8574,8 +8574,8 @@
       ems: null,
     },
     {
-      latitude: 38.723145,
-      longitude: -9.354082,
+      lat: 38.723145,
+      lng: -9.354082,
       altitude: {
         feet: 100,
         meters: 30,
@@ -8595,8 +8595,8 @@
       ems: null,
     },
     {
-      latitude: 38.722897,
-      longitude: -9.35437,
+      lat: 38.722897,
+      lng: -9.35437,
       altitude: {
         feet: 100,
         meters: 30,
