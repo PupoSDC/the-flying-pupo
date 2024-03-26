@@ -15,7 +15,7 @@ const LogbookPage = async () => {
   return (
     <>
       <Header title="My Logbook" />
-      <main className="max-w-screen-2xl mx-auto mt-16">
+      <main className="max-w-screen-2xl mx-auto pt-16">
         <table 
           className={cn(
             "table-auto",
@@ -23,6 +23,7 @@ const LogbookPage = async () => {
             "h-full",
             "border-separate",
             "border-spacing-0",
+            "border-b border-slate-600",
             "text-slate-200",
             "[&_thead]:bg-slate-600",
             "[&_thead_th]:border-slate-300",

@@ -6,8 +6,8 @@ aircraft: D-EFCZ
 origin: EDKB
 destination: EDKB
 pilotLog:
-  departure: 2020-09-20T10:23:00.000+01:00
-  arrival: 2020-09-20T11:29:00.000+01:00
+  departure: 2020-09-20T09:23:00.000+01:00
+  arrival: 2020-09-20T10:29:00.000+01:00
   singleEnginePistonTimeMinutes: 66
   multiEnginePistonTimeMinutes: 0
   multiPilotTimeMinutes: 0
@@ -32,6 +32,54 @@ track:
     heading: 109
     timestamp: 1600594808
     squawk: "0"
+  - lat: 50.767365
+    lng: 7.170583
+    altitude: 200
+    speed: 64
+    verticalSpeed: 768
+    heading: 105
+    timestamp: 1600594848
+    squawk: "0"
+  - lat: 50.766815
+    lng: 7.173775
+    altitude: 300
+    speed: 65
+    verticalSpeed: 448
+    heading: 106
+    timestamp: 1600594854
+    squawk: "0"
+  - lat: 50.7659
+    lng: 7.177413
+    altitude: 400
+    speed: 67
+    verticalSpeed: 704
+    heading: 110
+    timestamp: 1600594861
+    squawk: "0"
+  - lat: 50.765213
+    lng: 7.180531
+    altitude: 400
+    speed: 68
+    verticalSpeed: 512
+    heading: 109
+    timestamp: 1600594869
+    squawk: "0"
+  - lat: 50.763912
+    lng: 7.186432
+    altitude: 500
+    speed: 69
+    verticalSpeed: 384
+    heading: 108
+    timestamp: 1600594880
+    squawk: "0"
+  - lat: 50.763336
+    lng: 7.189216
+    altitude: 600
+    speed: 71
+    verticalSpeed: 448
+    heading: 108
+    timestamp: 1600594886
+    squawk: "0"
   - lat: 50.762653
     lng: 7.192535
     altitude: 600
@@ -39,6 +87,54 @@ track:
     verticalSpeed: -128
     heading: 106
     timestamp: 1600594893
+    squawk: "7000"
+  - lat: 50.761276
+    lng: 7.197826
+    altitude: 700
+    speed: 84
+    verticalSpeed: 704
+    heading: 124
+    timestamp: 1600594902
+    squawk: "7000"
+  - lat: 50.759537
+    lng: 7.200053
+    altitude: 700
+    speed: 79
+    verticalSpeed: 640
+    heading: 151
+    timestamp: 1600594908
+    squawk: "7000"
+  - lat: 50.757675
+    lng: 7.201157
+    altitude: 800
+    speed: 81
+    verticalSpeed: 448
+    heading: 163
+    timestamp: 1600594914
+    squawk: "7000"
+  - lat: 50.755234
+    lng: 7.201761
+    altitude: 900
+    speed: 81
+    verticalSpeed: 768
+    heading: 173
+    timestamp: 1600594920
+    squawk: "7000"
+  - lat: 50.751949
+    lng: 7.20253
+    altitude: 1000
+    speed: 75
+    verticalSpeed: 1088
+    heading: 170
+    timestamp: 1600594929
+    squawk: "7000"
+  - lat: 50.749901
+    lng: 7.202988
+    altitude: 1000
+    speed: 74
+    verticalSpeed: 576
+    heading: 172
+    timestamp: 1600594935
     squawk: "7000"
   - lat: 50.747864
     lng: 7.20332
@@ -48,6 +144,54 @@ track:
     heading: 175
     timestamp: 1600594941
     squawk: "7000"
+  - lat: 50.745617
+    lng: 7.203751
+    altitude: 1200
+    speed: 70
+    verticalSpeed: 320
+    heading: 172
+    timestamp: 1600594948
+    squawk: "7000"
+  - lat: 50.743561
+    lng: 7.204136
+    altitude: 1200
+    speed: 74
+    verticalSpeed: 640
+    heading: 174
+    timestamp: 1600594954
+    squawk: "7000"
+  - lat: 50.741661
+    lng: 7.20459
+    altitude: 1300
+    speed: 70
+    verticalSpeed: 1024
+    heading: 170
+    timestamp: 1600594960
+    squawk: "7000"
+  - lat: 50.739761
+    lng: 7.20525
+    altitude: 1400
+    speed: 69
+    verticalSpeed: 512
+    heading: 166
+    timestamp: 1600594966
+    squawk: "7000"
+  - lat: 50.736557
+    lng: 7.206511
+    altitude: 1500
+    speed: 67
+    verticalSpeed: 512
+    heading: 166
+    timestamp: 1600594976
+    squawk: "7000"
+  - lat: 50.734589
+    lng: 7.207328
+    altitude: 1500
+    speed: 71
+    verticalSpeed: 640
+    heading: 165
+    timestamp: 1600594983
+    squawk: "7000"
   - lat: 50.731201
     lng: 7.208219
     altitude: 1600
@@ -55,6 +199,54 @@ track:
     verticalSpeed: 640
     heading: 178
     timestamp: 1600594993
+    squawk: "7000"
+  - lat: 50.729141
+    lng: 7.208219
+    altitude: 1700
+    speed: 72
+    verticalSpeed: 576
+    heading: 178
+    timestamp: 1600594999
+    squawk: "7000"
+  - lat: 50.727173
+    lng: 7.208367
+    altitude: 1700
+    speed: 73
+    verticalSpeed: 448
+    heading: 175
+    timestamp: 1600595005
+    squawk: "7000"
+  - lat: 50.724667
+    lng: 7.208862
+    altitude: 1800
+    speed: 71
+    verticalSpeed: 832
+    heading: 171
+    timestamp: 1600595013
+    squawk: "7000"
+  - lat: 50.72081
+    lng: 7.209778
+    altitude: 1900
+    speed: 74
+    verticalSpeed: 320
+    heading: 176
+    timestamp: 1600595025
+    squawk: "7000"
+  - lat: 50.718525
+    lng: 7.209702
+    altitude: 2000
+    speed: 76
+    verticalSpeed: 704
+    heading: 180
+    timestamp: 1600595031
+    squawk: "7000"
+  - lat: 50.716476
+    lng: 7.209702
+    altitude: 2100
+    speed: 75
+    verticalSpeed: 576
+    heading: 178
+    timestamp: 1600595037
     squawk: "7000"
   - lat: 50.714428
     lng: 7.209854
@@ -64,6 +256,54 @@ track:
     heading: 177
     timestamp: 1600595043
     squawk: "7000"
+  - lat: 50.709732
+    lng: 7.21052
+    altitude: 2100
+    speed: 86
+    verticalSpeed: 128
+    heading: 173
+    timestamp: 1600595055
+    squawk: "7000"
+  - lat: 50.706421
+    lng: 7.211151
+    altitude: 2100
+    speed: 87
+    verticalSpeed: 64
+    heading: 173
+    timestamp: 1600595064
+    squawk: "7000"
+  - lat: 50.703232
+    lng: 7.211708
+    altitude: 2100
+    speed: 88
+    verticalSpeed: 64
+    heading: 172
+    timestamp: 1600595071
+    squawk: "7000"
+  - lat: 50.696411
+    lng: 7.212005
+    altitude: 2200
+    speed: 91
+    verticalSpeed: 64
+    heading: 179
+    timestamp: 1600595088
+    squawk: "7000"
+  - lat: 50.693943
+    lng: 7.212143
+    altitude: 2200
+    speed: 92
+    verticalSpeed: -64
+    heading: 178
+    timestamp: 1600595094
+    squawk: "7000"
+  - lat: 50.689957
+    lng: 7.212153
+    altitude: 2200
+    speed: 94
+    verticalSpeed: -64
+    heading: 180
+    timestamp: 1600595103
+    squawk: "7000"
   - lat: 50.687286
     lng: 7.212296
     altitude: 2200
@@ -71,6 +311,54 @@ track:
     verticalSpeed: 64
     heading: 177
     timestamp: 1600595109
+    squawk: "7000"
+  - lat: 50.684875
+    lng: 7.21245
+    altitude: 2200
+    speed: 92
+    verticalSpeed: 128
+    heading: 178
+    timestamp: 1600595115
+    squawk: "7000"
+  - lat: 50.678513
+    lng: 7.212747
+    altitude: 2200
+    speed: 90
+    verticalSpeed: -128
+    heading: 178
+    timestamp: 1600595130
+    squawk: "7000"
+  - lat: 50.674904
+    lng: 7.213058
+    altitude: 2100
+    speed: 93
+    verticalSpeed: -128
+    heading: 176
+    timestamp: 1600595138
+    squawk: "7000"
+  - lat: 50.67215
+    lng: 7.21349
+    altitude: 2100
+    speed: 92
+    verticalSpeed: 0
+    heading: 173
+    timestamp: 1600595145
+    squawk: "7000"
+  - lat: 50.668991
+    lng: 7.214158
+    altitude: 2200
+    speed: 90
+    verticalSpeed: 192
+    heading: 173
+    timestamp: 1600595152
+    squawk: "7000"
+  - lat: 50.666523
+    lng: 7.214677
+    altitude: 2200
+    speed: 89
+    verticalSpeed: 128
+    heading: 171
+    timestamp: 1600595158
     squawk: "7000"
   - lat: 50.664276
     lng: 7.215199
@@ -80,6 +368,54 @@ track:
     heading: 171
     timestamp: 1600595164
     squawk: "7000"
+  - lat: 50.660522
+    lng: 7.216066
+    altitude: 2200
+    speed: 89
+    verticalSpeed: -512
+    heading: 170
+    timestamp: 1600595173
+    squawk: "7000"
+  - lat: 50.658146
+    lng: 7.216681
+    altitude: 2200
+    speed: 94
+    verticalSpeed: -256
+    heading: 170
+    timestamp: 1600595179
+    squawk: "7000"
+  - lat: 50.655819
+    lng: 7.217275
+    altitude: 2200
+    speed: 95
+    verticalSpeed: 64
+    heading: 171
+    timestamp: 1600595185
+    squawk: "7000"
+  - lat: 50.652607
+    lng: 7.218018
+    altitude: 2200
+    speed: 94
+    verticalSpeed: 64
+    heading: 172
+    timestamp: 1600595191
+    squawk: "7000"
+  - lat: 50.650314
+    lng: 7.218524
+    altitude: 2200
+    speed: 95
+    verticalSpeed: 0
+    heading: 171
+    timestamp: 1600595197
+    squawk: "7000"
+  - lat: 50.647579
+    lng: 7.219131
+    altitude: 2200
+    speed: 95
+    verticalSpeed: -64
+    heading: 171
+    timestamp: 1600595203
+    squawk: "7000"
   - lat: 50.642365
     lng: 7.220244
     altitude: 2200
@@ -87,6 +423,54 @@ track:
     verticalSpeed: -64
     heading: 172
     timestamp: 1600595215
+    squawk: "7000"
+  - lat: 50.639786
+    lng: 7.220837
+    altitude: 2200
+    speed: 95
+    verticalSpeed: -128
+    heading: 171
+    timestamp: 1600595221
+    squawk: "7000"
+  - lat: 50.637177
+    lng: 7.221487
+    altitude: 2100
+    speed: 98
+    verticalSpeed: -192
+    heading: 171
+    timestamp: 1600595227
+    squawk: "7000"
+  - lat: 50.63443
+    lng: 7.221993
+    altitude: 2100
+    speed: 98
+    verticalSpeed: 0
+    heading: 173
+    timestamp: 1600595233
+    squawk: "7000"
+  - lat: 50.628845
+    lng: 7.223222
+    altitude: 2100
+    speed: 98
+    verticalSpeed: -128
+    heading: 173
+    timestamp: 1600595245
+    squawk: "7000"
+  - lat: 50.626419
+    lng: 7.223655
+    altitude: 2100
+    speed: 97
+    verticalSpeed: 320
+    heading: 173
+    timestamp: 1600595251
+    squawk: "7000"
+  - lat: 50.62381
+    lng: 7.224306
+    altitude: 2100
+    speed: 94
+    verticalSpeed: 192
+    heading: 169
+    timestamp: 1600595257
     squawk: "7000"
   - lat: 50.621246
     lng: 7.225029
@@ -96,6 +480,54 @@ track:
     heading: 168
     timestamp: 1600595263
     squawk: "7000"
+  - lat: 50.618637
+    lng: 7.225968
+    altitude: 2100
+    speed: 96
+    verticalSpeed: -128
+    heading: 167
+    timestamp: 1600595269
+    squawk: "7000"
+  - lat: 50.615921
+    lng: 7.226777
+    altitude: 2100
+    speed: 95
+    verticalSpeed: 64
+    heading: 168
+    timestamp: 1600595275
+    squawk: "7000"
+  - lat: 50.61319
+    lng: 7.227703
+    altitude: 2100
+    speed: 93
+    verticalSpeed: 64
+    heading: 168
+    timestamp: 1600595281
+    squawk: "7000"
+  - lat: 50.609482
+    lng: 7.228859
+    altitude: 2100
+    speed: 93
+    verticalSpeed: -128
+    heading: 168
+    timestamp: 1600595290
+    squawk: "4451"
+  - lat: 50.604401
+    lng: 7.230522
+    altitude: 2100
+    speed: 94
+    verticalSpeed: -64
+    heading: 168
+    timestamp: 1600595302
+    squawk: "4451"
+  - lat: 50.601723
+    lng: 7.231528
+    altitude: 2100
+    speed: 94
+    verticalSpeed: -64
+    heading: 165
+    timestamp: 1600595308
+    squawk: "4451"
   - lat: 50.599228
     lng: 7.232618
     altitude: 2100
@@ -103,6 +535,54 @@ track:
     verticalSpeed: 64
     heading: 163
     timestamp: 1600595314
+    squawk: "4451"
+  - lat: 50.596836
+    lng: 7.233755
+    altitude: 2100
+    speed: 94
+    verticalSpeed: 0
+    heading: 164
+    timestamp: 1600595320
+    squawk: "4451"
+  - lat: 50.594193
+    lng: 7.23457
+    altitude: 2100
+    speed: 96
+    verticalSpeed: -128
+    heading: 171
+    timestamp: 1600595326
+    squawk: "4451"
+  - lat: 50.591675
+    lng: 7.235147
+    altitude: 2100
+    speed: 95
+    verticalSpeed: 64
+    heading: 172
+    timestamp: 1600595332
+    squawk: "4451"
+  - lat: 50.588921
+    lng: 7.235759
+    altitude: 2100
+    speed: 94
+    verticalSpeed: 192
+    heading: 172
+    timestamp: 1600595338
+    squawk: "4451"
+  - lat: 50.586224
+    lng: 7.236353
+    altitude: 2100
+    speed: 93
+    verticalSpeed: 0
+    heading: 172
+    timestamp: 1600595344
+    squawk: "4451"
+  - lat: 50.583755
+    lng: 7.236521
+    altitude: 2200
+    speed: 94
+    verticalSpeed: 768
+    heading: 181
+    timestamp: 1600595350
     squawk: "4451"
   - lat: 50.580402
     lng: 7.235833
@@ -112,6 +592,54 @@ track:
     heading: 187
     timestamp: 1600595359
     squawk: "4451"
+  - lat: 50.57785
+    lng: 7.235364
+    altitude: 2300
+    speed: 84
+    verticalSpeed: -64
+    heading: 184
+    timestamp: 1600595365
+    squawk: "4451"
+  - lat: 50.574257
+    lng: 7.235017
+    altitude: 2300
+    speed: 85
+    verticalSpeed: 512
+    heading: 182
+    timestamp: 1600595374
+    squawk: "4451"
+  - lat: 50.571213
+    lng: 7.234859
+    altitude: 2400
+    speed: 82
+    verticalSpeed: 384
+    heading: 183
+    timestamp: 1600595383
+    squawk: "4451"
+  - lat: 50.568764
+    lng: 7.2342
+    altitude: 2400
+    speed: 82
+    verticalSpeed: 448
+    heading: 191
+    timestamp: 1600595389
+    squawk: "4451"
+  - lat: 50.566132
+    lng: 7.233557
+    altitude: 2500
+    speed: 80
+    verticalSpeed: 384
+    heading: 188
+    timestamp: 1600595396
+    squawk: "4451"
+  - lat: 50.564201
+    lng: 7.233161
+    altitude: 2500
+    speed: 80
+    verticalSpeed: 256
+    heading: 187
+    timestamp: 1600595402
+    squawk: "4451"
   - lat: 50.560852
     lng: 7.232419
     altitude: 2600
@@ -119,6 +647,54 @@ track:
     verticalSpeed: 384
     heading: 186
     timestamp: 1600595410
+    squawk: "4451"
+  - lat: 50.55867
+    lng: 7.232112
+    altitude: 2600
+    speed: 74
+    verticalSpeed: 704
+    heading: 183
+    timestamp: 1600595416
+    squawk: "4451"
+  - lat: 50.556568
+    lng: 7.232121
+    altitude: 2700
+    speed: 73
+    verticalSpeed: 256
+    heading: 178
+    timestamp: 1600595423
+    squawk: "4451"
+  - lat: 50.554428
+    lng: 7.232344
+    altitude: 2700
+    speed: 75
+    verticalSpeed: 192
+    heading: 174
+    timestamp: 1600595429
+    squawk: "4451"
+  - lat: 50.552444
+    lng: 7.232762
+    altitude: 2700
+    speed: 72
+    verticalSpeed: 640
+    heading: 170
+    timestamp: 1600595435
+    squawk: "4451"
+  - lat: 50.550385
+    lng: 7.233341
+    altitude: 2800
+    speed: 72
+    verticalSpeed: 384
+    heading: 170
+    timestamp: 1600595441
+    squawk: "4451"
+  - lat: 50.547539
+    lng: 7.233903
+    altitude: 2800
+    speed: 71
+    verticalSpeed: 512
+    heading: 173
+    timestamp: 1600595450
     squawk: "4451"
   - lat: 50.544605
     lng: 7.234571
@@ -128,6 +704,54 @@ track:
     heading: 171
     timestamp: 1600595458
     squawk: "4451"
+  - lat: 50.54274
+    lng: 7.234931
+    altitude: 2900
+    speed: 73
+    verticalSpeed: 256
+    heading: 176
+    timestamp: 1600595464
+    squawk: "4451"
+  - lat: 50.540863
+    lng: 7.234786
+    altitude: 3000
+    speed: 73
+    verticalSpeed: 448
+    heading: 186
+    timestamp: 1600595470
+    squawk: "4451"
+  - lat: 50.53862
+    lng: 7.234136
+    altitude: 3000
+    speed: 73
+    verticalSpeed: 448
+    heading: 190
+    timestamp: 1600595476
+    squawk: "4451"
+  - lat: 50.53656
+    lng: 7.23363
+    altitude: 3100
+    speed: 73
+    verticalSpeed: 448
+    heading: 188
+    timestamp: 1600595482
+    squawk: "4451"
+  - lat: 50.53455
+    lng: 7.233161
+    altitude: 3100
+    speed: 73
+    verticalSpeed: 448
+    heading: 187
+    timestamp: 1600595488
+    squawk: "4451"
+  - lat: 50.531204
+    lng: 7.232762
+    altitude: 3100
+    speed: 81
+    verticalSpeed: -128
+    heading: 183
+    timestamp: 1600595498
+    squawk: "4451"
   - lat: 50.529011
     lng: 7.232493
     altitude: 3100
@@ -135,6 +759,54 @@ track:
     verticalSpeed: -64
     heading: 184
     timestamp: 1600595504
+    squawk: "4451"
+  - lat: 50.524399
+    lng: 7.231825
+    altitude: 3100
+    speed: 84
+    verticalSpeed: 64
+    heading: 184
+    timestamp: 1600595515
+    squawk: "4451"
+  - lat: 50.521957
+    lng: 7.232039
+    altitude: 3100
+    speed: 87
+    verticalSpeed: -320
+    heading: 172
+    timestamp: 1600595521
+    squawk: "4451"
+  - lat: 50.519531
+    lng: 7.232545
+    altitude: 3100
+    speed: 90
+    verticalSpeed: -64
+    heading: 173
+    timestamp: 1600595528
+    squawk: "4451"
+  - lat: 50.517014
+    lng: 7.233051
+    altitude: 3100
+    speed: 90
+    verticalSpeed: 64
+    heading: 173
+    timestamp: 1600595534
+    squawk: "4451"
+  - lat: 50.513306
+    lng: 7.233919
+    altitude: 3100
+    speed: 90
+    verticalSpeed: 64
+    heading: 170
+    timestamp: 1600595543
+    squawk: "4451"
+  - lat: 50.508434
+    lng: 7.235536
+    altitude: 3100
+    speed: 89
+    verticalSpeed: -64
+    heading: 167
+    timestamp: 1600595555
     squawk: "4451"
   - lat: 50.505966
     lng: 7.236353
@@ -144,6 +816,54 @@ track:
     heading: 167
     timestamp: 1600595561
     squawk: "4451"
+  - lat: 50.501129
+    lng: 7.237967
+    altitude: 3100
+    speed: 89
+    verticalSpeed: -192
+    heading: 168
+    timestamp: 1600595572
+    squawk: "4451"
+  - lat: 50.497467
+    lng: 7.239195
+    altitude: 3100
+    speed: 91
+    verticalSpeed: 320
+    heading: 167
+    timestamp: 1600595581
+    squawk: "4451"
+  - lat: 50.494904
+    lng: 7.240063
+    altitude: 3200
+    speed: 88
+    verticalSpeed: 192
+    heading: 168
+    timestamp: 1600595588
+    squawk: "4451"
+  - lat: 50.492744
+    lng: 7.240733
+    altitude: 3200
+    speed: 89
+    verticalSpeed: 64
+    heading: 167
+    timestamp: 1600595594
+    squawk: "4451"
+  - lat: 50.487579
+    lng: 7.242514
+    altitude: 3200
+    speed: 92
+    verticalSpeed: 0
+    heading: 167
+    timestamp: 1600595606
+    squawk: "4451"
+  - lat: 50.485245
+    lng: 7.243315
+    altitude: 3200
+    speed: 89
+    verticalSpeed: 384
+    heading: 168
+    timestamp: 1600595612
+    squawk: "4451"
   - lat: 50.482922
     lng: 7.244073
     altitude: 3200
@@ -151,6 +871,54 @@ track:
     verticalSpeed: 320
     heading: 168
     timestamp: 1600595618
+    squawk: "4451"
+  - lat: 50.48053
+    lng: 7.244833
+    altitude: 3200
+    speed: 85
+    verticalSpeed: -128
+    heading: 167
+    timestamp: 1600595624
+    squawk: "4451"
+  - lat: 50.478012
+    lng: 7.245772
+    altitude: 3200
+    speed: 89
+    verticalSpeed: -64
+    heading: 166
+    timestamp: 1600595630
+    squawk: "4451"
+  - lat: 50.474487
+    lng: 7.247146
+    altitude: 3200
+    speed: 87
+    verticalSpeed: 0
+    heading: 165
+    timestamp: 1600595638
+    squawk: "4451"
+  - lat: 50.472076
+    lng: 7.248156
+    altitude: 3200
+    speed: 89
+    verticalSpeed: 64
+    heading: 163
+    timestamp: 1600595644
+    squawk: "4451"
+  - lat: 50.469795
+    lng: 7.249269
+    altitude: 3200
+    speed: 89
+    verticalSpeed: 0
+    heading: 161
+    timestamp: 1600595651
+    squawk: "4451"
+  - lat: 50.464954
+    lng: 7.252164
+    altitude: 3300
+    speed: 89
+    verticalSpeed: 128
+    heading: 158
+    timestamp: 1600595663
     squawk: "4451"
   - lat: 50.462673
     lng: 7.253649
@@ -160,6 +928,54 @@ track:
     heading: 156
     timestamp: 1600595669
     squawk: "4451"
+  - lat: 50.458668
+    lng: 7.255208
+    altitude: 3300
+    speed: 95
+    verticalSpeed: -192
+    heading: 175
+    timestamp: 1600595679
+    squawk: "4451"
+  - lat: 50.455456
+    lng: 7.255431
+    altitude: 3300
+    speed: 90
+    verticalSpeed: 896
+    heading: 176
+    timestamp: 1600595687
+    squawk: "4451"
+  - lat: 50.452744
+    lng: 7.255819
+    altitude: 3300
+    speed: 88
+    verticalSpeed: -512
+    heading: 173
+    timestamp: 1600595693
+    squawk: "4451"
+  - lat: 50.450428
+    lng: 7.256247
+    altitude: 3300
+    speed: 92
+    verticalSpeed: 0
+    heading: 172
+    timestamp: 1600595699
+    squawk: "4451"
+  - lat: 50.446472
+    lng: 7.25712
+    altitude: 3300
+    speed: 94
+    verticalSpeed: -64
+    heading: 171
+    timestamp: 1600595708
+    squawk: "4451"
+  - lat: 50.441303
+    lng: 7.258623
+    altitude: 3300
+    speed: 93
+    verticalSpeed: 64
+    heading: 168
+    timestamp: 1600595719
+    squawk: "4451"
   - lat: 50.438744
     lng: 7.259513
     altitude: 3300
@@ -167,6 +983,54 @@ track:
     verticalSpeed: 64
     heading: 167
     timestamp: 1600595725
+    squawk: "4451"
+  - lat: 50.436184
+    lng: 7.260404
+    altitude: 3300
+    speed: 94
+    verticalSpeed: 64
+    heading: 167
+    timestamp: 1600595731
+    squawk: "4451"
+  - lat: 50.433762
+    lng: 7.26122
+    altitude: 3300
+    speed: 94
+    verticalSpeed: 128
+    heading: 167
+    timestamp: 1600595738
+    squawk: "4451"
+  - lat: 50.429714
+    lng: 7.263151
+    altitude: 3300
+    speed: 93
+    verticalSpeed: 0
+    heading: 152
+    timestamp: 1600595748
+    squawk: "4451"
+  - lat: 50.428711
+    lng: 7.268468
+    altitude: 3300
+    speed: 88
+    verticalSpeed: -128
+    heading: 95
+    timestamp: 1600595757
+    squawk: "4451"
+  - lat: 50.431854
+    lng: 7.269609
+    altitude: 3300
+    speed: 97
+    verticalSpeed: -576
+    heading: 334
+    timestamp: 1600595765
+    squawk: "4451"
+  - lat: 50.432972
+    lng: 7.265897
+    altitude: 3300
+    speed: 96
+    verticalSpeed: 1152
+    heading: 270
+    timestamp: 1600595772
     squawk: "4451"
   - lat: 50.430878
     lng: 7.262631
@@ -176,6 +1040,54 @@ track:
     heading: 191
     timestamp: 1600595779
     squawk: "4451"
+  - lat: 50.428036
+    lng: 7.263596
+    altitude: 3300
+    speed: 90
+    verticalSpeed: -256
+    heading: 163
+    timestamp: 1600595786
+    squawk: "4451"
+  - lat: 50.425476
+    lng: 7.264858
+    altitude: 3300
+    speed: 93
+    verticalSpeed: 256
+    heading: 162
+    timestamp: 1600595792
+    squawk: "4451"
+  - lat: 50.423336
+    lng: 7.266194
+    altitude: 3400
+    speed: 91
+    verticalSpeed: 256
+    heading: 156
+    timestamp: 1600595798
+    squawk: "4451"
+  - lat: 50.4207
+    lng: 7.267529
+    altitude: 3300
+    speed: 99
+    verticalSpeed: -256
+    heading: 167
+    timestamp: 1600595805
+    squawk: "4451"
+  - lat: 50.419739
+    lng: 7.258783
+    altitude: 3300
+    speed: 94
+    verticalSpeed: 448
+    heading: 3
+    timestamp: 1600595825
+    squawk: "4451"
+  - lat: 50.416866
+    lng: 7.266491
+    altitude: 3300
+    speed: 100
+    verticalSpeed: 64
+    heading: 172
+    timestamp: 1600595847
+    squawk: "4451"
   - lat: 50.413376
     lng: 7.268396
     altitude: 3400
@@ -183,6 +1095,54 @@ track:
     verticalSpeed: 320
     heading: 157
     timestamp: 1600595855
+    squawk: "4451"
+  - lat: 50.409512
+    lng: 7.271019
+    altitude: 3400
+    speed: 94
+    verticalSpeed: 0
+    heading: 155
+    timestamp: 1600595864
+    squawk: "4451"
+  - lat: 50.406921
+    lng: 7.273022
+    altitude: 3400
+    speed: 97
+    verticalSpeed: -320
+    heading: 153
+    timestamp: 1600595871
+    squawk: "4451"
+  - lat: 50.402107
+    lng: 7.27577
+    altitude: 3300
+    speed: 102
+    verticalSpeed: 128
+    heading: 168
+    timestamp: 1600595881
+    squawk: "4451"
+  - lat: 50.398911
+    lng: 7.277792
+    altitude: 3300
+    speed: 96
+    verticalSpeed: -320
+    heading: 140
+    timestamp: 1600595890
+    squawk: "4451"
+  - lat: 50.399689
+    lng: 7.283574
+    altitude: 3300
+    speed: 96
+    verticalSpeed: -320
+    heading: 140
+    timestamp: 1600595900
+    squawk: "4451"
+  - lat: 50.402527
+    lng: 7.282005
+    altitude: 3200
+    speed: 97
+    verticalSpeed: -192
+    heading: 326
+    timestamp: 1600595907
     squawk: "4451"
   - lat: 50.401875
     lng: 7.275918
@@ -192,6 +1152,54 @@ track:
     heading: 224
     timestamp: 1600595916
     squawk: "4451"
+  - lat: 50.397964
+    lng: 7.27577
+    altitude: 3300
+    speed: 97
+    verticalSpeed: 0
+    heading: 160
+    timestamp: 1600595925
+    squawk: "4451"
+  - lat: 50.395432
+    lng: 7.277286
+    altitude: 3300
+    speed: 94
+    verticalSpeed: 256
+    heading: 158
+    timestamp: 1600595931
+    squawk: "4451"
+  - lat: 50.393078
+    lng: 7.278739
+    altitude: 3300
+    speed: 91
+    verticalSpeed: 128
+    heading: 158
+    timestamp: 1600595937
+    squawk: "4451"
+  - lat: 50.389984
+    lng: 7.280249
+    altitude: 3300
+    speed: 92
+    verticalSpeed: 0
+    heading: 171
+    timestamp: 1600595944
+    squawk: "4451"
+  - lat: 50.389866
+    lng: 7.273024
+    altitude: 3300
+    speed: 84
+    verticalSpeed: 64
+    heading: 21
+    timestamp: 1600595964
+    squawk: "4451"
+  - lat: 50.383068
+    lng: 7.280595
+    altitude: 3300
+    speed: 97
+    verticalSpeed: 64
+    heading: 165
+    timestamp: 1600595990
+    squawk: "4451"
   - lat: 50.380322
     lng: 7.281783
     altitude: 3300
@@ -199,6 +1207,54 @@ track:
     verticalSpeed: 0
     heading: 162
     timestamp: 1600595996
+    squawk: "4451"
+  - lat: 50.37616
+    lng: 7.27172
+    altitude: 3300
+    speed: 87
+    verticalSpeed: 0
+    heading: 316
+    timestamp: 1600596021
+    squawk: "4451"
+  - lat: 50.377899
+    lng: 7.269535
+    altitude: 3300
+    speed: 90
+    verticalSpeed: -512
+    heading: 319
+    timestamp: 1600596027
+    squawk: "4451"
+  - lat: 50.380974
+    lng: 7.265452
+    altitude: 3200
+    speed: 95
+    verticalSpeed: -64
+    heading: 320
+    timestamp: 1600596035
+    squawk: "4451"
+  - lat: 50.383026
+    lng: 7.262975
+    altitude: 3300
+    speed: 91
+    verticalSpeed: 384
+    heading: 322
+    timestamp: 1600596041
+    squawk: "4451"
+  - lat: 50.387375
+    lng: 7.25741
+    altitude: 3300
+    speed: 84
+    verticalSpeed: 192
+    heading: 317
+    timestamp: 1600596056
+    squawk: "4451"
+  - lat: 50.389114
+    lng: 7.254591
+    altitude: 3300
+    speed: 83
+    verticalSpeed: 192
+    heading: 311
+    timestamp: 1600596062
     squawk: "4451"
   - lat: 50.390656
     lng: 7.25157
@@ -208,6 +1264,54 @@ track:
     heading: 307
     timestamp: 1600596068
     squawk: "4451"
+  - lat: 50.391865
+    lng: 7.249195
+    altitude: 3400
+    speed: 80
+    verticalSpeed: -192
+    heading: 311
+    timestamp: 1600596074
+    squawk: "4451"
+  - lat: 50.393509
+    lng: 7.24664
+    altitude: 3300
+    speed: 78
+    verticalSpeed: -64
+    heading: 316
+    timestamp: 1600596080
+    squawk: "4451"
+  - lat: 50.395126
+    lng: 7.244296
+    altitude: 3300
+    speed: 78
+    verticalSpeed: -384
+    heading: 316
+    timestamp: 1600596086
+    squawk: "4451"
+  - lat: 50.397221
+    lng: 7.241178
+    altitude: 3200
+    speed: 74
+    verticalSpeed: -448
+    heading: 316
+    timestamp: 1600596094
+    squawk: "4451"
+  - lat: 50.398727
+    lng: 7.238834
+    altitude: 3200
+    speed: 72
+    verticalSpeed: 0
+    heading: 315
+    timestamp: 1600596101
+    squawk: "4451"
+  - lat: 50.4002
+    lng: 7.236501
+    altitude: 3200
+    speed: 70
+    verticalSpeed: -192
+    heading: 315
+    timestamp: 1600596107
+    squawk: "4451"
   - lat: 50.401657
     lng: 7.234208
     altitude: 3200
@@ -215,6 +1319,54 @@ track:
     verticalSpeed: -192
     heading: 313
     timestamp: 1600596113
+    squawk: "4451"
+  - lat: 50.403084
+    lng: 7.231825
+    altitude: 3200
+    speed: 70
+    verticalSpeed: 64
+    heading: 313
+    timestamp: 1600596120
+    squawk: "4451"
+  - lat: 50.405731
+    lng: 7.227414
+    altitude: 3200
+    speed: 71
+    verticalSpeed: -128
+    heading: 313
+    timestamp: 1600596132
+    squawk: "4451"
+  - lat: 50.408432
+    lng: 7.223222
+    altitude: 3100
+    speed: 69
+    verticalSpeed: -64
+    heading: 316
+    timestamp: 1600596143
+    squawk: "4451"
+  - lat: 50.410442
+    lng: 7.220096
+    altitude: 3100
+    speed: 73
+    verticalSpeed: -64
+    heading: 315
+    timestamp: 1600596152
+    squawk: "4451"
+  - lat: 50.412003
+    lng: 7.217729
+    altitude: 3100
+    speed: 74
+    verticalSpeed: -192
+    heading: 315
+    timestamp: 1600596158
+    squawk: "4451"
+  - lat: 50.413235
+    lng: 7.215791
+    altitude: 3100
+    speed: 74
+    verticalSpeed: -128
+    heading: 315
+    timestamp: 1600596164
     squawk: "4451"
   - lat: 50.415142
     lng: 7.212895
@@ -224,6 +1376,54 @@ track:
     heading: 315
     timestamp: 1600596171
     squawk: "4451"
+  - lat: 50.416992
+    lng: 7.210211
+    altitude: 3100
+    speed: 74
+    verticalSpeed: -512
+    heading: 318
+    timestamp: 1600596178
+    squawk: "4451"
+  - lat: 50.418449
+    lng: 7.208219
+    altitude: 3000
+    speed: 74
+    verticalSpeed: -384
+    heading: 319
+    timestamp: 1600596184
+    squawk: "4451"
+  - lat: 50.419891
+    lng: 7.206289
+    altitude: 3000
+    speed: 71
+    verticalSpeed: -448
+    heading: 319
+    timestamp: 1600596190
+    squawk: "4451"
+  - lat: 50.421753
+    lng: 7.203851
+    altitude: 3000
+    speed: 73
+    verticalSpeed: -256
+    heading: 318
+    timestamp: 1600596197
+    squawk: "4451"
+  - lat: 50.423447
+    lng: 7.201538
+    altitude: 2900
+    speed: 73
+    verticalSpeed: -384
+    heading: 318
+    timestamp: 1600596203
+    squawk: "4451"
+  - lat: 50.425663
+    lng: 7.198643
+    altitude: 2900
+    speed: 73
+    verticalSpeed: -320
+    heading: 320
+    timestamp: 1600596212
+    squawk: "4451"
   - lat: 50.427246
     lng: 7.196551
     altitude: 2800
@@ -231,6 +1431,54 @@ track:
     verticalSpeed: -448
     heading: 320
     timestamp: 1600596218
+    squawk: "4451"
+  - lat: 50.428738
+    lng: 7.19456
+    altitude: 2800
+    speed: 71
+    verticalSpeed: -576
+    heading: 318
+    timestamp: 1600596224
+    squawk: "4451"
+  - lat: 50.432144
+    lng: 7.190118
+    altitude: 2600
+    speed: 74
+    verticalSpeed: -512
+    heading: 322
+    timestamp: 1600596236
+    squawk: "4451"
+  - lat: 50.435253
+    lng: 7.186469
+    altitude: 2500
+    speed: 75
+    verticalSpeed: -768
+    heading: 323
+    timestamp: 1600596248
+    squawk: "4451"
+  - lat: 50.436977
+    lng: 7.184316
+    altitude: 2400
+    speed: 71
+    verticalSpeed: -384
+    heading: 320
+    timestamp: 1600596255
+    squawk: "4451"
+  - lat: 50.438324
+    lng: 7.182601
+    altitude: 2400
+    speed: 71
+    verticalSpeed: -704
+    heading: 322
+    timestamp: 1600596261
+    squawk: "4451"
+  - lat: 50.440796
+    lng: 7.179782
+    altitude: 2200
+    speed: 73
+    verticalSpeed: -576
+    heading: 323
+    timestamp: 1600596269
     squawk: "4451"
   - lat: 50.442375
     lng: 7.178007
@@ -240,6 +1488,54 @@ track:
     heading: 325
     timestamp: 1600596275
     squawk: "4451"
+  - lat: 50.444138
+    lng: 7.175951
+    altitude: 2200
+    speed: 70
+    verticalSpeed: -128
+    heading: 322
+    timestamp: 1600596282
+    squawk: "4451"
+  - lat: 50.445633
+    lng: 7.173998
+    altitude: 2300
+    speed: 70
+    verticalSpeed: 832
+    heading: 317
+    timestamp: 1600596288
+    squawk: "4451"
+  - lat: 50.447433
+    lng: 7.171181
+    altitude: 2300
+    speed: 73
+    verticalSpeed: -448
+    heading: 313
+    timestamp: 1600596296
+    squawk: "4451"
+  - lat: 50.4505
+    lng: 7.166483
+    altitude: 2400
+    speed: 71
+    verticalSpeed: 640
+    heading: 315
+    timestamp: 1600596308
+    squawk: "4451"
+  - lat: 50.451733
+    lng: 7.164422
+    altitude: 2500
+    speed: 70
+    verticalSpeed: 704
+    heading: 310
+    timestamp: 1600596314
+    squawk: "4451"
+  - lat: 50.452339
+    lng: 7.16123
+    altitude: 2500
+    speed: 75
+    verticalSpeed: 128
+    heading: 270
+    timestamp: 1600596320
+    squawk: "4451"
   - lat: 50.4515
     lng: 7.158113
     altitude: 2500
@@ -247,6 +1543,54 @@ track:
     verticalSpeed: 448
     heading: 231
     timestamp: 1600596327
+    squawk: "4451"
+  - lat: 50.449917
+    lng: 7.156405
+    altitude: 2500
+    speed: 73
+    verticalSpeed: -640
+    heading: 204
+    timestamp: 1600596333
+    squawk: "4451"
+  - lat: 50.447113
+    lng: 7.155931
+    altitude: 2600
+    speed: 74
+    verticalSpeed: 832
+    heading: 176
+    timestamp: 1600596340
+    squawk: "4451"
+  - lat: 50.445282
+    lng: 7.15687
+    altitude: 2700
+    speed: 66
+    verticalSpeed: 576
+    heading: 154
+    timestamp: 1600596347
+    squawk: "4451"
+  - lat: 50.443542
+    lng: 7.15846
+    altitude: 2700
+    speed: 70
+    verticalSpeed: 128
+    heading: 148
+    timestamp: 1600596353
+    squawk: "4451"
+  - lat: 50.442215
+    lng: 7.159906
+    altitude: 2700
+    speed: 73
+    verticalSpeed: 320
+    heading: 141
+    timestamp: 1600596359
+    squawk: "4451"
+  - lat: 50.441353
+    lng: 7.16509
+    altitude: 2800
+    speed: 70
+    verticalSpeed: 256
+    heading: 90
+    timestamp: 1600596369
     squawk: "4451"
   - lat: 50.440655
     lng: 7.168505
@@ -256,6 +1600,54 @@ track:
     heading: 121
     timestamp: 1600596375
     squawk: "4451"
+  - lat: 50.439377
+    lng: 7.171832
+    altitude: 2900
+    speed: 76
+    verticalSpeed: 128
+    heading: 121
+    timestamp: 1600596383
+    squawk: "4451"
+  - lat: 50.438187
+    lng: 7.174443
+    altitude: 2900
+    speed: 73
+    verticalSpeed: 640
+    heading: 123
+    timestamp: 1600596389
+    squawk: "4451"
+  - lat: 50.437271
+    lng: 7.176891
+    altitude: 3000
+    speed: 70
+    verticalSpeed: 640
+    heading: 119
+    timestamp: 1600596395
+    squawk: "4451"
+  - lat: 50.436264
+    lng: 7.179782
+    altitude: 3000
+    speed: 67
+    verticalSpeed: 320
+    heading: 116
+    timestamp: 1600596401
+    squawk: "4451"
+  - lat: 50.434929
+    lng: 7.183797
+    altitude: 3000
+    speed: 71
+    verticalSpeed: 320
+    heading: 120
+    timestamp: 1600596410
+    squawk: "4451"
+  - lat: 50.43367
+    lng: 7.18684
+    altitude: 3100
+    speed: 72
+    verticalSpeed: 448
+    heading: 123
+    timestamp: 1600596417
+    squawk: "4451"
   - lat: 50.432648
     lng: 7.189216
     altitude: 3100
@@ -263,6 +1655,54 @@ track:
     verticalSpeed: 256
     heading: 124
     timestamp: 1600596423
+    squawk: "4451"
+  - lat: 50.431137
+    lng: 7.192937
+    altitude: 3200
+    speed: 71
+    verticalSpeed: 320
+    heading: 122
+    timestamp: 1600596431
+    squawk: "4451"
+  - lat: 50.43013
+    lng: 7.195395
+    altitude: 3200
+    speed: 70
+    verticalSpeed: 320
+    heading: 121
+    timestamp: 1600596437
+    squawk: "4451"
+  - lat: 50.428177
+    lng: 7.200647
+    altitude: 3200
+    speed: 70
+    verticalSpeed: 320
+    heading: 118
+    timestamp: 1600596449
+    squawk: "4451"
+  - lat: 50.426102
+    lng: 7.206742
+    altitude: 3300
+    speed: 72
+    verticalSpeed: -128
+    heading: 116
+    timestamp: 1600596462
+    squawk: "4451"
+  - lat: 50.425198
+    lng: 7.209555
+    altitude: 3300
+    speed: 78
+    verticalSpeed: 0
+    heading: 116
+    timestamp: 1600596468
+    squawk: "4451"
+  - lat: 50.424088
+    lng: 7.212886
+    altitude: 3300
+    speed: 79
+    verticalSpeed: 64
+    heading: 118
+    timestamp: 1600596474
     squawk: "4451"
   - lat: 50.422897
     lng: 7.217512
@@ -272,6 +1712,54 @@ track:
     heading: 100
     timestamp: 1600596483
     squawk: "4451"
+  - lat: 50.422989
+    lng: 7.22062
+    altitude: 3300
+    speed: 80
+    verticalSpeed: 64
+    heading: 77
+    timestamp: 1600596489
+    squawk: "4451"
+  - lat: 50.425011
+    lng: 7.225144
+    altitude: 3300
+    speed: 83
+    verticalSpeed: -192
+    heading: 40
+    timestamp: 1600596498
+    squawk: "4451"
+  - lat: 50.4272
+    lng: 7.227125
+    altitude: 3300
+    speed: 84
+    verticalSpeed: 128
+    heading: 26
+    timestamp: 1600596504
+    squawk: "4451"
+  - lat: 50.430134
+    lng: 7.229301
+    altitude: 3300
+    speed: 83
+    verticalSpeed: 64
+    heading: 24
+    timestamp: 1600596513
+    squawk: "4451"
+  - lat: 50.432415
+    lng: 7.230934
+    altitude: 3300
+    speed: 82
+    verticalSpeed: 192
+    heading: 24
+    timestamp: 1600596519
+    squawk: "4451"
+  - lat: 50.435532
+    lng: 7.232907
+    altitude: 3300
+    speed: 84
+    verticalSpeed: -128
+    heading: 20
+    timestamp: 1600596528
+    squawk: "4451"
   - lat: 50.437729
     lng: 7.233991
     altitude: 3300
@@ -279,6 +1767,54 @@ track:
     verticalSpeed: 0
     heading: 16
     timestamp: 1600596534
+    squawk: "4451"
+  - lat: 50.440842
+    lng: 7.235364
+    altitude: 3300
+    speed: 85
+    verticalSpeed: 64
+    heading: 16
+    timestamp: 1600596542
+    squawk: "4451"
+  - lat: 50.443214
+    lng: 7.236501
+    altitude: 3300
+    speed: 85
+    verticalSpeed: 128
+    heading: 15
+    timestamp: 1600596548
+    squawk: "4451"
+  - lat: 50.445786
+    lng: 7.237533
+    altitude: 3300
+    speed: 85
+    verticalSpeed: -64
+    heading: 13
+    timestamp: 1600596555
+    squawk: "4451"
+  - lat: 50.448074
+    lng: 7.238328
+    altitude: 3300
+    speed: 87
+    verticalSpeed: 0
+    heading: 12
+    timestamp: 1600596561
+    squawk: "4451"
+  - lat: 50.451279
+    lng: 7.23934
+    altitude: 3300
+    speed: 86
+    verticalSpeed: 128
+    heading: 10
+    timestamp: 1600596569
+    squawk: "4451"
+  - lat: 50.45369
+    lng: 7.23999
+    altitude: 3300
+    speed: 86
+    verticalSpeed: 64
+    heading: 9
+    timestamp: 1600596575
     squawk: "4451"
   - lat: 50.455811
     lng: 7.240569
@@ -288,6 +1824,54 @@ track:
     heading: 10
     timestamp: 1600596581
     squawk: "4451"
+  - lat: 50.458328
+    lng: 7.241219
+    altitude: 3300
+    speed: 86
+    verticalSpeed: 128
+    heading: 8
+    timestamp: 1600596587
+    squawk: "4451"
+  - lat: 50.460857
+    lng: 7.241772
+    altitude: 3400
+    speed: 86
+    verticalSpeed: 64
+    heading: 7
+    timestamp: 1600596594
+    squawk: "4451"
+  - lat: 50.463558
+    lng: 7.242366
+    altitude: 3400
+    speed: 86
+    verticalSpeed: 64
+    heading: 7
+    timestamp: 1600596600
+    squawk: "4451"
+  - lat: 50.468258
+    lng: 7.243405
+    altitude: 3400
+    speed: 87
+    verticalSpeed: -128
+    heading: 7
+    timestamp: 1600596612
+    squawk: "4451"
+  - lat: 50.470818
+    lng: 7.243925
+    altitude: 3400
+    speed: 89
+    verticalSpeed: 0
+    heading: 6
+    timestamp: 1600596618
+    squawk: "4451"
+  - lat: 50.473251
+    lng: 7.244255
+    altitude: 3400
+    speed: 90
+    verticalSpeed: 0
+    heading: 4
+    timestamp: 1600596625
+    squawk: "4451"
   - lat: 50.478313
     lng: 7.245112
     altitude: 3400
@@ -295,6 +1879,54 @@ track:
     verticalSpeed: 0
     heading: 5
     timestamp: 1600596637
+    squawk: "4451"
+  - lat: 50.481571
+    lng: 7.245632
+    altitude: 3400
+    speed: 90
+    verticalSpeed: -256
+    heading: 5
+    timestamp: 1600596644
+    squawk: "4451"
+  - lat: 50.484375
+    lng: 7.246062
+    altitude: 3300
+    speed: 94
+    verticalSpeed: -512
+    heading: 8
+    timestamp: 1600596651
+    squawk: "4451"
+  - lat: 50.486832
+    lng: 7.247191
+    altitude: 3300
+    speed: 95
+    verticalSpeed: 0
+    heading: 19
+    timestamp: 1600596657
+    squawk: "4451"
+  - lat: 50.489067
+    lng: 7.249269
+    altitude: 3300
+    speed: 92
+    verticalSpeed: 128
+    heading: 32
+    timestamp: 1600596663
+    squawk: "4451"
+  - lat: 50.490875
+    lng: 7.252639
+    altitude: 3300
+    speed: 89
+    verticalSpeed: 0
+    heading: 51
+    timestamp: 1600596669
+    squawk: "4451"
+  - lat: 50.492188
+    lng: 7.255356
+    altitude: 3300
+    speed: 90
+    verticalSpeed: -320
+    heading: 55
+    timestamp: 1600596676
     squawk: "4451"
   - lat: 50.493256
     lng: 7.259142
@@ -304,6 +1936,54 @@ track:
     heading: 68
     timestamp: 1600596682
     squawk: "4451"
+  - lat: 50.494171
+    lng: 7.263047
+    altitude: 3300
+    speed: 88
+    verticalSpeed: 128
+    heading: 70
+    timestamp: 1600596688
+    squawk: "4451"
+  - lat: 50.495213
+    lng: 7.26753
+    altitude: 3300
+    speed: 88
+    verticalSpeed: -64
+    heading: 70
+    timestamp: 1600596695
+    squawk: "4451"
+  - lat: 50.496094
+    lng: 7.271359
+    altitude: 3300
+    speed: 89
+    verticalSpeed: -64
+    heading: 69
+    timestamp: 1600596702
+    squawk: "4451"
+  - lat: 50.49754
+    lng: 7.276884
+    altitude: 3300
+    speed: 90
+    verticalSpeed: 128
+    heading: 67
+    timestamp: 1600596711
+    squawk: "4451"
+  - lat: 50.499298
+    lng: 7.280105
+    altitude: 3300
+    speed: 90
+    verticalSpeed: -128
+    heading: 41
+    timestamp: 1600596717
+    squawk: "4451"
+  - lat: 50.501682
+    lng: 7.282451
+    altitude: 3300
+    speed: 91
+    verticalSpeed: 64
+    heading: 28
+    timestamp: 1600596723
+    squawk: "4451"
   - lat: 50.503784
     lng: 7.284225
     altitude: 3300
@@ -311,6 +1991,54 @@ track:
     verticalSpeed: 256
     heading: 27
     timestamp: 1600596729
+    squawk: "4451"
+  - lat: 50.505615
+    lng: 7.28567
+    altitude: 3300
+    speed: 89
+    verticalSpeed: -256
+    heading: 25
+    timestamp: 1600596735
+    squawk: "4451"
+  - lat: 50.508087
+    lng: 7.287549
+    altitude: 3300
+    speed: 90
+    verticalSpeed: 192
+    heading: 26
+    timestamp: 1600596741
+    squawk: "4451"
+  - lat: 50.510433
+    lng: 7.289577
+    altitude: 3300
+    speed: 88
+    verticalSpeed: 0
+    heading: 27
+    timestamp: 1600596748
+    squawk: "4451"
+  - lat: 50.512665
+    lng: 7.291308
+    altitude: 3300
+    speed: 89
+    verticalSpeed: -64
+    heading: 25
+    timestamp: 1600596754
+    squawk: "4451"
+  - lat: 50.514862
+    lng: 7.292826
+    altitude: 3300
+    speed: 89
+    verticalSpeed: 64
+    heading: 24
+    timestamp: 1600596760
+    squawk: "4451"
+  - lat: 50.517151
+    lng: 7.294488
+    altitude: 3300
+    speed: 88
+    verticalSpeed: -128
+    heading: 23
+    timestamp: 1600596766
     squawk: "4451"
   - lat: 50.51944
     lng: 7.296006
@@ -320,6 +2048,54 @@ track:
     heading: 21
     timestamp: 1600596772
     squawk: "4451"
+  - lat: 50.523563
+    lng: 7.298114
+    altitude: 3200
+    speed: 89
+    verticalSpeed: -704
+    heading: 10
+    timestamp: 1600596782
+    squawk: "4451"
+  - lat: 50.526123
+    lng: 7.29803
+    altitude: 3200
+    speed: 96
+    verticalSpeed: -640
+    heading: 355
+    timestamp: 1600596789
+    squawk: "4451"
+  - lat: 50.529102
+    lng: 7.297743
+    altitude: 3100
+    speed: 92
+    verticalSpeed: -128
+    heading: 356
+    timestamp: 1600596795
+    squawk: "4451"
+  - lat: 50.531849
+    lng: 7.297371
+    altitude: 3100
+    speed: 90
+    verticalSpeed: -832
+    heading: 353
+    timestamp: 1600596802
+    squawk: "4451"
+  - lat: 50.535061
+    lng: 7.296778
+    altitude: 3000
+    speed: 89
+    verticalSpeed: -896
+    heading: 352
+    timestamp: 1600596809
+    squawk: "4451"
+  - lat: 50.537567
+    lng: 7.296295
+    altitude: 2900
+    speed: 87
+    verticalSpeed: -896
+    heading: 352
+    timestamp: 1600596815
+    squawk: "4451"
   - lat: 50.541161
     lng: 7.295367
     altitude: 2700
@@ -327,6 +2103,54 @@ track:
     verticalSpeed: -1088
     heading: 347
     timestamp: 1600596825
+    squawk: "4451"
+  - lat: 50.544605
+    lng: 7.293957
+    altitude: 2600
+    speed: 91
+    verticalSpeed: -1152
+    heading: 345
+    timestamp: 1600596833
+    squawk: "4451"
+  - lat: 50.547306
+    lng: 7.292695
+    altitude: 2500
+    speed: 96
+    verticalSpeed: -1088
+    heading: 342
+    timestamp: 1600596839
+    squawk: "4451"
+  - lat: 50.550339
+    lng: 7.291235
+    altitude: 2400
+    speed: 98
+    verticalSpeed: -768
+    heading: 342
+    timestamp: 1600596846
+    squawk: "4451"
+  - lat: 50.553867
+    lng: 7.289206
+    altitude: 2300
+    speed: 97
+    verticalSpeed: -704
+    heading: 340
+    timestamp: 1600596855
+    squawk: "4451"
+  - lat: 50.556427
+    lng: 7.287694
+    altitude: 2200
+    speed: 97
+    verticalSpeed: -640
+    heading: 340
+    timestamp: 1600596861
+    squawk: "4451"
+  - lat: 50.559128
+    lng: 7.285569
+    altitude: 2100
+    speed: 97
+    verticalSpeed: -512
+    heading: 331
+    timestamp: 1600596868
     squawk: "4451"
   - lat: 50.562378
     lng: 7.282345
@@ -336,6 +2160,54 @@ track:
     heading: 324
     timestamp: 1600596875
     squawk: "4451"
+  - lat: 50.564156
+    lng: 7.280521
+    altitude: 2000
+    speed: 92
+    verticalSpeed: -384
+    heading: 327
+    timestamp: 1600596881
+    squawk: "4451"
+  - lat: 50.566483
+    lng: 7.278145
+    altitude: 2000
+    speed: 94
+    verticalSpeed: -192
+    heading: 327
+    timestamp: 1600596888
+    squawk: "4451"
+  - lat: 50.569016
+    lng: 7.275623
+    altitude: 2000
+    speed: 92
+    verticalSpeed: 256
+    heading: 326
+    timestamp: 1600596895
+    squawk: "4451"
+  - lat: 50.571045
+    lng: 7.273469
+    altitude: 2000
+    speed: 88
+    verticalSpeed: 128
+    heading: 324
+    timestamp: 1600596901
+    squawk: "4451"
+  - lat: 50.57515
+    lng: 7.26854
+    altitude: 2100
+    speed: 89
+    verticalSpeed: 64
+    heading: 322
+    timestamp: 1600596913
+    squawk: "4451"
+  - lat: 50.577164
+    lng: 7.2663
+    altitude: 2100
+    speed: 87
+    verticalSpeed: 256
+    heading: 325
+    timestamp: 1600596919
+    squawk: "4451"
   - lat: 50.579517
     lng: 7.263744
     altitude: 2100
@@ -343,6 +2215,54 @@ track:
     verticalSpeed: 128
     heading: 326
     timestamp: 1600596927
+    squawk: "4451"
+  - lat: 50.581421
+    lng: 7.261818
+    altitude: 2100
+    speed: 87
+    verticalSpeed: -320
+    heading: 326
+    timestamp: 1600596933
+    squawk: "4451"
+  - lat: 50.58371
+    lng: 7.259361
+    altitude: 2100
+    speed: 89
+    verticalSpeed: 0
+    heading: 325
+    timestamp: 1600596939
+    squawk: "4451"
+  - lat: 50.585758
+    lng: 7.257286
+    altitude: 2100
+    speed: 89
+    verticalSpeed: 256
+    heading: 326
+    timestamp: 1600596945
+    squawk: "4451"
+  - lat: 50.590317
+    lng: 7.252461
+    altitude: 2100
+    speed: 93
+    verticalSpeed: -64
+    heading: 327
+    timestamp: 1600596957
+    squawk: "4451"
+  - lat: 50.592274
+    lng: 7.250828
+    altitude: 2100
+    speed: 92
+    verticalSpeed: 64
+    heading: 333
+    timestamp: 1600596963
+    squawk: "4451"
+  - lat: 50.594601
+    lng: 7.249121
+    altitude: 2100
+    speed: 92
+    verticalSpeed: 192
+    heading: 336
+    timestamp: 1600596969
     squawk: "4451"
   - lat: 50.598358
     lng: 7.246568
@@ -352,6 +2272,54 @@ track:
     heading: 337
     timestamp: 1600596978
     squawk: "4451"
+  - lat: 50.60051
+    lng: 7.245122
+    altitude: 2100
+    speed: 93
+    verticalSpeed: -64
+    heading: 336
+    timestamp: 1600596984
+    squawk: "4451"
+  - lat: 50.602886
+    lng: 7.243628
+    altitude: 2100
+    speed: 94
+    verticalSpeed: -64
+    heading: 340
+    timestamp: 1600596990
+    squawk: "4451"
+  - lat: 50.605225
+    lng: 7.242303
+    altitude: 2100
+    speed: 93
+    verticalSpeed: 64
+    heading: 340
+    timestamp: 1600596996
+    squawk: "4451"
+  - lat: 50.607925
+    lng: 7.240858
+    altitude: 2100
+    speed: 92
+    verticalSpeed: -128
+    heading: 340
+    timestamp: 1600597002
+    squawk: "4451"
+  - lat: 50.61026
+    lng: 7.239557
+    altitude: 2100
+    speed: 93
+    verticalSpeed: -128
+    heading: 339
+    timestamp: 1600597008
+    squawk: "4451"
+  - lat: 50.614288
+    lng: 7.237316
+    altitude: 2100
+    speed: 92
+    verticalSpeed: -256
+    heading: 340
+    timestamp: 1600597018
+    squawk: "4451"
   - lat: 50.616531
     lng: 7.236015
     altitude: 2100
@@ -359,6 +2327,54 @@ track:
     verticalSpeed: -256
     heading: 340
     timestamp: 1600597024
+    squawk: "4451"
+  - lat: 50.619507
+    lng: 7.234423
+    altitude: 2100
+    speed: 96
+    verticalSpeed: -320
+    heading: 340
+    timestamp: 1600597030
+    squawk: "4451"
+  - lat: 50.622395
+    lng: 7.232716
+    altitude: 2100
+    speed: 97
+    verticalSpeed: 0
+    heading: 339
+    timestamp: 1600597037
+    squawk: "4451"
+  - lat: 50.625141
+    lng: 7.231157
+    altitude: 2100
+    speed: 96
+    verticalSpeed: 0
+    heading: 340
+    timestamp: 1600597043
+    squawk: "4451"
+  - lat: 50.627563
+    lng: 7.229871
+    altitude: 2100
+    speed: 95
+    verticalSpeed: -64
+    heading: 341
+    timestamp: 1600597050
+    squawk: "4451"
+  - lat: 50.633102
+    lng: 7.227052
+    altitude: 2100
+    speed: 92
+    verticalSpeed: 256
+    heading: 350
+    timestamp: 1600597062
+    squawk: "4451"
+  - lat: 50.641113
+    lng: 7.228281
+    altitude: 2100
+    speed: 92
+    verticalSpeed: 128
+    heading: 344
+    timestamp: 1600597084
     squawk: "4451"
   - lat: 50.646011
     lng: 7.224234
@@ -368,6 +2384,54 @@ track:
     heading: 329
     timestamp: 1600597096
     squawk: "4451"
+  - lat: 50.648045
+    lng: 7.222397
+    altitude: 2100
+    speed: 93
+    verticalSpeed: -128
+    heading: 329
+    timestamp: 1600597102
+    squawk: "4451"
+  - lat: 50.652699
+    lng: 7.218983
+    altitude: 2100
+    speed: 90
+    verticalSpeed: 0
+    heading: 336
+    timestamp: 1600597114
+    squawk: "4451"
+  - lat: 50.655769
+    lng: 7.216681
+    altitude: 2100
+    speed: 90
+    verticalSpeed: -64
+    heading: 335
+    timestamp: 1600597122
+    squawk: "4451"
+  - lat: 50.658142
+    lng: 7.21491
+    altitude: 2100
+    speed: 90
+    verticalSpeed: 64
+    heading: 333
+    timestamp: 1600597128
+    squawk: "4451"
+  - lat: 50.661209
+    lng: 7.21238
+    altitude: 2100
+    speed: 92
+    verticalSpeed: -256
+    heading: 331
+    timestamp: 1600597137
+    squawk: "4451"
+  - lat: 50.663639
+    lng: 7.210371
+    altitude: 2000
+    speed: 94
+    verticalSpeed: -320
+    heading: 333
+    timestamp: 1600597143
+    squawk: "4451"
   - lat: 50.668991
     lng: 7.206525
     altitude: 2000
@@ -375,6 +2439,54 @@ track:
     verticalSpeed: -320
     heading: 336
     timestamp: 1600597156
+    squawk: "4451"
+  - lat: 50.673695
+    lng: 7.203064
+    altitude: 2000
+    speed: 97
+    verticalSpeed: -256
+    heading: 335
+    timestamp: 1600597168
+    squawk: "4451"
+  - lat: 50.675976
+    lng: 7.201462
+    altitude: 2000
+    speed: 96
+    verticalSpeed: -128
+    heading: 335
+    timestamp: 1600597174
+    squawk: "4451"
+  - lat: 50.68103
+    lng: 7.197752
+    altitude: 2000
+    speed: 93
+    verticalSpeed: 256
+    heading: 335
+    timestamp: 1600597185
+    squawk: "4451"
+  - lat: 50.683285
+    lng: 7.195892
+    altitude: 2000
+    speed: 94
+    verticalSpeed: -384
+    heading: 331
+    timestamp: 1600597191
+    squawk: "4451"
+  - lat: 50.685471
+    lng: 7.193892
+    altitude: 1900
+    speed: 98
+    verticalSpeed: -256
+    heading: 328
+    timestamp: 1600597198
+    squawk: "4451"
+  - lat: 50.687714
+    lng: 7.191665
+    altitude: 1900
+    speed: 98
+    verticalSpeed: -64
+    heading: 328
+    timestamp: 1600597204
     squawk: "4451"
   - lat: 50.692108
     lng: 7.187285
@@ -384,6 +2496,54 @@ track:
     heading: 325
     timestamp: 1600597215
     squawk: "7000"
+  - lat: 50.694305
+    lng: 7.18491
+    altitude: 1900
+    speed: 98
+    verticalSpeed: -256
+    heading: 326
+    timestamp: 1600597222
+    squawk: "7000"
+  - lat: 50.697144
+    lng: 7.181941
+    altitude: 1800
+    speed: 95
+    verticalSpeed: -384
+    heading: 326
+    timestamp: 1600597229
+    squawk: "7000"
+  - lat: 50.699249
+    lng: 7.179794
+    altitude: 1800
+    speed: 86
+    verticalSpeed: -320
+    heading: 326
+    timestamp: 1600597235
+    squawk: "7000"
+  - lat: 50.702866
+    lng: 7.175928
+    altitude: 1700
+    speed: 85
+    verticalSpeed: -704
+    heading: 326
+    timestamp: 1600597246
+    squawk: "7000"
+  - lat: 50.705162
+    lng: 7.173462
+    altitude: 1700
+    speed: 89
+    verticalSpeed: -64
+    heading: 325
+    timestamp: 1600597252
+    squawk: "7000"
+  - lat: 50.707123
+    lng: 7.171919
+    altitude: 1700
+    speed: 86
+    verticalSpeed: -256
+    heading: 338
+    timestamp: 1600597258
+    squawk: "7000"
   - lat: 50.709072
     lng: 7.170792
     altitude: 1600
@@ -391,6 +2551,54 @@ track:
     verticalSpeed: -320
     heading: 340
     timestamp: 1600597264
+    squawk: "7000"
+  - lat: 50.712799
+    lng: 7.168655
+    altitude: 1600
+    speed: 88
+    verticalSpeed: -768
+    heading: 340
+    timestamp: 1600597273
+    squawk: "7000"
+  - lat: 50.71508
+    lng: 7.167511
+    altitude: 1500
+    speed: 86
+    verticalSpeed: -320
+    heading: 341
+    timestamp: 1600597279
+    squawk: "7000"
+  - lat: 50.717079
+    lng: 7.166443
+    altitude: 1500
+    speed: 80
+    verticalSpeed: -448
+    heading: 340
+    timestamp: 1600597285
+    squawk: "7000"
+  - lat: 50.721039
+    lng: 7.164199
+    altitude: 1400
+    speed: 69
+    verticalSpeed: -448
+    heading: 340
+    timestamp: 1600597297
+    squawk: "7000"
+  - lat: 50.722641
+    lng: 7.163457
+    altitude: 1300
+    speed: 67
+    verticalSpeed: -384
+    heading: 344
+    timestamp: 1600597303
+    squawk: "7000"
+  - lat: 50.726303
+    lng: 7.161675
+    altitude: 1300
+    speed: 68
+    verticalSpeed: -128
+    heading: 340
+    timestamp: 1600597315
     squawk: "7000"
   - lat: 50.730347
     lng: 7.159271
@@ -400,6 +2608,54 @@ track:
     heading: 340
     timestamp: 1600597328
     squawk: "7000"
+  - lat: 50.732666
+    lng: 7.157964
+    altitude: 1100
+    speed: 71
+    verticalSpeed: -576
+    heading: 342
+    timestamp: 1600597335
+    squawk: "7000"
+  - lat: 50.737015
+    lng: 7.156034
+    altitude: 1000
+    speed: 72
+    verticalSpeed: -192
+    heading: 344
+    timestamp: 1600597348
+    squawk: "7000"
+  - lat: 50.739006
+    lng: 7.155228
+    altitude: 1000
+    speed: 71
+    verticalSpeed: -192
+    heading: 345
+    timestamp: 1600597355
+    squawk: "7000"
+  - lat: 50.743336
+    lng: 7.153473
+    altitude: 1000
+    speed: 67
+    verticalSpeed: -128
+    heading: 346
+    timestamp: 1600597369
+    squawk: "7000"
+  - lat: 50.746078
+    lng: 7.152174
+    altitude: 900
+    speed: 70
+    verticalSpeed: 0
+    heading: 333
+    timestamp: 1600597378
+    squawk: "7000"
+  - lat: 50.747387
+    lng: 7.150116
+    altitude: 1000
+    speed: 68
+    verticalSpeed: 0
+    heading: 303
+    timestamp: 1600597384
+    squawk: "7000"
   - lat: 50.748459
     lng: 7.147349
     altitude: 1000
@@ -407,6 +2663,110 @@ track:
     verticalSpeed: 64
     heading: 301
     timestamp: 1600597390
+    squawk: "7000"
+  - lat: 50.749557
+    lng: 7.144528
+    altitude: 900
+    speed: 69
+    verticalSpeed: -320
+    heading: 302
+    timestamp: 1600597397
+    squawk: "7000"
+  - lat: 50.750565
+    lng: 7.141633
+    altitude: 900
+    speed: 70
+    verticalSpeed: -512
+    heading: 298
+    timestamp: 1600597403
+    squawk: "7000"
+  - lat: 50.751621
+    lng: 7.139206
+    altitude: 800
+    speed: 73
+    verticalSpeed: -512
+    heading: 303
+    timestamp: 1600597409
+    squawk: "7000"
+  - lat: 50.753815
+    lng: 7.136511
+    altitude: 800
+    speed: 72
+    verticalSpeed: -448
+    heading: 334
+    timestamp: 1600597417
+    squawk: "7000"
+  - lat: 50.755672
+    lng: 7.135468
+    altitude: 700
+    speed: 69
+    verticalSpeed: -576
+    heading: 344
+    timestamp: 1600597423
+    squawk: "7000"
+  - lat: 50.758327
+    lng: 7.134857
+    altitude: 700
+    speed: 68
+    verticalSpeed: -576
+    heading: 353
+    timestamp: 1600597431
+    squawk: "7000"
+  - lat: 50.760281
+    lng: 7.134476
+    altitude: 600
+    speed: 69
+    verticalSpeed: -448
+    heading: 353
+    timestamp: 1600597438
+    squawk: "7000"
+  - lat: 50.762051
+    lng: 7.134247
+    altitude: 600
+    speed: 68
+    verticalSpeed: -832
+    heading: 359
+    timestamp: 1600597444
+    squawk: "7000"
+  - lat: 50.768799
+    lng: 7.13562
+    altitude: 400
+    speed: 67
+    verticalSpeed: -256
+    heading: 17
+    timestamp: 1600597465
+    squawk: "7000"
+  - lat: 50.77066
+    lng: 7.136882
+    altitude: 400
+    speed: 66
+    verticalSpeed: 0
+    heading: 27
+    timestamp: 1600597471
+    squawk: "7000"
+  - lat: 50.771988
+    lng: 7.138664
+    altitude: 400
+    speed: 66
+    verticalSpeed: -320
+    heading: 50
+    timestamp: 1600597477
+    squawk: "7000"
+  - lat: 50.772812
+    lng: 7.142672
+    altitude: 400
+    speed: 63
+    verticalSpeed: -640
+    heading: 89
+    timestamp: 1600597485
+    squawk: "7000"
+  - lat: 50.771393
+    lng: 7.151654
+    altitude: 200
+    speed: 63
+    verticalSpeed: -448
+    heading: 109
+    timestamp: 1600597506
     squawk: "7000"
   - lat: 50.7690965
     lng: 7.1620958

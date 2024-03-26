@@ -17,6 +17,7 @@ import { getYamlData } from "src/server/get-yaml-data";
 import { FunctionComponent } from "react";
 import { getFlightLog } from "src/server/get-flight-log";
 import { Duration } from "luxon";
+import { cn } from "src/utils/cn";
 
 type Params = {
   flightId: string;
@@ -34,24 +35,33 @@ const FlightPage : FunctionComponent<{ params: Params }> = async ({
   const origin = airports[flight.origin];
   const destination = airports[flight.destination];
   const date = flight.pilotLog.departure.toFormat("yyyy-MM-dd");
-
+  
   return (
     <div className={styles.pageWrapper}>
       <Header title={`${date}  - ${flight.aircraft}`} />
       <main className={styles.mainContainer}>
         <section className={styles.mapSection}>
           {flight.track.length ? (
-            <FlightMap flights={[{
+            <FlightMap 
+              speedMultiplier={10}
+              flights={[{
                 origin: origin,
                 track: flight.track,
                 id: flight.id,
-            }]} />
+              }]} 
+            />
           ) : (
             <h1>Flight data not available :(</h1>
           )}
         </section>
-        <section className={styles.dataSection}>
-          <h1>{`${date}  - ${flight.aircraft}`}</h1>
+        <section className={cn(styles.dataSection, "text-slate-200")}>
+          <Header 
+            title={`${date}  - ${flight.aircraft}`} 
+            className={cn(
+              "relative top-0 [&_h1]:text-2xl pb-4 border-b",
+              "hidden lg:flex",
+            )}
+          />
           <div className={styles.dataChapter}>
             <div className={styles.chapterTitle}>
               <FaPlane />

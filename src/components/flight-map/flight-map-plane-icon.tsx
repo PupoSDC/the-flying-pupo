@@ -28,7 +28,7 @@ export type FlightMapPlaneIconProps = {
   /** Callbak when clicking the plabe icon */
   onClick?: () => void;
   /** the speed multiplier (i.e.: 60 for 1 minute per second) */
-  speedMultiplier?: number;
+  speedMultiplier: number;
 };
 
 type LagrangeInterpolation = (pointsY: number[], x: number) => number;

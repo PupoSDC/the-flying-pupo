@@ -10,7 +10,7 @@ pilotLog:
   arrival: 2020-12-05T14:19:00.000+00:00
   singleEnginePistonTimeMinutes: 25
   multiEnginePistonTimeMinutes: 0
-  multiPilotTimeMinutes: 0
+  multiPilotTimeMinutes: 25
   picTimeMinutes: 25
   dualTimeMinutes: 0
   copilotTimeMinutes: 0
@@ -104,6 +104,14 @@ track:
     heading: 52
     timestamp: 1607176845
     squawk: "7000"
+  - lat: 50.347504
+    lng: 7.51695
+    altitude: 1800
+    speed: 63
+    verticalSpeed: -256
+    heading: 67
+    timestamp: 1607176863
+    squawk: "7000"
   - lat: 50.347824
     lng: 7.521876
     altitude: 1700
@@ -183,6 +191,14 @@ track:
     verticalSpeed: 192
     heading: 303
     timestamp: 1607177084
+    squawk: "7000"
+  - lat: 50.329674
+    lng: 7.487108
+    altitude: 1900
+    speed: 86
+    verticalSpeed: 128
+    heading: 43
+    timestamp: 1607177110
     squawk: "7000"
   - lat: 50.331394
     lng: 7.489707
@@ -264,6 +280,14 @@ track:
     heading: 237
     timestamp: 1607177294
     squawk: "7000"
+  - lat: 50.327499
+    lng: 7.533513
+    altitude: 1000
+    speed: 57
+    verticalSpeed: -128
+    heading: 237
+    timestamp: 1607177303
+    squawk: "7000"
   - lat: 50.322365
     lng: 7.518657
     altitude: 1300
@@ -344,6 +368,14 @@ track:
     heading: 44
     timestamp: 1607177707
     squawk: "7000"
+  - lat: 50.336975
+    lng: 7.49947
+    altitude: 1800
+    speed: 69
+    verticalSpeed: -64
+    heading: 47
+    timestamp: 1607177717
+    squawk: "7000"
   - lat: 50.338192
     lng: 7.501658
     altitude: 1800
@@ -407,6 +439,14 @@ track:
     verticalSpeed: -576
     heading: 131
     timestamp: 1607177799
+    squawk: "7000"
+  - lat: 50.341782
+    lng: 7.53438
+    altitude: 1500
+    speed: 61
+    verticalSpeed: -512
+    heading: 131
+    timestamp: 1607177806
     squawk: "7000"
   - lat: 50.334049
     lng: 7.541892

@@ -35,6 +35,7 @@ export const getYamlData = async () => {
     )
       .flat()
       .filter((f) => f.name.includes(".yaml"))
+      .slice(0, process.env.NODE_ENV === "development" ? 10 : undefined)
       .map(async (f) => {
         const yaml = await fs.readFile(`${f.path}/${f.name}`, "utf-8");
         const json = YAML.parse(yaml);
@@ -42,13 +43,6 @@ export const getYamlData = async () => {
       }),
   );
 
-  //flights.sort((a, b) => a.pilotLog.departure - b.flight.pilotLog.departure);
-
-  CACHE = {
-    flights,
-    aircrafts,
-    airports,
-  };
-
+  CACHE = { flights, aircrafts, airports };
   return CACHE;
 };

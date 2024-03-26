@@ -8,7 +8,7 @@
   height: 100vh;
   max-width: 1400px;
   margin: auto;
-  padding-top: 3em;
+  padding-top: 4em;
 }
 
 .mapSection > div {
@@ -106,8 +106,8 @@
   flex: 1;
 }
 
-@media (min-width: 1400px) {
-  .pageWrapper header {
+@media (min-width: 1280px) {
+  .pageWrapper > header {
     display: none;
   }
 

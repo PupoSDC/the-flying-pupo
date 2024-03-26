@@ -2,7 +2,6 @@ import { YamlFlight } from "src/schemas/yaml-flight";
 import { getYamlData } from "./get-yaml-data";
 import { YamlAirport } from "src/schemas/yaml-airport";
 import { YamlAircraft } from "src/schemas/yaml-aircraft";
-import { DateTime } from "luxon";
 
 type FlightLogFlight = YamlFlight & {
     nextId: string | undefined,
@@ -162,7 +161,7 @@ export const getFlightLog = async () => {
       tripDistance: Math.floor(calculateTripDistance(flight, airports)),
       tripDistanceCovered: Math.floor(calculateTripDistanceCovered(flight, airports)),
       carryOver: JSON.parse(JSON.stringify(carryOver)),
-      track: getSetPointsFromArray(flight.track, 50).filter((e) => !!e),
+      track: flight.track,
     };
   });
 
@@ -170,6 +169,6 @@ export const getFlightLog = async () => {
     return b.pilotLog.departure.toMillis() - a.pilotLog.departure.toMillis();
   });
 
-  CACHE = { flights, airports, aircrafts };
+  CACHE =  { flights, airports, aircrafts };
   return CACHE;
 };
