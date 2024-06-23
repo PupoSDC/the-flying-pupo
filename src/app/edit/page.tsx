@@ -1,140 +1,87 @@
 "use client";
 
 import { useState } from "react";
-import { Input } from "src/components/input";
 import { z } from "zod";
-
-const FlighRadarData = z.object({
-  result: z.object({
-    response: z.object({
-      data: z.object({
-        flight: z.object({
-          identification: z.object({
-            callsign: z.string(),
-          }),
-          aircraft: z.object({
-            model: z.object({
-              code: z.string(),
-              text: z.string(),
-            }),
-            identification: z.object({
-              modes: z.string(),
-              registration: z.string(),
-            }),
-          }),
-          airport: z.object({
-            origin: z.object({
-              code: z.object({
-                icao: z.string(),
-              }),
-              position: z.object({
-                latitude: z.number(),
-                longitude: z.number(),
-              }),
-            }),
-            destination: z.object({
-              code: z.object({
-                icao: z.string(),
-              }),
-              position: z.object({
-                latitude: z.number(),
-                longitude: z.number(),
-              }),
-            }),
-          }),
-          track: z.array(
-            z.object({
-              latitude: z.number(),
-              longitude: z.number(),
-              altitude: z.object({
-                feet: z.number(),
-              }),
-              speed: z.object({
-                kts: z.number(),
-              }),
-              verticalSpeed: z.object({
-                fpm: z.number(),
-              }),
-              heading: z.number(),
-              squawk: z.string(),
-              timestamp: z.number(),
-            }),
-          ),
-        }),
-      }),
-    }),
-  }),
-});
+import { default as Editor } from '@monaco-editor/react';
+import { flighRadarData } from "src/schemas/flight-radar-data";
+import { YamlFlight, yamlFlight } from "src/schemas/yaml-flight";
 
 const EditPage = () => {
   const [frData, setFrData] = useState("");
+  const [flightData, setFlightData] = useState("");
 
   const loadFrData = () => {
-    console.log(FlighRadarData.parse(JSON.parse(frData)));
+    const parsedFrData = flighRadarData.parse(JSON.parse(frData));
+
+    const yamlFlight : YamlFlight = {
+      id: "1",
+      name: "Flight 1",
+      description: "Flight 1 description",
+      callsign: parsedFrData.result.response.data.flight.identification.callsign,
+      aircraft: parsedFrData.result.response.data.flight.aircraft.identification.registration,
+      origin: parsedFrData.result.response.data.flight.airport.origin.code.icao,
+      destination: parsedFrData.result.response.data.flight.airport.destination.code.icao,
+      track: parsedFrData.result.response.data.flight.track.map((track) => ({
+        lat: track.latitude,
+        lng: track.longitude,
+        altitude: track.altitude.feet,
+        speed: track.speed.kts,
+        verticalSpeed: track.verticalSpeed.fpm,
+        heading: track.heading,
+        squawk: track.squawk,
+        timestamp: track.timestamp,
+      })),
+      pilotLog: {
+        departure: "2020-09-15T14:09:00.000+01:00",
+        arrival:  "2020-09-15T14:09:00.000+01:00",
+        singleEnginePistonTimeMinutes: 0,
+        multiEnginePistonTimeMinutes: 0,
+        multiPilotTimeMinutes: 0,
+        picTimeMinutes: 0,
+        dualTimeMinutes: 0,
+        copilotTimeMinutes: 0,
+        instructorTimeMinutes: 0,
+        nightTimeMinutes: 0,
+        ifrTimeMinutes: 0,
+        landings: {
+          day: 0,
+          night: 0,
+        },
+        takeoffs: {
+          day: 0,
+          night: 0,
+        }
+      }
+    };
   };
 
   return (
-    <>
-      <div>
-        <label className="form-control w-full max-w-sm">
-          <span className="label label-text">FR data</span>
-          <textarea
-            value={frData}
-            onChange={(e) => setFrData(e.target.value)}
-            placeholder="FR Data"
-            className="textarea textarea-bordered overflow-hidden"
+    <main className="flex h-screen">
+      <div className="flex-1 h-full p-2">
+        <div className="h-[200px]">
+          <Editor 
+            theme="vs-dark" 
+            value={frData} 
+            
+            onChange={(v) => v && setFrData(v)} 
+            options={ { wordWrap: "on" }}
           />
-          <button className="btn btn-secondary" onClick={loadFrData}>
-            Load
-          </button>
-        </label>
-
-        <form className="w-full max-w-sm p-4">
-          <label className="form-control w-full max-w-sm">
-            <span className="label label-text">Flight ID</span>
-            <input
-              type="text"
-              placeholder="Flight ID"
-              className="input input-bordered w-full"
-            />
-          </label>
-          <label className="form-control w-full max-w-sm">
-            <span className="label label-text">Name</span>
-            <input
-              type="text"
-              placeholder="Name"
-              className="input input-bordered w-full"
-            />
-          </label>
-          <label className="form-control w-full max-w-sm">
-            <span className="label label-text">Description</span>
-            <textarea
-              placeholder="Flight Description"
-              className="textarea textarea-bordered"
-            />
-          </label>
-          <label className="form-control w-full max-w-sm">
-            <span className="label label-text">Callsign</span>
-            <input
-              type="text"
-              placeholder="Callsign"
-              className="input input-bordered w-full"
-            />
-          </label>
-
-          <div className="divider" />
-
-          <label className="form-control w-full max-w-sm">
-            <span className="label label-text">Aircraft</span>
-            <input
-              type="text"
-              placeholder="Aircraft"
-              className="input input-bordered w-full"
-            />
-          </label>
-        </form>
+        </div>
+        <button className="btn" onClick={loadFrData}>Parse</button>
       </div>
-    </>
+      <div className="flex-1 h-full p-2">
+        <Editor 
+          theme="vs-dark" 
+          value={flightData}
+          language="yaml"
+          onChange={(v) => v && setFlightData(v)}
+          options={ { wordWrap: "on" }}
+        />
+      </div>
+      <div className="flex-1 h-full p-2">
+        <Editor theme="vs-dark" />
+      </div>      
+    </main>
   );
 };
 
