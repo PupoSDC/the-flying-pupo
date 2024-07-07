@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const flighRadarData = z.object({
+export const flightRadarData = z.object({
     result: z.object({
         response: z.object({
             data: z.object({
@@ -62,4 +62,4 @@ export const flighRadarData = z.object({
     }),
 });
 
-export type FlightRadarData = z.infer<typeof flighRadarData>;
+export type FlightRadarData = z.infer<typeof flightRadarData>;

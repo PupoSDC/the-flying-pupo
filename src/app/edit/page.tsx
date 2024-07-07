@@ -1,19 +1,28 @@
 "use client";
 
 import { useState } from "react";
-import { z } from "zod";
+import * as YAML from "yaml";
 import { default as Editor } from '@monaco-editor/react';
-import { flighRadarData } from "src/schemas/flight-radar-data";
+import { flightRadarData } from "src/schemas/flight-radar-data";
 import { YamlFlight, yamlFlight } from "src/schemas/yaml-flight";
+import { DateTime } from "luxon";
 
 const EditPage = () => {
   const [frData, setFrData] = useState("");
   const [flightData, setFlightData] = useState("");
+  const [yamlFlight, setYamlFlight] = useState("");
 
   const loadFrData = () => {
-    const parsedFrData = flighRadarData.parse(JSON.parse(frData));
+    let data = JSON.parse(frData);
+    if (data.identification) {
+      data = {
+        result: { response: { data: { flight: data } } }
+      }
+    };
 
-    const yamlFlight : YamlFlight = {
+    const parsedFrData = flightRadarData.parse(data);
+
+    const yamlFlight: YamlFlight = {
       id: "1",
       name: "Flight 1",
       description: "Flight 1 description",
@@ -32,8 +41,8 @@ const EditPage = () => {
         timestamp: track.timestamp,
       })),
       pilotLog: {
-        departure: "2020-09-15T14:09:00.000+01:00",
-        arrival:  "2020-09-15T14:09:00.000+01:00",
+        departure: DateTime.now().startOf('day').toUTC(),
+        arrival: DateTime.now().startOf('day').toUTC(),
         singleEnginePistonTimeMinutes: 0,
         multiEnginePistonTimeMinutes: 0,
         multiPilotTimeMinutes: 0,
@@ -53,34 +62,36 @@ const EditPage = () => {
         }
       }
     };
+
+    setYamlFlight(YAML.stringify(yamlFlight, null, 2));
   };
 
   return (
     <main className="flex h-screen">
-      <div className="flex-1 h-full p-2">
-        <div className="h-[200px]">
-          <Editor 
-            theme="vs-dark" 
-            value={frData} 
-            
-            onChange={(v) => v && setFrData(v)} 
-            options={ { wordWrap: "on" }}
-          />
+      <div className="flex flex-1 h-full p-2 flex-col">
+        <div className="pb-2">
+          <button className="btn" onClick={loadFrData}>Parse</button>
         </div>
-        <button className="btn" onClick={loadFrData}>Parse</button>
+        <div className="v-full h-full">
+        <Editor
+          theme="vs-dark"
+          value={frData}
+
+          onChange={(v) => v && setFrData(v)}
+          options={{ wordWrap: "on" }}
+        />
+        </div>
+
       </div>
       <div className="flex-1 h-full p-2">
-        <Editor 
-          theme="vs-dark" 
-          value={flightData}
-          language="yaml"
+        <Editor
+          theme="vs-dark"
+          value={yamlFlight}
           onChange={(v) => v && setFlightData(v)}
-          options={ { wordWrap: "on" }}
+          language="yaml"
+          options={{ wordWrap: "on" }}
         />
       </div>
-      <div className="flex-1 h-full p-2">
-        <Editor theme="vs-dark" />
-      </div>      
     </main>
   );
 };
